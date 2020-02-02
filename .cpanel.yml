@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/iberkatt/public_html/afmstest
+    - export DEPLOYPATH=/home/iberkatt/public_html/afmstest2
     - /bin/cp * $DEPLOYPATH
