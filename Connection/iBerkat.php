@@ -1,7 +1,7 @@
 <?php
 $username = "gunbladeii";
 $password = "Sh@ti5620";
-$hostname = "localhost";
+$hostname = "42.1.60.115";
 $db_name = "afms";
 
 //connection to the database
