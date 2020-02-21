@@ -336,7 +336,7 @@
         <div class="form-group">
            <label>IC picture front and back:</label>        
            <div class="input-group mb-3">
-               <input type="file" name="DLPic" id="image" class="form-control" accept="image/*" id="validationDefault16">
+               <input type="file" name="DLPic" id="image" class="form-control" accept=".pdf" id="validationDefault16">
               <div class="input-group-append input-group-text">
                 <span class="far fa-copy"></span>
               </div>
@@ -346,7 +346,7 @@
         <div class="form-group">
            <label>User Picture:</label>
            <div class="input-group mb-3">
-              <input type="file" name="riderFacePic" id="image2" class="form-control" accept="image/*" id="validationDefault17">
+              <input type="file" name="riderFacePic" id="image2" class="form-control" accept=".pdf" id="validationDefault17">
               <div class="input-group-append input-group-text">
                 <span class="fas fa-portrait"></span>
               </div>
@@ -356,7 +356,7 @@
         <div class="form-group">
            <label>Motorcycle Picture:</label>
            <div class="input-group mb-3">
-              <input type="file" name="riderFaceMotorPic" id="image3" class="form-control" accept="image/*" id="validationDefault18">
+              <input type="file" name="riderFaceMotorPic" id="image3" class="form-control" accept=".pdf" id="validationDefault18">
               <div class="input-group-append input-group-text">
                 <span class="fas fa-image"></span>
               </div>
@@ -472,7 +472,7 @@ $(document).ready(function(){
            else  
            {  
                 var extension = $('#image').val().split('.').pop().toLowerCase();  
-                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)  
+                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg','pdf']) == -1)  
                 {  
                      alert('Invalid Image File');  
                      $('#image').val('');  
@@ -489,7 +489,7 @@ $(document).ready(function(){
            else  
            {  
                 var extension = $('#image2').val().split('.').pop().toLowerCase();  
-                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)  
+                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg','pdf']) == -1)  
                 {  
                      alert('Invalid Image File');  
                      $('#image2').val('');  
@@ -506,7 +506,7 @@ $(document).ready(function(){
            else  
            {  
                 var extension = $('#image3').val().split('.').pop().toLowerCase();  
-                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)  
+                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg','pdf']) == -1)  
                 {  
                      alert('Invalid Image File');  
                      $('#image3').val('');  
