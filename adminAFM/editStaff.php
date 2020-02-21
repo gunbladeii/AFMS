@@ -92,7 +92,7 @@
         <h3></h3>
         <div class="form-group">
           <div class="input-group mb-3">
-          <input type="text" name="employeeID" class="form-control" placeholder="Employee ID" id="validationDefault01" value="<?php echo $ED['id'];?>" required>
+          <input type="text" name="employeeID" class="form-control" placeholder="Employee ID" id="validationDefault01" value="<?php echo $ED['employeeID'];?>" required>
           <div class="input-group-append input-group-text">
               <span class="fas fa-id-card-alt"></span>
           </div>
@@ -327,7 +327,7 @@
         
         <div class="form-group">
            <div class="input-group mb-3">
-              <input type="text" name="roadtaxNo" class="form-control" placeholder="Road Tax Number" required>
+              <input type="text" name="roadtaxNo" class="form-control" placeholder="Road Tax Number" value="<?php echo $ED['roadtaxNo']?>" required>
               <div class="input-group-append input-group-text">
                 <span class="far fa-id-badge"></span>
               </div>
