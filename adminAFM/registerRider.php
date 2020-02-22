@@ -168,7 +168,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <div class="dropdown-divider"></div>
-          <a href="../index.php" class="dropdown-item dropdown-footer">Logout</a>
+          <a href="../logout.php" class="dropdown-item dropdown-footer">Logout</a>
         </div>
       </li>
      
