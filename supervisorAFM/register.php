@@ -179,12 +179,12 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
       </li>
       <!-- Exit -->
       <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="../index.php">
+        <a class="nav-link" data-toggle="dropdown" href="../logout.php">
           <i class="far fa-times-circle"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <div class="dropdown-divider"></div>
-          <a href="../index.php" class="dropdown-item dropdown-footer">Logout</a>
+          <a href="../logout.php" class="dropdown-item dropdown-footer">Logout</a>
         </div>
       </li>
      
@@ -209,7 +209,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
           <img src="data:image/jpeg;base64,<?php echo base64_encode($row_Recordset['riderFacePic']);?>" style="max-width:100%"/>
         </div>
         <div class="info">
-          <a href="index.php" class="d-block"><?php echo ucwords($row_Recordset['nama']);?></a>
+          <a href="index.php" class="badge badge-primary text-wrap" style="color:white;width: 6rem;"><?php echo ucwords($row_Recordset['nama']);?></a>
         </div>
       </div>
 

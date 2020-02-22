@@ -58,7 +58,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
     <ul class="navbar-nav ml-auto">
       <!-- Exit -->
       <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="../index.php">
+        <a class="nav-link" data-toggle="dropdown" href="../logout.php">
           <i class="far fa-times-circle"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
@@ -87,7 +87,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
          
        
         <div class="info">
-          <a href="#" class="d-block"> <i class="nav-icon fas fa-user"></i> <?php echo ucwords(strtolower($row_Recordset['nama']));?></a>
+          <a href="#" class="badge badge-primary text-wrap" style="color:white;width: 6rem;"> <i class="nav-icon fas fa-user"></i> <?php echo ucwords(strtolower($row_Recordset['nama']));?></a>
         </div>
       </div>
 
