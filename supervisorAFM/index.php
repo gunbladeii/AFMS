@@ -188,7 +188,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
       </li>
       <!-- Exit -->
       <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="../index.php">
+        <a class="nav-link" data-toggle="dropdown" href="../logout.php">
           <i class="far fa-times-circle"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
