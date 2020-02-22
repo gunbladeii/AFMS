@@ -201,7 +201,7 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
           <i class="nav-icon fas fa-user"></i>
         </div>
         <div class="info">
-          <a href="#" class="d-block"><?php echo $row_Recordset['nama'];?></a>
+          <a href="#" class="badge badge-primary text-wrap" style="color:white;width: 6rem;"><?php echo $row_Recordset['nama'];?></a>
         </div>
       </div>
 
