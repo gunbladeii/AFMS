@@ -217,7 +217,7 @@ $totalRows_parcel = mysqli_num_rows($parcel);
           <img src="data:image/jpeg;base64,<?php echo base64_encode($row_Recordset['riderFacePic']);?>" style="max-width:100%"/> 
         </div>
         <div class="info">
-          <a href="#" class="d-block"><?php echo ucwords(strtolower($row_Recordset['nama']));?></a>
+          <a href="#" class="badge badge-primary text-wrap" style="width: 6rem;"><?php echo ucwords(strtolower($row_Recordset['nama']));?></a>
         </div>
       </div>
 
