@@ -165,7 +165,7 @@
         <div class="form-group">
             <label>Date of birth:</label>
             <div class="input-group mb-3">
-                <input type='date' class="form-control" name="dob" placeholder="Date of birth" id="validationDefault06" required/>
+                <input type='text' class="form-control" name="dob" placeholder="Date of birth (mm/dd/yyyy)" data-inputmask="'mask': ['99/99/9999']" data-mask id="validationDefault06" required/>
                 <div class="input-group-append input-group-text">
                     <span class="fas fa-calendar">
                     </span>
