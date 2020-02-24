@@ -308,7 +308,7 @@
         <div class="form-group">
             <label>License exp date:</label>
             <div class="input-group mb-3">
-                <input type='date' class="form-control" name="lesenExp" placeholder="License Exp" id="validationDefault11" value="<?php echo $ED['lesenExp']?>" required>
+                <input type='text' class="form-control" name="lesenExp" placeholder="License Exp(mm/dd/yyyy)" data-inputmask="'mask': ['99/99/9999']" data-mask id="validationDefault11" value="<?php echo $ED['lesenExp']?>" required>
                 <div class="input-group-append input-group-text">
                     <span class="fas fa-calendar">
                     </span>
@@ -344,9 +344,9 @@
         </div>
         
         <div class="form-group">
-           <label>Vehicle mfg:</label>
+           <label>Vehicle Year:</label>
            <div class="input-group mb-3">
-              <input type="date" name="vehicleYear" class="form-control" placeholder="Vehicle Year" id="validationDefault15" value="<?php echo $ED['vehicleYear']?>" required>
+              <input type="text" name="vehicleYear" class="form-control" placeholder="Vehicle Year" data-inputmask="'mask': ['9999']" data-mask id="validationDefault15" value="<?php echo $ED['vehicleYear']?>" required>
               <div class="input-group-append input-group-text">
                 <span class="fas fa-calendar"></span>
               </div>

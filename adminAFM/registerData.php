@@ -324,9 +324,9 @@
         </div>
         
         <div class="form-group">
-           <label>Vehicle mfg:</label>
+           <label>Vehicle Year:</label>
            <div class="input-group mb-3">
-              <input type="date" name="vehicleYear" class="form-control" placeholder="Vehicle Year" id="validationDefault15" required>
+              <input type="text" name="vehicleYear" class="form-control" placeholder="Vehicle Year" data-inputmask="'mask': ['9999']" data-mask id="validationDefault15" required>
               <div class="input-group-append input-group-text">
                 <span class="fas fa-calendar"></span>
               </div>
