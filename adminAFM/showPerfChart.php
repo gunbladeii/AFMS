@@ -64,4 +64,4 @@ $a=1;
                     <?php } while ($performance = mysqli_fetch_assoc($sql_performance)); ?>
                     </tbody>
                   </table>
-<?php }else{echo '<div class="badge badge-warning">No data</div>';}?>
+<?php }else{echo '<div class="badge badge-warning">Your rider did not update any parcel record yet</div>';}?>
