@@ -34,7 +34,7 @@ $a=1;
                     </tr>
                     </thead>
                     <tbody>
-                    <?php do { ?>    
+                    <?php //do { ?>    
                     <tr style="text-align:center">
                       <td><?php echo $a++;?></td>
                       <td><a data-toggle="modal"
@@ -46,7 +46,7 @@ $a=1;
                       <td><span class="badge badge-success">In Progress</span></td>
                       <td><span class="badge badge-success">In Progress</span></td>
                     </tr>
-                    <?php } while ($row_attend = mysqli_fetch_assoc($attend)); ?>
+                    <?php // } while ($row_attend = mysqli_fetch_assoc($attend)); ?>
                     </tbody>
                   </table>
 <?php }else{echo '<div class="badge badge-warning">No data</div>';}?>
