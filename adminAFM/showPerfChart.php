@@ -23,7 +23,7 @@ $perSuccess = round(($success/$parcel)*100,2);
 $a=1;
 ?>
 <?php if (!empty($performance)) { ?>
-	<table id="example2" class="table table-hover table-responsive-sm">
+  <table id="example2" class="table table-hover table-responsive-sm">
                     <thead class="table-primary">
                     <tr style="text-align:center">
                       <th scope="col">No</th>
@@ -47,9 +47,9 @@ $a=1;
                       </td>
                       <td><span class="badge badge-info"><?php $date=date_create($performance['date']);echo date_format($date,"F");?></span></td>
                       <td><span class="badge badge-info"><?php $year=date_create($performance['date']);echo date_format($year,"Y");?></span></td>
-                      <td><span class="badge badge-warning"><?php echo $parcel;?></span></td>
-                      <td><span class="badge badge-success"><?php echo $success;?></span></td>
-                      <td><span class="badge badge-danger"><?php echo $fail;?></span></td>
+                      <td><span class="badge badge-warning"><?php echo $performance['totalParcel'];?></span></td>
+                      <td><span class="badge badge-success"><?php echo $performance['success'];?></span></td>
+                      <td><span class="badge badge-danger"><?php echo $performance['fail'];?></span></td>
                        <td><?php 
                       if ($performance['perSuccess'] > 50)
                       {
