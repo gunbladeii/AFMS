@@ -12,7 +12,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
 
 $station = $row_Recordset['stationCode'];
 
-$attend = $mysqli->query("SELECT attendance.stationCode, stationName.name AS stationName, COUNT(attendance.date) AS totalDay ,(COUNT(attendance.date)/26)*100 AS percentAtt, attendance.month, attendance.year FROM attendance INNER JOIN stationName ON attendance.stationCode = stationName.stationCode GROUP BY attendance.stationCode, attendance.month, attendance.year ORDER BY stationName.name, attendance.month, attendance.year DESC");
+$attend = $mysqli->query("SELECT attendance.date, attendance.stationCode, stationName.name AS stationName, COUNT(attendance.date) AS totalDay ,(COUNT(attendance.date)/26)*100 AS percentAtt, attendance.month, attendance.year FROM attendance INNER JOIN stationName ON attendance.stationCode = stationName.stationCode GROUP BY attendance.stationCode, attendance.month, attendance.year ORDER BY stationName.name, attendance.month, attendance.year DESC");
 $row_attend = mysqli_fetch_assoc($attend);
 $totalRows_attend = mysqli_num_rows($attend);
 $a=1;
