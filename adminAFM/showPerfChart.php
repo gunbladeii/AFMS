@@ -12,7 +12,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
 
 $station = $row_Recordset['stationCode'];
 
-$sql_performance = $mysqli->query("SELECT infoParcel.date AS date, infoParcel.stationCode, SUM(infoParcel.itemCode) AS totalParcel,SUM(infoParcel.fail) AS fail,SUM(infoParcel.itemCode - infoParcel.fail) AS success,(SUM(infoParcel.itemCode - infoParcel.fail))/(SUM(infoParcel.itemCode))*100 AS perSuccess,stationName.name AS stationName, COUNT(infoParcel.date) AS totalDay , infoParcel.month FROM infoParcel INNER JOIN stationName ON infoParcel.stationCode = stationName.stationCode WHERE infoParcel.itemCode IS NOT NULL GROUP BY infoParcel.stationCode, infoParcel.month, infoParcel.year ORDER BY infoParcel.month, infoParcel.year DESC");
+$sql_performance = $mysqli->query("SELECT infoParcel.date AS date, infoParcel.stationCode, SUM(infoParcel.itemCode) AS totalParcel,SUM(infoParcel.fail) AS fail,SUM(infoParcel.itemCode - infoParcel.fail) AS success,(SUM(infoParcel.itemCode - infoParcel.fail))/(SUM(infoParcel.itemCode))*100 AS perSuccess,stationName.name AS stationName, COUNT(infoParcel.date) AS totalDay , infoParcel.month FROM infoParcel INNER JOIN stationName ON infoParcel.stationCode = stationName.stationCode WHERE infoParcel.itemCode IS NOT NULL GROUP BY infoParcel.stationCode, infoParcel.month, infoParcel.year ORDER BY stationName, infoParcel.month, infoParcel.year DESC");
 $performance = mysqli_fetch_assoc($sql_performance);
 $totalRows_attend = mysqli_num_rows($sql_performance);
 
