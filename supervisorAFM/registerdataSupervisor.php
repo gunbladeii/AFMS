@@ -80,9 +80,9 @@
 
 <form method="post" action="registerdataSupervisor.php" role="form" enctype="multipart/form-data">
     
-       <button type="button" class="btn btn-success btn-block" data-toggle="collapse" data-target="#home">Login Registration</button>
+       <button type="button" class="btn btn-success btn-block">Login Registration</button>
        <!--BEGIN CLASS tab-pane-->
-        <div id="home" class="collapse">
+        <div id="home">
         <h3></h3>
         <div class="form-group">
           <div class="input-group mb-3">
