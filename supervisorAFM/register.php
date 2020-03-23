@@ -6,7 +6,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_Recordset = $_SESSION['MM_Username'];
 }
 
-$Recordset = $mysqli->query("SELECT employeeData.noIC, employeeData.nama, employeeData.riderFacePic, login.username FROM login INNER JOIN employeeData ON employeeData.noIC = login.noIC WHERE username = '$colname_Recordset'");
+$Recordset = $mysqli->query("SELECT * FROM login INNER JOIN employeeData ON employeeData.noIC = login.noIC WHERE username = '$colname_Recordset'");
 $row_Recordset = mysqli_fetch_assoc($Recordset);
 $totalRows_Recordset = mysqli_num_rows($Recordset);
 
@@ -318,7 +318,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
       <p class="login-box-msg">Register a new rider/supervisor (<?php date_default_timezone_set("asia/kuala_lumpur");
           echo date("Y/m/d, h:i:sa");?>)</p>
       <div class="col-mb-12" style="text-align:center">
-      <a data-toggle="modal" data-target="#parcelModal" data-whatever="<?php echo $row_Recordset['id'];?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Register New User</a>
+      <a data-toggle="modal" data-target="#parcelModal" data-whatever="<?php echo $row_Recordset['stationCode'];?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Register New User</a>
      </div>
       <br>
       <div id='show'></div>
@@ -477,7 +477,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
           var button = $(event.relatedTarget) // Button that triggered the modal
           var recipient = button.data('whatever') // Extract info from data-* attributes
           var modal = $(this);
-          var dataString = 'id=' + recipient;
+          var dataString = 'stationSS=' + recipient;
 
             $.ajax({
                 type: "GET",

@@ -1,11 +1,11 @@
 <?php session_start();?>
 <?php
     require('conn.php');
-    $id = $_GET['id'];
+    $stationSS = $_GET['stationSS'];
     date_default_timezone_set("asia/kuala_lumpur"); 
     $date = date('Y-m-d');
        /*insert into table login and employeeData*/
-         $noIC = $_POST['noIC'];
+       $noIC = $_POST['noIC'];
        $nama = $_POST['nama'];
        $username = $_POST['username'];/*emel instead*/
        
@@ -57,7 +57,7 @@
       header("location:register.php");
     }
     
-    $stationCall = $mysqli->query("SELECT * FROM `stationName`");
+    $stationCall = $mysqli->query("SELECT * FROM `stationName` WHERE stationCode = $stationSS");
     $SC = mysqli_fetch_assoc($stationCall);
     
     $stateCall = $mysqli->query("SELECT * FROM `state`");
@@ -439,7 +439,7 @@
         
         <div class="form-group">
             <div class="input-group mb-3">
-                <input type="text" name="stationCode" class="form-control" placeholder="<?php echo $row_joiner['stationName'];?>" value="<?php echo $row_joiner['stationCode'];?>">
+                <input type="text" name="stationCode" class="form-control" placeholder="<?php echo $SC['stationName'];?>" value="<?php echo $SC['stationCode'];?>">
                     <div class="input-group-append input-group-text">
                       <span class="fas fa-map-marked-alt"></span>
                    </div>
