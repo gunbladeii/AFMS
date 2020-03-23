@@ -441,7 +441,7 @@
             <div class="input-group mb-3">
                 <input type="hidden" name="stationCode" class="form-control" placeholder="<?echo $SC['name'];?>" value="<?php echo $stationSS;?>">
                     <div class="input-group-append input-group-text">
-                      <span class="fas fa-map-marked-alt"></span>
+                      
                    </div>
             </div>
         </div>
