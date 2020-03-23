@@ -57,7 +57,7 @@
       header("location:register.php");
     }
     
-    $stationCall = $mysqli->query("SELECT * FROM `stationName` WHERE stationCode = $stationSS");
+    $stationCall = $mysqli->query("SELECT * FROM `stationName` WHERE stationCode = '$stationSS'");
     $SC = mysqli_fetch_assoc($stationCall);
     
     $stateCall = $mysqli->query("SELECT * FROM `state`");
@@ -439,7 +439,7 @@
         
         <div class="form-group">
             <div class="input-group mb-3">
-                <input type="text" name="stationCode" class="form-control" value="<?php echo $stationSS;?>">
+                <input type="text" name="stationCode" class="form-control" placeholder="<?echo $SC['name'];?>"> value="<?php echo $stationSS;?>">
                     <div class="input-group-append input-group-text">
                       <span class="fas fa-map-marked-alt"></span>
                    </div>
