@@ -6,55 +6,55 @@
     $date = date('Y-m-d');
        /*insert into table login and employeeData*/
          $noIC = $_POST['noIC'];
-    	 $nama = $_POST['nama'];
-    	 $username = $_POST['username'];/*emel instead*/
-    	 
+       $nama = $_POST['nama'];
+       $username = $_POST['username'];/*emel instead*/
+       
        /*insert into table login*/
-    	$employeeID = $_POST['employeeID'];
-    	$password = $_POST['password'];
-    	$role = $_POST['role'];
-    	$terms = $_POST['terms'];
-    	
+      $employeeID = $_POST['employeeID'];
+      $password = $_POST['password'];
+      $role = $_POST['role'];
+      $terms = $_POST['terms'];
+      
        /*insert into table employeeData*/
-    	$sex = $_POST['sex'];
-    	$dob = $_POST['dob'];
-    	$pob = $_POST['pob'];
-    	$nationality = $_POST['nationality'];
-    	$race = $_POST['race'];
-    	$religion = $_POST['religion'];
-    	$marriage = $_POST['marriage'];
-    	$childrenNo = $_POST['childrenNo'];
-    	$address = $_POST['address'];
-    	$noTel = $_POST['noTel'];
-    	$lesenNo = $_POST['lesenNo'];
-    	$lesenExp = $_POST['lesenExp'];
-    	$noPlate = $_POST['noPlate'];
-    	$roadtaxNo = $_POST['roadtaxNo'];
-    	$vehicleModel = $_POST['vehicleModel'];
-    	$vehicleYear = $_POST['vehicleYear'];
-    	$pdrmRecordNo = $_POST['pdrmRecordNo'];
-    	$caseNo = $_POST['caseNo'];
-    	$employeeStatus = $_POST['employeeStatus'];
-    	$stationCode = $_POST['stationCode'];
-    	$accNum = $_POST['accNum'];
-    	$codeBank = $_POST['codeBank'];
-    	
+      $sex = $_POST['sex'];
+      $dob = $_POST['dob'];
+      $pob = $_POST['pob'];
+      $nationality = $_POST['nationality'];
+      $race = $_POST['race'];
+      $religion = $_POST['religion'];
+      $marriage = $_POST['marriage'];
+      $childrenNo = $_POST['childrenNo'];
+      $address = $_POST['address'];
+      $noTel = $_POST['noTel'];
+      $lesenNo = $_POST['lesenNo'];
+      $lesenExp = $_POST['lesenExp'];
+      $noPlate = $_POST['noPlate'];
+      $roadtaxNo = $_POST['roadtaxNo'];
+      $vehicleModel = $_POST['vehicleModel'];
+      $vehicleYear = $_POST['vehicleYear'];
+      $pdrmRecordNo = $_POST['pdrmRecordNo'];
+      $caseNo = $_POST['caseNo'];
+      $employeeStatus = $_POST['employeeStatus'];
+      $stationCode = $_POST['stationCode'];
+      $accNum = $_POST['accNum'];
+      $codeBank = $_POST['codeBank'];
+      
     if (isset($_POST['submit'])) {
         $DLPic = addslashes(file_get_contents($_FILES["DLPic"]["tmp_name"]));
-    	$riderFaceMotorPic = addslashes(file_get_contents($_FILES["riderFaceMotorPic"]["tmp_name"]));
-    	$riderFacePic = addslashes(file_get_contents($_FILES["riderFacePic"]["tmp_name"]));
-    	
-    	/*add pictue*/
-    	
-    	$mysqli->query("INSERT INTO `employeeData` (`noIC`, `nama`, `emel`, `sex`, `dob`, `pob`, `nationality`, `race`, `religion`, `marriage`, `childrenNo`, `address`, `noTel`, `lesenNo`, `lesenExp`, `noPlate`, `roadtaxNo`, `vehicleModel`, `vehicleYear`, `pdrmRecordNo`, `caseNo`, `employeeStatus`, `stationCode`, `accNum`, `codeBank`, `DLPic`, `riderFacePic`, `riderFaceMotorPic`) VALUES ('$noIC', '$nama', '$username', '$sex', '$dob', '$pob', '$nationality', '$race', '$religion', '$marriage','$childrenNo', '$address', '$noTel', '$lesenNo', '$lesenExp', '$noPlate', '$roadtaxNo', '$vehicleModel', '$vehicleYear', '$pdrmRecordNo', '$caseNo', '$employeeStatus', '$stationCode', '$accNum', '$codeBank', '$DLPic', '$riderFacePic', '$riderFaceMotorPic')");
-    	
-    	header("location:register.php");
+      $riderFaceMotorPic = addslashes(file_get_contents($_FILES["riderFaceMotorPic"]["tmp_name"]));
+      $riderFacePic = addslashes(file_get_contents($_FILES["riderFacePic"]["tmp_name"]));
+      
+      /*add pictue*/
+      
+      $mysqli->query("INSERT INTO `employeeData` (`noIC`, `nama`, `emel`, `sex`, `dob`, `pob`, `nationality`, `race`, `religion`, `marriage`, `childrenNo`, `address`, `noTel`, `lesenNo`, `lesenExp`, `noPlate`, `roadtaxNo`, `vehicleModel`, `vehicleYear`, `pdrmRecordNo`, `caseNo`, `employeeStatus`, `stationCode`, `accNum`, `codeBank`, `DLPic`, `riderFacePic`, `riderFaceMotorPic`) VALUES ('$noIC', '$nama', '$username', '$sex', '$dob', '$pob', '$nationality', '$race', '$religion', '$marriage','$childrenNo', '$address', '$noTel', '$lesenNo', '$lesenExp', '$noPlate', '$roadtaxNo', '$vehicleModel', '$vehicleYear', '$pdrmRecordNo', '$caseNo', '$employeeStatus', '$stationCode', '$accNum', '$codeBank', '$DLPic', '$riderFacePic', '$riderFaceMotorPic')");
+      
+      header("location:register.php");
     }
     
     if (isset($_POST['submit'])) {
-    	$mysqli->query("INSERT INTO `login` (`noIC`, `nama`, `username`, `employeeID`, `password`, `role`, `terms`) VALUES ('$noIC', '$nama', '$username', '$employeeID', '$password', '$role', '$terms')");
-    	
-    	header("location:register.php");
+      $mysqli->query("INSERT INTO `login` (`noIC`, `nama`, `username`, `employeeID`, `password`, `role`, `terms`) VALUES ('$noIC', '$nama', '$username', '$employeeID', '$password', '$role', '$terms')");
+      
+      header("location:register.php");
     }
     
     $stationCall = $mysqli->query("SELECT * FROM `stationName`");
@@ -80,7 +80,7 @@
 
 <form method="post" action="registerdataSupervisor.php" role="form" enctype="multipart/form-data">
     
-       <button type="button" class="btn btn-info btn-block" data-toggle="collapse" data-target="#home">Login Registration</button>
+       <button type="button" class="btn btn-success btn-block" data-toggle="collapse" data-target="#home">Login Registration</button>
        <!--BEGIN CLASS tab-pane-->
         <div id="home" class="collapse">
         <h3></h3>
@@ -165,7 +165,7 @@
         <div class="form-group">
             <label>Date of birth:</label>
             <div class="input-group mb-3">
-                <input type='date' class="form-control" name="dob" placeholder="Date of birth" id="validationDefault06" required/>
+                <input type='text' class="form-control" name="dob" placeholder="Date of birth (mm/dd/yyyy)" data-inputmask="'mask': ['99/99/9999']" data-mask id="validationDefault06" required/>
                 <div class="input-group-append input-group-text">
                     <span class="fas fa-calendar">
                     </span>
@@ -288,8 +288,7 @@
         <div class="form-group">
             <label>License exp date:</label>
             <div class="input-group mb-3">
-                <input type="hidden" id="benchmarkDate" value="<?php date_default_timezone_set("asia/kuala_lumpur");echo date('m/d/Y');?>"/>
-                <input type="date" class="form-control" name="lesenExp" placeholder="License Exp" id="validationDefault11" required>
+                <input type='text' class="form-control" name="lesenExp" placeholder="License Exp(mm/dd/yyyy)" data-inputmask="'mask': ['99/99/9999']" data-mask id="validationDefault11" required>
                 <div class="input-group-append input-group-text">
                     <span class="fas fa-calendar">
                     </span>
@@ -308,7 +307,7 @@
         
         <div class="form-group">
            <div class="input-group mb-3">
-              <input type="text" name="roadtaxNo" class="form-control" placeholder="Road Tax Number" data-inputmask="'mask': ['9999 9999 9999 [9999]']" data-mask id="validationDefault13" required>
+              <input type="text" name="roadtaxNo" class="form-control" placeholder="Road Tax Number" required>
               <div class="input-group-append input-group-text">
                 <span class="far fa-id-badge"></span>
               </div>
@@ -325,9 +324,9 @@
         </div>
         
         <div class="form-group">
-           <label>Vehicle mfg:</label>
+           <label>Vehicle Year:</label>
            <div class="input-group mb-3">
-              <input type="date" name="vehicleYear" class="form-control" placeholder="Vehicle Year" id="validationDefault15" required>
+              <input type="text" name="vehicleYear" class="form-control" placeholder="Vehicle Year" data-inputmask="'mask': ['9999']" data-mask id="validationDefault15" required>
               <div class="input-group-append input-group-text">
                 <span class="fas fa-calendar"></span>
               </div>
@@ -337,7 +336,7 @@
         <div class="form-group">
            <label>IC picture front and back:</label>        
            <div class="input-group mb-3">
-               <input type="file" name="DLPic" id="image" class="form-control" accept="image/*" id="validationDefault16" required>
+               <input type="file" name="DLPic" id="image" class="form-control" accept=".pdf" id="validationDefault16">
               <div class="input-group-append input-group-text">
                 <span class="far fa-copy"></span>
               </div>
@@ -347,7 +346,7 @@
         <div class="form-group">
            <label>User Picture:</label>
            <div class="input-group mb-3">
-              <input type="file" name="riderFacePic" id="image2" class="form-control" accept="image/*" id="validationDefault17" required>
+              <input type="file" name="riderFacePic" id="image2" class="form-control" accept=".pdf" id="validationDefault17">
               <div class="input-group-append input-group-text">
                 <span class="fas fa-portrait"></span>
               </div>
@@ -357,7 +356,7 @@
         <div class="form-group">
            <label>Motorcycle Picture:</label>
            <div class="input-group mb-3">
-              <input type="file" name="riderFaceMotorPic" id="image3" class="form-control" accept="image/*" id="validationDefault18" required>
+              <input type="file" name="riderFaceMotorPic" id="image3" class="form-control" accept=".pdf" id="validationDefault18">
               <div class="input-group-append input-group-text">
                 <span class="fas fa-image"></span>
               </div>
@@ -457,36 +456,13 @@
         
         <input type="hidden" name="terms" value="agree"/>
         <div class="modal-footer">
-			<input type="submit" class="btn btn-primary" name="submit" value="Register New User"/>&nbsp;
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		</div>
+      <input type="submit" class="btn btn-primary" name="submit" value="Register New User"/>&nbsp;
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
       </form>
-<!-- jquery datepicker -->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
-<!-- InputMask -->
-<script src="../adminAFM/plugins/inputmask/jquery.inputmask.bundle.js"></script>
-<!-- Select2 -->
-<script src="../adminAFM/plugins/select2/js/select2.full.min.js"></script>
-<script src="multipleuse.js"></script>
 <script>  
-$(document).ready(function(){ 
-    
-      $("#benchmarkDate, #validationDefault11").datepicker();
-
-      $("#validationDefault11").change(function () {
-      var startDate = document.getElementById("benchmarkDate").value;
-      var endDate = document.getElementById("validationDefault11").value;
- 
-      if ((Date.parse(endDate) >= Date.parse(startDate))) {
-        alert("Your license have been expired.Please renew your license");
-        document.getElementById("benchmarkDate").value = "";
-          }
-      });
-
-      $('#submit').click(function(){
-          
+$(document).ready(function(){  
+      $('#submit').click(function(){  
            var image_name = $('#image').val();  
            if(image_name == '')  
            {  
@@ -496,7 +472,7 @@ $(document).ready(function(){
            else  
            {  
                 var extension = $('#image').val().split('.').pop().toLowerCase();  
-                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)  
+                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg','pdf']) == -1)  
                 {  
                      alert('Invalid Image File');  
                      $('#image').val('');  
@@ -513,7 +489,7 @@ $(document).ready(function(){
            else  
            {  
                 var extension = $('#image2').val().split('.').pop().toLowerCase();  
-                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)  
+                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg','pdf']) == -1)  
                 {  
                      alert('Invalid Image File');  
                      $('#image2').val('');  
@@ -530,7 +506,7 @@ $(document).ready(function(){
            else  
            {  
                 var extension = $('#image3').val().split('.').pop().toLowerCase();  
-                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)  
+                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg','pdf']) == -1)  
                 {  
                      alert('Invalid Image File');  
                      $('#image3').val('');  
@@ -540,4 +516,132 @@ $(document).ready(function(){
       });  
  });  
  </script>  
+<!-- Select2 -->
+<script src="plugins/select2/js/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="plugins/inputmask/jquery.inputmask.bundle.js"></script>
+<script type="text/javascript">
+  $(function() {
+     'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+   }, false); 
+      
+    //Initialize Select2 Elements
+    $('.select2').select2()
 
+    //Datemask dd/mm/yyyy
+    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+    //Datemask2 mm/dd/yyyy
+    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+    //Money Euro
+    $('[data-mask]').inputmask()
+
+    //Date range picker
+    $('#reservation').daterangepicker()
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({
+      timePicker: true,
+      timePickerIncrement: 30,
+      locale: {
+        format: 'MM/DD/YYYY hh:mm A'
+      }
+    })
+    //Date range as a button
+    $('#daterange-btn').daterangepicker(
+      {
+        ranges   : {
+          'Today'       : [moment(), moment()],
+          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        startDate: moment().subtract(29, 'days'),
+        endDate  : moment()
+      },
+      function (start, end) {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+      }
+    )
+
+    //Timepicker
+    $('#timepicker').datetimepicker({
+      format: 'LT'
+    })
+
+    //Colorpicker
+    $('.my-colorpicker1').colorpicker()
+    //color picker with addon
+    $('.my-colorpicker2').colorpicker()
+
+    $('.my-colorpicker2').on('colorpickerChange', function(event) {
+      $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
+    });  
+      
+      
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 10000
+    });
+
+    $('#swalDefaultSuccess').click(function() {
+      Toast.fire({
+        type: 'success',
+        title: 'Registration Succesfull.Thank you'
+      })
+    });
+    $('.swalDefaultInfo').click(function() {
+      Toast.fire({
+        type: 'info',
+        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.swalDefaultError').click(function() {
+      Toast.fire({
+        type: 'error',
+        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.swalDefaultWarning').click(function() {
+      Toast.fire({
+        type: 'warning',
+        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+    $('.swalDefaultQuestion').click(function() {
+      Toast.fire({
+        type: 'question',
+        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      })
+    });
+
+    $('#toastrDefaultSuccess').click(function() {
+      toastr.success('Registration Succesfull.Thank you.')
+    });
+    $('.toastrDefaultInfo').click(function() {
+      toastr.info('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+    });
+    $('.toastrDefaultError').click(function() {
+      toastr.error('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+    });
+    $('.toastrDefaultWarning').click(function() {
+      toastr.warning('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+    });
+  });
+
+</script>
