@@ -439,7 +439,7 @@
         
         <div class="form-group">
             <div class="input-group mb-3">
-                <input type="text" name="stationCode" class="form-control" placeholder="<?php echo $SC['stationName'];?>" value="<?php echo $SC['stationCode'];?>">
+                <input type="text" name="stationCode" class="form-control" placeholder="<?php echo $SC['name'];?>" value="<?php echo $SC['stationCode'];?>">
                     <div class="input-group-append input-group-text">
                       <span class="fas fa-map-marked-alt"></span>
                    </div>
