@@ -439,12 +439,7 @@
         
         <div class="form-group">
             <div class="input-group mb-3">
-                <select name="stationCode" class="custom-select browser-default" required>
-                      <option value="">Choose station</option>
-                      <?php do{?>
-                      <option value="<?php echo $SC['stationCode'];?>"><?php echo ucwords($SC['name']);?></option>
-                      <?php }while ($SC = mysqli_fetch_assoc($stationCall))?>
-                    </select>
+                <input type="text" name="stationCode" class="form-control" placeholder="<?php echo $row_joiner['stationName'];?>" value="<?php echo $row_joiner['stationCode'];?>">
                     <div class="input-group-append input-group-text">
                       <span class="fas fa-map-marked-alt"></span>
                    </div>
