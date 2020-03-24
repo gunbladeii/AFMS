@@ -439,7 +439,7 @@
         
         <div class="form-group">
             <div class="input-group mb-3">
-                <input type="hidden" name="stationCode" class="form-control" placeholder="<?echo $SC['name'];?>" value="<?php echo $stationSS;?>">
+                <input type="text" name="stationCode" class="form-control" value="<?php echo $stationSS;?>">
                    </div>
             </div>
         </div>
