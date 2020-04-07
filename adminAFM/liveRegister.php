@@ -31,7 +31,7 @@ $a=1;
 ?>
 <?php if ($totalRows_station > 0) { ?>
     <h6 class="badge badge-warning">Click rider's name for edit record.</h6>
-	<table id="example2" class="table table-hover table-responsive-xl">
+	<table id="example1" class="table table-hover table-responsive-xl">
                     <thead class="table-info">
                     <tr style="text-align:left">
                       <th scope="col">No</th></th>
