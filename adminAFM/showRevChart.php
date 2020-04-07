@@ -54,14 +54,6 @@ $a=1;
 <script src="plugins/datatables/dataTables.bootstrap4.js"></script>
 <script>
   $(function () {
-    $("#example1").DataTable();
-    $('#example4').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-    });
+    $("#example4").DataTable();
   });
 </script>
