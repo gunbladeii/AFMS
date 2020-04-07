@@ -662,7 +662,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
               <div class="inner">
                 <h3><div id="totalSupervisor"></div></h3>
 
-                <p>Registered User</p>
+                <p>Admin/Supervisor</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
