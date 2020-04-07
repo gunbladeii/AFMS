@@ -40,6 +40,7 @@ $a=1;
                       <th scope="col">Emel</th>
                       <th scope="col">Role</th>
                       <th scope="col">Station</th>
+                      <th scope="col">Code</th>
                       <th scope="col">Action</th>
                     </tr>
                     </thead>
@@ -53,6 +54,7 @@ $a=1;
                       <td><?php echo $row_station['emel'];?></td>
                       <td><?php if($row_station['role'] =='rider'){echo '<h6>Rider</h6>';}elseif($row_station['role'] =='ss'){echo '<h6>Station Supervisor</h6>';}else{echo 'Administrator';}?></td>
                       <td><?php echo $row_station['name'];?></td>
+                      <td><?php echo $row_station['stationCode'];?></td>
                       <td>
                           <a data-toggle="modal" data-target="#deleteStaffModal" data-whatever2="<?php echo $row_station['id'];?>" class="badge badge-danger" role="button" aria-pressed="true" style="color:white">Del</a></td>
                     </tr>
