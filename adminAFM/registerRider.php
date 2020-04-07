@@ -884,7 +884,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
 		$(document).ready(function() {
 			setInterval(function () {
 				$('#show').load('liveRegister.php')
-			}, 30000);
+			}, 10000);
 		});
 </script>
 
