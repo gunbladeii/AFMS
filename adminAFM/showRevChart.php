@@ -23,7 +23,7 @@ $attendFinal = round(($attendFor/$attendTo)*100,2);
 $a=1;
 ?>
 <?php if (!empty($row_attend)) { ?>
-	<table id="example1" class="table table-hover table-responsive-sm">
+	<table id="example4" class="table table-hover table-responsive-sm">
                     <thead class="table-success">
                     <tr style="text-align:center">
                       <th scope="col">No</th>
@@ -55,7 +55,7 @@ $a=1;
 <script>
   $(function () {
     $("#example1").DataTable();
-    $('#example2').DataTable({
+    $('#example4').DataTable({
       "paging": true,
       "lengthChange": false,
       "searching": false,

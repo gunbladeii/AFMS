@@ -23,7 +23,7 @@ $perSuccess = round(($success/$parcel)*100,2);
 $a=1;
 ?>
 <?php if (!empty($performance)) { ?>
-  <table id="example1" class="table table-hover table-responsive-sm">
+  <table id="example3" class="table table-hover table-responsive-sm">
                     <thead class="table-primary">
                     <tr style="text-align:center">
                       <th scope="col">No</th>
@@ -70,7 +70,7 @@ $a=1;
 <script>
   $(function () {
     $("#example1").DataTable();
-    $('#example2').DataTable({
+    $('#example3').DataTable({
       "paging": true,
       "lengthChange": false,
       "searching": false,
