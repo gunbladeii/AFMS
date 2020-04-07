@@ -829,16 +829,14 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
 	<script type="text/javascript">
 		$(document).ready(function() {
 		   
-			setInterval(function () {
-			    $('#showPerfChart').load('showPerfChart.php')
-			    $('#showRevChart').load('showRevChart.php')
+			  $('#showPerfChart').load('showPerfChart.php')
+			  $('#showRevChart').load('showRevChart.php')
 				$('#showAttChart').load('showAttChart.php')
 				$('#totalSuccessParcel').load('totalSuccessParcel.php')
 				$('#percentSuccessParcel').load('percentSuccessParcel.php')
 				$('#totalSupervisor').load('totalSupervisor.php')
 				$('#totalRider').load('totalRider.php')
 				
-			}, 5000);
 		});
 </script>
 

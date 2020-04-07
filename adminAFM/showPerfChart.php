@@ -23,7 +23,7 @@ $perSuccess = round(($success/$parcel)*100,2);
 $a=1;
 ?>
 <?php if (!empty($performance)) { ?>
-  <table id="example2" class="table table-hover table-responsive-sm">
+  <table id="example1" class="table table-hover table-responsive-sm">
                     <thead class="table-primary">
                     <tr style="text-align:center">
                       <th scope="col">No</th>
@@ -65,3 +65,18 @@ $a=1;
                     </tbody>
                   </table>
 <?php }else{echo '<div class="badge badge-warning">Your rider did not update any parcel record yet</div>';}?>
+<script src="plugins/datatables/jquery.dataTables.js"></script>
+<script src="plugins/datatables/dataTables.bootstrap4.js"></script>
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+    });
+  });
+</script>
