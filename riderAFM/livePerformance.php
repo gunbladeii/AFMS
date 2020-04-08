@@ -40,7 +40,7 @@ $a=1;
                                 echo $dateM->format('d/m/y').'</br>('.$dateM->format('D').')';?></td>
                       <td><?php if (!empty($mem2['itemCode'])){echo '<span class="badge badge-info">'.$mem2['itemCode'].'</span>';}else{echo '<span class="badge badge-info">No data</span>';}?></td>
                       <td><?php if (!empty($mem2['success']) && $mem2['fail'] != NULL){echo '<span class="badge badge-success">'.$mem2['success'].'</span>';}else{echo '<span class="badge badge-success">No data</span>';}?></td>
-                      <td><?php if (!empty($mem2['fail']) && $mem2['fail'] != NULL){echo '<span class="badge badge-danger">'.$mem2['fail'].'</span>';}else{echo '<span class="badge badge-danger">No data</span>';}?></td>
+                      <td><?php if ($mem2['fail'] != NULL){echo '<span class="badge badge-danger">'.$mem2['fail'].'</span>';}else{echo '<span class="badge badge-danger">No data</span>';}?></td>
                        <td><span class="badge badge-warning"><?php echo round($mem2['percent'],2).'%';?></span></td>
                     </tr>
                     <?php } while ($mem2 = mysqli_fetch_assoc($query_parcel2)); ?>
