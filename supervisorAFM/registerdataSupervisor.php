@@ -117,7 +117,7 @@
           <div class="input-group-append input-group-text">
               <span class="fas fa-lock"></span>
           </div>
-          </div
+          </div>
         </div>
         
         <div class="form-group">
