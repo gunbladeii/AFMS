@@ -49,7 +49,7 @@
 			
 		<div class="form-group">
       <label for="email">Total Item Not Delivered</label>
-			<input type="number" class="form-control" id="fail" name="fail"/>
+			<input type="number" class="form-control" id="fail" name="fail" value="<?php echo $mem['fail'];?>" />
 		</div>
 		
 		<div class="modal-footer">
