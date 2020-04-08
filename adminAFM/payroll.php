@@ -881,9 +881,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
   crossorigin="anonymous"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			setInterval(function () {
 				$('#show').load('viewPayroll.php')
-			}, 3000);
 		});
 </script>
 <!-- Latest compiled and minified JavaScript -->
