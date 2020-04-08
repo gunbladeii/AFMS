@@ -40,7 +40,7 @@
     	$codeBank = $_POST['codeBank'];
     	
     if (isset($_POST['submit'])) {
-        $DLPic = addslashes(file_get_contents($_FILES["DLPic"]["tmp_name"]));
+      $DLPic = addslashes(file_get_contents($_FILES["DLPic"]["tmp_name"]));
     	$riderFaceMotorPic = addslashes(file_get_contents($_FILES["riderFaceMotorPic"]["tmp_name"]));
     	$riderFacePic = addslashes(file_get_contents($_FILES["riderFacePic"]["tmp_name"]));
     	
