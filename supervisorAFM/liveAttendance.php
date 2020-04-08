@@ -20,7 +20,7 @@ date_default_timezone_set("asia/kuala_lumpur");
 $date = date('Y-m-d'); 
 $time = date('H:i:s');
 
-$Recordset2 = $mysqli->query("SELECT * FROM attendance WHERE stationCode = '$station' AND date = '$date'");
+$Recordset2 = $mysqli->query("SELECT * FROM attendance WHERE stationCode = '$station' AND date = '$date'" ORDER BY nama ASC);
 $mem = mysqli_fetch_assoc($Recordset2);
 $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 
