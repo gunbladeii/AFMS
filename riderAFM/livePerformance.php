@@ -39,7 +39,7 @@ $a=1;
                       <td><?php $dateM = new DateTime($mem2['date']);
                                 echo $dateM->format('d/m/y').'</br>('.$dateM->format('D').')';?></td>
                       <td><?php if (!empty($mem2['itemCode'])){echo '<span class="badge badge-info">'.$mem2['itemCode'].'</span>';}else{echo '<span class="badge badge-info">No data</span>';}?></td>
-                      <td><?php if (!empty($mem2['success'])&&!empty($mem2['fail']){echo '<span class="badge badge-success">'.$mem2['success'].'</span>';}else{echo '<span class="badge badge-success">No data</span>';}?></td>
+                      <td><?php if (!empty($mem2['success'])&&!empty($mem2['fail'])){echo '<span class="badge badge-success">'.$mem2['success'].'</span>';}else{echo '<span class="badge badge-success">No data</span>';}?></td>
                       <td><?php if (!empty($mem2['fail'])){echo '<span class="badge badge-danger">'.$mem2['fail'].'</span>';}else{echo '<span class="badge badge-danger">No data</span>';}?></td>
                        <td><span class="badge badge-warning"><?php echo round($mem2['percent'],2).'%';?></span></td>
                     </tr>
