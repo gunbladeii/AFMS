@@ -20,7 +20,7 @@ date_default_timezone_set("asia/kuala_lumpur");
 $date = date('Y-m-d'); 
 $time = date('H:i:s');
 
-$Recordset2 = $mysqli->query("SELECT nama,date,itemCode,fail, (itemCode - fail) AS success FROM infoParcel WHERE stationCode = '$station' AND date = '$date'");
+$Recordset2 = $mysqli->query("SELECT nama,date,itemCode,fail, (itemCode - fail) AS success FROM infoParcel WHERE stationCode = '$station' AND date = '$date' ORDER BY nama ASC");
 $row_Recordset2 = mysqli_fetch_assoc($Recordset2);
 $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 
