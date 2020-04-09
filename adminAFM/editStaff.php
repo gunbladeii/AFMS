@@ -186,7 +186,7 @@
         <div class="form-group">
             <label>Date of birth:</label>
             <div class="input-group mb-3">
-                <input type='text' class="form-control" name="dob" placeholder="Date of birth(yyyy/mm/dd)" data-inputmask="'mask':['9999-99-99']" data-mask id="validationDefault06" value="<?php echo $ED['dob'];?>" required/>
+                <input type='text' class="form-control" name="dob" placeholder="Date of birth(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask id="validationDefault06" value="<?php echo $ED['dob'];?>" required/>
                 <div class="input-group-append input-group-text">
                     <span class="fas fa-calendar">
                     </span>
@@ -316,7 +316,7 @@
         <div class="form-group">
             <label>License exp date:</label>
             <div class="input-group mb-3">
-                <input type='text' class="form-control" name="lesenExp" placeholder="License Exp(yyyy-mm-dd)" data-inputmask="'mask': ['9999-99-99']" data-mask id="validationDefault11" value="<?php echo $ED['lesenExp']?>" required>
+                <input type='text' class="form-control" name="lesenExp" placeholder="License Exp(dd-mm-yyyy)" data-inputmask="'mask': ['99-99-9999']" data-mask id="validationDefault11" value="<?php echo $ED['lesenExp']?>" required>
                 <div class="input-group-append input-group-text">
                     <span class="fas fa-calendar">
                     </span>
