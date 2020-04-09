@@ -623,7 +623,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
           echo date("Y/m/d, h:i:sa");?>)</p>
       <div class="col-mb-12" style="text-align:center">
       <a data-toggle="modal" data-target="#parcelModal" data-whatever="<?php echo $row_Recordset['id'];?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Register New User</a>
-      <a href="dumpRider.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Register New User</a>
+      <a href="dumpRider.php" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Show Resign User</a>
      </div>
       <br>
       <form method="post" action="registerRider.php" role="form">
