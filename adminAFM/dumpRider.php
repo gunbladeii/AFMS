@@ -940,7 +940,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
 
             $.ajax({
                 type: "GET",
-                url: "deleteStaff.php",
+                url: "deleteStaffDump.php",
                 data: dataString2,
                 cache: false,
                 success: function (data) {
