@@ -11,7 +11,7 @@ $Recordset = $mysqli->query("SELECT * FROM login WHERE username = '$colname_Reco
 $row_Recordset = mysqli_fetch_assoc($Recordset);
 $totalRows_Recordset = mysqli_num_rows($Recordset);
 
-$station = $mysqli->query("SELECT employeeData.id, login.nama, login.role, login.username AS emel, login.noIC, employeeData.stationCode, employeeData.employeeStatus, stationName.name FROM ((employeeData 
+$station = $mysqli->query("SELECT employeeData.id, login.nama, login.role, login.username AS emel, login.noIC, employeeData.stationCode, employeeData.employeeStatus, stationName.name, login.password FROM ((employeeData 
     
     INNER JOIN login ON employeeData.noIC = login.noIC)
     INNER JOIN stationName ON employeeData.stationCode = stationName.stationCode)
@@ -37,7 +37,8 @@ $a=1;
                       <th scope="col">No</th></th>
                       <th scope="col">Name</th></th>
                       <th scope="col">IC Number</th>
-                      <th scope="col">Emel</th>
+                      <th scope="col">Emel/Username</th>
+                      <th scope="col">Password</th>
                       <th scope="col">Role</th>
                       <th scope="col">Station</th>
                       <th scope="col">Code</th>
@@ -52,6 +53,7 @@ $a=1;
                       </td>
                       <td><?php echo $row_station['noIC'];?></td>
                       <td><?php echo $row_station['emel'];?></td>
+                      <td><?php echo $row_station['password'];?></td>
                       <td><?php if($row_station['role'] =='rider'){echo '<h6>Rider</h6>';}elseif($row_station['role'] =='ss'){echo '<h6>Station Supervisor</h6>';}else{echo 'Administrator';}?></td>
                       <td><?php echo $row_station['name'];?></td>
                       <td><?php echo $row_station['stationCode'];?></td>
