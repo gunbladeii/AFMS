@@ -622,7 +622,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
       <p class="login-box-msg">Resignation Rider/Supervisor (<?php date_default_timezone_set("asia/kuala_lumpur");
           echo date("Y/m/d, h:i:sa");?>)</p>
       <div class="col-mb-12" style="text-align:center">
-      <a href="registerRider.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Registered Rider</a>
+      <a href="registerRider.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Show Registered Rider</a>
      </div>
       <br>
       <form method="post" action="registerRider.php" role="form">
