@@ -88,7 +88,12 @@
   
 
 <form method="post" action="editStaff.php" role="form" enctype="multipart/form-data">
-    
+      
+      <div href="#" class="brand-link">
+      <img src="data:image/jpeg;base64,<?php echo base64_encode($ED['riderFacePic']);?>" alt="pic profile" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      </div>
+
        <button type="button" class="btn btn-success btn-block" data-toggle="collapse" data-target="#home">Login Registration (Edit)</button>
        <!--BEGIN CLASS tab-pane-->
         <div id="home" class="collapse">
