@@ -58,7 +58,7 @@ $a=1;
                       <td><?php echo $row_station['name'];?></td>
                       <td><?php echo $row_station['stationCode'];?></td>
                       <td>
-                          <a data-toggle="modal" data-target="#deleteStaffModal" data-whatever2="<?php echo $row_station['id'];?>" class="badge badge-danger" role="button" aria-pressed="true" style="color:white">Del</a></td>
+                          <a data-toggle="modal" data-target="#deleteStaffModal" data-whatever2="<?php echo $row_station['id'];?>" class="badge badge-success" role="button" aria-pressed="true" style="color:white">Fetch</a></td>
                     </tr>
                     <?php } while ($row_station = mysqli_fetch_assoc($station)); ?>
                     </tbody>
