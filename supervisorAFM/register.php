@@ -503,7 +503,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
 
             $.ajax({
                 type: "GET",
-                url: "editStaff.php",
+                url: "..adminAFM/editStaff.php",
                 data: dataString1,
                 cache: false,
                 success: function (data) {
