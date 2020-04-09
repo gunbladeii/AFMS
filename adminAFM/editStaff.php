@@ -60,7 +60,10 @@
     $employeeData = $mysqli->query("SELECT * FROM `employeeData` INNER JOIN `login` ON employeeData.noIC = login.noIC WHERE employeeData.id = '$id'");
     $ED = mysqli_fetch_assoc($employeeData);
     
-    $stationCall2 = $mysqli->query("SELECT employeeData.stationCode, stationName.name, employeeData.id FROM `employeeData` INNER JOIN `stationName` ON employeeData.stationCode = stationName.stationCode WHERE employeeData.id = '$id'");
+    $stationCall2 = $mysqli->query("SELECT employeeData.stationCode, stationName.name, employeeData.id, bankName.bankName, employeeData.codeBank FROM ((`employeeData` 
+      INNER JOIN `stationName` ON employeeData.stationCode = stationName.stationCode)
+      INNER JOIN `bankName` ON employeeData.codeBank = bankName.codeBank) 
+      WHERE employeeData.id = '$id'");
     $SC2 = mysqli_fetch_assoc($stationCall2);
     
     $stationCall = $mysqli->query("SELECT * FROM `stationName`");
@@ -394,8 +397,9 @@
             <div class="input-group mb-3">
                 <select name="codeBank" class="custom-select browser-default" required>
                       <option value="">Choose your bank</option>
+                      <option value="<?php echo $SC2['codeBank'];?>" selected><?php echo ucwords($SC2['bankName']);?></option>
                       <?php do{?>
-                      <option value="<?php echo $BC['codeBank'];?>" selected><?php echo ucwords($BC['bankName']);?></option>
+                      <option value="<?php echo $BC['codeBank'];?>"><?php echo ucwords($BC['bankName']);?></option>
                       <?php }while ($BC = mysqli_fetch_assoc($bankCall))?>
                     </select>
                     <div class="input-group-append input-group-text">
