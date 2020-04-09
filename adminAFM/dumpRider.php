@@ -619,11 +619,10 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
       
   <div class="card">
     <div class="card-body register-card-body">
-      <p class="login-box-msg">Register a new rider/supervisor (<?php date_default_timezone_set("asia/kuala_lumpur");
+      <p class="login-box-msg">Resignation Rider/Supervisor (<?php date_default_timezone_set("asia/kuala_lumpur");
           echo date("Y/m/d, h:i:sa");?>)</p>
       <div class="col-mb-12" style="text-align:center">
-      <a data-toggle="modal" data-target="#parcelModal" data-whatever="<?php echo $row_Recordset['id'];?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Register New User</a>
-      <a href="dumpRider.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Register New User</a>
+      <a href="registerRider.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Registered Rider</a>
      </div>
       <br>
       <form method="post" action="registerRider.php" role="form">
@@ -883,7 +882,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
   crossorigin="anonymous"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-				$('#show').load('liveRegister.php');
+				$('#show').load('liveRegisterDump.php');
 		});
 </script>
 
