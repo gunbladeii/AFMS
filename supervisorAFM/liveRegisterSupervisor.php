@@ -13,7 +13,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
 $stationName = $row_Recordset['stationCode'];
 
 
-$station = $mysqli->query("SELECT login.nama, login.role, login.username AS emel, login.noIC, employeeData.stationCode FROM login INNER JOIN employeeData ON employeeData.noIC = login.noIC WHERE employeeData.stationCode = '$stationName' ORDER BY login.nama ASC");
+$station = $mysqli->query("SELECT login.nama, login.role, login.username AS emel, login.noIC, login.password, employeeData.stationCode FROM login INNER JOIN employeeData ON employeeData.noIC = login.noIC WHERE employeeData.stationCode = '$stationName' ORDER BY login.nama ASC");
 $row_station = mysqli_fetch_assoc($station);
 $totalRows_station = mysqli_num_rows($station);
 $a=1;
