@@ -499,7 +499,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
           var button = $(event.relatedTarget) // Button that triggered the modal
           var recipient1 = button.data('whatever1') // Extract info from data-* attributes
           var modal = $(this);
-          var dataString1 = 'noIC=' + recipient1;
+          var dataString1 = 'id=' + recipient1;
 
             $.ajax({
                 type: "GET",

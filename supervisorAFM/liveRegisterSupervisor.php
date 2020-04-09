@@ -13,7 +13,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
 $stationName = $row_Recordset['stationCode'];
 
 
-$station = $mysqli->query("SELECT login.nama, login.role, login.username AS emel, login.noIC, login.password, employeeData.stationCode FROM login INNER JOIN employeeData ON employeeData.noIC = login.noIC WHERE employeeData.stationCode = '$stationName' ORDER BY login.nama ASC");
+$station = $mysqli->query("SELECT employeeData.id,login.nama, login.role, login.username AS emel, login.noIC, login.password, employeeData.stationCode FROM login INNER JOIN employeeData ON employeeData.noIC = login.noIC WHERE employeeData.stationCode = '$stationName' ORDER BY login.nama ASC");
 $row_station = mysqli_fetch_assoc($station);
 $totalRows_station = mysqli_num_rows($station);
 $a=1;
@@ -35,7 +35,7 @@ $a=1;
                     <?php do { ?>    
                     <tr style="text-align:left">
                       <td><?php echo $a++;?></td>
-                      <td><a data-toggle="modal" data-target="#editStaffModal" data-whatever1="<?php echo $row_station['noIC'];?>" class="badge badge-light" role="button" aria-pressed="true"><?php echo ucwords(strtolower($row_station['nama']));?></a>
+                      <td><a data-toggle="modal" data-target="#editStaffModal" data-whatever1="<?php echo $row_station['id'];?>" class="badge badge-light" role="button" aria-pressed="true"><?php echo ucwords(strtolower($row_station['nama']));?></a>
                       </td>
                       <td><?php echo $row_station['noIC'];?></td>
                       <td><?php echo $row_station['emel'];?></td>
