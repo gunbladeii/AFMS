@@ -753,10 +753,10 @@ $downloadExcell = $_SERVER['PHP_SELF'];
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h5 class="card-title">Click Station Name for Payment Voucher/Payslip</h5>
+              <h5 class="card-title">Click Rider/SV Name for viewing attendance record</h5>
               <div class="card-description col-12">
 
-                  <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="download" class="download" enctype="multipart/form-data">\
+                  <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="download" class="download" enctype="multipart/form-data">
 				      <!-- empty form for download excell -->
                   </form>
 
