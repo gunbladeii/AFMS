@@ -24,8 +24,8 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 $a=1;
 ?>
 <?php if(!empty($row_Recordset2['stationCode'])) {?>
-              <h3><?php echo strtoupper($row_Recordset2['month']);?></h3>
-              <h5><span class="badge badge-info"><?php $date=date_create($row_Recordset2['date']);echo date_format($date,"F");?></span></h5>
+              <h3><?php echo strtoupper($row_Recordset2['stationName']);?></h3>
+              <h5><span class="badge badge-info">Month: <?php $date=date_create($row_Recordset2['date']);echo date_format($date,"F");?></span></h5>
               <table id="example2" class="table table-hover table-responsive-xl">
                 <thead>
                 <tr style="text-align:center">
