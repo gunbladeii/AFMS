@@ -374,7 +374,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
             </a>
           </li>
           <li class="nav-item">
-            <a href="attendance.php" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 e-Attendance
@@ -755,15 +755,11 @@ $downloadExcell = $_SERVER['PHP_SELF'];
             <div class="card-header">
               <h5 class="card-title">Click Station Name for Payment Voucher/Payslip</h5>
               <div class="card-description col-12">
-                  <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="download" class="download" enctype="multipart/form-data">
-              		  			
-				      <button type="submit" name='download' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Eksport Excel Giro Ach</button>
-                      <input type="hidden" name="MM_download" value="download">
+
+                  <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="download" class="download" enctype="multipart/form-data">\
+				      <!-- empty form for download excell -->
                   </form>
-                  <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="advanced" class="advanced" enctype="multipart/form-data">
-              		  			
-				      <button type="submit" name='advanced' value="Export to excel" class="badge badge-success" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Eksport Excel Giro Ach (Advanced Payment)</button>
-                  </form>
+
               </div>
             </div>
             <!-- /.card-header -->
@@ -881,7 +877,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
   crossorigin="anonymous"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-				$('#show').load('viewPayroll.php')
+				$('#show').load('viewAttendance.php')
 		});
 </script>
 <!-- Latest compiled and minified JavaScript -->
@@ -890,13 +886,12 @@ $downloadExcell = $_SERVER['PHP_SELF'];
     $('#viewRiderModal').on('show.bs.modal', function (event) {
           var button = $(event.relatedTarget) // Button that triggered the modal
           var recipient = button.data('whatever') // Extract info from data-* attributes
-          var recipient2 = button.data('whatever2') // Extract info from data-* attributes
           var modal = $(this);
-          var dataString = 'noIC=' + recipient + '&' + 'month=' + recipient2;
+          var dataString = 'noIC=' + recipient;
 
             $.ajax({
                 type: "GET",
-                url: "liveViewPayroll2.php",
+                url: "liveViewAttendance2.php",
                 data: dataString, 
                 cache: false,
                 success: function (data) {
@@ -914,13 +909,12 @@ $downloadExcell = $_SERVER['PHP_SELF'];
     $('#viewStationModal').on('show.bs.modal', function (event) {
           var button = $(event.relatedTarget) // Button that triggered the modal
           var recipient3 = button.data('whatever3') // Extract info from data-* attributes
-          var recipient4 = button.data('whatever4') // Extract info from data-* attributes
           var modal = $(this);
-          var dataString2 = 'stationCode=' + recipient3 + '&' + 'month=' + recipient4;
+          var dataString2 = 'noIC=' + recipient3;
 
             $.ajax({
                 type: "GET",
-                url: "liveViewPayroll.php",
+                url: "liveViewAttendance.php",
                 data: dataString2, 
                 cache: false,
                 success: function (data) {
