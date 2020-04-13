@@ -43,7 +43,7 @@ $a=1;
 
 	              <td><?php echo $row_Recordset2['date'];?></td>	
 	              <td><?php echo $row_Recordset2['time'];?></td>
-                <td><?php echo $row-Recordset['timeOut'];?></td>
+                <td><?php echo $row_Recordset2['timeOut'];?></td>
 	              
 	            </tr>
                 <?php } while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2));?>
