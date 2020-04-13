@@ -39,7 +39,7 @@ $a=1;
                 <?php do {?>    
                 <tr style="text-align:center">
                 <td><?php echo $a++;?></td>	
-                <td> <span data-toggle="modal" data-target="#viewRiderModal" data-whatever="<?php echo $row_Recordset2['id'];?>" class="badge badge-primary" role="button" aria-pressed="true"><?php echo ucwords($row_Recordset2['nama']);?></span></td> 
+                <td> <span data-toggle="modal" data-target="#viewRiderModal" data-whatever="<?php echo $row_Recordset2['id'];?>" class="badge badge-primary" role="button" aria-pressed="true"><?php echo ucwords($row_Recordset2['id']);?></span></td> 
 
 	              <td><?php echo $row_Recordset2['date'];?></td>	
 	              <td><?php echo $row_Recordset2['time'];?></td>
@@ -51,6 +51,7 @@ $a=1;
                 <tfoot>
                 <tr style="text-align:center">
                   <th>No.</th>
+                  <th>id</th>
                   <th>Date</th>
                   <th>Clock-in</th>
                   <th>Clock-out</th>
