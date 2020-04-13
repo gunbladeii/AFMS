@@ -42,7 +42,7 @@ $a=1;
 
 	              <td><?php echo $row_Recordset2['date'];?></td>	
 	              <td><?php echo $row_Recordset2['time'];?></td>
-                <td><?php if($row_Recordset2['timeOut'] NOT NULL || !empty($row_Recordset2['timeOut'])){echo $row_Recordset2['timeOut'];}else{echo '<span class="badge badge-danger">No Data</span>';}?></td>
+                <td><?php echo $row-Recordset['tmeOut'];?></td>
 	              
 	            </tr>
                 <?php } while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2));?>
