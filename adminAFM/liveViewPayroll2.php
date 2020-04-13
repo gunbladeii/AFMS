@@ -176,7 +176,7 @@
 	            <tr>
                 <td>4</td>
                 <td>Comission</td>
-                <td style="text-align:right"><span id="comission" class="btn btn-light btn-sm btn-block"><?php if($formCommision > 0){echo $formCommision;}else{echo 0;}?></span></td>
+                <td style="text-align:right"><span id="comission" class="btn btn-light btn-sm btn-block"><?php if($totalParcel > 0){echo $formCommision3;}else{echo 0;}?></span></td>
                 <!--earnings-->
                 <td>4</td>
                 <td>Incomplete POD</td>
