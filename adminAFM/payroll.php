@@ -79,7 +79,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 					<td>'.round($row['grandTotal'],2).'</td>
 					<td>Donation</td>
 					<td>01</td>
-					<td>'.round($row["noIC"],2).'</td>
+					<td>'.str_replace(' ', '', $row["noIC"]).'</td>
 				</tr>			
 				';		
 			}
@@ -141,7 +141,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 					<td></td>
 					<td>Donation</td>
 					<td>01</td>
-					<td>'.round($row["noIC"],2).'</td>
+					<td>'.str_replace(' ', '', $row["noIC"]).'</td>
 				</tr>			
 				';		
 			}
