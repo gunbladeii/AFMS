@@ -55,4 +55,4 @@ $a=1;
                 </tr>
                 </tfoot>
               </table>
-<?php }?>
+<?php }else{echo '<span class="badge badge-danger">No rider/SV data were recorded</span>';}?>
