@@ -17,7 +17,7 @@ $Recordset2 = $mysqli->query("SELECT attendance.id, attendance.nama, attendance.
   INNER JOIN employeeData ON attendance.noIC = employeeData.noIC)
   INNER JOIN stationName ON attendance.stationCode = stationName.stationCode)
 
-   WHERE attendance.timeOut IS NOT NULL AND employeeData.employeeStatus NOT LIKE 'dump' AND attendance.noIC = '$noIC' ORDER BY attendance.date ASC");
+   WHERE attendance.timeOut IS NOT NULL AND employeeData.employeeStatus NOT LIKE 'dump' AND attendance.noIC = '$noIC' ORDER BY attendance.date DESC");
 $row_Recordset2 = mysqli_fetch_assoc($Recordset2);
 $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 
@@ -43,7 +43,7 @@ $a=1;
 
 	              <td><?php echo $row_Recordset2['date'];?></td>	
 	              <td><?php echo $row_Recordset2['time'];?></td>
-                <td><?php echo $row_Recordset2['timeOut'];?></td>
+                <td><?php if($row_Recordset2['timeOut' IS NOT NULL || !empty($row_Recordset2['timeOut'])){echo $row_Recordset2['timeOut'];}else{echo '<span class="badge badge-danger">No Data</span>';}?></td>
 	              
 	            </tr>
                 <?php } while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2));?>
