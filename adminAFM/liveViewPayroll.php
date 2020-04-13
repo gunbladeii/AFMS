@@ -28,7 +28,7 @@ $a=1;
               <h5><span class="badge badge-info">Month: <?php $date=date_create($row_Recordset2['date']);echo date_format($date,"F");?></span></h5>
               <table id="example2" class="table table-hover table-responsive-xl">
                 <thead>
-                <tr style="text-align:center">
+                <tr>
                   <th>No.</th>
                   <th>Full Name</th>
                   <th>Total working days</th>
@@ -36,7 +36,7 @@ $a=1;
                 </thead>
                 <tbody>
                 <?php do {?>    
-                <tr style="text-align:center">
+                <tr>
                 <td><?php echo $a++;?></td>	
 	            <td> <span data-toggle="modal" data-target="#viewRiderModal" data-whatever="<?php echo $row_Recordset2['noIC'];?>" data-whatever2="<?php echo $row_Recordset2['month'];?>" class="badge badge-primary" role="button" aria-pressed="true"><?php echo ucwords($row_Recordset2['nama']);?></span></td>	
                 <td class="d-sm-inline-flex"><span class="badge badge-warning"><?php echo $row_Recordset2['totalDay'];?></span></td>	
@@ -44,7 +44,7 @@ $a=1;
                 <?php } while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2));?>
                 </tbody>
                 <tfoot>
-                <tr style="text-align:center">
+                <tr>
                   <th>No.</th>
                   <th>Full Name</th>
                   <th>Total working days</th>
