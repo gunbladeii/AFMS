@@ -223,14 +223,14 @@
                     
                 <tr style="text-align:center">
                   <th class="table-info" colspan="2">Total Earnings</th>
-                  <th class="table-info"><span class="btn btn-light btn-sm btn-block"><?php echo $totalEarning2;?></span></th>
+                  <th class="table-info"><span class="btn btn-light btn-sm btn-block"><?php echo $totalEarning1;?></span></th>
                   <th class="table-warning" colspan="2">Total Deductions</th>
-                  <th class="table-warning"><span class="btn btn-light btn-sm btn-block"><?php echo $totalDeduction2;?></span></th>
+                  <th class="table-warning"><span class="btn btn-light btn-sm btn-block"><?php echo $totalDeduction1;?></span></th>
                 </tr>
                 
                 <tr style="text-align:center">
                   <th class="table-success" colspan="3">Grand Total</th>
-                  <th class="table-success" colspan="3"><span class="btn btn-light btn-sm btn-block"><?php echo $grandTotal2;?></span></th>
+                  <th class="table-success" colspan="3"><span class="btn btn-light btn-sm btn-block"><?php echo $grandTotal1;?></span></th>
                 </tr>
                 
                 </tfoot>
