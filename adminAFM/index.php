@@ -252,7 +252,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
                 <!--<i class="fas fa-angle-left right"></i>
                 <!--<span class="badge badge-info right">6</span>-->
               </p>
-              <span class="badge badge-danger navbar-badge">Coming Soon</span>
+              <span class="badge badge-success navbar-badge">New</span>
             </a>
             <!--<ul class="nav nav-treeview">
               <li class="nav-item">
