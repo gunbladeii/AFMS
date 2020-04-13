@@ -223,7 +223,7 @@
                     
                 <tr style="text-align:center">
                   <th class="table-info" colspan="2">Total Earnings</th>
-                  <th class="table-info"><span class="btn btn-light btn-sm btn-block"><?php echo $totalEarning1;?></span></th>
+                  <th class="table-info"><span class="btn btn-light btn-sm btn-block"><?php if ($totalAttend > 26){echo $totalEarning2}else{echo $totalEarning1};?></span></th>
                   <th class="table-warning" colspan="2">Total Deductions</th>
                   <th class="table-warning"><span class="btn btn-light btn-sm btn-block"><?php echo $totalDeduction1;?></span></th>
                 </tr>

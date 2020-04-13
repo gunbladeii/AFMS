@@ -52,11 +52,11 @@
     
     /*kira basic attAllow*/
     $attAllow=$FS['attAllow'];
-    $formAttAllow = round($attAllow * ($totalAttend / 26),2);
+    $formAttAllow = 50;
     /*end kira basic commision*/
     
     /*kira basic epf*/
-    $totalEarning1 = round($formBasicSalary + $formHandphone + $formPetrol + $formAttAllow + $formCommision3,2);
+    $totalEarning1 = round($formBasicSalary + $formHandphone + $formPetrol + $formCommision3,2);
     $totalEarning2 = round($formBasicSalary + $formHandphone + $formPetrol + $formAttAllow + $formCommision3,2);
     $epf=round(0.11 * $totalEarning2,2);
     /*end kira basic epf*/
@@ -71,7 +71,7 @@
     
     /*calculate total and grand total*/
     $advance = $FS['advance'];
-    $totalDeduction1 = round($advance + $undel + $penalty + $bagDeposit,2);
+    $totalDeduction1 = round($advance + $undel + $bagDeposit,2);
     $totalDeduction2 = round($epf + $eis + $socso + $advance + $undel + $penalty + $bagDeposit ,2);
     $grandTotal1 = round($totalEarning1 - $totalDeduction1,2);
     $grandTotal2 = round($totalEarning2 - $totalDeduction2,2);
