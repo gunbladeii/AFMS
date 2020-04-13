@@ -365,7 +365,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="payroll.php" class="nav-link">
               <i class="nav-icon fas fa-money-check"></i>
               <p>
                 Rider Payroll
