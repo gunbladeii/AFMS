@@ -25,7 +25,7 @@ $a=1;
 
 <?php if(!empty($row_Recordset2['stationCode'])) {?>    
               <h3><?php echo strtoupper($row_Recordset2['nama']);?></h3>
-              <h5><span class="badge badge-primary"><?php echo strtoupper($row_Recordset2['nama']);?></span></h5>
+              <h5><span class="badge badge-primary"><?php echo strtoupper($row_Recordset2['stationName']);?></span></h5>
               <table id="example2" class="table table-hover table-responsive-xl">
                 <thead>
                 <tr style="text-align:center">
