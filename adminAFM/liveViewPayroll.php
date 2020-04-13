@@ -24,13 +24,13 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 $a=1;
 ?>
 <?php if(!empty($row_Recordset2['stationCode'])) {?>
+              <h3><?php echo strtoupper($row_Recordset2['month']);?></h3>
+              <h5><span class="badge badge-info"><?php $date=date_create($row_Recordset2['date']);echo date_format($date,"F");?></span></h5>
               <table id="example2" class="table table-hover table-responsive-xl">
                 <thead>
                 <tr style="text-align:center">
                   <th>No.</th>
                   <th>Full Name</th>
-                  <th>Station</th>
-                  <th>Month</th>
                   <th>Total working days</th>
                 </tr>
                 </thead>
@@ -39,8 +39,6 @@ $a=1;
                 <tr style="text-align:center">
                 <td><?php echo $a++;?></td>	
 	            <td> <span data-toggle="modal" data-target="#viewRiderModal" data-whatever="<?php echo $row_Recordset2['noIC'];?>" data-whatever2="<?php echo $row_Recordset2['month'];?>" class="badge badge-primary" role="button" aria-pressed="true"><?php echo ucwords($row_Recordset2['nama']);?></span></td>	
-	            <td><?php echo $row_Recordset2['stationName'];?></td>
-	            <td><span class="badge badge-info"><?php $date=date_create($row_Recordset2['date']);echo date_format($date,"F");?></span></td>
                 <td class="d-sm-inline-flex"><span class="badge badge-warning"><?php echo $row_Recordset2['totalDay'];?></span></td>	
 	            </tr>
                 <?php } while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2));?>
@@ -49,8 +47,6 @@ $a=1;
                 <tr style="text-align:center">
                   <th>No.</th>
                   <th>Full Name</th>
-                  <th>Station</th>
-                  <th>Month</th>
                   <th>Total working days</th>
                 </tr>
                 </tfoot>
