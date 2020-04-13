@@ -6,9 +6,10 @@
     $date = date('Y-m-d');
     $time = $_POST['time'];
     $timeOut = $_POST['timeOut'];
+    $id2 = $_POST['id'];
 
     if (isset($_POST['submit'])) {
-      $mysqli->query("UPDATE `attendance` SET `time` = '$time', `timeOut` = '$timeOut' WHERE `id` = '$id'");
+      $mysqli->query("UPDATE `attendance` SET `time` = '$time', `timeOut` = '$timeOut' WHERE `id` = '$id2'");
       
       header("location:attendance.php");
     }
