@@ -9,7 +9,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_Recordset2 = $_SESSION['MM_Username'];
 }
 
-$Recordset2 = $mysqli->query("SELECT attendance.id, attendance.nama, attendance.noIC, attendance.date AS date, attendance.stationCode, stationName.name AS stationName, attendance.time, attendance.timeOut, attendance.month, employeeData.employeeStatus FROM 
+$Recordset2 = $mysqli->query("SELECT attendance.id, attendance.nama, attendance.noIC, attendance.date AS date, attendance.stationCode, stationName.name AS stationName, attendance.time, attendance.timeOut, attendance.month, employeeData.employeeStatus, attendance.longitude, attendance.latitude FROM 
 
   ((attendance 
 
@@ -34,6 +34,7 @@ $a=1;
                   <th>Date</th>
                   <th>Clock-in</th>
                   <th>Clock-out</th>
+                  <th>Location</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -45,6 +46,7 @@ $a=1;
 	              <td><?php echo $row_Recordset2['date'];?></td>	
 	              <td><?php echo $row_Recordset2['time'];?></td>
                 <td><?php echo $row_Recordset2['timeOut'];?></td>
+                <td><?php if(!empty($row_Recordset2['latitude'])){echo '<span class="badge badge-danger">'.round($row_Recordset2['latitude'],4).','.round($row_Recordset2['longitude'],4).'</span>';}else{echo '<span class="badge badge-danger">No record</span>';}?></td>
 	              
 	            </tr>
                 <?php } while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2));?>
@@ -56,6 +58,7 @@ $a=1;
                   <th>Date</th>
                   <th>Clock-in</th>
                   <th>Clock-out</th>
+                  <th>Location</th>
                 </tr>
                 </tfoot>
               </table>
