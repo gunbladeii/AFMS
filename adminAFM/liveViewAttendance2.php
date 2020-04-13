@@ -5,252 +5,135 @@
     date_default_timezone_set("asia/kuala_lumpur"); 
     $date = date('Y-m-d');
     
-    
-    require('salaryAlgorithm.php');
+  $Recordset2 = $mysqli->query("SELECT attendance.id, attendance.nama, attendance.noIC, attendance.date AS date, attendance.stationCode, stationName.name AS stationName, attendance.time, attendance.timeOut, attendance.month, employeeData.employeeStatus FROM 
+
+  ((attendance 
+
+  INNER JOIN employeeData ON attendance.noIC = employeeData.noIC)
+  INNER JOIN stationName ON attendance.stationCode = stationName.stationCode)
+
+   WHERE attendance.timeOut IS NOT NULL AND employeeData.employeeStatus NOT LIKE 'dump' AND attendance.id = '$id' ORDER BY date DESC");
+$ED = mysqli_fetch_assoc($Recordset2);
+$totalRows_Recordset2 = mysqli_num_rows($Recordset2);
+
 ?>
 
 <!--start if employeeStatus!='temp'-->
 
-<?php if ($BC['employeeStatus'] != 'temp'){?>
-            <div class="image"><img src="data:image/jpeg;base64,<?php echo base64_encode($BC['riderFacePic']);?>" class="img-fluid img-thumbnail mx-auto d-block" style="width: 50px;height: 50px;border-radius: 50%; vertical-align:middle"/></div>
-            <div style="text-align:center; padding:3px"><button class="btn btn-outline-dark btn-sm btn-block"><?php $monthM=date_create($AC['date']);echo 'Month of '.date_format($monthM,"F,Y");?></button></div>
-            <div style="text-align:center; padding:3px"><button class="btn btn-outline-dark btn-sm btn-block"><?php echo 'Nama: '.ucwords($BC['nama']).' (I/C Number: '.$BC['noIC'].')';?></button></div>
-            <div style="text-align:center; padding:3px"><button class="btn btn-outline-dark btn-sm btn-block"><?php echo 'Account Info: ('.$BC['bankName'].': '.$BC['accNum'].')';?></button></div>
-            <table id="example2" class="table table-hover table-responsive-xl">
-                <thead>
-                <tr style="text-align:center">
-                  <th colspan="3" class="table-info">Earnings</th>
-                  <th colspan="3" class="table-warning">Deductions</th>
-                </tr>
-                </thead>
-                <thead>
-                <tr style="text-align:center">
-                  <th class="table-info">#</th>
-                  <th class="table-info">Description</th>
-                  <th class="table-info">Amount (RM)</th>
-                  <th class="table-warning">#</th>
-                  <th class="table-warning">Description</th>
-                  <th class="table-warning">Amount (RM)</th>
-                </tr>
-                </thead>
-                <tbody>
+<form method="post" action="liveViewAttendance2.php" role="form" enctype="multipart/form-data">
+
+       <!--BEGIN CLASS tab-pane-->
+        <div class="form-group">
+          <div class="input-group mb-3">
+          <input type="text" name="id" class="form-control" id="validationDefault01" value="<?php echo $ED['id'];?>" readonly>
+          <div class="input-group-append input-group-text">
+              <span class="fas fa-id-card-alt"></span>
+          </div>
+         </div>
+        </div>
         
-                <tr>
-                <td>1</td>
-                <td>Salary</td>
-                <td style="text-align:right"><span id = "fees" class="btn btn-light btn-sm btn-block"><?php echo $formBasicSalary;?></span></td>
-                <!--earnings-->
-                <td>1</td>
-                <td>Penalty</td>
-                <td style="text-align:right"><span id = "penalty" class="btn btn-light btn-sm btn-block"><?php echo 11.25;?></span></td>
-                <!--deductions-->
-	            </tr>
-	            
-	            <tr>
-                <td>2</td>
-                <td>Petrol</td>
-                <td style="text-align:right"><span id = "petrol" class="btn btn-light btn-sm btn-block"><?php echo $formPetrol;?></span></td>
-                <!--earnings-->
-                <td>2</td>
-                <td>Advance</td>
-                <td style="text-align:right"><span id = "advance" class="btn btn-light btn-sm btn-block"><?php echo $FS['advance'];?></span></td>
-                <!--deductions-->
-	            </tr>
-	            
-	            <tr>
-                <td>3</td>
-                <td>Handphone</td>
-                <td style="text-align:right"><span id = "handphone" class="btn btn-light btn-sm btn-block"><?php echo $formHandphone;?></span></td>
-                <!--earnings-->
-                <td>3</td>
-                <td>KWSP(EPF)</td>
-                <td style="text-align:right"><span id = "epf" class="btn btn-light btn-sm btn-block"><?php echo $epf;?></span></td>
-                <!--deductions-->
-	            </tr>
-	            
-	            <tr>
-                <td>4</td>
-                <td>Comission</td>
-                <td style="text-align:right"><span id = "comission" class="btn btn-light btn-sm btn-block"><?php if($formCommision > 0){echo $formCommision;}else{echo 0;}?></span></td>
-                <!--earnings-->
-                <td>4</td>
-                <td>SOCSO</td>
-                <td style="text-align:right"><span id = "socso" class="btn btn-light btn-sm btn-block"></span></td>
-                <!--deductions-->
-	            </tr>
-	            
-	            <tr>
-                <td>5</td>
-                <td>Overtime</td>
-                <td style="text-align:right"><span id = "overtime"  class="btn btn-light btn-sm btn-block"></span></td>
-                <!--earnings-->
-                <td>5</td>
-                <td>EIS</td>
-                <td style="text-align:right"><span id = "eis" class="btn btn-light btn-sm btn-block"></span></td>
-                <!--deductions-->
-	            </tr>
-                
-                </tbody>
-                
-                <tfoot>
-                    
-                 <tr style="text-align:center">
-                  <th class="table-info" colspan="2">Total Earnings</th>
-                  <th class="table-info"><span class="btn btn-light btn-sm btn-block"><?php echo $totalEarning2;?></span></th>
-                  <th class="table-warning" colspan="2">Total Deductions</th>
-                  <th class="table-warning"><span class="btn btn-light btn-sm btn-block"><?php echo $totalDeduction2;?></span></th>
-                </tr>
-                
-                <tr style="text-align:center">
-                  <th class="table-success" colspan="3">Grand Total</th>
-                  <th class="table-success" colspan="3"><span class="btn btn-light btn-sm btn-block"><?php echo $grandTotal2;?></span></th>
-                </tr>
-                
-                </tfoot>
-                
-              </table>
-<?php }?> 
-
-<!--end if employeeStatus!='temp'-->
-
-<!--start if employeeStatus=='temp'-->
-
-<?php if ($BC['employeeStatus'] == 'temp'){?>
-            <div class="image"><img src="data:image/jpeg;base64,<?php echo base64_encode($BC['riderFacePic']);?>" class="img-fluid img-thumbnail mx-auto d-block" style="width: 50px;height: 50px;border-radius: 50%; vertical-align:middle"/></div>
-           <div style="text-align:center; padding:3px"><button class="btn btn-outline-dark btn-sm btn-block"><?php $monthM=date_create($AC['date']);echo 'Month of '.date_format($monthM,"F,Y");?></button></div>
-            <div style="text-align:center; padding:3px"><button class="btn btn-outline-dark btn-sm btn-block"><?php echo 'Nama: '.ucwords($BC['nama']).' (I/C Number: '.$BC['noIC'].')';?></button></div>
-            <div style="text-align:center; padding:3px"><button class="btn btn-outline-dark btn-sm btn-block"><?php echo 'Account Info: ('.$BC['bankName'].': '.$BC['accNum'].')';?></button></div>
-            <table id="example2" class="table table-hover table-responsive-xl">
-                <thead>
-                <tr style="text-align:center">
-                  <th colspan="3" class="table-info">Earnings</th>
-                  <th colspan="3" class="table-warning">Deductions</th>
-                </tr>
-                </thead>
-                <thead>
-                <tr style="text-align:center">
-                  <th class="table-info">#</th>
-                  <th class="table-info">Description</th>
-                  <th class="table-info">Amount (RM)</th>
-                  <th class="table-warning">#</th>
-                  <th class="table-warning">Description</th>
-                  <th class="table-warning">Amount (RM)</th>
-                </tr>
-                </thead>
-                <tbody>
+        <div class="form-group">
+          <div class="input-group mb-3">
+          <input type="text" class="form-control" name="nama" id="validationDefault02" value="<?php echo ucfirst($ED['nama']);?>" readonly>
+          <div class="input-group-append input-group-text">
+              <span class="fas fa-user"></span>
+          </div>
+          </div>
+        </div>
         
-                <tr>
-                <td>1</td>
-                <td>Fees</td>
-                <td style="text-align:right"><span id="fees" class="btn btn-light btn-sm btn-block"><?php echo $formBasicSalary;?></span></td>
-                <!--earnings-->
-                <td>1</td>
-                <td>Penalty</td>
-                <td style="text-align:right"><span id="penalty" class="btn btn-light btn-sm btn-block"></span></td>
-                <!--deductions-->
-	            </tr>
-	            
-	            <tr>
-                <td>2</td>
-                <td>Petrol</td>
-                <td style="text-align:right"><span id="petrol" class="btn btn-light btn-sm btn-block"><?php echo $formPetrol;?></span></td>
-                <!--earnings-->
-                <td>2</td>
-                <td>Advance</td>
-                <td style="text-align:right"><span id="advance"class="btn btn-light btn-sm btn-block"><?php echo $FS['advance'];?></span></td>
-                <!--deductions-->
-	            </tr>
-	            
-	            <tr>
-                <td>3</td>
-                <td>Handphone</td>
-                <td style="text-align:right"><span id="handphone" class="btn btn-light btn-sm btn-block"><?php echo $formHandphone;?></span></td>
-                <!--earnings-->
-                <td>3</td>
-                <td>Bag Deposit</td>
-                <td style="text-align:right"><span id="bagDeposit"class="btn btn-light btn-sm btn-block"></span></td>
-                <!--deductions-->
-	            </tr>
-	            
-	            <tr>
-                <td>4</td>
-                <td>Comission</td>
-                <td style="text-align:right"><span id="comission" class="btn btn-light btn-sm btn-block"><?php if($formCommision > 0){echo $formCommision;}else{echo 0;}?></span></td>
-                <!--earnings-->
-                <td>4</td>
-                <td>Incomplete POD</td>
-                <td style="text-align:right"><span id="incompletePOD" class="btn btn-light btn-sm btn-block"></span></td>
-                <!--deductions-->
-	            </tr>
-	            
-	            <tr>
-                <td>5</td>
-                <td>Others</td>
-                <td style="text-align:right"><span id="others" class="btn btn-light btn-sm btn-block"></span></td>
-                <!--earnings-->
-                <td style="text-align:right"></td>
-                <td style="text-align:right"></td>
-                <td style="text-align:right"></td>
-                <!--deductions-->
-	            </tr>
-	            
-	            <tr>
-                <td>6</td>
-                <td>Refund Bag Deposit</td>
-                <td style="text-align:right"><span id="refund" class="btn btn-light btn-sm btn-block"></span></td>
-                <!--earnings-->
-                <td style="text-align:right"></td>
-                <td style="text-align:right"></td>
-                <td style="text-align:right"></td>
-                <!--deductions-->
-	            </tr>
-                
-                <tr>
-                <td>7</td>
-                <td>Att Allowance</td>
-                <td style="text-align:right"><span id="attAllow" class="btn btn-light btn-sm btn-block"><?php if ($totalAttend > 26){echo 50;}else{echo 0;}?></span></td>
-                <!--earnings-->
-                <td style="text-align:right"></td>
-                <td style="text-align:right"></td>
-                <td style="text-align:right"></td>
-                <!--deductions-->
-	            </tr>
-	            
-                </tbody>
-                
-                <tfoot>
-                    
-                <tr style="text-align:center">
-                  <th class="table-info" colspan="2">Total Earnings</th>
-                  <th class="table-info"><span class="btn btn-light btn-sm btn-block"><?php echo $totalEarning2;?></span></th>
-                  <th class="table-warning" colspan="2">Total Deductions</th>
-                  <th class="table-warning"><span class="btn btn-light btn-sm btn-block"><?php echo $totalDeduction2;?></span></th>
-                </tr>
-                
-                <tr style="text-align:center">
-                  <th class="table-success" colspan="3">Grand Total</th>
-                  <th class="table-success" colspan="3"><span class="btn btn-light btn-sm btn-block"><?php echo $grandTotal2;?></span></th>
-                </tr>
-                
-                </tfoot>
-              </table>
-<?php }?> 
-
-<!--end if employeeStatus=='temp'-->
-
+        <div class="form-group">
+          <div class="input-group mb-3"> 
+          <input type="text" name="date" class="form-control" id="validationDefault03" value="<?php echo $ED['date'];?>" readonly>
+          <div class="input-group-append input-group-text">
+              <span class="fas fa-calendar-alt"></span>
+          </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="input-group mb-3"> 
+          <input type="text" name="time" class="form-control" placeholder="Clock-In(HH:MM:SS)" id="validationDefault04" value="<?php echo $ED['time'];?>" required>
+          <div class="input-group-append input-group-text">
+              <span class="fas fa-user-clock"></span>
+          </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="input-group mb-3"> 
+          <input type="text" name="timeOut" class="form-control" placeholder="Clock-Out(HH:MM:SS)" id="validationDefault04" value="<?php echo $ED['timeOut'];?>" required>
+          <div class="input-group-append input-group-text">
+              <span class="fas fa-user-clock"></span>
+          </div>
+          </div>
+        </div>
+        
         <input type="hidden" name="terms" value="agree"/>
         <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		</div>
- 
+         <input type="submit" class="btn btn-primary" name="submit" value="Edit User Record"/>&nbsp;
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </form>
+<script>  
+$(document).ready(function(){  
+      $('#submit').click(function(){  
+           var image_name = $('#image').val();  
+           if(image_name == '')  
+           {  
+                alert("Please Select Image");  
+                return false;  
+           }  
+           else  
+           {  
+                var extension = $('#image').val().split('.').pop().toLowerCase();  
+                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg','pdf']) == -1)  
+                {  
+                     alert('Invalid Image File');  
+                     $('#image').val('');  
+                     return false;  
+                }  
+           }  
+           
+           var image_name2 = $('#image2').val();  
+           if(image_name2 == '')  
+           {  
+                alert("Please Select Image");  
+                return false;  
+           }  
+           else  
+           {  
+                var extension = $('#image2').val().split('.').pop().toLowerCase();  
+                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg','pdf']) == -1)  
+                {  
+                     alert('Invalid Image File');  
+                     $('#image2').val('');  
+                     return false;  
+                }  
+           } 
+           
+           var image_name3 = $('#image3').val();  
+           if(image_name3 == '')  
+           {  
+                alert("Please Select Image");  
+                return false;  
+           }  
+           else  
+           {  
+                var extension = $('#image3').val().split('.').pop().toLowerCase();  
+                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg','pdf']) == -1)  
+                {  
+                     alert('Invalid Image File');  
+                     $('#image3').val('');  
+                     return false;  
+                }  
+           }  
+      });  
+ });  
+ </script>  
 <!-- Select2 -->
 <script src="plugins/select2/js/select2.full.min.js"></script>
 <!-- InputMask -->
 <script src="plugins/inputmask/jquery.inputmask.bundle.js"></script>
-
-<!--calculate total earning, deduction, grand total-->
-<script src="../calculateTotalSalary.js"></script>
-
 <script type="text/javascript">
   $(function() {
      'use strict';
