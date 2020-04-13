@@ -24,7 +24,7 @@ $a=1;
 ?>
 
 <?php if(!empty($row_Recordset2['stationCode'])) {?>    
-              <h3><?php echo $row_Recordset2['nama'];?></h3>
+              <h3><?php echo ucwords($row_Recordset2['nama']);?></h3>
               <table id="example2" class="table table-hover table-responsive-xl">
                 <thead>
                 <tr style="text-align:center">

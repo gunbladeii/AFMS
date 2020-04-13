@@ -28,7 +28,7 @@ $a=1;
                 <?php do {?>    
                 <tr>
                 <td><?php echo $a++;?></td>	
-	            <td> <span data-toggle="modal" data-target="#viewStationModal" data-whatever3="<?php echo $row_Recordset2['noIC'];?>" class="badge badge-primary" role="button" aria-pressed="true"><?php echo $row_Recordset2['nama'];?></span></td>
+	            <td> <span data-toggle="modal" data-target="#viewStationModal" data-whatever3="<?php echo $row_Recordset2['noIC'];?>" class="badge badge-primary" role="button" aria-pressed="true"><?php echo ucwords($row_Recordset2['nama']);?></span></td>
 	            <td><span class="badge badge-info"><?php echo $row_Recordset2['stationName'];?></span></td>
 	             <td><span class="badge badge-info"><?php echo $row_Recordset2['stationCode'];?></span></td>
 	            </tr>
