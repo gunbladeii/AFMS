@@ -26,7 +26,7 @@ $a=1;
 <?php if(!empty($row_Recordset2['stationCode'])) {?>    
               <h3><?php echo strtoupper($row_Recordset2['nama']);?></h3>
               <h5><span class="badge badge-primary"><?php echo strtoupper($row_Recordset2['stationName']);?></span></h5>
-              <table id="example1" class="table table-hover table-responsive-xl">
+              <table id="example3" class="table table-hover table-responsive-xl">
                 <thead>
                 <tr style="text-align:center">
                   <th>No.</th>
@@ -64,14 +64,6 @@ $a=1;
 <script src="plugins/datatables/dataTables.bootstrap4.js"></script>
 <script>
   $(function () {
-    $("#example1").DataTable();
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-    });
+    $("#example3").DataTable();
   });
 </script>
