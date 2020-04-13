@@ -23,7 +23,8 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 $a=1;
 ?>
 
-<?php if(!empty($row_Recordset2['stationCode'])) {?>
+<?php if(!empty($row_Recordset2['stationCode'])) {?>    
+              <h3><?php echo $row_Recordset2['nama'];?></h3>
               <table id="example2" class="table table-hover table-responsive-xl">
                 <thead>
                 <tr style="text-align:center">
@@ -42,7 +43,7 @@ $a=1;
 
 	              <td><?php echo $row_Recordset2['date'];?></td>	
 	              <td><?php echo $row_Recordset2['time'];?></td>
-                <td><?php echo $row-Recordset['tmeOut'];?></td>
+                <td><?php echo $row-Recordset['timeOut'];?></td>
 	              
 	            </tr>
                 <?php } while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2));?>
