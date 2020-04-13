@@ -4,7 +4,17 @@
     $id = $_GET['id'];
     date_default_timezone_set("asia/kuala_lumpur"); 
     $date = date('Y-m-d');
-    
+    $time = $_POST['time'];
+    $timeOut = $_POST['timeOut'];
+
+    if (isset($_POST['submit'])) {
+      $mysqli->query("UPDATE `attendance` SET `time` = '$time', `timeOut` = '$timeOut' WHERE `id` = '$id'");
+      
+      header("location:attendance.php");
+    }
+
+
+
   $Recordset2 = $mysqli->query("SELECT attendance.id, attendance.nama, attendance.noIC, attendance.date AS date, attendance.stationCode, stationName.name AS stationName, attendance.time, attendance.timeOut, attendance.month, employeeData.employeeStatus FROM 
 
   ((attendance 
@@ -70,7 +80,7 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
         
         <input type="hidden" name="terms" value="agree"/>
         <div class="modal-footer">
-         <input type="submit" class="btn btn-primary" name="submit" value="Edit User Record"/>&nbsp;
+         <input type="submit" class="btn btn-primary" name="submit" value="Edit Att Record"/>&nbsp;
          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </form>
