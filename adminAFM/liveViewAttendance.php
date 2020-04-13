@@ -59,4 +59,4 @@ $a=1;
                 </tr>
                 </tfoot>
               </table>
-<?php }?>
+<?php }else{echo '<span class="badge badge-danger">No attendance were recorded</span>'}?>
