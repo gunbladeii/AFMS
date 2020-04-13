@@ -32,14 +32,14 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 
 	if (isset($_POST["download"]))
 	{
-	$sql = $mysqli->query("SELECT employeeData.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, attendance.month, attendance.year, employeeData.employeeStatus, testSalary.grandTotal FROM
+	$sql = $mysqli->query("SELECT infoParcel.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, infoParcel.month, infoParcel.year, employeeData.employeeStatus, testSalary.grandTotal FROM
 
      ((((employeeData 
 					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
 					INNER JOIN infoParcel ON employeeData.noIC = infoParcel.noIC)
 					INNER JOIN attendance ON employeeData.noIC = attendance.noIC)
           INNER JOIN testSalary ON employeeData.noIC = testSalary.noIC)			
-					WHERE attendance.year='$year' AND attendance.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY infoParcel.noIC,infoParcel.month, infoParcel.year ORDER BY employeeData.nama ASC"); 					
+					WHERE infoParcel.year='$year' AND infoParcel.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY infoParcel.noIC,infoParcel.month, infoParcel.year ORDER BY employeeData.nama ASC"); 					
 
 	if (mysqli_num_rows($sql) > 0)
 		{
@@ -95,13 +95,13 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 	//download advance payment
 	if (isset($_POST["advanced"]))
 	{
-	$sql = $mysqli->query("SELECT employeeData.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, attendance.month, attendance.year,employeeData.employeeStatus FROM
+	$sql = $mysqli->query("SELECT infoParcel.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, infoParcel.month, infoParcel.year,employeeData.employeeStatus FROM
 
      (((employeeData 
 					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
 					INNER JOIN infoParcel ON employeeData.noIC = infoParcel.noIC)
 					INNER JOIN attendance ON employeeData.noIC = attendance.noIC)			
-					WHERE attendance.year='$year' AND employeeData.employeeStatus NOT LIKE 'dump' AND attendance.month ='$month' GROUP BY infoParcel.noIC,infoParcel.month, infoParcel.year ORDER BY employeeData.nama ASC"); 					
+					WHERE infoParcel.year='$year' AND employeeData.employeeStatus NOT LIKE 'dump' AND infoParcel.month ='$month' GROUP BY infoParcel.noIC,infoParcel.month, infoParcel.year ORDER BY employeeData.nama ASC"); 					
 
 	if (mysqli_num_rows($sql) > 0)
 		{
