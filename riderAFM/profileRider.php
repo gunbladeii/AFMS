@@ -545,8 +545,8 @@ $totalRows_parcel = mysqli_num_rows($parcel);
 				$('#show').load('liveReceive.php')
 				$('#show2').load('liveStatusPunch.php')
 				$('#show3').load('liveAttendStatus.php')
-				$('#showPerformance').load('livePerformance.php')
 			}, 3000);
+      $('#showPerformance').load('livePerformance.php');
 		});
 </script>
 <!-- Latest compiled and minified JavaScript -->
