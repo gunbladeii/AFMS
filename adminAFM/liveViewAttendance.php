@@ -3,7 +3,6 @@
 session_start();
 
 $noIC = $_GET['noIC'];
-$month = $_GET['month'];
 
 $colname_Recordset2 = "-1";
 if (isset($_SESSION['MM_Username'])) {
