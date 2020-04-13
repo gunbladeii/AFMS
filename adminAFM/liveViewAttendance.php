@@ -10,7 +10,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_Recordset2 = $_SESSION['MM_Username'];
 }
 
-$Recordset2 = $mysqli->query("SELECT attendance.nama, attendance.noIC, attendance.date AS date, attendance.stationCode, stationName.name AS stationName, attendance.time, attendance.timeOut AS totalDay , attendance.month, employeeData.employeeStatus FROM 
+$Recordset2 = $mysqli->query("SELECT attendance.id, attendance.nama, attendance.noIC, attendance.date AS date, attendance.stationCode, stationName.name AS stationName, attendance.time, attendance.timeOut AS totalDay , attendance.month, employeeData.employeeStatus FROM 
 
   ((attendance 
 
@@ -43,8 +43,8 @@ $a=1;
 
 	              <td><?php echo $row_Recordset2['date'];?></td>	
 	              <td><?php echo $row_Recordset2['time'];?></td>
-	              <td><span class="badge badge-info"><?php $date=date_create($row_Recordset2['date']);echo date_format($date,"F");?></span></td>
-                <td class="d-sm-inline-flex"><span class="badge badge-warning"><?php echo $row_Recordset2['totalDay'];?></span></td>	
+                <td><?php echo $row_Recordset2['timeOut'];?></td>
+	              
 	            </tr>
                 <?php } while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2));?>
                 </tbody>
