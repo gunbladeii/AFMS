@@ -506,20 +506,17 @@ function showPosition(position) {
     })
 </script>
 <script type="text/javascript">
-  $(document).ready(function() {
-  $('form').submit(function() {
-    if(typeof jQuery.data(this, "disabledOnSubmit") == 'undefined') {
-      jQuery.data(this, "disabledOnSubmit", { submited: true });
-      $('input[type=submit], input[type=button]', this).each(function() {
-        $(this).attr("disabled", "disabled");
-      });
-      return true;
-    }
-    else
-    {
+   $(document).ready(function() {
+  jQuery(function() {
+  $("form").submit(function() {
+    // submit more than once return false
+    $(this).submit(function() {
       return false;
-    }
+    });
+    // submit once return true
+    return true;
   });
+});
 });
 </script>
 </body>
