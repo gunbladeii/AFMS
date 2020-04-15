@@ -10,6 +10,9 @@ $Recordset = $mysqli->query("SELECT * FROM login WHERE username = '$colname_Reco
 $row_Recordset = mysqli_fetch_assoc($Recordset);
 $totalRows_Recordset = mysqli_num_rows($Recordset);
 
+date_default_timezone_set("Asia/Kuala_Lumpur");
+$date = date('d-m-Y');
+
 //download excell data rider
 $downloadExcell = $_SERVER['PHP_SELF'];
 
