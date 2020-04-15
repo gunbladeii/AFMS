@@ -10,6 +10,58 @@ $Recordset = $mysqli->query("SELECT * FROM login WHERE username = '$colname_Reco
 $row_Recordset = mysqli_fetch_assoc($Recordset);
 $totalRows_Recordset = mysqli_num_rows($Recordset);
 
+//download excell data rider
+$downloadExcell = $_SERVER['PHP_SELF'];
+
+  if (isset($_POST["download"]))
+  {
+  $sql = $mysqli->query("SELECT employeeData.id,employeeData.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel, login.password, stationName.name AS stationName, employeeData.stationCode FROM
+
+    ((employeeData 
+
+    INNER JOIN stationName ON employeeData.stationCode = stationName.stationCode)
+    INNER JOIN login ON employeeData.noIC = login.noIC) 
+
+    ORDER BY employeeData.nama ASC");           
+
+  if (mysqli_num_rows($sql) > 0)
+    {
+    $output .='
+      <table class="table" border="1">
+        <tr>
+          <th>No.</th>
+          <th>Employee ID</th>
+          <th>Name</th>
+          <th>IC Number</th>
+          <th>Username/E-mail</th>
+          <th>Password</th>
+          <th>Station Code</th>
+          <th>Station Name</th>
+        </tr>   
+      ';
+    while($row = mysqli_fetch_assoc($sql))
+      {
+      $output .='
+        <tr>
+          <td>'.$d++.'</td>
+          <td>'.$row["id"].'</td>
+          <td>'.str_replace(' ', '', $row["noIC"]).'</td>
+          <td>'.$row["emel"].'</td>
+          <td>'.ucwords(strtolower($row["nama"])).'</td>
+          <td>'.$row["password"].'</td>
+          <td>'.$row["stationCode"].'</td>
+          <td>'.$row["stationName"].'</td>
+        </tr>     
+        ';    
+      }
+    $output .='</table>';
+    header("Content-Type: application/vnd-ms-excel");
+    header("Content-Disposition: attachment; filename=excell_giro_ach_".$date.".xls");
+    echo $output;
+      
+    }
+  exit;
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -625,6 +677,14 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
       <a data-toggle="modal" data-target="#parcelModal" data-whatever="<?php echo $row_Recordset['id'];?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Register New User</a>
       <a href="dumpRider.php" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Show Resign User</a>
      </div>
+
+      <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="download" class="download" enctype="multipart/form-data">
+
+      <button type="submit" name='download' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Eksport Excell Data</button>
+      <input type="hidden" name="MM_download" value="download">
+      
+      </form>
+
       <br>
       <form method="post" action="registerRider.php" role="form">
       <div id='show'></div>
