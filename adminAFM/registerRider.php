@@ -10,6 +10,7 @@ $Recordset = $mysqli->query("SELECT * FROM login WHERE username = '$colname_Reco
 $row_Recordset = mysqli_fetch_assoc($Recordset);
 $totalRows_Recordset = mysqli_num_rows($Recordset);
 
+$d=1;
 date_default_timezone_set("Asia/Kuala_Lumpur");
 $date = date('d-m-Y');
 
@@ -48,9 +49,9 @@ $downloadExcell = $_SERVER['PHP_SELF'];
         <tr>
           <td>'.$d++.'</td>
           <td>'.$row["id"].'</td>
+          <td>'.ucwords(strtolower($row["nama"])).'</td>
           <td>'.str_replace(' ', '', $row["noIC"]).'</td>
           <td>'.$row["emel"].'</td>
-          <td>'.ucwords(strtolower($row["nama"])).'</td>
           <td>'.$row["password"].'</td>
           <td>'.$row["stationCode"].'</td>
           <td>'.$row["stationName"].'</td>
