@@ -56,7 +56,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
       }
     $output .='</table>';
     header("Content-Type: application/vnd-ms-excel");
-    header("Content-Disposition: attachment; filename=excell_giro_ach_".$date.".xls");
+    header("Content-Disposition: attachment; filename=excell_data_afms_".$date.".xls");
     echo $output;
       
     }
@@ -680,7 +680,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 
       <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="download" class="download" enctype="multipart/form-data">
 
-      <button type="submit" name='download' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Eksport Excell Data</button>
+      <button type="submit" name='download' value="Export to excel" class="badge badge-primary" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Eksport Excell Data</button>
       <input type="hidden" name="MM_download" value="download">
       
       </form>
