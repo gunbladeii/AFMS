@@ -87,7 +87,7 @@
 ?>
   
 
-<form method="post" action="editStaff.php" role="form" enctype="multipart/form-data">
+<form method="post" action="registerRider.php" role="form" enctype="multipart/form-data">
       
       <div href="#" class="input-group mb-3">
       <img src="data:image/jpeg;base64,<?php echo base64_encode($ED['riderFacePic']);?>" class="brand-image img-circle elevation-5"
