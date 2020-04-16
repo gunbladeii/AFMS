@@ -11,7 +11,7 @@
     if (isset($_POST['submit'])) {
       $mysqli->query("UPDATE `infoParcel` SET `itemCode` = '$itemCode', `fail` = '$fail' WHERE `id` = '$id2'");
       
-      header("location:pod.php");
+      header("location:riderPerformance.php");
     }
 
 
@@ -31,7 +31,7 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 
 <!--start if employeeStatus!='temp'-->
 
-<form method="post" action="liveViewPod2.php" role="form" enctype="multipart/form-data">
+<form method="post" action="infoJourneytSS2.php" role="form" enctype="multipart/form-data">
 
        <!--BEGIN CLASS tab-pane-->
         <div class="form-group">
