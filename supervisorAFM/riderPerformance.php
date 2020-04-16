@@ -335,9 +335,9 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
             <!-- /.card-header -->
      
       <br>
-      <div class="table-responsive">
+      
       <div id='showPerformance'></div>
-      </div>
+      
         </div>
         <!-- /.col -->
       </div>
