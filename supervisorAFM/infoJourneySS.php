@@ -14,7 +14,7 @@
     $b=1;
 ?>
 
-           <div class="table table-hover table-responsive-xl">
+           <div class="table table-hover table-responsive">
                   	<table id="example2" class="table m-0">
                     <thead>
                     <tr style="text-align:center">

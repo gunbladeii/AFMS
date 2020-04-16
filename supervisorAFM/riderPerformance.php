@@ -305,25 +305,26 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-    
-       <div class="modal fade" id="infoJourney">
-        <div class="modal-dialog">
-          <div class="modal-content bg-light">
-            <div class="modal-header">
-              <h4 class="modal-title">Rider Performance</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="journey">
-              
-            </div>
-          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
+
+    <!--journey-->
+<div class="modal fade" id="infoJourney" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Rider Performance</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <!-- /.modal -->
-      
+      <div class="modal-body">
+          <div class="journey"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end / journey-->
+
     <!-- Main content -->
     <section class="content">
    <div class="row">
