@@ -16,7 +16,7 @@
 
 
 
-  $Recordset2 = $mysqli->query("SELECT infoParcel.id, infoParcel.nama, infoParcel.noIC, infoParcel.date AS date, infoParcel.stationCode, stationName.name AS stationName, infoParcel.time, infoParcel.timeOut, infoParcel.month, employeeData.employeeStatus, infoParcel.fail, (infoParcel.itemCode - infoParcel.fail) AS success FROM 
+  $Recordset2 = $mysqli->query("SELECT infoParcel.id, infoParcel.nama, infoParcel.noIC, infoParcel.date AS date, infoParcel.stationCode, stationName.name AS stationName, infoParcel.itemCode, infoParcel.fail, infoParcel.month, employeeData.employeeStatus, infoParcel.fail, (infoParcel.itemCode - infoParcel.fail) AS success FROM 
 
   ((infoParcel 
 

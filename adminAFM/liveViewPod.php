@@ -9,7 +9,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_Recordset2 = $_SESSION['MM_Username'];
 }
 
-$Recordset2 = $mysqli->query("SELECT infoParcel.id, infoParcel.nama, infoParcel.noIC, infoParcel.date AS date, infoParcel.stationCode, stationName.name AS stationName, infoParcel.time, infoParcel.timeOut, infoParcel.month, employeeData.employeeStatus, infoParcel.fail, (infoParcel.itemCode - infoParcel.fail) AS success FROM 
+$Recordset2 = $mysqli->query("SELECT infoParcel.id, infoParcel.nama, infoParcel.noIC, infoParcel.date AS date, infoParcel.stationCode, stationName.name AS stationName, infoParcel.itemCode, infoParcel.fail, infoParcel.month, employeeData.employeeStatus, infoParcel.fail, (infoParcel.itemCode - infoParcel.fail) AS success FROM 
 
   ((infoParcel 
 
