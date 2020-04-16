@@ -689,7 +689,6 @@ $downloadExcell = $_SERVER['PHP_SELF'];
       
       </form>
 
-      <br>
       <form method="post" action="registerRider.php" role="form">
       <div id='show'></div>
       </form>
