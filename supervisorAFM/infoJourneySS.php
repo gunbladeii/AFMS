@@ -13,16 +13,7 @@
     
     $b=1;
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Using Bootstrap modal</title>
-</head>
-<body>
-    <div class="col-sm-12">
+
            <div class="table table-hover table-responsive-xl">
                   	<table id="example2" class="table m-0">
                     <thead>
@@ -61,9 +52,7 @@
                     <?php } while ($row_mem = mysqli_fetch_assoc($mem)); ?>
                     </tbody>
                   </table>
-        </div>
-    </div>
-</body>
+        
 <!-- DataTables -->
 <script src="../adminAFM/plugins/datatables/jquery.dataTables.js"></script>
 <script src="../adminAFM/plugins/datatables/dataTables.bootstrap4.js"></script>
