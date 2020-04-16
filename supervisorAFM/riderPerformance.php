@@ -447,9 +447,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
   crossorigin="anonymous"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			setInterval(function () {
-				$('#showPerformance').load('livePerformanceMonth.php')
-			}, 3000);
+				$('#showPerformance').load('livePerformanceMonth.php');
 		});
 </script>
 

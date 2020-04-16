@@ -20,9 +20,9 @@ $totalRows_attend = mysqli_num_rows($attend);
 $a=1;
 ?>
 <?php if (!empty($row_attend)) { ?>
-	<table id="example2" class="table table-hover table-responsive-sm">
+	<table id="example2" class="table table-hover table-responsive">
                     <thead class="table-warning">
-                    <tr style="text-align:center">
+                    <tr>
                       <th scope="col">No</th>
                       <th scope="col">Name</th>
                       <th scope="col">Month</th>
@@ -31,7 +31,7 @@ $a=1;
                     </thead>
                     <tbody>
                     <?php do { ?>    
-                    <tr style="text-align:center">
+                    <tr>
                       <td><?php echo $a++;?></td>
                       <td><a data-toggle="modal"
                           data-target="#infoJourney"

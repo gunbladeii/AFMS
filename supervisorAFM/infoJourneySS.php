@@ -23,7 +23,7 @@
 </head>
 <body>
     <div class="col-sm-12">
-           <div class="table-responsive-sm">
+           <div class="table table-hover table-responsive">
                   	<table id="example2" class="table m-0">
                     <thead>
                     <tr style="text-align:center">
