@@ -341,7 +341,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
             </ul>-->
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="pod.php" class="nav-link">
               <i class="nav-icon fas fa-flag-checkered"></i>
               <p>
                 e-POD

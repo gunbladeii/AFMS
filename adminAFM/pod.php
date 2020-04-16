@@ -1,5 +1,6 @@
-<?php require('Connection/iBerkat.php'); ?>
-<?php session_start();
+<?php require('Connection/iBerkat.php');
+
+session_start();
 
 $colname_Recordset = "-1";
 if (isset($_SESSION['MM_Username'])) {
@@ -10,10 +11,148 @@ if (isset($_SESSION['MM_Username'])) {
 $Recordset = $mysqli->query("SELECT * FROM login WHERE username = '$colname_Recordset'");
 $row_Recordset = mysqli_fetch_assoc($Recordset);
 $totalRows_Recordset = mysqli_num_rows($Recordset);
+$a=1;
+$d=1;
 
-$Recordset2 = $mysqli->query("SELECT * FROM login");
-$row_Recordset2 = mysqli_fetch_assoc($Recordset2);
-$totalRows_Recordset2 = mysqli_num_rows($Recordset2);
+date_default_timezone_set("Asia/Kuala_Lumpur");
+$date = date('d-m-Y');
+$year = date('Y');
+$month = date('m');
+
+/*
+    $bankQuery = $mysqli->query("SELECT employeeData.noIC, employeeData.stationCode, employeeData.nama, employeeData.codeBank, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, attendance.month, attendance.year FROM
+
+     (((employeeData 
+					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
+					INNER JOIN infoParcel ON employeeData.noIC = infoParcel.noIC)
+					INNER JOIN attendance ON employeeData.noIC = attendance.noIC)			
+					WHERE attendance.year='2019' AND attendance.month ='12' GROUP BY infoParcel.noIC,infoParcel.month, infoParcel.year ORDER BY employeeData.nama ASC")
+*/
+$downloadExcell = $_SERVER['PHP_SELF'];
+
+	if (isset($_POST["download"]))
+	{
+	$sql = $mysqli->query("SELECT employeeData.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, attendance.month, attendance.year, employeeData.employeeStatus FROM
+
+     (((employeeData 
+					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
+					INNER JOIN infoParcel ON employeeData.noIC = infoParcel.noIC)
+					INNER JOIN attendance ON employeeData.noIC = attendance.noIC)			
+					WHERE attendance.year='$year' AND attendance.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY infoParcel.noIC,infoParcel.month, infoParcel.year ORDER BY employeeData.nama ASC"); 					
+
+	if (mysqli_num_rows($sql) > 0)
+		{
+		$output .='
+			<table class="table" border="1">
+				<tr>
+					<th>No.</th>
+					<th>Record Type</th>
+					<th>Invoice Ref.</th>
+					<th>Invoice Date</th>
+					<th>Invoice Description</th>
+					<th>Payee Bank Code</th>
+					<th>Payee Account</th>
+					<th>Amount</th>
+					<th>Email Address</th>
+					<th>Customer Ref.(Opt)</th>
+					<th>Payment Description(Opt)</th>
+					<th>ID. Type</th>
+					<th>ID. No.(IC No)</th>
+					
+					
+				</tr>		
+			';
+		while($row = mysqli_fetch_assoc($sql))
+			{
+			$output .='
+				<tr>
+					<td>'.$d++.'</td>
+					<td>P</td>
+					<td>xxxx-xxxx-xxxx</td>
+					<td>'.$date.'</td>
+					<td>'.ucwords(strtolower($row["nama"])).'</td>
+					<td>'.$row["codeBank"].'</td>
+					<td>'.str_replace(' ', '', $row["accNum"]).'</td>
+					<td></td>
+					<td>'.$row['emel'].'</td>
+					<td></td>
+					<td>Donation</td>
+					<td>01</td>
+					<td>'.round($row["noIC"],2).'</td>
+				</tr>			
+				';		
+			}
+		$output .='</table>';
+		header("Content-Type: application/vnd-ms-excel");
+		header("Content-Disposition: attachment; filename=excell_giro_ach_".$date.".xls");
+		echo $output;
+			
+		}
+	exit;
+	}
+	
+	//download advance payment
+	if (isset($_POST["advanced"]))
+	{
+	$sql = $mysqli->query("SELECT employeeData.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, attendance.month, attendance.year,employeeData.employeeStatus FROM
+
+     (((employeeData 
+					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
+					INNER JOIN infoParcel ON employeeData.noIC = infoParcel.noIC)
+					INNER JOIN attendance ON employeeData.noIC = attendance.noIC)			
+					WHERE attendance.year='$year' AND employeeData.employeeStatus NOT LIKE 'dump' AND attendance.month ='$month' GROUP BY infoParcel.noIC,infoParcel.month, infoParcel.year ORDER BY employeeData.nama ASC"); 					
+
+	if (mysqli_num_rows($sql) > 0)
+		{
+		$output .='
+			<table class="table" border="1">
+				<tr>
+					<th>No.</th>
+					<th>Record Type</th>
+					<th>Invoice Ref.</th>
+					<th>Invoice Date</th>
+					<th>Invoice Description</th>
+					<th>Payee Bank Code</th>
+					<th>Payee Account</th>
+					<th>Amount</th>
+					<th>Email Address</th>
+					<th>Customer Ref.(Opt)</th>
+					<th>Payment Description(Opt)</th>
+					<th>ID. Type</th>
+					<th>ID. No.(IC No)</th>
+					
+					
+				</tr>		
+			';
+		while($row = mysqli_fetch_assoc($sql))
+			{
+			$output .='
+				<tr>
+					<td>'.$d++.'</td>
+					<td>P</td>
+					<td>xxxx-xxxx-xxxx</td>
+					<td>'.$date.'</td>
+					<td>'.ucwords(strtolower($row["nama"])).'</td>
+					<td>'.$row["codeBank"].'</td>
+					<td>'.str_replace(' ', '', $row["accNum"]).'</td>
+					<td>400</td>
+					<td>'.$row['emel'].'</td>
+					<td></td>
+					<td>Donation</td>
+					<td>01</td>
+					<td>'.round($row["noIC"],2).'</td>
+				</tr>			
+				';		
+			}
+		$output .='</table>';
+		header("Content-Type: application/vnd-ms-excel");
+		header("Content-Disposition: attachment; filename=excell_giro_ach_".$date.".xls");
+		echo $output;
+			
+		}
+	exit;
+	}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -163,12 +302,12 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
       </li>
       <!-- Exit -->
       <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="../index.php">
+        <a class="nav-link" data-toggle="dropdown" href="../logout.php">
           <i class="far fa-times-circle"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <div class="dropdown-divider"></div>
-          <a href="../index.php" class="dropdown-item dropdown-footer">Logout</a>
+          <a href="../logout.php" class="dropdown-item dropdown-footer">Logout</a>
         </div>
       </li>
     </ul>
@@ -235,13 +374,14 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
             </a>
           </li>
           <li class="nav-item">
-            <a href="attendance.php" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 e-Attendance
                 <!--<i class="fas fa-angle-left right"></i>
                 <!--<span class="badge badge-info right">6</span>-->
               </p>
+              <span class="badge badge-success navbar-badge">New</span>
             </a>
             <!--<ul class="nav nav-treeview">
               <li class="nav-item">
@@ -283,12 +423,13 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
             </ul>-->
           </li>
           <li class="nav-item has-treeview">
-            <a href="pod.php" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-flag-checkered"></i>
               <p>
                 e-POD
                 <!--<i class="right fas fa-angle-left"></i>-->
               </p>
+              <span class="badge badge-danger navbar-badge">Coming Soon</span>
             </a>
             <!--<ul class="nav nav-treeview">
               <li class="nav-item">
@@ -594,12 +735,12 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>e-POD Section</h1>
+            <h1>Parcel Section</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">e-POD</li>
+              <li class="breadcrumb-item active">Parcel Section</li>
             </ol>
           </div>
         </div>
@@ -612,92 +753,20 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Click Staff Name for e-POD Status</h3>
+              <h5 class="card-title">Click Rider/SV Name for viewing parcel record</h5>
+              <div class="card-description col-12">
+
+                  <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="download" class="download" enctype="multipart/form-data">
+				      <!-- empty form for download excell -->
+                  </form>
+
+              </div>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>No.</th>
-                  <th>Full Name</th>
-                  <th>Station</th>
-                  <th>Supervisor Name</th>
-                  <th>Succesful Delivery</th>
-                </tr>
-                </thead>
-                <tbody>
-<tr>	<td>1</td>	
-	<td>Ali bin Ahmad</td>	
-	<td>Balakong</td>	
-	<td>Abu Bakar</td>	
-	<td>114</td>	</tr>
-<tr>	<td>2</td>	
-	<td>Ahmad bin Ali</td>	
-	<td>Cheras</td>	
-	<td>Imran</td>	
-	<td>200</td>	</tr>
-<tr>	<td>3</td>	
-	<td>Zakaria</td>	
-	<td>Cheras</td>	
-	<td>Imran</td>	
-	<td>56</td>	</tr>
-<tr>	<td>4</td>	
-	<td>Zaidi</td>	
-	<td>Balakong</td>	
-	<td>Abu Bakar</td>	
-	<td>45</td>	</tr>
-<tr>	<td>5</td>	
-	<td>Ali Jinnah</td>	
-	<td>Balakong</td>	
-	<td>Abu Bakar</td>	
-	<td>67</td>	</tr>
-<tr>	<td>6</td>	
-	<td>Mustapha Kamal</td>	
-	<td>Cheras</td>	
-	<td>Imran</td>	
-	<td>78</td>	</tr>
-<tr>	<td>7</td>	
-	<td>Rashidi</td>	
-	<td>Balakong</td>	
-	<td>Abu Bakar</td>	
-	<td>88</td>	</tr>
-<tr>	<td>8</td>	
-	<td>Rafiy Salleh</td>	
-	<td>Cheras</td>	
-	<td>Imran</td>	
-	<td>90</td>	</tr>
-<tr>	<td>9</td>	
-	<td>Mohd Isa</td>	
-	<td>Cheras</td>	
-	<td>Imran</td>	
-	<td>100</td>	</tr>
-<tr>	<td>10</td>	
-	<td>Amri Yahya</td>	
-	<td>Balakong</td>	
-	<td>Abu Bakar</td>	
-	<td>250</td>	</tr>
-<tr>	<td>11</td>	
-	<td>Mohd Saidi</td>	
-	<td>Balakong</td>	
-	<td>Abu Bakar</td>	
-	<td>245</td>	</tr>
-<tr>	<td>12</td>	
-	<td>Mustamaain</td>	
-	<td>Balakong</td>	
-	<td>Abu Bakar</td>	
-	<td>230</td>	</tr>
-                </tbody>
-                <tfoot>
-                <tr>
-                  <th>No.</th>
-                  <th>Full Name</th>
-                  <th>Station</th>
-                  <th>Supervisor Name</th>
-                  <th>Succesful Delivery</th>
-                </tr>
-                </tfoot>
-              </table>
+                
+            <div id='show'></div>
+            
             </div>
             <!-- /.card-body -->
           </div>
@@ -709,20 +778,44 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
     </section>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2019 <a href="https://iberkat.my/AFM">AFM Sdn. Bhd</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0.0-beta.1
+   <!--parcelModal-->
+<div class="modal fade" id="viewRiderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">View/Edit Rider Att. Record</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="dash"></div>
+      </div>
+      </div>
     </div>
-  </footer>
+  </div>
+</div>
+<!-- end / parcelModal-->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+   <!--parcelModal-->
+<div class="modal fade" id="viewStationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Rider/SV Attendance Records</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="dash2"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end / parcelModal-->
+
 </div>
 <!-- ./wrapper -->
 
@@ -777,6 +870,62 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
       "autoWidth": false,
     });
   });
+</script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+				$('#show').load('viewPod.php')
+		});
+</script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+    $('#viewRiderModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString = 'id=' + recipient;
+
+            $.ajax({
+                type: "GET",
+                url: "liveViewPod2.php",
+                data: dataString, 
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    modal.find('.dash').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+    })
+</script>
+<script>
+    
+    $('#viewStationModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient3 = button.data('whatever3') // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString2 = 'noIC=' + recipient3;
+
+            $.ajax({
+                type: "GET",
+                url: "liveViewPod.php",
+                data: dataString2, 
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    modal.find('.dash2').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+    })
 </script>
 </body>
 </html>
