@@ -498,7 +498,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
           var recipient = button.data('whatever') // Extract info from data-* attributes
           var recipient2 = button.data('whatever2') // Extract info from data-* attributes
           var modal = $(this);
-          var dataString = 'noIC=' + recipient + '&' + 'month=' + recipient2;
+          var dataString = 'id=' + recipient;
 
             $.ajax({
                 type: "GET",
