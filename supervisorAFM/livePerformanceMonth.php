@@ -20,7 +20,7 @@ $totalRows_attend = mysqli_num_rows($attend);
 $a=1;
 ?>
 <?php if (!empty($row_attend)) { ?>
-	<table id="example2" class="table table-hover table-responsive-xl">
+	<table id="example2" class="table table-hover table-responsive">
                     <thead class="table-warning">
                     <tr>
                       <th scope="col">No</th>
