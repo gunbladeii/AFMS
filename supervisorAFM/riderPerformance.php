@@ -344,6 +344,24 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
   </div>
 </div>
 <!-- end / infoJourney-->
+<!--infoJourney2-->
+<div class="modal fade" id="infoJourney2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Rider Performance</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="journey2"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end / infoJourney2-->
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2019 <a href="https://iberkat.my/AFM">AFM Sdn. Bhd</a>.</strong>
@@ -467,6 +485,29 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 success: function (data) {
                     console.log(data);
                     modal.find('.journey').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+    })
+</script> 
+<script>
+    $('#infoJourney2').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          var recipient2 = button.data('whatever2') // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString = 'noIC=' + recipient + '&' + 'month=' + recipient2;
+
+            $.ajax({
+                type: "GET",
+                url: "../adminAFM/liveViewPod2.php",
+                data: dataString,
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    modal.find('.journey2').html(data);
                 },
                 error: function(err) {
                     console.log(err);
