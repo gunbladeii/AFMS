@@ -11,7 +11,7 @@
     if (isset($_POST['submit'])) {
       $mysqli->query("UPDATE `infoParcel` SET `itemCode` = '$itemCode', `fail` = '$fail' WHERE `id` = '$id2'");
       
-      header("location:pod.php");
+      header("location:#");
     }
 
 
