@@ -7,7 +7,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_Recordset2 = $_SESSION['MM_Username'];
 }
 
-$Recordset2 = $mysqli->query("SELECT infoParcel.itemCode, infoParcel.noIC, infoParcel.nama,infoParcel.year, infoParcel.stationCode, stationName.name AS stationName, infoParcel.month, infoParcel.time, infoParcel.timeOut FROM infoParcel INNER JOIN stationName ON infoParcel.stationCode = stationName.stationCode WHERE infoParcel.itemCode IS NOT NULL GROUP BY infoParcel.noIC ORDER BY infoParcel.nama ASC");
+$Recordset2 = $mysqli->query("SELECT infoParcel.itemCode, infoParcel.noIC, infoParcel.nama,infoParcel.year, infoParcel.stationCode, stationName.name AS stationName, infoParcel.month, infoParcel.time, infoParcel.itemCode FROM infoParcel INNER JOIN stationName ON infoParcel.stationCode = stationName.stationCode WHERE infoParcel.itemCode IS NOT NULL GROUP BY infoParcel.noIC ORDER BY infoParcel.nama ASC");
 $row_Recordset2 = mysqli_fetch_assoc($Recordset2);
 $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 
