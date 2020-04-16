@@ -23,7 +23,7 @@
   INNER JOIN employeeData ON infoParcel.noIC = employeeData.noIC)
   INNER JOIN stationName ON infoParcel.stationCode = stationName.stationCode)
 
-   WHERE infoParcel.itemCode IS NOT NULL AND employeeData.employeeStatus NOT LIKE 'dump' AND infoParcel.noIC = '$noIC' GROUP BY infoParcel.id ORDER BY date DESC");
+   WHERE infoParcel.itemCode IS NOT NULL AND employeeData.employeeStatus NOT LIKE 'dump' AND infoParcel.id = '$id' GROUP BY infoParcel.id ORDER BY date DESC");
 $ED = mysqli_fetch_assoc($Recordset2);
 $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 
