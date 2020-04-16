@@ -41,7 +41,7 @@ $a=1;
                 <?php do {?>    
                 <tr style="text-align:center">
                 <td><?php echo $a++;?></td>	
-                <td> <span data-toggle="modal" data-target="#viewRiderModal" data-whatever="<?php echo $row_Recordset2['id'];?>" class="badge badge-primary" role="button" aria-pressed="true"><?php echo ucwords($row_Recordset2['id']);?></span></td> 
+                <td> <span data-toggle="modal" data-target="#viewRiderModal" data-whatever="<?php echo $row_Recordset2['id'];?>" class="badge badge-primary" data-dismiss="modal" role="button" aria-pressed="true"><?php echo ucwords($row_Recordset2['id']);?></span></td> 
 
 	              <td><?php echo $row_Recordset2['date'];?></td>	
 	              <td><?php echo $row_Recordset2['time'];?></td>
