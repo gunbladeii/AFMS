@@ -1,16 +1,17 @@
 <?php require_once('../Connection/iBerkat.php'); ?>
 <?php session_start();
+
 $colname_Recordset = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_Recordset = $_SESSION['MM_Username'];
 }
 
-$Recordset = $mysqli->query("SELECT employeeData.noIC, employeeData.nama, employeeData.riderFacePic, login.username FROM login INNER JOIN employeeData ON employeeData.noIC = login.noIC WHERE username = '$colname_Recordset'");
+$Recordset = $mysqli->query("SELECT * FROM login INNER JOIN employeeData ON employeeData.noIC = login.noIC WHERE username = '$colname_Recordset'");
 $row_Recordset = mysqli_fetch_assoc($Recordset);
 $totalRows_Recordset = mysqli_num_rows($Recordset);
 
 
-$joiner = $mysqli->query("SELECT employeeData.noIC, employeeData.nama, employeeData.emel, stationName.name AS stationName, stationName.stationCode FROM employeeData INNER JOIN stationName ON employeeData.stationCode = stationName.stationCode WHERE emel = '$colname_Recordset'");
+$joiner = $mysqli->query("SELECT employeeData.noIC, employeeData.nama, employeeData.emel, stationName.name AS stationName, stationName.stationCode AS stationCode FROM employeeData INNER JOIN stationName ON employeeData.stationCode = stationName.stationCode WHERE emel = '$colname_Recordset'");
 $row_joiner = mysqli_fetch_assoc($joiner);
 $totalRows_joiner = mysqli_num_rows($joiner);
 
@@ -306,47 +307,43 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
     </div>
     <!-- /.content-header -->
 
-    <!--journey-->
-<div class="modal fade" id="infoJourney" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <!-- Main content -->
+    <section class="content">
+  <div class="register-logo">
+    <a href="index.php"><img src="../adminAFM/altus logo.png" style="width:15%"></a>
+  </div>
+      
+  <div class="card">
+    <div class="card-body register-card-body">
+      <h3>Rider Performance</h3>
+      <div class="col-mb-12" style="text-align:center">
+     </div>
+      <br>
+      <div id='showPerformance'></div>
+     </div>
+    </div>
+ </section>
+</div>
+
+
+<!--infoJourney-->
+<div class="modal fade" id="infoJourney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">Rider Performance</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Rider Performance</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-          <div class="journey"></div>
+          <div class="journey></div>
       </div>
       </div>
     </div>
   </div>
 </div>
-<!-- end / journey-->
-
-    <!-- Main content -->
-    <section class="content">
-   <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Performance Status by Month</h3><p class="h6">(Click by name)</p>
-            </div>
-            <!-- /.card-header -->
-     
-      <br>
-      
-      <div id='showPerformance'></div>
-      
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
- </section>
-</div>
-</div>
-
+<!-- end / infoJourney-->
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2019 <a href="https://iberkat.my/AFM">AFM Sdn. Bhd</a>.</strong>
@@ -446,10 +443,10 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-				$('#showPerformance').load('livePerformanceMonth.php');
-		});
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $('#showPerformance').load('livePerformanceMonth.php');
+    });
 </script>
 
 <!-- Latest compiled and minified JavaScript -->
