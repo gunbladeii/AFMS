@@ -502,7 +502,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
 
             $.ajax({
                 type: "GET",
-                url: "../adminAFM/liveViewPod2.php",
+                url: "infoJourneytSS2.php",
                 data: dataString,
                 cache: false,
                 success: function (data) {
