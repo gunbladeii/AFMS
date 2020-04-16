@@ -31,7 +31,7 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 
 <!--start if employeeStatus!='temp'-->
 
-<form method="post" action="liveViewinfoParcel2.php" role="form" enctype="multipart/form-data">
+<form method="post" action="liveViewPod2.php" role="form" enctype="multipart/form-data">
 
        <!--BEGIN CLASS tab-pane-->
         <div class="form-group">
