@@ -294,13 +294,13 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
             </ul>-->
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="pod.php" class="nav-link">
               <i class="nav-icon fas fa-flag-checkered"></i>
               <p>
                 e-POD
                 <!--<i class="right fas fa-angle-left"></i>-->
               </p>
-              <span class="badge badge-danger navbar-badge">Coming Soon</span>
+              <span class="badge badge-success navbar-badge">New</span>
             </a>
             <!--<ul class="nav nav-treeview">
               <li class="nav-item">

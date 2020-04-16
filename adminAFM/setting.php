@@ -300,7 +300,7 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
                 e-POD
                 <!--<i class="right fas fa-angle-left"></i>-->
               </p>
-              <span class="badge badge-danger navbar-badge">Coming Soon</span>
+              <span class="badge badge-success navbar-badge">New</span>
             </a>
             <!--<ul class="nav nav-treeview">
               <li class="nav-item">
