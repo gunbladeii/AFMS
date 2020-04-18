@@ -20,5 +20,5 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 ?>
 <?php 
 $success = $row_Recordset2['received'] - $row_Recordset2['fail'];
-if ($row_Recordset2['fail'] != NULL){echo $success.'/'.$row_Recordset2['received'];}else{echo 0;}?>
+if ($row_Recordset2['fail'] != NULL){echo $success.' / '.$row_Recordset2['received'];}else{echo 0;}?>
 
