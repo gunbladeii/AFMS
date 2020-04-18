@@ -631,7 +631,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h5><div id="totalSuccessParcel"></div></h5>
+                <h4><div id="totalSuccessParcel"></div></h4>
 
                 <p>Succesful Parcel Today</p>
               </div>
