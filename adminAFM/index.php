@@ -609,6 +609,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">Altus Freight Managment System Dashboard</h1>
             <p>(*All data shown below as of <?php echo $date;?>)</p>
+            <p><?php print "IP address: ".$_SERVER['REMOTE_ADDR'];?></p>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
