@@ -273,7 +273,7 @@ $totalRows_parcel = mysqli_num_rows($parcel);
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">Welcome <?php echo ucwords(strtolower($row_Recordset['nama']));?></h1>
             <span class="badge badge-warning">Today is <?php $dateM = new DateTime($date);echo $dateM->format('l').' ('.$dateM->format('d-M-Y').')';?></span>
-            <span class="badge badge-success"><?php echo ucwords(strtolower($row_Recordset2['name']));?> Station</span>
+            <h6><span class="badge badge-success"><?php echo ucwords(strtolower($row_Recordset2['name']));?> Station</span></h6>
             <h6><span class="badge badge-warning">Your IP address: <?php print $_SERVER['REMOTE_ADDR'];?></span></h6>
           </div><!-- /.col -->
           <div class="col-sm-6">
