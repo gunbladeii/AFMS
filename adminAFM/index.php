@@ -608,8 +608,8 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">Altus Freight Managment System Dashboard</h1>
-            <h5>(*All data shown below as of <?php echo $date;?>)</h5>
-            <h5><?php print "Your IP address: ".$_SERVER['REMOTE_ADDR'];?></h5>
+            <h6>(*All data shown below as of <?php echo $date;?>)</h6>
+            <h6><?php print "Your IP address: ".$_SERVER['REMOTE_ADDR'];?></h6>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
