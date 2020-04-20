@@ -17,7 +17,7 @@
         <h4>Are you sure to fetch this record?</h4>
         <div class="modal-footer">
             <input type="hidden" name="id" value="<?php echo $id;?>"/>
-			<input type="submit" class="btn btn-danger" name="delete" value="Delete"/>&nbsp;
+			<input type="submit" class="btn btn-success" name="delete" value="Fetch"/>&nbsp;
 			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 		</div>
       </form>
