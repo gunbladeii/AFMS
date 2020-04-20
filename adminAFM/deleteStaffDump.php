@@ -13,7 +13,7 @@
 ?>
   
 
-     <form method="post" action="deleteStaff.php" role="form">
+     <form method="post" action="deleteStaffDump.php" role="form">
         <h4>Are you sure to fetch this record?</h4>
         <div class="modal-footer">
             <input type="hidden" name="id" value="<?php echo $id;?>"/>

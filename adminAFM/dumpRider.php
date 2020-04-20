@@ -655,7 +655,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalScrollableTitle">Delete Rider Record</h6>
+        <h6 class="modal-title" id="exampleModalScrollableTitle">Fetch Rider Record</h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
