@@ -147,12 +147,12 @@
          <div class="input-group mb-3">
                     <select name="role" class="custom-select browser-default" required>
                       <option value="">Choose role</option>
-                      <?php do {  ?>
+                      
                       <option value="<?php echo $ED['role']?>" selected><?php echo ucfirst($ED['role'])?></option>
                       <option value="ss">Station Supervisor</option>
                       <option value="rider">Rider</option>
-                      <?php } while ($ED = mysqli_fetch_assoc($employeeData)); $rows = mysqli_num_rows($employeeData);
-                      if($rows > 0) {mysqli_data_seek($employeeData, 0);$ED = mysqli_fetch_assoc($employeeData);} ?>
+                      <option value="dump">dump</option>
+                      
                     </select>
                     <div class="input-group-append input-group-text">
                       <span class="fas fa-user"></span>
