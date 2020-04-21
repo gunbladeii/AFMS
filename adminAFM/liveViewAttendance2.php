@@ -23,7 +23,7 @@
   INNER JOIN employeeData ON attendance.noIC = employeeData.noIC)
   INNER JOIN stationName ON attendance.stationCode = stationName.stationCode)
 
-   WHERE attendance.timeOut IS NOT NULL AND employeeData.employeeStatus NOT LIKE 'dump' AND attendance.id = '$id' ORDER BY date DESC");
+   WHERE attendance.id = '$id' ORDER BY date DESC");
 $ED = mysqli_fetch_assoc($Recordset2);
 $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 

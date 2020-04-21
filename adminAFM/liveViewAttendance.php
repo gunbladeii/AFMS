@@ -16,7 +16,7 @@ $Recordset2 = $mysqli->query("SELECT attendance.id, attendance.nama, attendance.
   INNER JOIN employeeData ON attendance.noIC = employeeData.noIC)
   INNER JOIN stationName ON attendance.stationCode = stationName.stationCode)
 
-   WHERE attendance.timeOut IS NOT NULL AND employeeData.employeeStatus NOT LIKE 'dump' AND attendance.noIC = '$noIC' ORDER BY date DESC");
+   WHERE employeeData.employeeStatus NOT LIKE 'dump' AND attendance.noIC = '$noIC' ORDER BY date DESC");
 $row_Recordset2 = mysqli_fetch_assoc($Recordset2);
 $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 
