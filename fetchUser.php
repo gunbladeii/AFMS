@@ -38,7 +38,7 @@ if ($_SESSION['role'] != 'dump')
                         — The Team</p>
                 </div>
                 <div class="error-actions">
-                    <a href="index.php" style="margin-top: 10px;" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-home">
+                    <a href="logout.php" style="margin-top: 10px;" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-home">
                     </span>Take Me Home </a>
                 </div>
             </div>
