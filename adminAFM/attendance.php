@@ -19,139 +19,17 @@ $date = date('d-m-Y');
 $year = date('Y');
 $month = date('m');
 
-/*
-    $bankQuery = $mysqli->query("SELECT employeeData.noIC, employeeData.stationCode, employeeData.nama, employeeData.codeBank, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, attendance.month, attendance.year FROM
 
-     (((employeeData 
-					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
-					INNER JOIN infoParcel ON employeeData.noIC = infoParcel.noIC)
-					INNER JOIN attendance ON employeeData.noIC = attendance.noIC)			
-					WHERE attendance.year='2019' AND attendance.month ='12' GROUP BY infoParcel.noIC,infoParcel.month, infoParcel.year ORDER BY employeeData.nama ASC")
-*/
-$downloadExcell = $_SERVER['PHP_SELF'];
+$deleteURL = $_SERVER['PHP_SELF'];
 
-	if (isset($_POST["download"]))
-	{
-	$sql = $mysqli->query("SELECT employeeData.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, attendance.month, attendance.year, employeeData.employeeStatus FROM
+	if (isset($_POST['delete'])) {
 
-     (((employeeData 
-					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
-					INNER JOIN infoParcel ON employeeData.noIC = infoParcel.noIC)
-					INNER JOIN attendance ON employeeData.noIC = attendance.noIC)			
-					WHERE attendance.year='$year' AND attendance.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY infoParcel.noIC,infoParcel.month, infoParcel.year ORDER BY employeeData.nama ASC"); 					
+    	$mysqli->query("DELETE t1 FROM attendance t1 INNER  JOIN attendance t2 WHERE t1.id < t2.id AND t1.noIC = t2.noIC AND t1.date = t2.date AND t1.year = t2.year");
 
-	if (mysqli_num_rows($sql) > 0)
-		{
-		$output .='
-			<table class="table" border="1">
-				<tr>
-					<th>No.</th>
-					<th>Record Type</th>
-					<th>Invoice Ref.</th>
-					<th>Invoice Date</th>
-					<th>Invoice Description</th>
-					<th>Payee Bank Code</th>
-					<th>Payee Account</th>
-					<th>Amount</th>
-					<th>Email Address</th>
-					<th>Customer Ref.(Opt)</th>
-					<th>Payment Description(Opt)</th>
-					<th>ID. Type</th>
-					<th>ID. No.(IC No)</th>
-					
-					
-				</tr>		
-			';
-		while($row = mysqli_fetch_assoc($sql))
-			{
-			$output .='
-				<tr>
-					<td>'.$d++.'</td>
-					<td>P</td>
-					<td>xxxx-xxxx-xxxx</td>
-					<td>'.$date.'</td>
-					<td>'.ucwords(strtolower($row["nama"])).'</td>
-					<td>'.$row["codeBank"].'</td>
-					<td>'.str_replace(' ', '', $row["accNum"]).'</td>
-					<td></td>
-					<td>'.$row['emel'].'</td>
-					<td></td>
-					<td>Donation</td>
-					<td>01</td>
-					<td>'.round($row["noIC"],2).'</td>
-				</tr>			
-				';		
-			}
-		$output .='</table>';
-		header("Content-Type: application/vnd-ms-excel");
-		header("Content-Disposition: attachment; filename=excell_giro_ach_".$date.".xls");
-		echo $output;
-			
-		}
-	exit;
-	}
-	
-	//download advance payment
-	if (isset($_POST["advanced"]))
-	{
-	$sql = $mysqli->query("SELECT employeeData.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, attendance.month, attendance.year,employeeData.employeeStatus FROM
+    	$mysqli->query("DELETE t1 FROM infoParcel t1 INNER  JOIN infoParcel t2 WHERE t1.id < t2.id AND t1.noIC = t2.noIC AND t1.date = t2.date AND t1.year = t2.year");
 
-     (((employeeData 
-					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
-					INNER JOIN infoParcel ON employeeData.noIC = infoParcel.noIC)
-					INNER JOIN attendance ON employeeData.noIC = attendance.noIC)			
-					WHERE attendance.year='$year' AND employeeData.employeeStatus NOT LIKE 'dump' AND attendance.month ='$month' GROUP BY infoParcel.noIC,infoParcel.month, infoParcel.year ORDER BY employeeData.nama ASC"); 					
-
-	if (mysqli_num_rows($sql) > 0)
-		{
-		$output .='
-			<table class="table" border="1">
-				<tr>
-					<th>No.</th>
-					<th>Record Type</th>
-					<th>Invoice Ref.</th>
-					<th>Invoice Date</th>
-					<th>Invoice Description</th>
-					<th>Payee Bank Code</th>
-					<th>Payee Account</th>
-					<th>Amount</th>
-					<th>Email Address</th>
-					<th>Customer Ref.(Opt)</th>
-					<th>Payment Description(Opt)</th>
-					<th>ID. Type</th>
-					<th>ID. No.(IC No)</th>
-					
-					
-				</tr>		
-			';
-		while($row = mysqli_fetch_assoc($sql))
-			{
-			$output .='
-				<tr>
-					<td>'.$d++.'</td>
-					<td>P</td>
-					<td>xxxx-xxxx-xxxx</td>
-					<td>'.$date.'</td>
-					<td>'.ucwords(strtolower($row["nama"])).'</td>
-					<td>'.$row["codeBank"].'</td>
-					<td>'.str_replace(' ', '', $row["accNum"]).'</td>
-					<td>400</td>
-					<td>'.$row['emel'].'</td>
-					<td></td>
-					<td>Donation</td>
-					<td>01</td>
-					<td>'.round($row["noIC"],2).'</td>
-				</tr>			
-				';		
-			}
-		$output .='</table>';
-		header("Content-Type: application/vnd-ms-excel");
-		header("Content-Disposition: attachment; filename=excell_giro_ach_".$date.".xls");
-		echo $output;
-			
-		}
-	exit;
-	}
+    	header("location:attendance.php");
+    }
 
 ?>
 <!DOCTYPE html>
@@ -756,8 +634,9 @@ $downloadExcell = $_SERVER['PHP_SELF'];
               <h5 class="card-title">Click Rider/SV Name for viewing attendance record</h5>
               <div class="card-description col-12">
 
-                  <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="download" class="download" enctype="multipart/form-data">
-				      <!-- empty form for download excell -->
+                  <form action="<?php echo $deleteURL;?>" role="form" method="POST" class="well form-horizontal" enctype="multipart/form-data">
+				      <button type="submit" name='delete' class="badge badge-primary"><i class="nav-icon fas fa-clone"></i> Clean duplicate data</button>
+                  
                   </form>
 
               </div>
