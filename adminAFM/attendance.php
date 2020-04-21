@@ -28,7 +28,7 @@ $deleteURL = $_SERVER['PHP_SELF'];
 
     	$mysqli->query("DELETE t1 FROM infoParcel t1 INNER  JOIN infoParcel t2 WHERE t1.id < t2.id AND t1.noIC = t2.noIC AND t1.date = t2.date AND t1.year = t2.year");
 
-    	header("location:attendance.php");
+    	header("location:attendance.php?message=success");
     }
 
 ?>
