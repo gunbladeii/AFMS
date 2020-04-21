@@ -151,6 +151,7 @@
                       <option value="<?php echo $ED['role']?>" selected><?php echo ucfirst($ED['role'])?></option>
                       <option value="ss">Station Supervisor</option>
                       <option value="rider">Rider</option>
+                      <option value="dump">dump</option>
                       
                     </select>
                     <div class="input-group-append input-group-text">
