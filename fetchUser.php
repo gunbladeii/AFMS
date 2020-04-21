@@ -1,4 +1,4 @@
-<?php require('../Connection/iBerkat.php'); ?>
+<?php require('Connection/iBerkat.php');?>
 <?php
 session_start();
 if ($_SESSION['role'] != 'dump')
@@ -12,7 +12,7 @@ if ($_SESSION['role'] != 'dump')
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AFMS | RIDER PAGE</title>
+  <title>AFMS | Block Account</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
