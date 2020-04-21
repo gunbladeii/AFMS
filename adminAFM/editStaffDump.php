@@ -48,13 +48,13 @@
     	
     	$mysqli->query("UPDATE `employeeData` SET `nama` = '$nama', `emel` = '$username', `sex` = '$sex', `dob` = '$dob', `pob`= '$pob', `nationality` = '$nationality', `race` = '$race', `religion` = '$religion', `marriage` = '$marriage', `childrenNo` = '$childrenNo', `address` = '$address', `noTel` = '$noTel', `lesenNo`= '$lesenNo', `lesenExp` = '$lesenExp', `noPlate` ='$noPlate', `roadtaxNo` = '$roadtaxNo', `vehicleModel` = '$vehicleModel', `vehicleYear` = '$vehicleYear', `pdrmRecordNo` = '$pdrmRecordNo', `caseNo` ='$caseNo', `employeeStatus` = '$employeeStatus', `stationCode` = '$stationCode', `accNum` = '$accNum', `codeBank` ='$codeBank', `DLPic` ='$DLPic', `riderFacePic` ='$riderFacePic', `riderFaceMotorPic` = '$riderFaceMotorPic' WHERE `noIC` = '$noIC'");
     	
-    	header("location:registerRider.php");
+    	header("location:dumpRider.php");
     }
     
     if (isset($_POST['submit'])) {
     	$mysqli->query("UPDATE `login` SET `nama` = '$nama', `username` = '$username', `employeeID` = '$employeeID', `password` = '$password', `role` ='$role', `terms`= '$terms' WHERE `noIC` = '$noIC'");
     	
-    	header("location:registerRider.php");
+    	header("location:dumpRider.php");
     }
     
     $employeeData = $mysqli->query("SELECT * FROM `employeeData` INNER JOIN `login` ON employeeData.noIC = login.noIC WHERE employeeData.id = '$id'");
@@ -87,7 +87,7 @@
 ?>
   
 
-<form method="post" action="editStaff.php" role="form" enctype="multipart/form-data">
+<form method="post" action="editStaffDump.php" role="form" enctype="multipart/form-data">
       
       <div href="#" class="input-group mb-3">
       <img src="data:image/jpeg;base64,<?php echo base64_encode($ED['riderFacePic']);?>" class="brand-image img-circle elevation-5"
