@@ -63,7 +63,14 @@ session_start();
             $_SESSION['password'] = $res["password"];
             header('Location:supervisorAFM/index.php');
             }
-            else if($res["role"] != "administrator" || $res["role"] != "ss" ||$res["role"] != "rider")
+            else if($res["role"] == "dump")
+            {
+            $_SESSION['MM_Username'] = $res['username'];
+            $_SESSION['role'] = $res["role"];
+            $_SESSION['password'] = $res["password"];
+            header('Location:fetchUser.php');
+            }
+            else if($res["role"] != "administrator" && $res["role"] != "ss" && $res["role"] != "rider" && $res["role"] != "dump")
             {
             header('Location:index.php?message=fail');
             }
