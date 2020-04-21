@@ -999,7 +999,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           var button = $(event.relatedTarget) // Button that triggered the modal
           var recipient2 = button.data('whatever2') // Extract info from data-* attributes
           var modal = $(this);
-          var dataString2 = 'id=' + recipient2;
+          var dataString2 = 'noIC=' + recipient2;
 
             $.ajax({
                 type: "GET",
