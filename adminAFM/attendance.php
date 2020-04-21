@@ -634,11 +634,8 @@ $deleteURL = $_SERVER['PHP_SELF'];
               <h5 class="card-title">Click Rider/SV Name for viewing attendance record</h5>
               <div class="card-description col-12">
 
-                  <form action="<?php echo $deleteURL;?>" role="form" method="POST" class="well form-horizontal" enctype="multipart/form-data">
-				      <button type="submit" name='delete' class="badge badge-primary"><i class="nav-icon fas fa-clone"></i> Clean duplicate data</button>
-                  
-                  </form>
-
+                  <span data-toggle="modal" data-target="#confirmationModal" class="badge badge-primary" role="button" aria-pressed="true"><?php echo ucwords($row_Recordset2['id']);?><i class="nav-icon fas fa-clone"></i> Clean duplicate data</span>
+                
               </div>
             </div>
             <!-- /.card-header -->
@@ -694,6 +691,34 @@ $deleteURL = $_SERVER['PHP_SELF'];
   </div>
 </div>
 <!-- end / parcelModal-->
+
+<!--confirmationModal-->
+<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Rider/SV Attendance Records</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <h5>Are you sure to clean-up all duplicate data?</h5>
+          <div class="modal-footer">
+
+         <form action="<?php echo $deleteURL;?>" role="form" method="POST" class="well form-horizontal" enctype="multipart/form-data">
+         	
+         <input type="submit" class="btn btn-primary" name="delete" value="Yes"/>
+         </form>&nbsp;
+
+         <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end confirmationModal-->
 
 </div>
 <!-- ./wrapper -->
