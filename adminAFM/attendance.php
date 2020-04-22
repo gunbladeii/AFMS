@@ -631,7 +631,7 @@ $deleteURL = $_SERVER['PHP_SELF'];
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h5 class="card-title">Click Rider/SV Name for viewing attendance record</h5>
+              <h5 class="card-title"><i class="far fa-calendar-alt"></i> SV/Rider Attendance<p class="h6">(Click SV/Rider Name for detail records)</p></h5>
               <div class="card-description col-12">
 
                   <span data-toggle="modal" data-target="#confirmationModal" class="badge badge-primary" role="button" aria-pressed="true"><?php echo ucwords($row_Recordset2['id']);?><i class="nav-icon fas fa-clone"></i> Clean duplicate data</span>
@@ -653,6 +653,33 @@ $deleteURL = $_SERVER['PHP_SELF'];
       <!-- /.row -->
     </section>
     <!-- /.content -->
+
+  <section class="content">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title"><i class="fas fa-user-clock"></i> Unclock-out Station<p class="h6">(All data shown below as of <?php echo $date;?>)</p></h5>
+              <div class="card-description col-12">
+
+              </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                
+            <div id='show2'></div>
+            
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+
   </div>
    <!--parcelModal-->
 <div class="modal fade" id="viewRiderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -782,6 +809,7 @@ $deleteURL = $_SERVER['PHP_SELF'];
 	<script type="text/javascript">
 		$(document).ready(function() {
 				$('#show').load('viewAttendance.php')
+        $('#show2').load('viewAttendance2.php')
 		});
 </script>
 <!-- Latest compiled and minified JavaScript -->
