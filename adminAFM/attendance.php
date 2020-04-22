@@ -719,6 +719,25 @@ $deleteURL = $_SERVER['PHP_SELF'];
 </div>
 <!-- end / parcelModal-->
 
+<!--attendanceModal-->
+<div class="modal fade" id="viewStationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Unclock-out Records</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="dash4"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end / attendanceModal-->
+
 <!--confirmationModal-->
 <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -852,6 +871,29 @@ $deleteURL = $_SERVER['PHP_SELF'];
                 success: function (data) {
                     console.log(data);
                     modal.find('.dash2').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+    })
+</script>
+<script>
+    
+    $('#viewClockoutModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient4 = button.data('whatever4') // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString3 = 'stationCode=' + recipient4;
+
+            $.ajax({
+                type: "GET",
+                url: "liveView2Attendance.php",
+                data: dataString3, 
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    modal.find('.dash4').html(data);
                 },
                 error: function(err) {
                     console.log(err);
