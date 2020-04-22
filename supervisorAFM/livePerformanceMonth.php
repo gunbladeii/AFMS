@@ -16,7 +16,7 @@ $attend = $mysqli->query("SELECT attendance.nama, attendance.noIC, attendance.da
   ((attendance 
   INNER JOIN stationName ON attendance.stationCode = stationName.stationCode)
   INNER JOIN login ON attendance.noIC = login.noIC) 
-  WHERE attendance.stationCode = '$station' AND role NOT LIKE 'dump' GROUP BY attendance.noIC, attendance.month, attendance.year ORDER BY attendance.month, attendance.nama DESC");
+  WHERE attendance.stationCode = '$station' AND login.role NOT LIKE 'dump' GROUP BY attendance.noIC, attendance.month, attendance.year ORDER BY attendance.month, attendance.nama DESC");
 $row_attend = mysqli_fetch_assoc($attend);
 $totalRows_attend = mysqli_num_rows($attend);
 
