@@ -15,7 +15,7 @@ $a=1;
 ?>
 
 <?php if(!empty($row_Recordset2['stationCode'])) {?>
-              <table id="example1" class="table table-hover table-responsive-xl">
+              <table id="example5" class="table table-hover table-responsive-xl">
                 <thead>
                 <tr>
                   <th>No.</th>
@@ -48,7 +48,7 @@ $a=1;
 <script src="plugins/datatables/dataTables.bootstrap4.js"></script>
 <script>
   $(function () {
-    $("#example1").DataTable();
+    $("#example5").DataTable();
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": false,
