@@ -38,7 +38,7 @@ $a=1;
                 <?php do {?>    
                 <tr>
                 <td><?php echo $a++;?></td>	
-                <td><span class="badge badge-primary"><?php echo ucwords($row_Recordset2['nama']);?></span></td>
+                <td><span class="badge badge-primary"><?php echo strtoupper($row_Recordset2['nama']);?></span></td>
                 <td><?php echo $date;?></td>	
 	              <td><span class="badge badge-danger">Unclock-out</span></td>
 	              
