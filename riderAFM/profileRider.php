@@ -292,7 +292,7 @@ $totalRows_parcel = mysqli_num_rows($parcel);
       <div class="container-fluid">
         <!-- Info boxes -->
         <div class="row">
-          <div class="col-12 col-sm-6 col-md-3">
+          <div class="col-12 col-sm-6 col-md-4">
             <a href="attendance.php" style="color:black;"><div class="info-box">
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-box"></i></span>
 
@@ -305,7 +305,7 @@ $totalRows_parcel = mysqli_num_rows($parcel);
             <!-- /.info-box -->
           </div>
           <!-- /.col -->
-          <div class="col-12 col-sm-6 col-md-3">
+          <div class="col-12 col-sm-6 col-md-4">
             <a data-toggle="modal" data-target="#parcelModal" data-whatever="<?php echo $mem['noIC'];?>" data-whatever2="<?php echo $mem['date'];?>"><div class="info-box mb-3">
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-motorcycle"></i></span>
 
@@ -337,7 +337,7 @@ $totalRows_parcel = mysqli_num_rows($parcel);
           </div>
            /.col -->
          
-         <div class="col-12 col-sm-6 col-md-3">
+         <div class="col-12 col-sm-6 col-md-4">
             <a href="#" style="color:black;"><div class="info-box mb-3">
               <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-archive"></i></span>
 
