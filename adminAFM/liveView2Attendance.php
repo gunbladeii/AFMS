@@ -24,9 +24,9 @@ $a=1;
 <?php if(!empty($row_Recordset2['stationCode'])) {?>    
               <h3><?php echo strtoupper($row_Recordset2['nama']);?></h3>
               <h5><span class="badge badge-primary"><?php echo strtoupper($row_Recordset2['stationName']);?></span></h5>
-              <table id="example3" class="table table-hover table-responsive-xl">
+              <table id="example6" class="table table-hover table-responsive">
                 <thead>
-                <tr style="text-align:center">
+                <tr>
                   <th>No.</th>
                   <th>Name</th>
                   <th>Date</th>
@@ -36,7 +36,7 @@ $a=1;
                 </thead>
                 <tbody>
                 <?php do {?>    
-                <tr style="text-align:center">
+                <tr>
                 <td><?php echo $a++;?></td>	
                 <td><span class="badge badge-primary"><?php echo ucwords($row_Recordset2['nama']);?></span></td>
                 <td><?php echo $date;?></td>	
@@ -59,6 +59,6 @@ $a=1;
 <script src="plugins/datatables/dataTables.bootstrap4.js"></script>
 <script>
   $(function () {
-    $("#example3").DataTable();
+    $("#example6").DataTable();
   });
 </script>
