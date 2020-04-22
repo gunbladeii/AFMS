@@ -12,7 +12,11 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
 
 $station = $row_Recordset['stationCode'];
 
-$attend = $mysqli->query("SELECT attendance.nama, attendance.noIC, attendance.date AS date, attendance.stationCode, stationName.name AS stationName, COUNT(attendance.date) AS totalDay , attendance.month FROM attendance INNER JOIN stationName ON attendance.stationCode = stationName.stationCode WHERE attendance.stationCode = '$station' GROUP BY attendance.noIC, attendance.month, attendance.year ORDER BY attendance.month, attendance.nama DESC");
+$attend = $mysqli->query("SELECT attendance.nama, attendance.noIC, attendance.date AS date, attendance.stationCode, stationName.name AS stationName, COUNT(attendance.date) AS totalDay , attendance.month, login.role FROM 
+  ((attendance 
+  INNER JOIN stationName ON attendance.stationCode = stationName.stationCode)
+  INNER JOIN login ON attendance.noIC = login.noIC) 
+  WHERE attendance.stationCode = '$station' AND role NOT LIKE 'dump' GROUP BY attendance.noIC, attendance.month, attendance.year ORDER BY attendance.month, attendance.nama DESC");
 $row_attend = mysqli_fetch_assoc($attend);
 $totalRows_attend = mysqli_num_rows($attend);
 
