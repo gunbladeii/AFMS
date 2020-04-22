@@ -33,7 +33,7 @@ $a=1;
                 <?php do {?>    
                 <tr>
                 <td><?php echo $a++;?></td>	
-	            <td> <span data-toggle="modal" data-target="#viewClockoutModal" data-whatever4="<?php echo $row_Recordset2['stationCode'];?>" class="badge badge-primary" role="button" aria-pressed="true"><?php echo strtoupper($row_Recordset2['stationName']);?></span></td>
+	            <td> <button data-toggle="modal" data-target="#viewClockoutModal" data-whatever4="<?php echo $row_Recordset2['stationCode'];?>" class="badge badge-primary" role="button" aria-pressed="true"><?php echo strtoupper($row_Recordset2['stationName']);?></button></td>
 	            <td><span class="badge badge-info"><?php echo $row_Recordset2['stationCode'];?></span></td>
 	             <td><span class="badge badge-info"><?php echo $row_Recordset2['totalUnclock'];?></span></td>
 	            </tr>
