@@ -248,7 +248,7 @@ $totalRows_parcel = mysqli_num_rows($parcel);
             </a>
           </li>
           <li class="nav-item">
-            <a href="payroll.php" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-file-invoice-dollar"></i>
               <p>
                 PV Record
@@ -322,6 +322,7 @@ $totalRows_parcel = mysqli_num_rows($parcel);
           <!-- fix for small devices only -->
           <div class="clearfix hidden-md-up"></div>
 
+          <!--
           <div class="col-12 col-sm-6 col-md-3">
             <a data-toggle="modal" data-target="#salaryModal" data-whatever="<?php echo $row_Recordset['noIC'];?>" data-whatever2="<?php echo $month;?>" style="color:black;"><div class="info-box mb-3">
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-calendar-alt"></i></span>
@@ -330,11 +331,11 @@ $totalRows_parcel = mysqli_num_rows($parcel);
                 <span class="info-box-text">Live PV</span>
                 <div id="show3"></div>
               </div>
-              <!-- /.info-box-content -->
+              
             </div></a>
-            <!-- /.info-box -->
+            
           </div>
-          <!-- /.col -->
+           /.col -->
          
          <div class="col-12 col-sm-6 col-md-3">
             <a href="#" style="color:black;"><div class="info-box mb-3">
