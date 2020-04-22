@@ -720,7 +720,7 @@ $deleteURL = $_SERVER['PHP_SELF'];
 <!-- end / parcelModal-->
 
 <!--attendanceModal-->
-<div class="modal fade" id="viewStationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+<div class="modal fade" id="viewClockoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
