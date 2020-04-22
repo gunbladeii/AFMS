@@ -48,7 +48,7 @@ $a=1;
                 </tr>
                 </tfoot>
               </table>
-<?php }?>
+<?php }else{echo '<span class="badge badge-warning">No data yet!</span>';}?>
 <script src="plugins/datatables/jquery.dataTables.js"></script>
 <script src="plugins/datatables/dataTables.bootstrap4.js"></script>
 <script>
