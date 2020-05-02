@@ -207,8 +207,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">Payslip (Supervisor)</li>
-              <a class="h3">Coming Soon</a>
+              <li class="breadcrumb-item active">Payslip (Supervisor)<a class="h3">Coming Soon</a></li>
             </ol>
           </div>
         </div>
