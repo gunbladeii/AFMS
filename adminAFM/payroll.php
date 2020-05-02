@@ -66,6 +66,8 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <th>Att. Allowance</th>
           <th>Commission</th>
           <th>Advanced</th>
+          <th>EIS</th>
+          <th>Socso</th>
 					<th>Payment Description(Opt)</th>
 					<th>ID. Type</th>
 					<th>ID. No.(IC No)</th>
@@ -97,6 +99,8 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>'.round($row['attAllow'],2).'</td>
           <td>'.round($row['comission'],2).'</td>
           <td>'.round($row['advanced'],2).'</td>
+          <td>0</td>
+          <td>0</td>
 					<td>Donation</td>
 					<td>01</td>
 					<td>'.str_replace(' ', '', $row["noIC"]).'</td>
