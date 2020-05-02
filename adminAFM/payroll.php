@@ -32,7 +32,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 
 	if (isset($_POST["download"]))
 	{
-	$sql = $mysqli->query("SELECT infoParcel.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, infoParcel.month, infoParcel.year, employeeData.employeeStatus, testSalary.grandTotal FROM
+	$sql = $mysqli->query("SELECT infoParcel.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, infoParcel.month, infoParcel.year, employeeData.employeeStatus, testSalary.basicSalary,testSalary.petrol, testSalary.handphone, testSalary.attAllow, testSalary.comission, testSalary.advanced, testSalary.grandTotal FROM
 
      ((((employeeData 
 					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
@@ -56,6 +56,16 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 					<th>Amount</th>
 					<th>Email Address</th>
 					<th>Customer Ref.(Opt)</th>
+          <th>Total Attend(Days)</th>
+          <th>Parcel Receieved</th>
+          <th>Total Undel</th>
+          <th>Total Success</th>
+          <th>Basic Salary</th>
+          <th>Fuel</th>
+          <th>Handphone</th>
+          <th>Att. Allowance</th>
+          <th>Commission</th>
+          <th>Advanced</th>
 					<th>Payment Description(Opt)</th>
 					<th>ID. Type</th>
 					<th>ID. No.(IC No)</th>
@@ -77,6 +87,16 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 					<td></td>
 					<td>'.$row['emel'].'</td>
 					<td>'.round($row['grandTotal'],2).'</td>
+          <td>'.$row["totalAttend"].'</td>
+          <td>'.$row["totalParcel"].'</td>
+          <td>'.$row["totalFail"].'</td>
+          <td>'.$row["totalSuccess"].'</td>
+          <td>'.round($row['basicSalary'],2).'</td>
+          <td>'.round($row['petrol'],2).'</td>
+          <td>'.round($row['handphone'],2).'</td>
+          <td>'.round($row['attAllow'],2).'</td>
+          <td>'.round($row['comission'],2).'</td>
+          <td>'.round($row['advanced'],2).'</td>
 					<td>Donation</td>
 					<td>01</td>
 					<td>'.str_replace(' ', '', $row["noIC"]).'</td>

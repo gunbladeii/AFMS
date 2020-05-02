@@ -53,10 +53,10 @@
     /*kira basic attAllow*/
     $attAllow=$FS['attAllow'];
     $formAttAllow = 50;
-    /*end kira basic commision*/
+    /*end kira basic attAllow*/
     
     /*kira basic epf*/
-    $totalEarning1 = round($formBasicSalary + $formHandphone + $formPetrol + $formCommision3,2);
+    $totalEarning1 = round($formBasicSalary + $formHandphone + $formPetrol + $formCommision3 + $formAttAllow,2);
     $totalEarning2 = round($formBasicSalary + $formHandphone + $formPetrol + $formAttAllow + $formCommision3,2);
     $epf=round(0.11 * $totalEarning2,2);
     /*end kira basic epf*/
