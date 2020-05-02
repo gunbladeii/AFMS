@@ -202,12 +202,12 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Payslip (Supervisor)</h1>
+            <h1>Payslip (Supervisor)<a class="h3">Coming Soon</a></h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">Payslip (Supervisor)<a class="h3">Coming Soon</a></li>
+              <li class="breadcrumb-item active">Payslip (Supervisor)</li>
             </ol>
           </div>
         </div>
