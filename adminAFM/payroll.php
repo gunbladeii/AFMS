@@ -32,7 +32,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 
 	if (isset($_POST["download"]))
 	{
-	$sql = $mysqli->query("SELECT infoParcel.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, COUNT(infoParcel.date) AS totalAttend, testSalary.receieved AS totalParcel, testSalary.fail AS totalFail, testSalary.totalParcel AS totalSuccess, infoParcel.month, infoParcel.year, employeeData.employeeStatus, testSalary.basicSalary,testSalary.petrol, testSalary.handphone, testSalary.attAllow, testSalary.comission, testSalary.advanced, testSalary.grandTotal FROM
+	$sql = $mysqli->query("SELECT infoParcel.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, testSalary.totalAttend, testSalary.receieved AS totalParcel, testSalary.fail AS totalFail, testSalary.totalParcel AS totalSuccess, infoParcel.month, infoParcel.year, employeeData.employeeStatus, testSalary.basicSalary,testSalary.petrol, testSalary.handphone, testSalary.attAllow, testSalary.comission, testSalary.advanced, testSalary.grandTotal FROM
 
      ((((employeeData 
 					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
