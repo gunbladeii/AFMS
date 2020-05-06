@@ -337,7 +337,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
         </button>
       </div>
       <div class="modal-body">
-          <div class="dash1"></div>
+          <div class="dash2"></div>
       </div>
       </div>
     </div>
@@ -356,7 +356,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
         </button>
       </div>
       <div class="modal-body">
-          <div class="dash2"></div>
+          <div class="dash1"></div>
       </div>
       </div>
     </div>
