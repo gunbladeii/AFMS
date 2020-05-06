@@ -337,7 +337,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
         </button>
       </div>
       <div class="modal-body">
-          <div class="dash"></div>
+          <div class="dash1"></div>
       </div>
       </div>
     </div>
@@ -356,7 +356,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
         </button>
       </div>
       <div class="modal-body">
-          <div class="dash"></div>
+          <div class="dash2"></div>
       </div>
       </div>
     </div>
@@ -486,7 +486,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 cache: false,
                 success: function (data) {
                     console.log(data);
-                    modal.find('.dash').html(data);
+                    modal.find('.dash1').html(data);
                 },
                 error: function(err) {
                     console.log(err);
@@ -508,7 +508,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 cache: false,
                 success: function (data) {
                     console.log(data);
-                    modal.find('.dash').html(data);
+                    modal.find('.dash2').html(data);
                 },
                 error: function(err) {
                     console.log(err);
