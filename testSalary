@@ -1,0 +1,27 @@
+SELECT 
+month, year,nama,noIC,stationCode,
+SUM(itemCode - fail) AS totalParcel,
+operationDay,
+COUNT(date) AS totalAttend,
+(SUM(itemCode - fail)/COUNT(date)) AS avgDel,
+(COUNT(date) * 30) AS minDel,
+(SUM(itemCode - fail) - (COUNT(date) * 30)) AS delComm,
+(1.5*(SUM(itemCode - fail))) AS comission,
+(100*(COUNT(date)/26)) AS petrol,
+(50*(COUNT(date)/26)) AS handphone,
+IF(COUNT(date)>24,50,0) AS attAllow,
+
+
+ 
+
+
+
+
+(((1170*(COUNT(date)/26)) + (100*(COUNT(date)/26)) + (50*(COUNT(date)/26)) + IF(COUNT(date)>24,50,0) +(1.5*(SUM(itemCode - fail) - (30*COUNT(date)))))-400) AS grandTotal,
+SUM(itemCode) AS receieved,
+SUM(fail) AS fail,
+400 AS advanced
+FROM 
+infoParcel 
+GROUP BY noIC, month, year 
+ORDER BY `totalAttend`  DESC

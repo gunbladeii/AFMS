@@ -102,7 +102,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>'.round($row['handphone'],2).'</td>
           <td>'.round($row['attAllow'],2).'</td>
           <td>'.round($row['comission'],2).'</td>
-          <td>0</td>
+          <td>=SUM(T4:AA4)</td>
           <td>0</td>
           <td>0</td>
           <td>0</td>
