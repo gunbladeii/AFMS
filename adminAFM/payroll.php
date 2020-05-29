@@ -13,6 +13,7 @@ $row_Recordset = mysqli_fetch_assoc($Recordset);
 $totalRows_Recordset = mysqli_num_rows($Recordset);
 $a=1;
 $d=1;
+$e=2;
 
 date_default_timezone_set("Asia/Kuala_Lumpur");
 $date = date('d-m-Y');
@@ -92,7 +93,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 					<td>'.str_replace(' ', '', $row["accNum"]).'</td>
 					<td></td>
 					<td>'.$row['emel'].'</td>
-					<td>'.round($row['grandTotal'],2).'</td>
+					<td>=SUM(O'.$e++.':S'.$e++.')</td>
           <td>'.$row["totalAttend"].'</td>
           <td>'.$row["totalParcel"].'</td>
           <td>'.$row["totalFail"].'</td>
@@ -102,7 +103,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>'.round($row['handphone'],2).'</td>
           <td>'.round($row['attAllow'],2).'</td>
           <td>'.round($row['comission'],2).'</td>
-          <td>=SUM(T4:AA4)</td>
+          <td>0</td>
           <td>0</td>
           <td>0</td>
           <td>0</td>
