@@ -1,5 +1,5 @@
 SELECT 
-month, year,nama,noIC,stationCode,
+month, year,nama,noIC,role,stationCode,
 SUM(itemCode - fail) AS totalParcel,
 operationDay,
 COUNT(date) AS totalAttend,
@@ -10,14 +10,7 @@ COUNT(date) AS totalAttend,
 (100*(COUNT(date)/26)) AS petrol,
 (50*(COUNT(date)/26)) AS handphone,
 IF(COUNT(date)>24,50,0) AS attAllow,
-
-
- 
-
-
-
-
-(((1170*(COUNT(date)/26)) + (100*(COUNT(date)/26)) + (50*(COUNT(date)/26)) + IF(COUNT(date)>24,50,0) +(1.5*(SUM(itemCode - fail) - (30*COUNT(date)))))-400) AS grandTotal,
+IF(role = 'ss',2000,0) AS comFee,
 SUM(itemCode) AS receieved,
 SUM(fail) AS fail,
 400 AS advanced
