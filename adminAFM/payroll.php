@@ -33,14 +33,13 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 
 	if (isset($_POST["download"]))
 	{
-	$sql = $mysqli->query("SELECT infoParcel.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, testSalary.totalAttend, testSalary.receieved AS totalParcel, testSalary.fail AS totalFail, testSalary.totalParcel AS totalSuccess, infoParcel.month, infoParcel.year, employeeData.employeeStatus, testSalary.basicSalary,testSalary.petrol, testSalary.handphone, testSalary.attAllow, testSalary.comission, testSalary.advanced, testSalary.grandTotal FROM
+	$sql = $mysqli->query("SELECT testSalary.role,testSalary.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, testSalary.totalAttend, testSalary.receieved AS totalParcel, testSalary.fail AS totalFail, testSalary.totalParcel AS totalSuccess, testSalary.month, testSalary.year, employeeData.employeeStatus, testSalary.operationDay,testSalary.avgDel,testSalary.minDel,testSalary.delComm,testSalary.comFee,testSalary.petrol, testSalary.handphone, testSalary.attAllow, testSalary.comission, testSalary.advanced, testSalary.grandTotal FROM
 
      ((((employeeData 
 					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
-					INNER JOIN infoParcel ON employeeData.noIC = infoParcel.noIC)
 					INNER JOIN attendance ON employeeData.noIC = attendance.noIC)
           INNER JOIN testSalary ON employeeData.noIC = testSalary.noIC)			
-					WHERE infoParcel.year='$year' AND infoParcel.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY infoParcel.noIC,infoParcel.month, infoParcel.year ORDER BY employeeData.nama ASC"); 					
+					WHERE testSalary.year='$year' AND testSalary.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY testSalary.noIC,testSalary.month, testSalary.year ORDER BY employeeData.nama ASC"); 					
 
 	if (mysqli_num_rows($sql) > 0)
 		{
@@ -48,34 +47,48 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 			<table class="table" border="1">
 				<tr>
 					<th>No.</th>
-					<th>Record Type</th>
-					<th>Invoice Ref.</th>
-					<th>Invoice Date</th>
-					<th>Invoice Description</th>
-					<th>Payee Bank Code</th>
-					<th>Payee Account</th>
-					<th>Amount</th>
-					<th>Email Address</th>
-					<th>Customer Ref.(Opt)</th>
-          <th>Total Attend(Days)</th>
-          <th>Parcel Receieved</th>
-          <th>Total Undel</th>
-          <th>Total Success</th>
-          <th>Basic Salary</th>
+					<th>Name</th>
+					<th>IC</th>
+					<th>Poslaju Branch</th>
+					<th>PIC/Rider</th>
+					<th>Total Parcel (Success)</th>
+					<th>Comm</th>
+					<th>Fuel</th>
+					<th>Phone</th>
+					<th>Bank Name</th>
+          <th>Bank Code</th>
+          <th>Account No</th>
+          <th>Branch Operating Days</th>
+          <th>No. of Days</th>
+          <th>Advance Working Days 1 -15th</th>
+          <th>Average Delivery Per Day</th>
+          <th>Min Delivery Requirement</th>
+          <th>Delivery For Comission</th>
+          <th>Commission / Fees</th>
           <th>Fuel</th>
-          <th>Handphone</th>
-          <th>Att. Allowance</th>
-          <th>Commission</th>
+          <th>Phone</th>
+          <th>Fix Comission (SV)</th>
+          <th>OT</th>
+          <th>Delivery Comission</th>
           <th>Refund Bag Deposit</th>
-          <th>Bag Deposit(deduct)</th>
+          <th>Attendance</th>
+					<th>Gross</th>
+					<th>Bag Deposit (RM)</th>
+					<th>Advance 15th</th>
           <th>Penalty</th>
           <th>Incomplete POD</th>
-          <th>Advanced</th>
-          <th>EIS</th>
-          <th>Socso</th>
-					<th>Payment Description(Opt)</th>
-					<th>ID. Type</th>
-					<th>ID. No.(IC No)</th>
+          <th>Over Payment</th>
+          <th>NOPAY Leave</th>
+          <th>EPF Employee</th>
+          <th>SOCSO Employee</th>
+          <th>EIS Employee</th>
+          <th>Total</th>
+          <th>EPF Employer</th>
+          <th>Socso Employer</th>
+          <th>EIS Employer</th>
+          <th>HRDF Employer</th>
+          <th>Month</th>
+          <th>Remarks</th>
 					
 					
 				</tr>		
@@ -85,34 +98,48 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 			$output .='
 				<tr>
 					<td>'.$d++.'</td>
-					<td>P</td>
-					<td>xxxx-xxxx-xxxx</td>
-					<td>'.$date.'</td>
 					<td>'.ucwords(strtolower($row["nama"])).'</td>
-					<td>'.$row["codeBank"].'</td>
-					<td>'.str_replace(' ', '', $row["accNum"]).'</td>
-					<td></td>
-					<td>'.$row['emel'].'</td>
-					<td>=SUM(O'.$e++.':S'.$e++.')</td>
-          <td>'.$row["totalAttend"].'</td>
-          <td>'.$row["totalParcel"].'</td>
-          <td>'.$row["totalFail"].'</td>
-          <td>'.$row["totalSuccess"].'</td>
-          <td>'.round($row['basicSalary'],2).'</td>
-          <td>'.round($row['petrol'],2).'</td>
-          <td>'.round($row['handphone'],2).'</td>
-          <td>'.round($row['attAllow'],2).'</td>
-          <td>'.round($row['comission'],2).'</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>'.round($row['advanced'],2).'</td>
-          <td>0</td>
-          <td>0</td>
-					<td>Donation</td>
-					<td>01</td>
 					<td>'.str_replace(' ', '', $row["noIC"]).'</td>
+          <td>'.$row["stationCode"].'</td>
+          <td>'.$row["role"].'</td>
+          <td>'.$row["totalSuccess"].'</td>
+          <td>1.50</td>
+          <td>100.00</td>
+          <td>50.00</td>
+          <td>'.$row["bankName"].'</td>
+          <td>'.$row["codeBank"].'</td>
+          <td>'.str_replace(' ', '', $row["accNum"]).'</td>
+          <td>'.$row['operationDay'].'</td>
+          <td>'.$row['totalAttend'].'</td>
+          <td>=N'.$e.'-O'.$e.'</td>
+          <td>=+G'.$e.'-O'.$e.'</td>
+          <td>=+(O'.$e.'*30)</td>
+          <td>=+G'.$e.'-R'.$e.'</td>
+          <td>=ROUND((G'.$e.'*H'.$e.'),2)</td>
+          <td>=+ROUND(O'.$e.'/26*I'.$e.',2)</td>
+          <td>=+ROUND(O'.$e.'/26*J'.$e.',2)</td>
+          <td>'.if($row["role"]=="SS"){echo 2000;}else{echo 0;}.'</td>
+          <td>'.if($row["role"]=="SS"){echo "=ROUND((11.5*14.43)+(0*19.23),2)";}else{echo 0;}.'</td>
+          <td>'.if($row["role"]=="rider"){echo "=ROUND(((0*9.52)+(0*12.7)),2)";}else{echo 0;}.'</td>
+          <td>'.$row['attAllow'].'</td>
+          <td>=SUM(T'.$e.':AA'.$e.')</td>
+          <td></td>
+          <td>=VLOOKUP(D2,"D:\Users\acer\Desktop\Payroll\Advance\16. Apr2020\[APRIL 2020 ADVANCE POS LAJU.xlsx]Summary ADV APRIL 2020"!$D:$N,11,FALSE)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>=LOOKUP(AR2,"EPF table"!$B$9:$C$754,"EPF table"!$E$9:$E$754)</td>
+          <td>=LOOKUP(AS2,"socso table"!$B$9:$C$54,"socso table"!$E$9:$E$54)</td>
+          <td>=LOOKUP(AT2,"eis table"!$B$9:$C$54,"eis table"!$E$9:$E$54)</td>
+          <td>=AB2-AC2-AD2-AE2-AG2-AH2-AI2-AJ2-AK2-AF2</td>
+          <td>=LOOKUP(AR2,"EPF table"!$B$9:$C$754,"EPF table"!$D$9:$D$754)</td>
+          <td>=LOOKUP(AS2,"socso table"!$B$9:$C$54,"socso table"!$D$9:$D$54)</td>
+          <td>=LOOKUP(AS2,"eis table"!$B$9:$C$54,"eis table"!$D$9:$D$54)</td>
+          <td>=+ROUND(AU'.$e.'*0.01,2)</td>
+					<td>'.$date.'</td>
+          <td></td>
+					
 				</tr>			
 				';		
 			}
