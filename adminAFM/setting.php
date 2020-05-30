@@ -755,11 +755,11 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <td>
                     <div class="input-group mb-3">
                           <select name="stationCode" class="custom-select browser-default" required>
-                            <option value="" selected>Select Station Code..</option>
+                            <option value="">Pick your Station Code</option>
+                            <option value="<?php echo $row_Recordset2['stationCode']?>" selected><?php echo $row_Recordset2['stationCode']?></option>
                             <?php do{?>
-                            <option value="<?php echo $row_Recordset2['stationCode']?>" ><?php echo $row_Recordset2['stationCode']?></option>
-                            <?php } while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2)); $rows = mysqli_num_rows($Recordset2);
-                            if($rows > 0) {mysqli_data_seek($Recordset2, 0);$row_Recordset2 = mysqli_fetch_assoc($Recordset2);} ?>
+                            <option value="<?php echo $row_Recordset2['stationCode'];?>"><?php echo $row_Recordset2['stationCode'];?></option>
+                            <?php }while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2))?>
                           </select>
                             <div class="input-group-append input-group-text">
                               <span class="fas fa-motorcycle"></span>
