@@ -24,6 +24,29 @@ $e7=2;
 $e8=2;
 $e9=2;
 $e10=2;
+$e11=2;
+$e12=2;
+$e13=2;
+$e14=2;
+$e15=2;
+$e16=2;
+$e17=2;
+$e18=2;
+$e19=2;
+$e20=2;
+$e21=2;
+$e22=2;
+$e23=2;
+$e24=2;
+$e25=2;
+$e26=2;
+$e27=2;
+$e28=2;
+$e29=2;
+$e30=2;
+$e31=2;
+$e32=2;
+$e33=2;
 
 date_default_timezone_set("Asia/Kuala_Lumpur");
 $date = date('d-m-Y');
@@ -121,34 +144,34 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>'.str_replace(' ', '', $row["accNum"]).'</td>
           <td>'.$row['operationDay'].'</td>
           <td>'.$row['totalAttend'].'</td>
-          <td>=N'.$e++.'-O'.$e++.'</td>
-          <td>=+G'.$e1++.'-O'.$e1++.'</td>
-          <td>=+(O'.$e2++.'*30)</td>
-          <td>=+G'.$e3++.'-R'.$e3++.'</td>
-          <td>=ROUND((G'.$e4++.'*H'.$e4++.'),2)</td>
-          <td>=+ROUND(O'.$e5++.'/26*I'.$e5++.',2)</td>
-          <td>=+ROUND(O'.$e6++.'/26*J'.$e6++.',2)</td>
+          <td>=M'.$e++.'-N'.$e++.'</td>
+          <td>=+F'.$e1++.'-N'.$e2++.'</td>
+          <td>=+(N'.$e3++.'*30)</td>
+          <td>=+F'.$e4++.'-Q'.$e5++.'</td>
+          <td>=ROUND((F'.$e6++.'*G'.$e7++.'),2)</td>
+          <td>=+ROUND(N'.$e8++.'/26*H'.$e9++.',2)</td>
+          <td>=+ROUND(N'.$e10++.'/26*I'.$e11++.',2)</td>
           <td>'.$row["comFee"].'</td>
           <td>'.$row["ot"].'</td>
           <td>=ROUND(((0*9.52)+(0*12.7)),2)</td>
+          <td></td>
           <td>'.$row['attAllow'].'</td>
-          <td>=SUM(T'.$e7++.':AA'.$e7++.')</td>
+          <td>=SUM(S'.$e12++.':Z'.$e13++.')</td>
           <td></td>
-          <td>=VLOOKUP(D2,"D:\Users\acer\Desktop\Payroll\Advance\16. Apr2020\[APRIL 2020 ADVANCE POS LAJU.xlsx]Summary ADV APRIL 2020"!$D:$N,11,FALSE)</td>
-          <td></td>
-          <td></td>
+          <td>=VLOOKUP(D2,'D:\Users\acer\Desktop\Payroll\Advance\16. Apr2020\[APRIL 2020 ADVANCE POS LAJU.xlsx]Summary ADV APRIL 2020'!$D:$N,11,FALSE)</td>
           <td></td>
           <td></td>
-          <td>=LOOKUP(AR2,"EPF table"!$B$9:$C$754,"EPF table"!$e++$9:$e++$754)</td>
-          <td>=LOOKUP(AS2,"socso table"!$B$9:$C$54,"socso table"!$e++$9:$e++$54)</td>
-          <td>=LOOKUP(AT2,"eis table"!$B$9:$C$54,"eis table"!$e++$9:$e++$54)</td>
-          <td>=AB2-AC2-AD2-AE2-AG2-AH2-AI2-AJ2-AK2-AF2</td>
-          <td>=LOOKUP(AR2,"EPF table"!$B$9:$C$754,"EPF table"!$D$9:$D$754)</td>
-          <td>=LOOKUP(AS2,"socso table"!$B$9:$C$54,"socso table"!$D$9:$D$54)</td>
-          <td>=LOOKUP(AS2,"eis table"!$B$9:$C$54,"eis table"!$D$9:$D$54)</td>
-          <td>=+ROUND(AU'.$e8++.'*0.01,2)</td>
+          <td></td>
+          <td></td>
+          <td>=LOOKUP(AQ'.$e25++.','EPF table'!$B$9:$C$754,'EPF table'!$e++$9:$e++$754)</td>
+          <td>=LOOKUP(AR'.$e26++.','socso table'!$B$9:$C$54,'socso table'!$e++$9:$e++$54)</td>
+          <td>=LOOKUP(AS'.$e27++.','eis table'!$B$9:$C$54,'eis table'!$e++$9:$e++$54)</td>
+          <td>=AA'.$e14++.'-AB'.$e15++.'-AC'.$e16++.'-AD'.$e17++.'-AF'.$e18++.'-AG'.$e19++.'-AH'.$e20++.'-AI'.$e21++.'-AJ'.$e22++.'-AE'.$e23++.'</td>
+          <td>=LOOKUP(AQ'.$e28++.','EPF table'!$B$9:$C$754,'EPF table'!$D$9:$D$754)</td>
+          <td>=LOOKUP(AR'.$e29++.','socso table'!$B$9:$C$54,'socso table'!$D$9:$D$54)</td>
+          <td>=LOOKUP(AR'.$e30++.','eis table'!$B$9:$C$54,'eis table'!$D$9:$D$54)</td>
+          <td>=+ROUND(AT'.$e24++.'*0.01,2)</td>
 					<td>'.$date.'</td>
-          <td></td>
           <td></td>
 					
 				</tr>			
