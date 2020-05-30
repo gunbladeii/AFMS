@@ -149,8 +149,8 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>=+(N'.$e3++.'*30)</td>
           <td>=+F'.$e4++.'-Q'.$e5++.'</td>
           <td>=ROUND((F'.$e6++.'*G'.$e7++.'),2)</td>
-          <td>=+ROUND(N'.$e8++.'/26*H'.$e9++.',2)</td>
-          <td>=+ROUND(N'.$e10++.'/26*I'.$e11++.',2)</td>
+          <td>'.$row["petrol"].'</td>
+          <td>'.$row["handphone"].'</td>
           <td>'.$row["comFee"].'</td>
           <td>'.$row["ot"].'</td>
           <td>=ROUND(((0*9.52)+(0*12.7)),2)</td>
