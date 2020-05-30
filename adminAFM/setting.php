@@ -1,6 +1,9 @@
 <?php require('Connection/iBerkat.php'); ?>
 <?php session_start();
 
+date_default_timezone_set("Asia/Kuala_Lumpur");
+$year = date('Y');
+$month = $_POST['month'];
 $name = $_POST['name'];
 $stationCode = $_POST['stationCode'];
 
@@ -8,6 +11,12 @@ if (isset($_POST["submit"])){
   $mysqli->query("INSERT INTO stationName (name, stationCode) VALUES ('$name', '$stationCode')");
   header("Location: setting.php");
 }
+
+if (isset($_POST['submit2'])) {
+      $mysqli->query("UPDATE `infoParcel` SET `operationDay` = '$operationDay' WHERE `stationCode` = '$stationCode' AND `month` = '$month' AND `year` = '$year'");
+      
+      header("location:setting.php");
+    }
 
 $colname_Recordset = "-1";
 if (isset($_SESSION['MM_Username'])) {
@@ -22,6 +31,10 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
 $Recordset2 = $mysqli->query("SELECT * FROM stationName");
 $row_Recordset2 = mysqli_fetch_assoc($Recordset2);
 $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
+
+$Recordset3 = $mysqli->query("SELECT * FROM stationName ORDER BY month, year DESC");
+$row_Recordset3 = mysqli_fetch_assoc($Recordset3);
+$totalRows_Recordset3 = mysqli_num_rows($Recordset3);
 
 ?>
 <!DOCTYPE html>
@@ -625,7 +638,8 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-md-12">
+
+        <div class="col-md-12">
           <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
@@ -643,7 +657,7 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
               <!-- /.card-header -->
               <div class="card-body p-0">
                 <div class="table-responsive">
-                <form action="<?php echo $editFormAction; ?>" method="post" name="prosesDaftar" enctype="multipart/form-data">
+                <form action="setting.php" method="post" name="prosesDaftar" enctype="multipart/form-data">
                   <table class="table m-0">
                     <thead>
                     <tr>
@@ -708,7 +722,116 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
             <!-- /.card -->
           </div>
           <!-- /.col -->
-          
+
+          <!--Update operation days-->
+          <div class="col-md-12">
+          <!-- TABLE: LATEST ORDERS -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Update Operation Days</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
+                  <table class="table m-0">
+                    <thead>
+                    <tr>
+                      <th>Station Code</th>
+                      <th>Month</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <td>
+                    <div class="input-group mb-3">
+                          <select name="stationCode" class="custom-select browser-default" required>
+                            <option value="" selected>Select Station Code..</option>
+                            <?php do{?>
+                            <option value="<?php echo $row_Recordset2['stationCode']?>" ><?php echo $row_Recordset2['stationCode']?></option>
+                            <?php } while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2)); $rows = mysqli_num_rows($Recordset2);
+                            if($rows > 0) {mysqli_data_seek($Recordset2, 0);$row_Recordset2 = mysqli_fetch_assoc($Recordset2);} ?>
+                          </select>
+                            <div class="input-group-append input-group-text">
+                              <span class="fas fa-motorcycle"></span>
+                            </div>
+                     </div>
+                     </td>
+                      <td>
+                     <div class="input-group mb-3">
+                           <select name="month" class="custom-select browser-default" required>
+                              <option value="" selected>Pick Month</option>
+                              <option value="01" >01</option>
+                              <option value="02" >02</option>
+                              <option value="03" >03</option>
+                              <option value="04" >04</option>
+                              <option value="05" >05</option>
+                              <option value="06" >06</option>
+                              <option value="07" >07</option>
+                              <option value="08" >08</option>
+                              <option value="09" >09</option>
+                              <option value="10" >10</option>
+                              <option value="11" >11</option>
+                              <option value="12" >12</option>
+                           </select>
+                                <div class="input-group-append input-group-text">
+                                  <span class="fas fa-calendar-alt"></span>
+                                </div>
+                     </div>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <input type="hidden" name="year" value="<?php echo $year;?>">
+                </div>
+                <!-- /.table-responsive -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix">
+                <button type="submit" name="submit2" class="btn btn-sm btn-success float-right">Update</button>
+              </div>
+              </form>
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Operation Days by Month and Station</h3>
+                </div>
+                <div class="table-responsive">
+                   <table class="table m-0 table-hover table-sm">
+                    <thead>
+                    <tr>
+                      <th><div class="badge badge-info">Station Code</div></th>
+                      <th><div class="badge badge-info">Station Name</div></th>
+                      <th><div class="badge badge-info">Month</div></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php do {?>
+                    <tr>
+                      <td><?php echo $row_Recordset3['stationCode'];?></td>
+                      <td><?php echo $row_Recordset3['name'];?></td>
+                      <td><?php echo $row_Recordset3['Month'];?></td>
+                    </tr>
+                    <?php }while ($row_Recordset3 = mysqli_fetch_assoc($Recordset3))?>
+                    </tbody>
+                  </table> 
+                </div>
+              </div>
+              <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+
+
+
         <div class="col-md-12">
           <!-- TABLE: LATEST ORDERS -->
             <div class="card">
@@ -728,7 +851,7 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
               <!-- /.card-header -->
               <div class="card-body p-0">
                 <div class="table-responsive">
-                <form action="<?php echo $editFormAction; ?>" method="post" name="prosesDaftar2" enctype="multipart/form-data">
+                <form action="setting.php" method="post" name="prosesDaftar2" enctype="multipart/form-data">
             <!-- tools box -->
             <!-- /.card-header -->
             <div class="card-body pad">
