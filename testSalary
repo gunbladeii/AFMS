@@ -20,6 +20,7 @@ IF(role = 'ss',"=LOOKUP(AQ'.$e28++.','EPF table'!$B$9:$C$754,'EPF table'!$D$9:$D
 IF(role = 'ss',"=LOOKUP(AR'.$e29++.','socso table'!$B$9:$C$54,'socso table'!$D$9:$D$54)",0) AS socso2,
 IF(role = 'ss',"=LOOKUP(AR'.$e30++.','eis table'!$B$9:$C$54,'eis table'!$D$9:$D$54)",0) AS eis2,
 IF(role = 'ss',"=+ROUND(AT'.$e24++.'*0.01,2)",0) AS hrdf,
+IF(role = 'ss',"=VLOOKUP(D'.$e31++.','D:\Users\acer\Desktop\Payroll\Advance\16. Apr2020\[APRIL 2020 ADVANCE POS LAJU.xlsx]Summary ADV APRIL 2020'!$D:$N,11,FALSE)",0) AS hrdf,
 
 SUM(itemCode) AS receieved,
 SUM(fail) AS fail,
