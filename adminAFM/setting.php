@@ -32,6 +32,10 @@ $Recordset2 = $mysqli->query("SELECT * FROM stationName");
 $row_Recordset2 = mysqli_fetch_assoc($Recordset2);
 $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 
+$Recordset4 = $mysqli->query("SELECT * FROM stationName");
+$row_Recordset4 = mysqli_fetch_assoc($Recordset4);
+$totalRows_Recordset4 = mysqli_num_rows($Recordset4);
+
 $Recordset3 = $mysqli->query("SELECT infoParcel.stationCode,infoParcel.month,infoParcel.year,infoParcel.operationDay,stationName.name AS name FROM infoParcel INNER JOIN stationName ON stationName.stationCode = infoParcel.stationCode GROUP BY stationCode,month,year ORDER BY month, year DESC");
 $row_Recordset3 = mysqli_fetch_assoc($Recordset3);
 $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
@@ -757,8 +761,8 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                           <select name="stationCode" class="custom-select browser-default" required>
                             <option value="">Pick your Station Code</option>
                             <?php do{?>
-                            <option value="<?php echo $row_Recordset2['stationCode'];?>"><?php echo $row_Recordset2['stationCode'];?></option>
-                            <?php }while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2))?>
+                            <option value="<?php echo $row_Recordset4['stationCode'];?>"><?php echo $row_Recordset4['stationCode'];?></option>
+                            <?php }while ($row_Recordset4 = mysqli_fetch_assoc($Recordset4))?>
                           </select>
                             <div class="input-group-append input-group-text">
                               <span class="fas fa-motorcycle"></span>
