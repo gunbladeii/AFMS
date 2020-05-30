@@ -66,7 +66,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 
 	if (isset($_POST["download"]))
 	{
-	$sql = $mysqli->query("SELECT testSalary.role,testSalary.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, testSalary.totalAttend, testSalary.receieved AS totalParcel, testSalary.fail AS totalFail, testSalary.totalParcel AS totalSuccess, testSalary.month, testSalary.year, employeeData.employeeStatus, testSalary.operationDay,testSalary.avgDel,testSalary.ot,testSalary.minDel,testSalary.delComm,testSalary.comFee,testSalary.petrol, testSalary.handphone, testSalary.attAllow, testSalary.comission, testSalary.advanced FROM
+	$sql = $mysqli->query("SELECT testSalary.role,testSalary.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, testSalary.totalAttend, testSalary.receieved AS totalParcel, testSalary.fail AS totalFail, testSalary.totalParcel AS totalSuccess, testSalary.month, testSalary.year, employeeData.employeeStatus, testSalary.operationDay,testSalary.avgDel,testSalary.ot,testSalary.minDel,testSalary.delComm,testSalary.comFee,testSalary.petrol, testSalary.handphone, testSalary.attAllow, testSalary.comission, testSalary.advanced,testSalary.epf,testSalary.eis,testSalary.socso,testSalary.epf2,testSalary.eis2,testSalary.socso2,testSalary.hrdf FROM
 
      (((employeeData 
 					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
@@ -163,14 +163,14 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td></td>
           <td></td>
           <td></td>
-          <td>=LOOKUP(AQ'.$e25++.','EPF table'!$B$9:$C$754,'EPF table'!$e++$9:$e++$754)</td>
-          <td>=LOOKUP(AR'.$e26++.','socso table'!$B$9:$C$54,'socso table'!$e++$9:$e++$54)</td>
-          <td>=LOOKUP(AS'.$e27++.','eis table'!$B$9:$C$54,'eis table'!$e++$9:$e++$54)</td>
+          <td>'.$row["epf"].'</td>
+          <td>'.$row["socso"].'</td>
+          <td>'.$row["eis"].'</td>
           <td>=AA'.$e14++.'-AB'.$e15++.'-AC'.$e16++.'-AD'.$e17++.'-AF'.$e18++.'-AG'.$e19++.'-AH'.$e20++.'-AI'.$e21++.'-AJ'.$e22++.'-AE'.$e23++.'</td>
-          <td>=LOOKUP(AQ'.$e28++.','EPF table'!$B$9:$C$754,'EPF table'!$D$9:$D$754)</td>
-          <td>=LOOKUP(AR'.$e29++.','socso table'!$B$9:$C$54,'socso table'!$D$9:$D$54)</td>
-          <td>=LOOKUP(AR'.$e30++.','eis table'!$B$9:$C$54,'eis table'!$D$9:$D$54)</td>
-          <td>=+ROUND(AT'.$e24++.'*0.01,2)</td>
+          <td>'.$row["epf2"].'</td>
+          <td>'.$row["socso2"].'</td>
+          <td>'.$row["eis2"].'</td>
+          <td>'.$row["hrdf"].'</td>
 					<td>'.$date.'</td>
           <td></td>
 					
