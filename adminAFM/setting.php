@@ -32,7 +32,7 @@ $Recordset2 = $mysqli->query("SELECT * FROM stationName");
 $row_Recordset2 = mysqli_fetch_assoc($Recordset2);
 $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 
-$Recordset3 = $mysqli->query("SELECT * FROM stationName ORDER BY month, year DESC");
+$Recordset3 = $mysqli->query("SELECT * FROM infoParcel GROUP BY stationCode,month,year ORDER BY month, year DESC");
 $row_Recordset3 = mysqli_fetch_assoc($Recordset3);
 $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
 
