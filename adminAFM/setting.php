@@ -756,7 +756,6 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <div class="input-group mb-3">
                           <select name="stationCode" class="custom-select browser-default" required>
                             <option value="">Pick your Station Code</option>
-                            <option value="<?php echo $row_Recordset2['stationCode']?>" selected><?php echo $row_Recordset2['stationCode']?></option>
                             <?php do{?>
                             <option value="<?php echo $row_Recordset2['stationCode'];?>"><?php echo $row_Recordset2['stationCode'];?></option>
                             <?php }while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2))?>
