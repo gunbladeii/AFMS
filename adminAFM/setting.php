@@ -803,7 +803,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 <h3 class="card-title">Operation Days by Month and Station</h3>
                 </div>
                 <div class="table-responsive">
-                   <table class="table m-0 table-hover table-sm">
+                   <table id="example4"class="table m-0 table-hover table-sm">
                     <thead>
                     <tr>
                       <th><div class="badge badge-info">Station Code</div></th>
@@ -935,6 +935,13 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
 <script src="plugins/select2/js/select2.full.min.js"></script>
 <!-- InputMask -->
 <script src="plugins/inputmask/jquery.inputmask.bundle.js"></script>
+<script src="plugins/datatables/jquery.dataTables.js"></script>
+<script src="plugins/datatables/dataTables.bootstrap4.js"></script>
+<script>
+  $(function () {
+    $("#example4").DataTable();
+  });
+</script>
 <script type="text/javascript">
   $(function() {
      'use strict';
