@@ -139,6 +139,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>=+ROUND(AU'.$e.'*0.01,2)</td>
 					<td>'.$date.'</td>
           <td></td>
+          <td></td>
 					
 				</tr>			
 				';		
