@@ -11,6 +11,7 @@ COUNT(date) AS totalAttend,
 (50*(COUNT(date)/26)) AS handphone,
 IF(COUNT(date)>24,50,0) AS attAllow,
 IF(role = 'ss',2000,0) AS comFee,
+IF(role = 'ss','=ROUND((11.5*14.43)+(0*19.23),2)',0) AS ot,
 SUM(itemCode) AS receieved,
 SUM(fail) AS fail,
 400 AS advanced
