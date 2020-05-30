@@ -6,6 +6,7 @@ $year = date('Y');
 $month = $_POST['month'];
 $name = $_POST['name'];
 $stationCode = $_POST['stationCode'];
+$operationDay = $_POST['operationDay'];
 
 if (isset($_POST["submit"])){
   $mysqli->query("INSERT INTO stationName (name, stationCode) VALUES ('$name', '$stationCode')");
