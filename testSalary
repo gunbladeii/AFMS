@@ -12,6 +12,15 @@ COUNT(date) AS totalAttend,
 IF(COUNT(date)>24,50,0) AS attAllow,
 IF(role = 'ss',2000,0) AS comFee,
 IF(role = 'ss','=ROUND((11.5*14.43)+(0*19.23),2)',0) AS ot,
+IF(role = 'ss',"=LOOKUP(AQ'.$e25++.','EPF table'!$B$9:$C$754,'EPF table'!$e++$9:$e++$754)",0) AS epf,
+IF(role = 'ss',"=LOOKUP(AR'.$e26++.','socso table'!$B$9:$C$54,'socso table'!$e++$9:$e++$54)",0) AS socso,
+IF(role = 'ss',"=LOOKUP(AS'.$e27++.','eis table'!$B$9:$C$54,'eis table'!$e++$9:$e++$54)",0) AS eis,
+
+IF(role = 'ss',"=LOOKUP(AQ'.$e28++.','EPF table'!$B$9:$C$754,'EPF table'!$D$9:$D$754)",0) AS epf2,
+IF(role = 'ss',"=LOOKUP(AR'.$e29++.','socso table'!$B$9:$C$54,'socso table'!$D$9:$D$54)",0) AS socso2,
+IF(role = 'ss',"=LOOKUP(AR'.$e30++.','eis table'!$B$9:$C$54,'eis table'!$D$9:$D$54)",0) AS eis2,
+IF(role = 'ss',"=+ROUND(AT'.$e24++.'*0.01,2)",0) AS hrdf,
+
 SUM(itemCode) AS receieved,
 SUM(fail) AS fail,
 400 AS advanced
