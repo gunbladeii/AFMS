@@ -111,32 +111,32 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>'.str_replace(' ', '', $row["accNum"]).'</td>
           <td>'.$row['operationDay'].'</td>
           <td>'.$row['totalAttend'].'</td>
-          <td>=N'.$e.'-O'.$e.'</td>
-          <td>=+G'.$e.'-O'.$e.'</td>
-          <td>=+(O'.$e.'*30)</td>
-          <td>=+G'.$e.'-R'.$e.'</td>
-          <td>=ROUND((G'.$e.'*H'.$e.'),2)</td>
-          <td>=+ROUND(O'.$e.'/26*I'.$e.',2)</td>
-          <td>=+ROUND(O'.$e.'/26*J'.$e.',2)</td>
+          <td>=N'.$e++.'-O'.$e++.'</td>
+          <td>=+G'.$e++.'-O'.$e++.'</td>
+          <td>=+(O'.$e++.'*30)</td>
+          <td>=+G'.$e++.'-R'.$e++.'</td>
+          <td>=ROUND((G'.$e++.'*H'.$e++.'),2)</td>
+          <td>=+ROUND(O'.$e++.'/26*I'.$e++.',2)</td>
+          <td>=+ROUND(O'.$e++.'/26*J'.$e++.',2)</td>
           <td>'.if($row["role"]=="SS"){echo 2000;}else{echo 0;}.'</td>
           <td>'.if($row["role"]=="SS"){echo "=ROUND((11.5*14.43)+(0*19.23),2)";}else{echo 0;}.'</td>
           <td>'.if($row["role"]=="rider"){echo "=ROUND(((0*9.52)+(0*12.7)),2)";}else{echo 0;}.'</td>
           <td>'.$row['attAllow'].'</td>
-          <td>=SUM(T'.$e.':AA'.$e.')</td>
+          <td>=SUM(T'.$e++.':AA'.$e++.')</td>
           <td></td>
           <td>=VLOOKUP(D2,"D:\Users\acer\Desktop\Payroll\Advance\16. Apr2020\[APRIL 2020 ADVANCE POS LAJU.xlsx]Summary ADV APRIL 2020"!$D:$N,11,FALSE)</td>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
-          <td>=LOOKUP(AR2,"EPF table"!$B$9:$C$754,"EPF table"!$E$9:$E$754)</td>
-          <td>=LOOKUP(AS2,"socso table"!$B$9:$C$54,"socso table"!$E$9:$E$54)</td>
-          <td>=LOOKUP(AT2,"eis table"!$B$9:$C$54,"eis table"!$E$9:$E$54)</td>
+          <td>=LOOKUP(AR2,"EPF table"!$B$9:$C$754,"EPF table"!$e++$9:$e++$754)</td>
+          <td>=LOOKUP(AS2,"socso table"!$B$9:$C$54,"socso table"!$e++$9:$e++$54)</td>
+          <td>=LOOKUP(AT2,"eis table"!$B$9:$C$54,"eis table"!$e++$9:$e++$54)</td>
           <td>=AB2-AC2-AD2-AE2-AG2-AH2-AI2-AJ2-AK2-AF2</td>
           <td>=LOOKUP(AR2,"EPF table"!$B$9:$C$754,"EPF table"!$D$9:$D$754)</td>
           <td>=LOOKUP(AS2,"socso table"!$B$9:$C$54,"socso table"!$D$9:$D$54)</td>
           <td>=LOOKUP(AS2,"eis table"!$B$9:$C$54,"eis table"!$D$9:$D$54)</td>
-          <td>=+ROUND(AU'.$e.'*0.01,2)</td>
+          <td>=+ROUND(AU'.$e++.'*0.01,2)</td>
 					<td>'.$date.'</td>
           <td></td>
           <td></td>
