@@ -14,6 +14,16 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
 $a=1;
 $d=1;
 $e=2;
+$e1=2;
+$e2=2;
+$e3=2;
+$e4=2;
+$e5=2;
+$e6=2;
+$e7=2;
+$e8=2;
+$e9=2;
+$e10=2;
 
 date_default_timezone_set("Asia/Kuala_Lumpur");
 $date = date('d-m-Y');
@@ -112,17 +122,17 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>'.$row['operationDay'].'</td>
           <td>'.$row['totalAttend'].'</td>
           <td>=N'.$e++.'-O'.$e++.'</td>
-          <td>=+G'.$e++.'-O'.$e++.'</td>
-          <td>=+(O'.$e++.'*30)</td>
-          <td>=+G'.$e++.'-R'.$e++.'</td>
-          <td>=ROUND((G'.$e++.'*H'.$e++.'),2)</td>
-          <td>=+ROUND(O'.$e++.'/26*I'.$e++.',2)</td>
-          <td>=+ROUND(O'.$e++.'/26*J'.$e++.',2)</td>
+          <td>=+G'.$e1++.'-O'.$e1++.'</td>
+          <td>=+(O'.$e2++.'*30)</td>
+          <td>=+G'.$e3++.'-R'.$e3++.'</td>
+          <td>=ROUND((G'.$e4++.'*H'.$e4++.'),2)</td>
+          <td>=+ROUND(O'.$e5++.'/26*I'.$e5++.',2)</td>
+          <td>=+ROUND(O'.$e6++.'/26*J'.$e6++.',2)</td>
           <td>'.$row["comFee"].'</td>
           <td>'.$row["ot"].'</td>
           <td>=ROUND(((0*9.52)+(0*12.7)),2)</td>
           <td>'.$row['attAllow'].'</td>
-          <td>=SUM(T'.$e++.':AA'.$e++.')</td>
+          <td>=SUM(T'.$e7++.':AA'.$e7++.')</td>
           <td></td>
           <td>=VLOOKUP(D2,"D:\Users\acer\Desktop\Payroll\Advance\16. Apr2020\[APRIL 2020 ADVANCE POS LAJU.xlsx]Summary ADV APRIL 2020"!$D:$N,11,FALSE)</td>
           <td></td>
@@ -136,7 +146,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>=LOOKUP(AR2,"EPF table"!$B$9:$C$754,"EPF table"!$D$9:$D$754)</td>
           <td>=LOOKUP(AS2,"socso table"!$B$9:$C$54,"socso table"!$D$9:$D$54)</td>
           <td>=LOOKUP(AS2,"eis table"!$B$9:$C$54,"eis table"!$D$9:$D$54)</td>
-          <td>=+ROUND(AU'.$e++.'*0.01,2)</td>
+          <td>=+ROUND(AU'.$e8++.'*0.01,2)</td>
 					<td>'.$date.'</td>
           <td></td>
           <td></td>
