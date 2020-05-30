@@ -752,6 +752,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <tr>
                       <th>Station Code</th>
                       <th>Month</th>
+                      <th>Operating Days</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -791,6 +792,14 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                                 </div>
                      </div>
                       </td>
+                      <td>
+                        <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Insert days" name="operationDay" id="validationDefault06" required>
+                          <div class="input-group-append input-group-text">
+                             <span class="fas fa-calendar-alt"></span>
+                          </div>
+                         </div>
+                     </td>
                     </tr>
                     </tbody>
                   </table>
