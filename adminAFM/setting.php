@@ -822,6 +822,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                       <th><div class="badge badge-info">Station Code</div></th>
                       <th><div class="badge badge-info">Station Name</div></th>
                       <th><div class="badge badge-info">Month</div></th>
+                       <th><div class="badge badge-info">Year</div></th>
                       <th><div class="badge badge-info">Operation Days</div></th>
                     </tr>
                     </thead>
@@ -831,6 +832,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                       <td><?php echo $row_Recordset3['stationCode'];?></td>
                       <td><?php echo $row_Recordset3['name'];?></td>
                       <td><?php echo $row_Recordset3['month'];?></td>
+                      <td><?php echo $row_Recordset3['year'];?></td>
                       <td><?php echo $row_Recordset3['operationDay'];?></td>
                     </tr>
                     <?php }while ($row_Recordset3 = mysqli_fetch_assoc($Recordset3))?>
