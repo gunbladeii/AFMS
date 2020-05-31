@@ -802,7 +802,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                         <div class="input-group mb-3">
                         <input type="number" class="form-control" placeholder="Insert days" name="operationDay" id="validationDefault06" required>
                           <div class="input-group-append input-group-text">
-                             <span class="fas fa-calendar-alt"></span>
+                             <span class="fas fa-list-ol"></span>
                           </div>
                          </div>
                      </td>
