@@ -1,6 +1,9 @@
 <?php require('Connection/iBerkat.php'); ?>
 <?php session_start();
 
+$a = 1;
+$b = 1;
+
 date_default_timezone_set("Asia/Kuala_Lumpur");
 $year = date('Y');
 $month = $_POST['month'];
@@ -707,6 +710,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                    <table id="example3" class="table m-0 table-hover table-sm">
                     <thead>
                     <tr>
+                      <th>No.</th>
                       <th><div class="badge badge-info">Station Code</div></th>
                       <th><div class="badge badge-info">Station Name</div></th>
                     </tr>
@@ -714,6 +718,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <tbody>
                     <?php do {?>
                     <tr>
+                      <td><?php echo $a++;?></td>
                       <td><?php echo $row_Recordset2['stationCode'];?></td>
                       <td><?php echo $row_Recordset2['name'];?></td>
                     </tr>
@@ -820,6 +825,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                    <table id="example4"class="table m-0 table-hover table-sm">
                     <thead>
                     <tr>
+                      <th>No.</th>
                       <th><div class="badge badge-info">Station Code</div></th>
                       <th><div class="badge badge-info">Station Name</div></th>
                       <th><div class="badge badge-info">Month</div></th>
@@ -830,6 +836,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <tbody>
                     <?php do {?>
                     <tr>
+                      <td><?php echo $b++;?></td>
                       <td><?php echo $row_Recordset3['stationCode'];?></td>
                       <td><?php echo $row_Recordset3['name'];?></td>
                       <td><?php echo $row_Recordset3['month'];?></td>
