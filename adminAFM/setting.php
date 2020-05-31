@@ -704,7 +704,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 <h3 class="card-title">Registered Station</h3>
                 </div>
                 <div class="table-responsive">
-                   <table class="table m-0 table-hover table-sm">
+                   <table id="example3" class="table m-0 table-hover table-sm">
                     <thead>
                     <tr>
                       <th><div class="badge badge-info">Station Code</div></th>
@@ -954,6 +954,10 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
 <script src="plugins/datatables/jquery.dataTables.js"></script>
 <script src="plugins/datatables/dataTables.bootstrap4.js"></script>
 <script>
+$(function () {
+    $("#example3").DataTable();
+  });
+
   $(function () {
     $("#example4").DataTable();
   });
