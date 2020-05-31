@@ -710,7 +710,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                    <table id="example3" class="table m-0 table-hover table-sm">
                     <thead>
                     <tr>
-                      <th>No.</th>
+                      <th><div class="badge badge-info">No.</div></th>
                       <th><div class="badge badge-info">Station Code</div></th>
                       <th><div class="badge badge-info">Station Name</div></th>
                     </tr>
@@ -825,7 +825,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                    <table id="example4"class="table m-0 table-hover table-sm">
                     <thead>
                     <tr>
-                      <th>No.</th>
+                      <th><div class="badge badge-info">No.</div></th>
                       <th><div class="badge badge-info">Station Code</div></th>
                       <th><div class="badge badge-info">Station Name</div></th>
                       <th><div class="badge badge-info">Month</div></th>
