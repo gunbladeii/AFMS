@@ -839,7 +839,8 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                       <td><?php echo $b++;?></td>
                       <td><?php echo $row_Recordset3['stationCode'];?></td>
                       <td><?php echo $row_Recordset3['name'];?></td>
-                      <td><?php echo $row_Recordset3['month'];?></td>
+                      <td><?php $month_name = date("F", mktime(0, 0, 0, $row_Recordset3['month'], 10));
+                            echo $month_name."\n";?></td>
                       <td><?php echo $row_Recordset3['year'];?></td>
                       <td><?php echo $row_Recordset3['operationDay'];?></td>
                     </tr>
