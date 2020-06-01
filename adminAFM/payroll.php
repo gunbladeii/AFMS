@@ -52,6 +52,7 @@ date_default_timezone_set("Asia/Kuala_Lumpur");
 $date = date('d-m-Y');
 $year = date('Y');
 $month = $_POST['month'];
+$month_name = date("F", mktime(0, 0, 0, $month, 10));
 
 
 /*
@@ -173,8 +174,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>'.$row["socso2"].'</td>
           <td>'.$row["eis2"].'</td>
           <td>'.$row["hrdf"].'</td>
-          <td>'.$month_name = date("F", mktime(0, 0, 0, $month, 10));
-                            echo $month_name."\n";.'</td>
+          <td>'.$month_name.'</td>
 					<td>'.$date.'</td>
           <td></td>
 					
