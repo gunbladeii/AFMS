@@ -53,6 +53,7 @@ $date = date('d-m-Y');
 $year = date('Y');
 $month = $_POST['month'];
 
+
 /*
     $bankQuery = $mysqli->query("SELECT employeeData.noIC, employeeData.stationCode, employeeData.nama, employeeData.codeBank, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, attendance.month, attendance.year FROM
 
@@ -121,6 +122,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <th>EIS Employer</th>
           <th>HRDF Employer</th>
           <th>Month</th>
+          <th>Date download</th>
           <th>Remarks</th>
 					
 					
@@ -171,6 +173,8 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>'.$row["socso2"].'</td>
           <td>'.$row["eis2"].'</td>
           <td>'.$row["hrdf"].'</td>
+          <td>'.$month_name = date("F", mktime(0, 0, 0, $month, 10));
+                            echo $month_name."\n";.'</td>
 					<td>'.$date.'</td>
           <td></td>
 					
