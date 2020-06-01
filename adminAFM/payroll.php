@@ -852,13 +852,12 @@ $downloadExcell = $_SERVER['PHP_SELF'];
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h5 class="card-title">Click Station Name for Payment Voucher/Payslip</h5>
               <div class="card-description col-12">
                   <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="download" class="download" enctype="multipart/form-data">
                    <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>Month</th>
+                      <th>Download Excell Payroll Section</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -900,7 +899,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                
+            <h5 class="card-title">Click Station Name for Payment Voucher/Payslip</h5>    
             <div id='show'></div>
             
             </div>
