@@ -889,7 +889,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                   </table> 
 
               		  			
-				           <button type="submit" name='download' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Eksport Excel Giro Ach</button>
+				           <button type="submit" name='download' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export Excel Giro Ach</button>
                   </form>
                   <!--<form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="advanced" class="advanced" enctype="multipart/form-data">
               		  			
