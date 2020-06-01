@@ -141,7 +141,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>50.00</td>
           <td>'.$row["bankName"].'</td>
           <td>'.$row["codeBank"].'</td>
-          <td>TEXT('.str_replace(' ', '', $row["accNum"]).',"0000000")</td>
+          <td>=TEXT('.str_replace(' ', '', $row["accNum"]).',"0000000")</td>
           <td>'.$row['operationDay'].'</td>
           <td>'.$row['totalAttend'].'</td>
           <td>=M'.$e++.'-N'.$e++.'</td>
