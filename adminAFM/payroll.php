@@ -51,7 +51,7 @@ $e33=2;
 date_default_timezone_set("Asia/Kuala_Lumpur");
 $date = date('d-m-Y');
 $year = date('Y');
-$month = date('m');
+$month = $_POST['month'];
 
 /*
     $bankQuery = $mysqli->query("SELECT employeeData.noIC, employeeData.stationCode, employeeData.nama, employeeData.codeBank, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, attendance.month, attendance.year FROM
@@ -186,7 +186,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 	exit;
 	}
 	
-	//download advance payment
+	/*download advance payment
 	if (isset($_POST["advanced"]))
 	{
 	$sql = $mysqli->query("SELECT infoParcel.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, infoParcel.month, infoParcel.year,employeeData.employeeStatus FROM
@@ -247,7 +247,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 		}
 	exit;
 	}
-
+*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -851,14 +851,47 @@ $downloadExcell = $_SERVER['PHP_SELF'];
               <h5 class="card-title">Click Station Name for Payment Voucher/Payslip</h5>
               <div class="card-description col-12">
                   <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="download" class="download" enctype="multipart/form-data">
+                   <table class="table m-0">
+                    <thead>
+                    <tr>
+                      <th>Month</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>
+                     <div class="input-group mb-3">
+                           <select name="month" class="custom-select browser-default" required>
+                              <option value="" selected>Pick Month</option>
+                              <option value="01" >January</option>
+                              <option value="02" >Febuary</option>
+                              <option value="03" >March</option>
+                              <option value="04" >April</option>
+                              <option value="05" >May</option>
+                              <option value="06" >June</option>
+                              <option value="07" >July</option>
+                              <option value="08" >August</option>
+                              <option value="09" >September</option>
+                              <option value="10" >October</option>
+                              <option value="11" >November</option>
+                              <option value="12" >Disember</option>
+                           </select>
+                                <div class="input-group-append input-group-text">
+                                  <span class="fas fa-calendar-alt"></span>
+                                </div>
+                     </div>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table> 
+
               		  			
-				      <button type="submit" name='download' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Eksport Excel Giro Ach</button>
-                      <input type="hidden" name="MM_download" value="download">
+				           <button type="submit" name='download' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Eksport Excel Giro Ach</button>
                   </form>
-                  <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="advanced" class="advanced" enctype="multipart/form-data">
+                  <!--<form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="advanced" class="advanced" enctype="multipart/form-data">
               		  			
 				      <button type="submit" name='advanced' value="Export to excel" class="badge badge-success" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Eksport Excel Giro Ach (Advanced Payment)</button>
-                  </form>
+                  </form>-->
               </div>
             </div>
             <!-- /.card-header -->
