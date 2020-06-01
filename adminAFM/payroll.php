@@ -132,7 +132,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 				<tr>
 					<td>'.$d++.'</td>
 					<td>'.ucwords(strtolower($row["nama"])).'</td>
-					<td>'.str_replace(' ', '', $row["noIC"]).'</td>
+					<td>=TEXT('.str_replace(' ', '', $row["noIC"]).',"0000000")</td>
           <td>'.$row["stationCode"].'</td>
           <td>'.$row["role"].'</td>
           <td>'.$row["totalSuccess"].'</td>
