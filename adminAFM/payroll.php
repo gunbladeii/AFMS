@@ -52,7 +52,7 @@ date_default_timezone_set("Asia/Kuala_Lumpur");
 $date = date('d-m-Y');
 $year = date('Y');
 $month = $_POST['month'];
-$month_name = date("F", mktime(0, 0, 0, $month, 10));
+
 
 
 /*
@@ -193,7 +193,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 	/*download overtime SV*/
 	if (isset($_POST["ot"]))
 	{
-	$sql2 = $mysqli->query("SELECT employeeData.employeeStatus, attendance.month, attendance.year, attendance.role,attendance.noIC, attendance.stationCode, attendance.nama, attendance.timeOut, attendance.time, TIMEDIFF(attendance.timeOut, attendance.time) AS timeDiff, stationName.name AS stationName FROM 
+	$sql2 = $mysqli->query("SELECT employeeData.employeeStatus, attendance.date, attendance.month, attendance.year, attendance.role,attendance.noIC, attendance.stationCode, attendance.nama, attendance.timeOut, attendance.time, TIMEDIFF(attendance.timeOut, attendance.time) AS timeDiff, stationName.name AS stationName FROM 
 
     ((attendance 
     INNER JOIN stationName ON attendance.stationCode = stationName.stationCode)
@@ -236,9 +236,9 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>'.$row2["stationName"].'</td>
           <td>'.$row["date"].'</td>
           <td>'.$row2["month"].'</td>
-          <td>=TEXT('.$row2["time"].',"0000000")</td>
-          <td>=TEXT('.$row2["timeOut"].',"0000000")</td>
-          <td>=TEXT('.$row2["timeDiff"].',"0000000")</td>
+          <td>'.$row2["time"].'</td>
+          <td>'.$row2["timeOut"].'</td>
+          <td>'.$row2["timeDiff"].'</td>
           <td>'.$row2["year"].'</td>
           <td></td>
           
