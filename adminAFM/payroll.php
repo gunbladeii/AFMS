@@ -253,7 +253,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 		}
 	exit;
 	}
-*/
+
 ?>
 <!DOCTYPE html>
 <html>
