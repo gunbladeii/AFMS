@@ -234,7 +234,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>'.$row2["role"].'</td>
           <td>'.$row2["stationCode"].'</td>
           <td>'.$row2["stationName"].'</td>
-          <td>'.$row["date"].'</td>
+          <td>'.$row2["date"].'</td>
           <td>'.$row2["month"].'</td>
           <td>'.$row2["time"].'</td>
           <td>'.$row2["timeOut"].'</td>
