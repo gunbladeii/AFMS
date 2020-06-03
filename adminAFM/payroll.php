@@ -190,56 +190,58 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 	exit;
 	}
 	
-	/*download advance payment
-	if (isset($_POST["advanced"]))
+	download overtime SV
+	if (isset($_POST["ot"]))
 	{
-	$sql = $mysqli->query("SELECT infoParcel.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, infoParcel.month, infoParcel.year,employeeData.employeeStatus FROM
+	$sql2 = $mysqli->query("SELECT employeeData.employeeStatus, attendance.month, attendance.year, attendance.role,attendance.noIC, attendance.stationCode, attendance.nama, attendance.timeOut, attendance.time, TIMEDIFF(attendance.timeOut, attendance.time) AS timeDiff, stationName.name AS stationName FROM 
 
-     (((employeeData 
-					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
-					INNER JOIN infoParcel ON employeeData.noIC = infoParcel.noIC)
-					INNER JOIN attendance ON employeeData.noIC = attendance.noIC)			
-					WHERE infoParcel.year='$year' AND employeeData.employeeStatus NOT LIKE 'dump' AND infoParcel.month ='$month' GROUP BY infoParcel.noIC,infoParcel.month, infoParcel.year ORDER BY employeeData.nama ASC"); 					
+    ((attendance 
+    INNER JOIN stationName ON attendance.stationCode = stationName.stationCode)
+    INNER JOIN employeeData ON attendance.noIC = employeeData.noIC)
 
-	if (mysqli_num_rows($sql) > 0)
+
+    WHERE attendance.year='$year' AND attendance.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' AND attendance.role LIKE 'ss' ORDER BY attendance.stationCode,attendance.nama ASC"); 					
+
+	if (mysqli_num_rows($sql2) > 0)
 		{
 		$output .='
 			<table class="table" border="1">
 				<tr>
 					<th>No.</th>
-					<th>Record Type</th>
-					<th>Invoice Ref.</th>
-					<th>Invoice Date</th>
-					<th>Invoice Description</th>
-					<th>Payee Bank Code</th>
-					<th>Payee Account</th>
-					<th>Amount</th>
-					<th>Email Address</th>
-					<th>Customer Ref.(Opt)</th>
-					<th>Payment Description(Opt)</th>
-					<th>ID. Type</th>
-					<th>ID. No.(IC No)</th>
+					<th>Name</th>
+          <th>IC Number</th>
+					<th>Role</th>
+					<th>Station Code</th>
+					<th>Station Name</th>
+					<th>Date</th>
+					<th>Month</th>
+					<th>Clock-In</th>
+					<th>Clock-Out</th>
+					<th>Working Hours</th>
+					<th>Year</th>
+					<th>Remark</th>
 					
 					
 				</tr>		
 			';
-		while($row = mysqli_fetch_assoc($sql))
+		while($row2 = mysqli_fetch_assoc($sql))
 			{
 			$output .='
 				<tr>
-					<td>'.$d++.'</td>
-					<td>P</td>
-					<td>xxxx-xxxx-xxxx</td>
-					<td>'.$date.'</td>
-					<td>'.ucwords(strtolower($row["nama"])).'</td>
-					<td>'.$row["codeBank"].'</td>
-					<td>'.str_replace(' ', '', $row["accNum"]).'</td>
-					<td>400</td>
-					<td>'.$row['emel'].'</td>
-					<td></td>
-					<td>Donation</td>
-					<td>01</td>
-					<td>'.str_replace(' ', '', $row["noIC"]).'</td>
+					<td>'.$a++.'</td>
+					<td>'.ucwords(strtolower($row2["nama"])).'</td>
+          <td>=TEXT('.str_replace(' ', '', $row2["noIC"]).',"0000000")</td>
+          <td>'.$row2["role"].'</td>
+          <td>'.$row2["stationCode"].'</td>
+          <td>'.$row2["stationName"].'</td>
+          <td>'.$row["date"].'</td>
+          <td>'.$row2["month"].'</td>
+          <td>=TEXT('.$row2["time"].',"0000000")</td>
+          <td>=TEXT('.$row2["timeOut"].',"0000000")</td>
+          <td>=TEXT('.$row2["timeDiff"].',"0000000")</td>
+          <td>'.$row2["year"].'</td>
+          <td></td>
+          
 				</tr>			
 				';		
 			}
@@ -891,10 +893,48 @@ $downloadExcell = $_SERVER['PHP_SELF'];
               		  			
 				           <button type="submit" name='download' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export Excel Giro Ach</button>
                   </form>
-                  <!--<form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="advanced" class="advanced" enctype="multipart/form-data">
-              		  			
-				      <button type="submit" name='advanced' value="Export to excel" class="badge badge-success" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Eksport Excel Giro Ach (Advanced Payment)</button>
-                  </form>-->
+
+                  <!-- Download OT part -->
+
+                  <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="ot" class="download" enctype="multipart/form-data">
+                   <table class="table m-0">
+                    <thead>
+                    <tr>
+                      <th>Download Excell O/T Supervisor Section</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>
+                     <div class="input-group mb-3">
+                           <select name="month" class="custom-select browser-default" required>
+                              <option value="" selected>Pick Month</option>
+                              <option value="01" >January</option>
+                              <option value="02" >Febuary</option>
+                              <option value="03" >March</option>
+                              <option value="04" >April</option>
+                              <option value="05" >May</option>
+                              <option value="06" >June</option>
+                              <option value="07" >July</option>
+                              <option value="08" >August</option>
+                              <option value="09" >September</option>
+                              <option value="10" >October</option>
+                              <option value="11" >November</option>
+                              <option value="12" >Disember</option>
+                           </select>
+                                <div class="input-group-append input-group-text">
+                                  <span class="fas fa-calendar-alt"></span>
+                                </div>
+                     </div>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table> 
+
+                          
+                   <button type="submit" name='ot' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export Excel Giro Ach</button>
+                  </form>
+                 
               </div>
             </div>
             <!-- /.card-header -->
