@@ -688,7 +688,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
       <input type="hidden" name="MM_download" value="download">
       
       </form>
-      
+
      </div>
 </section>
 
@@ -700,7 +700,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
               <div class="card-header">
                 <h3 class="card-title">
                   <i class="fas fa-chart-bar mr-1"></i>
-                  Rider Attendance Indicator<p class="h6">(Data Shown by Month)</p>
+                  Registered Rider/SV <p class="h6">(Data Shown by Month)</p>
                 </h3>
               </div><!-- /.card-header -->
               <div class="card-body">
