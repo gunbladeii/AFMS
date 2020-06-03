@@ -688,11 +688,30 @@ $downloadExcell = $_SERVER['PHP_SELF'];
       <input type="hidden" name="MM_download" value="download">
       
       </form>
-
-      <div id='show'></div>
       
      </div>
 </section>
+
+ <div class="row">
+          <!-- Left col -->
+          <section class="col-lg-12 connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-bar mr-1"></i>
+                  Rider Attendance Indicator<p class="h6">(Data Shown by Month)</p>
+                </h3>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content p-0">
+                  <!-- Morris chart - Sales -->
+                  <div id='show'></div>
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </section>
+  </div>
 
  <!--editStaffModal-->
 <div class="modal fade" id="editStaffModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
