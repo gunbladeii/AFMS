@@ -625,11 +625,32 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
       <a href="registerRider.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Show Registered Rider</a>
      </div>
       <br>
-      <form method="post" action="registerRider.php" role="form">
-      <div id='show'></div>
-      </form>
+      
      </div>
 </section>
+
+<div class="row">
+          <!-- Left col -->
+          <section class="col-lg-12 connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-bar mr-1"></i>
+                  Resign Rider/SV Record <p class="h6"></p>
+                </h3>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content p-0">
+                  <!-- Morris chart - Sales -->
+                  <form method="post" action="registerRider.php" role="form">
+                    <div id='show'></div>
+                  </form>
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </section>
+  </div>
 
  <!--editStaffModal-->
 <div class="modal fade" id="editStaffModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
