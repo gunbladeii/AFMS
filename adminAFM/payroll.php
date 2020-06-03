@@ -224,7 +224,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 					
 				</tr>		
 			';
-		while($row2 = mysqli_fetch_assoc($sql))
+		while($row2 = mysqli_fetch_assoc($sql2))
 			{
 			$output .='
 				<tr>
@@ -247,7 +247,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 			}
 		$output .='</table>';
 		header("Content-Type: application/vnd-ms-excel");
-		header("Content-Disposition: attachment; filename=excell_giro_ach_".$date.".xls");
+		header("Content-Disposition: attachment; filename=excell_ot_sv_".$date.".xls");
 		echo $output;
 			
 		}
