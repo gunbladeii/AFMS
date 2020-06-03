@@ -932,7 +932,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                   </table> 
 
                           
-                   <button type="submit" name='ot' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export Excel Giro Ach</button>
+                   <button type="submit" name='ot' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export O/T Supervisor</button>
                   </form>
                  
               </div>
