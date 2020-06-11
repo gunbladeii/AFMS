@@ -366,7 +366,7 @@ $totalRows_parcel = mysqli_num_rows($parcel);
             <div class="modal-body">
             <div style="width: 100%;margin:0 auto;text-align:center;">
             <!--<form role="form" action="//track.trackingmore.com" method="get" onsubmit="return false">-->
-            <form role="form" action="#" method="post">  
+            <form role="form" action="profilRider.php" method="post">  
                         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
                         <div class="col">
                           <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
@@ -394,7 +394,8 @@ $totalRows_parcel = mysqli_num_rows($parcel);
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1">Result</span>
                         </div>
-                        <input type="text" class="form-control" name="scanInput" id="scanInput" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" name="scanInput" id="scanInput" aria-label="Username" aria-describedby="basic-addon1" onchange='this.form.submit()'>
+                        <noscript><input type="submit" value="Submit"></noscript>
                       </div>
 
                       </div>
