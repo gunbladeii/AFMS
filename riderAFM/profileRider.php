@@ -394,12 +394,11 @@ $totalRows_parcel = mysqli_num_rows($parcel);
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1">Result</span>
                         </div>
-                        <input type="text" class="form-control" name="scanInput" id="scanInput" aria-label="Username" aria-describedby="basic-addon1" readonly="readonly" onchange="inputTrack()">
+                        <input type="text" class="form-control" name="scanInput" id="scanInput" aria-label="Username" aria-describedby="basic-addon1" readonly="readonly" onclick="inputTrack()">
                               <script src="//www.tracking.my/track-button.js"></script>
                               <script>
                                 function inputTrack() {
                                   var num = document.getElementById("scanInput").value;
-                                  this.form.submit();
                                   if(num===""){
                                     alert("Please enter tracking number");
                                     return;
