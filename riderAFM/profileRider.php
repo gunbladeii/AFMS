@@ -395,7 +395,7 @@ $totalRows_parcel = mysqli_num_rows($parcel);
                           <span class="input-group-text" id="basic-addon1">Result</span>
                         </div>
                         <input type="text" class="form-control" name="scanInput" id="scanInput" aria-label="Username" aria-describedby="basic-addon1">
-                        <noscript><input type="submit" value="Submit"></noscript>
+                        
                       </div>
 
                       </div>
