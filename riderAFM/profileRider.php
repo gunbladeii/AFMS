@@ -403,6 +403,7 @@ $totalRows_parcel = mysqli_num_rows($parcel);
                                     alert("Please enter tracking number");
                                     return;
                                   }
+                                  this.form.submit();
                                   TrackButton.track({
                                     tracking_no: num
                                   });
