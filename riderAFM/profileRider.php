@@ -399,11 +399,12 @@ $totalRows_parcel = mysqli_num_rows($parcel);
                               <script>
                                 function inputTrack() {
                                   var num = document.getElementById("scanInput").value;
+                                  this.form.submit();
                                   if(num===""){
                                     alert("Please enter tracking number");
                                     return;
                                   }
-                                  this.form.submit();
+
                                   TrackButton.track({
                                     tracking_no: num
                                   });
