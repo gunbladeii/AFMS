@@ -74,6 +74,9 @@
     
     $raceCall = $mysqli->query("SELECT * FROM `race`");
     $RC = mysqli_fetch_assoc($raceCall);
+
+    $categoryCall = $mysqli->query("SELECT * FROM `category`");
+    $CaC = mysqli_fetch_assoc($categoryCall);
     
 ?>
   
@@ -132,10 +135,15 @@
         <div class="form-group">
          <div class="input-group mb-3">
                     <select name="role" class="custom-select browser-default" required>
-                      <option value="">Choose role</option>
-                      <option value="ss">Station Supervisor</option>
-                      <option value="rider">Rider</option>
-                      <option value="administrator">Administrator</option>
+                      <option value="" selected="">Choose role</option>
+                      <?php do {?>
+                      <option value="<?php echo $CaC['roleCategory'];?>">
+                        <?php if($CaC['roleCategory'] == 'ss')
+                        {echo 'Supervisors';}
+                        else
+                          {echo ucfirst($CaC['roleCategory']);}
+                        ?></option>
+                       <?php }while ($CaC = mysqli_fetch_assoc($categoryCall))?>
                     </select>
                     <div class="input-group-append input-group-text">
                       <span class="fas fa-user"></span>
