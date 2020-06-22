@@ -38,6 +38,10 @@
     	$stationCode = $_POST['stationCode'];
     	$accNum = $_POST['accNum'];
     	$codeBank = $_POST['codeBank'];
+      $dateJoin = $_POST['dateJoin'];
+      $dateTransfer = $_POST['dateTransfer'];
+      $datePromo = $_POST['datePromo'];
+      $dateResign = $_POST['dateResign'];
     	
     if (isset($_POST['submit'])) {
         $DLPic = addslashes(file_get_contents($_FILES["DLPic"]["tmp_name"]));
@@ -46,7 +50,7 @@
     	
     	/*add pictue*/
     	
-    	$mysqli->query("UPDATE `employeeData` SET `nama` = '$nama', `emel` = '$username', `sex` = '$sex', `dob` = '$dob', `pob`= '$pob', `nationality` = '$nationality', `race` = '$race', `religion` = '$religion', `marriage` = '$marriage', `childrenNo` = '$childrenNo', `address` = '$address', `noTel` = '$noTel', `lesenNo`= '$lesenNo', `lesenExp` = '$lesenExp', `noPlate` ='$noPlate', `roadtaxNo` = '$roadtaxNo', `vehicleModel` = '$vehicleModel', `vehicleYear` = '$vehicleYear', `pdrmRecordNo` = '$pdrmRecordNo', `caseNo` ='$caseNo', `employeeStatus` = '$employeeStatus', `stationCode` = '$stationCode', `accNum` = '$accNum', `codeBank` ='$codeBank', `DLPic` ='$DLPic', `riderFacePic` ='$riderFacePic', `riderFaceMotorPic` = '$riderFaceMotorPic' WHERE `noIC` = '$noIC'");
+    	$mysqli->query("UPDATE `employeeData` SET `nama` = '$nama', `emel` = '$username', `sex` = '$sex', `dob` = '$dob', `pob`= '$pob', `nationality` = '$nationality', `race` = '$race', `religion` = '$religion', `marriage` = '$marriage', `childrenNo` = '$childrenNo', `address` = '$address', `noTel` = '$noTel', `lesenNo`= '$lesenNo', `lesenExp` = '$lesenExp', `noPlate` ='$noPlate', `roadtaxNo` = '$roadtaxNo', `vehicleModel` = '$vehicleModel', `vehicleYear` = '$vehicleYear', `pdrmRecordNo` = '$pdrmRecordNo', `caseNo` ='$caseNo', `employeeStatus` = '$employeeStatus', `stationCode` = '$stationCode', `accNum` = '$accNum', `codeBank` ='$codeBank', `DLPic` ='$DLPic', `riderFacePic` ='$riderFacePic', `riderFaceMotorPic` = '$riderFaceMotorPic' ,`dateJoin` = '$dateJoin',`dateTransfer` = '$dateTransfer',`datePromo` = '$datePromo',`dateResign` = '$dateResign' WHERE `noIC` = '$noIC'");
     	
     	header("location:registerRider.php");
     }
@@ -302,6 +306,50 @@
                 <span class="fas fa-phone"></span>
               </div>
           </div>
+        </div>
+
+        <div class="form-group">
+           
+            <div class="input-group mb-3">
+                <input type='text' class="form-control" name="dateJoin" placeholder="Date of Joining(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask id="validationDefault06" value="<?php echo $ED['dateJoin'];?>" required/>
+                <div class="input-group-append input-group-text">
+                    <span class="fas fa-calendar">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            
+            <div class="input-group mb-3">
+                <input type='text' class="form-control" name="dateTransfer" placeholder="Date of Transfer(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask id="validationDefault06" value="<?php echo $ED['dateTransfer'];?>" required/>
+                <div class="input-group-append input-group-text">
+                    <span class="fas fa-calendar">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            
+            <div class="input-group mb-3">
+                <input type='text' class="form-control" name="datePromo" placeholder="Date of Promo(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask id="validationDefault06" value="<?php echo $ED['datePromo'];?>" required/>
+                <div class="input-group-append input-group-text">
+                    <span class="fas fa-calendar">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            
+            <div class="input-group mb-3">
+                <input type='text' class="form-control" name="dateResign" placeholder="Date of Resignation(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask id="validationDefault06" value="<?php echo $ED['dateResign'];?>" required/>
+                <div class="input-group-append input-group-text">
+                    <span class="fas fa-calendar">
+                    </span>
+                </div>
+            </div>
         </div>
         
         
