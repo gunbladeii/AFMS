@@ -994,9 +994,29 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                  <button type="submit" name="submit4" class="btn btn-sm btn-success float-right">Update</button>
                </div>
               </form>
-             </div>
-            </div>
-            </div>
+              <div class="card-header border-transparent">
+                <h3 class="card-title">List of Registered Category</h3>
+                </div>
+                <div class="table-responsive">
+                   <table id="example4"class="table m-0 table-hover table-sm">
+                    <thead>
+                    <tr>
+                      <th><div class="badge badge-info">No.</div></th>
+                      <th><div class="badge badge-info">Registered Category</div></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php do {?>
+                    <tr>
+                      <td><?php echo $c++;?></td>
+                      <td><?php if($row_Recordset5['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset5['roleCategory']);}?></td>
+                    </tr>
+                    <?php }while ($row_Recordset5 = mysqli_fetch_assoc($Recordset5))?>
+                    </tbody>
+                  </table> 
+                </div>
+              </div>
+              <!-- /.card-footer -->
             </div>
             <!-- /.card -->
           </div>
