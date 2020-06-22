@@ -60,7 +60,7 @@ $Recordset5 = $mysqli->query("SELECT * FROM category");
 $row_Recordset5 = mysqli_fetch_assoc($Recordset5);
 $totalRows_Recordset5 = mysqli_num_rows($Recordset5);
 
-$Recordset6 = $mysqli->query("SELECT * FROM formulaSalary" WHERE id = "1");
+$Recordset6 = $mysqli->query("SELECT * FROM formulaSalary WHERE `id` = "1");
 $row_Recordset6 = mysqli_fetch_assoc($Recordset6);
 $totalRows_Recordset6 = mysqli_num_rows($Recordset6);
 
