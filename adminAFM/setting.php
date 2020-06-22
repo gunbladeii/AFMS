@@ -49,7 +49,7 @@ $Recordset4 = $mysqli->query("SELECT * FROM stationName");
 $row_Recordset4 = mysqli_fetch_assoc($Recordset4);
 $totalRows_Recordset4 = mysqli_num_rows($Recordset4);
 
-$Recordset5 = $mysqli->query("SELECT IF (roleCategory == 'ss', "Supervisors","") FROM category");
+$Recordset5 = $mysqli->query("SELECT IF (roleCategory = 'ss', "Supervisors", roleCategory) FROM category");
 $row_Recordset5 = mysqli_fetch_assoc($Recordset5);
 $totalRows_Recordset5 = mysqli_num_rows($Recordset5);
 
