@@ -10,6 +10,7 @@ $month = $_POST['month'];
 $name = $_POST['name'];
 $stationCode = $_POST['stationCode'];
 $operationDay = $_POST['operationDay'];
+$roleCategory = $_POST['roleCategory'];
 
 if (isset($_POST["submit"])){
   $mysqli->query("INSERT INTO stationName (name, stationCode) VALUES ('$name', '$stationCode')");
@@ -21,6 +22,13 @@ if (isset($_POST['submit2'])) {
       
       header("location:setting.php");
     }
+
+if (isset($_POST['submit3'])) {
+      $mysqli->query("INSERT INTO category (roleCategory) VALUES ('$roleCategory')");
+      
+      header("location:setting.php");
+    }
+
 
 $colname_Recordset = "-1";
 if (isset($_SESSION['MM_Username'])) {
@@ -39,6 +47,10 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 $Recordset4 = $mysqli->query("SELECT * FROM stationName");
 $row_Recordset4 = mysqli_fetch_assoc($Recordset4);
 $totalRows_Recordset4 = mysqli_num_rows($Recordset4);
+
+$Recordset5 = $mysqli->query("SELECT * FROM category");
+$row_Recordset5 = mysqli_fetch_assoc($Recordset5);
+$totalRows_Recordset5 = mysqli_num_rows($Recordset5);
 
 $Recordset3 = $mysqli->query("SELECT infoParcel.stationCode,infoParcel.month,infoParcel.year,infoParcel.operationDay,stationName.name AS name FROM infoParcel INNER JOIN stationName ON stationName.stationCode = infoParcel.stationCode GROUP BY stationCode,month,year ORDER BY month, year DESC");
 $row_Recordset3 = mysqli_fetch_assoc($Recordset3);
@@ -845,6 +857,77 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                       <td><?php echo $row_Recordset3['operationDay'];?></td>
                     </tr>
                     <?php }while ($row_Recordset3 = mysqli_fetch_assoc($Recordset3))?>
+                    </tbody>
+                  </table> 
+                </div>
+              </div>
+              <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+
+          <!--Update category setting-->
+          <div class="col-md-12">
+          <!-- TABLE: LATEST ORDERS -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">User's Role Setting</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
+                  <table class="table m-0">
+                    <tbody>
+                    <tr>
+                      <td>
+                        <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Type role category" name="roleCategory" id="validationDefault07" required>
+                          <div class="input-group-append input-group-text">
+                             <span class="fas fa-list-ol"></span>
+                          </div>
+                         </div>
+                     </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <input type="hidden" name="year" value="<?php echo $year;?>">
+                </div>
+                <!-- /.table-responsive -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix">
+                <button type="submit" name="submit3" class="btn btn-sm btn-success float-right">Insert</button>
+              </div>
+              </form>
+              <div class="card-header border-transparent">
+                <h3 class="card-title">List of Registered Category</h3>
+                </div>
+                <div class="table-responsive">
+                   <table id="example4"class="table m-0 table-hover table-sm">
+                    <thead>
+                    <tr>
+                      <th><div class="badge badge-info">No.</div></th>
+                      <th><div class="badge badge-info">Registered Category</div></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php do {?>
+                    <tr>
+                      <td><?php echo $b++;?></td>
+                      <td><?php echo if($row_Recordset5['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo $row_Recordset5['roleCategory'];}?></td>
+                    </tr>
+                    <?php }while ($row_Recordset5 = mysqli_fetch_assoc($Recordset5))?>
                     </tbody>
                   </table> 
                 </div>
