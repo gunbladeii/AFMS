@@ -978,7 +978,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                         <input type="number" class="form-control" placeholder="Type comission" name="roleCategory" id="validationDefault07" value="<?php echo $row_Recordset6['commision'];?>" required>
                           <div class="input-group-append input-group-text">
                              <span class="fas fa-list-ol"></span>
-                             <button type="submit" name="submit4" class="btn btn-sm btn-success float-right">Update</button>
+                            
                           </div>
                          </div>
                      </td>
@@ -990,6 +990,9 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 <!-- /.table-responsive -->
               </div>
               <!-- /.card-body -->
+               <div class="card-footer clearfix">
+                 <button type="submit" name="submit4" class="btn btn-sm btn-success float-right">Update</button>
+               </div>
               </form>
               
             </div>
