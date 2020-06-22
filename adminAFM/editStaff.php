@@ -153,7 +153,7 @@
                       
                       <option value="<?php echo $ED['role']?>" selected><?php echo ucfirst($ED['role'])?></option>
                       <?php do {?>
-                      <option value="<?php echo $CaC['roleCategory'];?>"><?php if($CaC['roleCategory'] == 'ss'){echo 'Supervisors'}else{echo '$CaC['roleCategory']';}?></option>
+                      <option value="<?php echo $CaC['roleCategory'];?>"><?php if($CaC['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo '$CaC['roleCategory']';}?></option>
                        <?php }while ($CaC = mysqli_fetch_assoc($categoryCall))?>
                     </select>
                     <div class="input-group-append input-group-text">
