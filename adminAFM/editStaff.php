@@ -5,7 +5,7 @@
     date_default_timezone_set("asia/kuala_lumpur"); 
     $date = date('Y-m-d');
        /*insert into table login and employeeData*/
-         $noIC = $_POST['noIC'];
+       $noIC = $_POST['noIC'];
     	 $nama = $_POST['nama'];
     	 $username = $_POST['username'];/*emel instead*/
     	 

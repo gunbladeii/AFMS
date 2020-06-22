@@ -41,9 +41,9 @@ $a=1;
                     <tr style="text-align:center">
                       <td><?php echo $a++;?></td>
                       <td><a data-toggle="modal"
-                          data-target="#infoJourney"
-                          data-whatever="<?php echo $performance['noIC'];?>"  
-                          data-whatever2="<?php echo $performance['month'];?>"><span class="badge badge-secondary"><?php echo $performance['stationName'];?></span></a>
+                          data-target="#performanceModal"
+                          data-whatever="<?php echo $performance['stationCode'];?>"  
+                          data-whatever2="<?php $date=date_create($performance['date']);echo date_format($date,"F");?>"><span class="badge badge-secondary"><?php echo $performance['stationName'];?></span></a>
                       </td>
                       <td><span class="badge badge-info"><?php $date=date_create($performance['date']);echo date_format($date,"F");?></span></td>
                       <td><span class="badge badge-info"><?php $year=date_create($performance['date']);echo date_format($year,"Y");?></span></td>

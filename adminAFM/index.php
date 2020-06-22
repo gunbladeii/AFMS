@@ -783,6 +783,26 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
         
   </div>
   <!-- /.content-wrapper -->
+
+<!--performanceModal-->
+<div class="modal fade" id="performanceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Performance Status (By Days)</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="performance"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end / performanceModal-->
+
 </div>
 <!-- ./wrapper -->
 
@@ -840,6 +860,31 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
 				
 		});
 </script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+    $('#performanceModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          var recipient2 = button.data('whatever2') // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString = 'stationCode=' + recipient + 'month=' + recipient2 +;
+
+            $.ajax({
+                type: "GET",
+                url: "performanceModal.php",
+                data: dataString,
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    modal.find('.performance').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+    })
+    </script>
 
 </body>
 </html>
