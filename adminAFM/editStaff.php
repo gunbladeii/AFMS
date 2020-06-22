@@ -158,9 +158,9 @@
                         {echo 'Supervisors';}
                         elseif ($CaC['roleCategory'] == $ED['role']) {
                           echo NULL;
-                        }
+                        }                        
                         else
-                          {echo $CaC['roleCategory'];}
+                          {echo ucfirst($CaC['roleCategory']);}
                         ?></option>
                        <?php }while ($CaC = mysqli_fetch_assoc($categoryCall))?>
                     </select>
