@@ -12,6 +12,7 @@ $name = $_POST['name'];
 $stationCode = $_POST['stationCode'];
 $operationDay = $_POST['operationDay'];
 $roleCategory = $_POST['roleCategory'];
+$commision = $_POST['commision'];
 
 if (isset($_POST["submit"])){
   $mysqli->query("INSERT INTO stationName (name, stationCode) VALUES ('$name', '$stationCode')");
@@ -26,6 +27,12 @@ if (isset($_POST['submit2'])) {
 
 if (isset($_POST['submit3'])) {
       $mysqli->query("INSERT INTO category (roleCategory) VALUES ('$roleCategory')");
+      
+      header("location:setting.php");
+    }
+
+if (isset($_POST['submit4'])) {
+     $mysqli->query("UPDATE `formulaSalary` SET `commision` = '$commision' WHERE `id` = '1'");
       
       header("location:setting.php");
     }
@@ -52,6 +59,10 @@ $totalRows_Recordset4 = mysqli_num_rows($Recordset4);
 $Recordset5 = $mysqli->query("SELECT * FROM category");
 $row_Recordset5 = mysqli_fetch_assoc($Recordset5);
 $totalRows_Recordset5 = mysqli_num_rows($Recordset5);
+
+$Recordset6 = $mysqli->query("SELECT * FROM formulaSalary" WHERE id = "1");
+$row_Recordset6 = mysqli_fetch_assoc($Recordset6);
+$totalRows_Recordset6 = mysqli_num_rows($Recordset6);
 
 $Recordset3 = $mysqli->query("SELECT infoParcel.stationCode,infoParcel.month,infoParcel.year,infoParcel.operationDay,stationName.name AS name FROM infoParcel INNER JOIN stationName ON stationName.stationCode = infoParcel.stationCode GROUP BY stationCode,month,year ORDER BY month, year DESC");
 $row_Recordset3 = mysqli_fetch_assoc($Recordset3);
@@ -934,6 +945,53 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 </div>
               </div>
               <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+
+           <!--Update category formulaSalary-->
+          <div class="col-md-12">
+          <!-- TABLE: LATEST ORDERS -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Formula Setting</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
+                  <table class="table m-0">
+                    <tbody>
+                    <tr>
+                      <td>
+                        <div class="input-group mb-3">
+                        <input type="number" class="form-control" placeholder="Type comission" name="roleCategory" id="validationDefault07" value="<? echo $row_Recordset6['commision'];?>" required>
+                          <div class="input-group-append input-group-text">
+                             <span class="fas fa-list-ol"></span>
+                             <button type="submit" name="submit4" class="btn btn-sm btn-success float-right">Update</button>
+                          </div>
+                         </div>
+                     </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <input type="hidden" name="year" value="<?php echo $year;?>">
+                </div>
+                <!-- /.table-responsive -->
+              </div>
+              <!-- /.card-body -->
+              </form>
+              
             </div>
             <!-- /.card -->
           </div>
