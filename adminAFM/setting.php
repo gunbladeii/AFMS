@@ -950,7 +950,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
           </div>
           <!-- /.col -->
 
-           <!--Update category formulaSalary-->
+           <!--Update formulaSalary-->
           <div class="col-md-12">
           <!-- TABLE: LATEST ORDERS -->
             <div class="card">
@@ -975,10 +975,9 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <tr>
                       <td>
                         <div class="input-group mb-3">
-                        <input type="number" class="form-control" placeholder="Type comission" name="roleCategory" id="validationDefault07" value="<?php echo $row_Recordset6['commision'];?>" required>
+                        <input type="number" class="form-control" placeholder="Update commision" name="commision" id="validationDefault07" value="<?php echo $row_Recordset6['commision'];?>" required>
                           <div class="input-group-append input-group-text">
                              <span class="fas fa-list-ol"></span>
-                            
                           </div>
                          </div>
                      </td>
@@ -990,28 +989,26 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 <!-- /.table-responsive -->
               </div>
               <!-- /.card-body -->
-               <div class="card-footer clearfix">
-                 <button type="submit" name="submit4" class="btn btn-sm btn-success float-right">Update</button>
-               </div>
+              <div class="card-footer clearfix">
+                <button type="submit" name="submit4" class="btn btn-sm btn-success float-right">Insert</button>
+              </div>
               </form>
               <div class="card-header border-transparent">
-                <h3 class="card-title">List of Registered Category</h3>
+                <h3 class="card-title">Comissin Editable</h3>
                 </div>
                 <div class="table-responsive">
                    <table id="example4"class="table m-0 table-hover table-sm">
                     <thead>
                     <tr>
                       <th><div class="badge badge-info">No.</div></th>
-                      <th><div class="badge badge-info">Registered Category</div></th>
+                      <th><div class="badge badge-info">Comission</div></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php do {?>
                     <tr>
-                      <td><?php echo $c++;?></td>
-                      <td><?php if($row_Recordset5['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset5['roleCategory']);}?></td>
+                      <td><?php echo '1';?></td>
+                      <td><?php echo $row_Recordset6['commision'];?></td>
                     </tr>
-                    <?php }while ($row_Recordset5 = mysqli_fetch_assoc($Recordset5))?>
                     </tbody>
                   </table> 
                 </div>
@@ -1021,7 +1018,6 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
             <!-- /.card -->
           </div>
           <!-- /.col -->
-
 
 
         
