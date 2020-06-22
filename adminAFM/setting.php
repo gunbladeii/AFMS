@@ -3,6 +3,7 @@
 
 $a = 1;
 $b = 1;
+$c = 1;
 
 date_default_timezone_set("Asia/Kuala_Lumpur");
 $year = date('Y');
@@ -924,7 +925,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <tbody>
                     <?php do {?>
                     <tr>
-                      <td><?php echo $b++;?></td>
+                      <td><?php echo $c++;?></td>
                       <td><?php echo if($row_Recordset5['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo $row_Recordset5['roleCategory'];}?></td>
                     </tr>
                     <?php }while ($row_Recordset5 = mysqli_fetch_assoc($Recordset5))?>
