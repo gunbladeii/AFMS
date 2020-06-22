@@ -37,8 +37,12 @@
     	$employeeStatus = $_POST['employeeStatus'];
     	$stationCode = $_POST['stationCode'];
     	$accNum = $_POST['accNum'];
-    	$codeBank = $_POST['codeBank'];
-    	
+      $codeBank = $_POST['codeBank'];
+    	$dateJoin = $_POST['dateJoin'];
+      $dateTransfer = $_POST['dateTransfer'];
+      $datePromo = $_POST['datePromo'];
+      $dateResign = $_POST['dateResign'];
+         	
     if (isset($_POST['submit'])) {
       $DLPic = addslashes(file_get_contents($_FILES["DLPic"]["tmp_name"]));
     	$riderFaceMotorPic = addslashes(file_get_contents($_FILES["riderFaceMotorPic"]["tmp_name"]));
@@ -46,7 +50,7 @@
     	
     	/*add pictue*/
     	
-    	$mysqli->query("INSERT INTO `employeeData` (`noIC`, `nama`, `emel`, `sex`, `dob`, `pob`, `nationality`, `race`, `religion`, `marriage`, `childrenNo`, `address`, `noTel`, `lesenNo`, `lesenExp`, `noPlate`, `roadtaxNo`, `vehicleModel`, `vehicleYear`, `pdrmRecordNo`, `caseNo`, `employeeStatus`, `stationCode`, `accNum`, `codeBank`, `DLPic`, `riderFacePic`, `riderFaceMotorPic`) VALUES ('$noIC', '$nama', '$username', '$sex', '$dob', '$pob', '$nationality', '$race', '$religion', '$marriage','$childrenNo', '$address', '$noTel', '$lesenNo', '$lesenExp', '$noPlate', '$roadtaxNo', '$vehicleModel', '$vehicleYear', '$pdrmRecordNo', '$caseNo', '$employeeStatus', '$stationCode', '$accNum', '$codeBank', '$DLPic', '$riderFacePic', '$riderFaceMotorPic')");
+    	$mysqli->query("INSERT INTO `employeeData` (`noIC`, `nama`, `emel`, `sex`, `dob`, `pob`, `dateJoin`,`dateTransfer` ,`datePromo` ,`dateResign` , `nationality`, `race`, `religion`, `marriage`, `childrenNo`, `address`, `noTel`, `lesenNo`, `lesenExp`, `noPlate`, `roadtaxNo`, `vehicleModel`, `vehicleYear`, `pdrmRecordNo`, `caseNo`, `employeeStatus`, `stationCode`, `accNum`, `codeBank`, `DLPic`, `riderFacePic`, `riderFaceMotorPic`) VALUES ('$noIC', '$nama', '$username', '$sex', '$dob', '$pob', '$dateJoin','$dateTransfer','$datePromo','$dateResign','$nationality', '$race', '$religion', '$marriage','$childrenNo', '$address', '$noTel', '$lesenNo', '$lesenExp', '$noPlate', '$roadtaxNo', '$vehicleModel', '$vehicleYear', '$pdrmRecordNo', '$caseNo', '$employeeStatus', '$stationCode', '$accNum', '$codeBank', '$DLPic', '$riderFacePic', '$riderFaceMotorPic')");
     	
     	header("location:registerRider.php");
     }
@@ -272,6 +276,50 @@
                 <span class="fas fa-phone"></span>
               </div>
           </div>
+        </div>
+
+         <div class="form-group">
+            
+            <div class="input-group mb-3">
+                <input type='text' class="form-control" name="dateJoin" placeholder="Date of Joining (mm/dd/yyyy)" data-inputmask="'mask': ['99/99/9999']" data-mask id="validationDefault06"/>
+                <div class="input-group-append input-group-text">
+                    <span class="fas fa-calendar">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+         <div class="form-group">
+           
+            <div class="input-group mb-3">
+                <input type='text' class="form-control" name="dateTransfer" placeholder="Date of Transfer (mm/dd/yyyy)" data-inputmask="'mask': ['99/99/9999']" data-mask id="validationDefault06"/>
+                <div class="input-group-append input-group-text">
+                    <span class="fas fa-calendar">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+         <div class="form-group">
+            
+            <div class="input-group mb-3">
+                <input type='text' class="form-control" name="datePromo" placeholder="Date of Promotion (mm/dd/yyyy)" data-inputmask="'mask': ['99/99/9999']" data-mask id="validationDefault06"/>
+                <div class="input-group-append input-group-text">
+                    <span class="fas fa-calendar">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+         <div class="form-group">
+            
+            <div class="input-group mb-3">
+                <input type='text' class="form-control" name="dateResign" placeholder="Date of Resignation (mm/dd/yyyy)" data-inputmask="'mask': ['99/99/9999']" data-mask id="validationDefault06"/>
+                <div class="input-group-append input-group-text">
+                    <span class="fas fa-calendar">
+                    </span>
+                </div>
+            </div>
         </div>
         
         
