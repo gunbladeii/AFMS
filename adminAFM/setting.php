@@ -884,7 +884,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
           <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">User's Role Setting</h3>
+                <h3 class="card-title">User's Role and Formula Setting</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
@@ -922,6 +922,37 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 <button type="submit" name="submit3" class="btn btn-sm btn-success float-right">Insert</button>
               </div>
               </form>
+
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
+                  <table class="table m-0">
+                    <tbody>
+                    <tr>
+                      <td>
+                        <div class="input-group mb-3">
+                        <input type="number" class="form-control" placeholder="Update commision" name="commision" id="validationDefault07" value="<?php echo($row_Recordset6['commision'])?>" required>
+                          <div class="input-group-append input-group-text">
+                             <span class="fas fa-list-ol"></span>
+                          </div>
+                         </div>
+                     </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <input type="hidden" name="year" value="<?php echo $year;?>">
+                </div>
+                <!-- /.table-responsive -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix">
+                <button type="submit" name="submit4" class="btn btn-sm btn-success float-right">Update</button>
+              </div>
+              </form>
+
+
+
               <div class="card-header border-transparent">
                 <h3 class="card-title">List of Registered Category</h3>
                 </div>
