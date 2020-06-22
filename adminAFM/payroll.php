@@ -53,7 +53,8 @@ $date = date('d-m-Y');
 $year = date('Y');
 $month = $_POST['month'];
 
-
+$formulaSalary = $mysqli->query("SELECT * FROM `formulaSalary`");
+$FS = mysqli_fetch_assoc($formulaSalary);
 
 /*
     $bankQuery = $mysqli->query("SELECT employeeData.noIC, employeeData.stationCode, employeeData.nama, employeeData.codeBank, bankName.bankName, COUNT(attendance.timeOut) AS totalAttend, SUM(infoParcel.itemCode) AS totalParcel, SUM(infoParcel.fail) AS totalFail, SUM(infoParcel.itemCode - infoParcel.fail) AS totalSuccess, attendance.month, attendance.year FROM
@@ -139,9 +140,9 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>'.$row["stationCode"].'</td>
           <td>'.$row["role"].'</td>
           <td>'.$row["totalSuccess"].'</td>
-          <td>1.50</td>
-          <td>100.00</td>
-          <td>50.00</td>
+          <td>'.$FS["commision"].'</td>
+          <td>'.$FS["petrol"].'</td>
+          <td>'.$FS["handphone"].'</td>
           <td>'.$row["bankName"].'</td>
           <td>'.$row["codeBank"].'</td>
           <td>=TEXT('.str_replace(' ', '', $row["accNum"]).',"0000000")</td>
