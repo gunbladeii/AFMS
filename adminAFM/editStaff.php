@@ -157,7 +157,7 @@
                         <?php if($CaC['roleCategory'] == 'ss')
                         {echo 'Supervisors';}
                         elseif ($CaC['roleCategory'] == $ED['role']) {
-                          echo "";
+                          echo NULL;
                         }
                         else
                           {echo $CaC['roleCategory'];}
