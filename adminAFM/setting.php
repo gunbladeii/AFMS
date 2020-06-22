@@ -949,7 +949,8 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
             <!-- /.card -->
           </div>
           <!-- /.col -->
-
+    </section>
+    <section>
            <!--Update formulaSalary-->
           <div class="col-md-12">
           <!-- TABLE: LATEST ORDERS -->
