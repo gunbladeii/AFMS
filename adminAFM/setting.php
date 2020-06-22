@@ -941,52 +941,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
 
 
 
-        <div class="col-md-12">
-          <!-- TABLE: LATEST ORDERS -->
-            <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Annoucement</h3>
-                <div class="badge badge-info text-wrap" style="width: 25rem;">
-                Use for annouced news/task crossed over all station supervisor and rider.</div>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                <form action="setting.php" method="post" name="prosesDaftar2" enctype="multipart/form-data">
-            <!-- tools box -->
-            <!-- /.card-header -->
-            <div class="card-body pad">
-              <div class="mb-3">
-                <textarea class="textarea" placeholder="Place some text here"
-                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-              </div>
-               <!-- /. tools -->
-                  <input type="hidden" name="MM_insert2" value="prosesDaftar2">
-                </div>
-                <!-- /.table-responsive -->
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer clearfix">
-                <button type="submit" name="submit" class="btn btn-sm btn-success float-right">Submit</button>
-              </div>
-              </form>
-              </div>
-              <!-- /.card-footer -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.xxx section registraion end -->
-        </div>
-        <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
+        
      </section>
     <!-- /.content -->
   </div>
