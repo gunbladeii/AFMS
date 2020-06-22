@@ -926,7 +926,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <?php do {?>
                     <tr>
                       <td><?php echo $c++;?></td>
-                      <td><?php echo $row_Recordset5['roleCategory'];?></td>
+                      <td><?php if($row_Recordset5['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo $row_Recordset5['roleCategory'];}?></td>
                     </tr>
                     <?php }while ($row_Recordset5 = mysqli_fetch_assoc($Recordset5))?>
                     </tbody>
