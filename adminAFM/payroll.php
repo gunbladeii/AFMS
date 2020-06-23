@@ -149,7 +149,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>'.$row['operationDay'].'</td>
           <td>'.$row['totalAttend'].'</td>
           <td>=M'.$e++.'-N'.$e++.'</td>
-          <td>=+F'.$e1++.'-N'.$e2++.'</td>
+          <td>=ROUND((+F'.$e1++.'/N'.$e2++.'),2)</td>
           <td>=+(N'.$e3++.'*30)</td>
           <td>=+F'.$e4++.'-Q'.$e5++.'</td>
           <td>=ROUND((F'.$e6++.'*G'.$e7++.'),2)</td>
