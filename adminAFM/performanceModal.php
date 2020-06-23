@@ -26,7 +26,7 @@ $a=1;
 
 <?php if(!empty($row_Recordset2['stationCode'])) {?>    
               <h5><span class="badge badge-primary"><?php echo strtoupper($row_Recordset2['stationName']);?></span></h5>
-              <table id="example3" class="table table-hover table-responsive">
+              <table id="examplePerf" class="table table-hover table-responsive">
                 <thead>
                 <tr style="text-align:center">
                   <th>No.</th>
@@ -67,6 +67,6 @@ $a=1;
 <script src="plugins/datatables/dataTables.bootstrap4.js"></script>
 <script>
   $(function () {
-    $("#example3").DataTable();
+    $("#examplePerf").DataTable();
   });
 </script>
