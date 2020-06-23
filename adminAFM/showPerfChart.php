@@ -43,7 +43,7 @@ $a=1;
                       <td><a data-toggle="modal"
                           data-target="#performanceModal"
                           data-whatever="<?php echo $performance['stationCode'];?>"  
-                          data-whatever2="<?php $date=date_create($performance['date']);echo date_format($date,"F");?>"><span class="badge badge-secondary"><?php echo $performance['stationName'];?></span></a>
+                          data-whatever2="<?php echo $performance['month'];?>"><span class="badge badge-secondary"><?php echo $performance['stationName'];?></span></a>
                       </td>
                       <td><span class="badge badge-info"><?php $date=date_create($performance['date']);echo date_format($date,"F");?></span></td>
                       <td><span class="badge badge-info"><?php $year=date_create($performance['date']);echo date_format($year,"Y");?></span></td>
