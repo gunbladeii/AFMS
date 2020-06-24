@@ -51,7 +51,8 @@ $e33=2;
 date_default_timezone_set("Asia/Kuala_Lumpur");
 $date = date('d-m-Y');
 $year = date('Y');
-$month = $_POST['month'];
+$monthBegin = $_POST['month1'];
+$monthEnd = $_POST['month2'];
 
 $formulaSalary = $mysqli->query("SELECT * FROM `formulaSalary`");
 $FS = mysqli_fetch_assoc($formulaSalary);
@@ -75,7 +76,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
 					INNER JOIN attendance ON employeeData.noIC = attendance.noIC)
           INNER JOIN testSalary ON employeeData.noIC = testSalary.noIC)			
-					WHERE testSalary.year='$year' AND testSalary.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY testSalary.noIC,testSalary.month, testSalary.year ORDER BY employeeData.stationCode,employeeData.nama ASC"); 					
+					WHERE testSalary.year='$year' AND employeeData.employeeStatus NOT LIKE 'dump' AND testSalary.month BETWWEEN '$monthBegin' AND '#monthEnd' GROUP BY testSalary.noIC,testSalary.month, testSalary.year ORDER BY employeeData.stationCode,employeeData.nama ASC"); 					
 
 	if (mysqli_num_rows($sql) > 0)
 		{
@@ -867,21 +868,8 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                     <tr>
                       <td>
                      <div class="input-group mb-3">
-                           <select name="month" class="custom-select browser-default" required>
-                              <option value="" selected>Pick Month</option>
-                              <option value="01" >January</option>
-                              <option value="02" >Febuary</option>
-                              <option value="03" >March</option>
-                              <option value="04" >April</option>
-                              <option value="05" >May</option>
-                              <option value="06" >June</option>
-                              <option value="07" >July</option>
-                              <option value="08" >August</option>
-                              <option value="09" >September</option>
-                              <option value="10" >October</option>
-                              <option value="11" >November</option>
-                              <option value="12" >Disember</option>
-                           </select>
+                           <input type="date" name="month1" placeholder="Date Begin.." required>
+                           <input type="date" name="month2" placeholder="Date End.." required>
                                 <div class="input-group-append input-group-text">
                                   <span class="fas fa-calendar-alt"></span>
                                 </div>
