@@ -882,8 +882,6 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                               <option value="11" >November</option>
                               <option value="12" >Disember</option>
                            </select>
-                           <input type="date" name="month1" placeholder="Date Begin.." required>
-                           <input type="date" name="month2" placeholder="Date End.." required>
                                 <div class="input-group-append input-group-text">
                                   <span class="fas fa-calendar-alt"></span>
                                 </div>
