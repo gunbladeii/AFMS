@@ -69,7 +69,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 
 	if (isset($_POST["download"]))
 	{
-	$sql = $mysqli->query("SELECT testSalary.role,testSalary.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, testSalary.totalAttend, testSalary.receieved AS totalParcel, testSalary.fail AS totalFail, testSalary.totalParcel AS totalSuccess, testSalary.month, testSalary.year, employeeData.employeeStatus, testSalary.operationDay,testSalary.avgDel,testSalary.ot,testSalary.minDel,testSalary.delComm,testSalary.comFee,testSalary.petrol, testSalary.handphone, testSalary.attAllow, testSalary.comission, testSalary.advanced,testSalary.epf,testSalary.eis,testSalary.socso,testSalary.epf2,testSalary.eis2,testSalary.socso2,testSalary.hrdf, testSalary.advance2 FROM
+	$sql = $mysqli->query("SELECT testSalary.role,testSalary.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, testSalary.totalAttend, testSalary.receieved AS totalParcel, testSalary.fail AS totalFail, testSalary.totalParcel AS totalSuccess, testSalary.month, testSalary.year, employeeData.employeeStatus, testSalary.operationDay,testSalary.avgDel,testSalary.ot,testSalary.minDel,testSalary.delComm,testSalary.comFee,testSalary.petrol, testSalary.handphone, testSalary.attAllow, testSalary.comission, testSalary.advanced,testSalary.epf,testSalary.eis,testSalary.socso,testSalary.epf2,testSalary.eis2,testSalary.socso2,testSalary.hrdf, testSalary.advance2, testSalary.ot, testSalary.valueOT FROM
 
      (((employeeData 
 					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
@@ -155,26 +155,26 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>=ROUND((F'.$e6++.'*G'.$e7++.'),2)</td>
           <td>'.$row["petrol"].'</td>
           <td>'.$row["handphone"].'</td>
-          <td>'.$row["comFee"].'</td>
-          <td>'.$row["ot"].'</td>
+          <td>'.round($row["comFee"],2).'</td>
+          <td>'.round($row["ot"],2).'</td>
           <td>=ROUND(((0*9.52)+(0*12.7)),2)</td>
           <td></td>
           <td>'.$row['attAllow'].'</td>
           <td>=SUM(S'.$e12++.':Z'.$e13++.')</td>
           <td></td>
-          <td>'.$row["advance2"].'</td>
+          <td>'.round($row["advance2"],2).'</td>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
-          <td>'.$row["epf"].'</td>
-          <td>'.$row["socso"].'</td>
-          <td>'.$row["eis"].'</td>
+          <td>'.round($row["epf2"],2).'</td>
+          <td>'.round($row["socso2"],2).'</td>
+          <td>'.round($row["eis2"],2).'</td>
           <td>=AA'.$e14++.'-AB'.$e15++.'-AC'.$e16++.'-AD'.$e17++.'-AF'.$e18++.'-AG'.$e19++.'-AH'.$e20++.'-AI'.$e21++.'-AJ'.$e22++.'-AE'.$e23++.'</td>
-          <td>'.$row["epf2"].'</td>
-          <td>'.$row["socso2"].'</td>
-          <td>'.$row["eis2"].'</td>
-          <td>'.$row["hrdf"].'</td>
+          <td>'.round($row["epf"],2).'</td>
+          <td>'.round($row["socso"],2).'</td>
+          <td>'.round($row["eis"],2).'</td>
+          <td>'.round($row["hrdf"],2).'</td>
           <td>'.$month_name.'</td>
 					<td>'.$date.'</td>
           <td></td>
