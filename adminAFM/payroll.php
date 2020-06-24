@@ -76,7 +76,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
 					INNER JOIN attendance ON employeeData.noIC = attendance.noIC)
           INNER JOIN testSalary ON employeeData.noIC = testSalary.noIC)			
-					WHERE testSalary.year='$year' AND employeeData.employeeStatus NOT LIKE 'dump' AND testSalary.month BETWWEEN '$monthBegin' AND '#monthEnd' GROUP BY testSalary.noIC,testSalary.month, testSalary.year ORDER BY employeeData.stationCode,employeeData.nama ASC"); 					
+					WHERE testSalary.year='$year' AND employeeData.employeeStatus NOT LIKE 'dump' AND testSalary.date BETWEEN '$monthBegin' AND '#monthEnd' GROUP BY testSalary.noIC,testSalary.month, testSalary.year ORDER BY employeeData.stationCode,employeeData.nama ASC"); 					
 
 	if (mysqli_num_rows($sql) > 0)
 		{
