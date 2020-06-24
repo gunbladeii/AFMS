@@ -51,8 +51,7 @@ $e33=2;
 date_default_timezone_set("Asia/Kuala_Lumpur");
 $date = date('d-m-Y');
 $year = date('Y');
-$monthBegin = $_POST['month1'];
-$monthEnd = $_POST['month2'];
+$month = $_POST['month'];
 
 $formulaSalary = $mysqli->query("SELECT * FROM `formulaSalary`");
 $FS = mysqli_fetch_assoc($formulaSalary);
@@ -70,13 +69,13 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 
 	if (isset($_POST["download"]))
 	{
-	$sql = $mysqli->query("SELECT testSalary.role,testSalary.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, testSalary.totalAttend, testSalary.receieved AS totalParcel, testSalary.fail AS totalFail, testSalary.totalParcel AS totalSuccess, testSalary.month, MONTHNAME(testSalary.date) AS month_name, testSalary.year, employeeData.employeeStatus, testSalary.operationDay,testSalary.avgDel,testSalary.ot,testSalary.minDel,testSalary.delComm,testSalary.comFee,testSalary.petrol, testSalary.handphone, testSalary.attAllow, testSalary.comission, testSalary.advanced,testSalary.epf,testSalary.eis,testSalary.socso,testSalary.epf2,testSalary.eis2,testSalary.socso2,testSalary.hrdf, testSalary.advance2, testSalary.ot, testSalary.valueOT FROM
+	$sql = $mysqli->query("SELECT testSalary.role,testSalary.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, testSalary.totalAttend, testSalary.receieved AS totalParcel, testSalary.fail AS totalFail, testSalary.totalParcel AS totalSuccess, testSalary.month, testSalary.year, employeeData.employeeStatus, testSalary.operationDay,testSalary.avgDel,testSalary.ot,testSalary.minDel,testSalary.delComm,testSalary.comFee,testSalary.petrol, testSalary.handphone, testSalary.attAllow, testSalary.comission, testSalary.advanced,testSalary.epf,testSalary.eis,testSalary.socso,testSalary.epf2,testSalary.eis2,testSalary.socso2,testSalary.hrdf, testSalary.advance2 FROM
 
      (((employeeData 
 					INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank) 
 					INNER JOIN attendance ON employeeData.noIC = attendance.noIC)
           INNER JOIN testSalary ON employeeData.noIC = testSalary.noIC)			
-					WHERE testSalary.year='$year' AND employeeData.employeeStatus NOT LIKE 'dump' AND testSalary.date BETWEEN '$monthBegin' AND '$monthEnd' GROUP BY testSalary.noIC,testSalary.month, testSalary.year ORDER BY employeeData.stationCode,employeeData.nama ASC"); 					
+					WHERE testSalary.year='$year' AND testSalary.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY testSalary.noIC,testSalary.month, testSalary.year ORDER BY employeeData.stationCode,employeeData.nama ASC"); 					
 
 	if (mysqli_num_rows($sql) > 0)
 		{
@@ -139,7 +138,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 					<td>'.ucwords(strtolower($row["nama"])).'</td>
 					<td>=TEXT('.str_replace(' ', '', $row["noIC"]).',"0000000")</td>
           <td>'.$row["stationCode"].'</td>
-          <td>'.ucfirst($row["role"]).'</td>
+          <td>'.$row["role"].'</td>
           <td>'.$row["totalSuccess"].'</td>
           <td>'.$FS["commision"].'</td>
           <td>'.$FS["petrol"].'</td>
@@ -156,27 +155,27 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>=ROUND((F'.$e6++.'*G'.$e7++.'),2)</td>
           <td>'.$row["petrol"].'</td>
           <td>'.$row["handphone"].'</td>
-          <td>'.round($row["comFee"],2).'</td>
-          <td>'.round($row["ot"],2).'</td>
+          <td>'.$row["comFee"].'</td>
+          <td>'.$row["ot"].'</td>
           <td>=ROUND(((0*9.52)+(0*12.7)),2)</td>
           <td></td>
           <td>'.$row['attAllow'].'</td>
           <td>=SUM(S'.$e12++.':Z'.$e13++.')</td>
           <td></td>
-          <td>'.round($row["advance2"],2).'</td>
+          <td>'.$row["advance2"].'</td>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
-          <td>'.round($row["epf2"],2).'</td>
-          <td>'.round($row["socso2"],2).'</td>
-          <td>'.round($row["eis2"],2).'</td>
+          <td>'.$row["epf"].'</td>
+          <td>'.$row["socso"].'</td>
+          <td>'.$row["eis"].'</td>
           <td>=AA'.$e14++.'-AB'.$e15++.'-AC'.$e16++.'-AD'.$e17++.'-AF'.$e18++.'-AG'.$e19++.'-AH'.$e20++.'-AI'.$e21++.'-AJ'.$e22++.'-AE'.$e23++.'</td>
-          <td>'.round($row["epf"],2).'</td>
-          <td>'.round($row["socso"],2).'</td>
-          <td>'.round($row["eis"],2).'</td>
-          <td>'.round($row["hrdf"],2).'</td>
-          <td>'.$row["month_name"].'</td>
+          <td>'.$row["epf2"].'</td>
+          <td>'.$row["socso2"].'</td>
+          <td>'.$row["eis2"].'</td>
+          <td>'.$row["hrdf"].'</td>
+          <td>'.$month_name.'</td>
 					<td>'.$date.'</td>
           <td></td>
 					
@@ -868,13 +867,23 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                     <tr>
                       <td>
                      <div class="input-group mb-3">
-                           <input type="text" name="month1" placeholder="Date Begin.." required>
-                                <div class="input-group-append input-group-text">
-                                  <span class="fas fa-calendar-alt"></span>
-                                </div>
-                     </div>
-                     <div class="input-group mb-3">
-                              <input type="text" name="month2" placeholder="Date End.." required>
+                           <select name="month" class="custom-select browser-default" required>
+                              <option value="" selected>Pick Month</option>
+                              <option value="01" >January</option>
+                              <option value="02" >Febuary</option>
+                              <option value="03" >March</option>
+                              <option value="04" >April</option>
+                              <option value="05" >May</option>
+                              <option value="06" >June</option>
+                              <option value="07" >July</option>
+                              <option value="08" >August</option>
+                              <option value="09" >September</option>
+                              <option value="10" >October</option>
+                              <option value="11" >November</option>
+                              <option value="12" >Disember</option>
+                           </select>
+                           <input type="date" name="month1" placeholder="Date Begin.." required>
+                           <input type="date" name="month2" placeholder="Date End.." required>
                                 <div class="input-group-append input-group-text">
                                   <span class="fas fa-calendar-alt"></span>
                                 </div>
