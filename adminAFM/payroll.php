@@ -138,7 +138,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 					<td>'.ucwords(strtolower($row["nama"])).'</td>
 					<td>=TEXT('.str_replace(' ', '', $row["noIC"]).',"0000000")</td>
           <td>'.$row["stationCode"].'</td>
-          <td>'.if($row["role" == "ss"]){"Supervisor";}else{ucfirst($row["role");}.'</td>
+          <td>'.ucfirst($row["role").'</td>
           <td>'.$row["totalSuccess"].'</td>
           <td>'.$FS["commision"].'</td>
           <td>'.$FS["petrol"].'</td>
