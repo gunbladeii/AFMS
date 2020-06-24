@@ -868,8 +868,13 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                     <tr>
                       <td>
                      <div class="input-group mb-3">
-                           <input type="date" name="month1" placeholder="Date Begin.." required>
-                           <input type="date" name="month2" placeholder="Date End.." required>
+                           <input type="text" name="month1" placeholder="Date Begin.." required>
+                                <div class="input-group-append input-group-text">
+                                  <span class="fas fa-calendar-alt"></span>
+                                </div>
+                     </div>
+                     <div class="input-group mb-3">
+                              <input type="text" name="month2" placeholder="Date End.." required>
                                 <div class="input-group-append input-group-text">
                                   <span class="fas fa-calendar-alt"></span>
                                 </div>
