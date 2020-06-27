@@ -235,26 +235,6 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
               </li>-->
             </ul>
           </li>
-          
-          <li class="nav-item has-treeview">
-          <a href="registerRider.php" class="nav-link">
-              <i class="nav-icon fas fa-cash-register"></i>
-              <p>
-                Registration Form
-                <!--<i class="right fas fa-angle-left"></i>-->
-              </p>
-            </a>
-          </li>
-          
-          <li class="nav-item has-treeview">
-          <a href="setting.php" class="nav-link">
-              <i class="nav-icon fas fa-cogs"></i>
-              <p>
-                Control Panel
-                <!--<i class="right fas fa-angle-left"></i>-->
-              </p>
-            </a>
-          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
