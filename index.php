@@ -49,6 +49,13 @@ session_start();
                 $_SESSION['password'] = $res["password"];
                 header('Location:adminAFM/index.php');
             }
+            else if($res["role"] == "regional admin")
+            {
+            $_SESSION['MM_Username'] = $res['username'];
+            $_SESSION['role'] = $res["role"];
+            $_SESSION['password'] = $res["password"];
+            header('Location:adminAFM/regional_admin.php');
+            }
             else if($res["role"] == "rider")
             {
             $_SESSION['MM_Username'] = $res['username'];

@@ -7,6 +7,10 @@
             {
                 header('Location:adminAFM/index.php');
             }
+            else if($_SESSION['role'] == "regional admin")
+            {
+            header('Location:adminAFM/regional_admin.php');
+            }
             else if($_SESSION['role'] == "rider")
             {
             header('Location:riderAFM/profileRider.php');
