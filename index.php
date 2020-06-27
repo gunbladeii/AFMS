@@ -63,6 +63,13 @@ session_start();
             $_SESSION['password'] = $res["password"];
             header('Location:supervisorAFM/index.php');
             }
+            else if($res["role"] == "Senior Courier")
+            {
+            $_SESSION['MM_Username'] = $res['username'];
+            $_SESSION['role'] = $res["role"];
+            $_SESSION['password'] = $res["password"];
+            header('Location:supervisorAFM/index.php');
+            }
             else if($res["role"] == "dump")
             {
             $_SESSION['MM_Username'] = $res['username'];

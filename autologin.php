@@ -15,6 +15,10 @@
             {
             header('Location:supervisorAFM/index.php');
             }
+            else if($_SESSION['role'] == "Senior Courier")
+            {
+            header('Location:supervisorAFM/index.php');
+            }
             else if($_SESSION['role'] == "dump")
             {
             header('Location:fetchUser.php');
