@@ -903,6 +903,11 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <tbody>
                     <tr>
                       <td>
+                        <div class="h3">Role Cagtegory Setting</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
                         <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Type role category" name="roleCategory" id="validationDefault07" required>
                           <div class="input-group-append input-group-text">
