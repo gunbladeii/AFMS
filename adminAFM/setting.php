@@ -1029,7 +1029,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 </div>
 
                 <div class="card-header border-transparent">
-                <h3 class="card-title">Commission by role dasboard</h3>
+                <h3 class="card-title">Commission by Role</h3>
                 </div>
                 <div class="table-responsive">
                    <table id="example5"class="table m-0 table-hover table-sm">
@@ -1039,6 +1039,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                       <th><div class="badge badge-info">Commission</div></th>
                       <th><div class="badge badge-info">Role</div></th>
                       <th><div class="badge badge-info">Month</div></th>
+                      <th><div class="badge badge-info">Year</div></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -1048,6 +1049,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                       <td><?php echo $row_Recordset7['commision'];?></td>
                       <td><?php if($row_Recordset7['role'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset7['role']);}?></td>
                       <td><?php echo $row_Recordset7['monthName'];?></td>
+                      <td><?php echo $row_Recordset7['year'];?></td>
                     </tr>
                     <?php }while ($row_Recordset7 = mysqli_fetch_assoc($Recordset7))?>
                     </tbody>
