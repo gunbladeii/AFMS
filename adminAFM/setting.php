@@ -67,7 +67,7 @@ $Recordset6 = $mysqli->query("SELECT * FROM category");
 $row_Recordset6 = mysqli_fetch_assoc($Recordset6);
 $totalRows_Recordset6 = mysqli_num_rows($Recordset6);
 
-$Recordset7 = $mysqli->query("SELECT *,MONTHNAME('date') AS monthName FROM infoParcel GROUP BY role,month,year ORDER BY monthName ASC");
+$Recordset7 = $mysqli->query("SELECT *,MONTHNAME(date) AS monthName FROM infoParcel GROUP BY role,month,year ORDER BY monthName ASC");
 $row_Recordset7 = mysqli_fetch_assoc($Recordset7);
 $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
 
