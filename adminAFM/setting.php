@@ -67,7 +67,7 @@ $Recordset6 = $mysqli->query("SELECT * FROM category");
 $row_Recordset6 = mysqli_fetch_assoc($Recordset6);
 $totalRows_Recordset6 = mysqli_num_rows($Recordset6);
 
-$Recordset7 = $mysqli->query("SELECT * FROM infoParcel GROUP BY role,month,year");
+$Recordset7 = $mysqli->query("SELECT *,MONTHNAME("date") AS monthName FROM infoParcel GROUP BY role,month,year ORDER BY monthName ASC");
 $row_Recordset7 = mysqli_fetch_assoc($Recordset7);
 $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
 
@@ -1045,9 +1045,9 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <?php do {?>
                     <tr>
                       <td><?php echo $d++;?></td>
-                      <td><?php $row_Recordset7['commision'];?></td>
+                      <td><?php echo $row_Recordset7['commision'];?></td>
                       <td><?php if($row_Recordset7['role'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset7['role']);}?></td>
-                      <td><?php $row_Recordset7['month'];?></td>
+                      <td><?php echo $row_Recordset7['monthName'];?></td>
                     </tr>
                     <?php }while ($row_Recordset7 = mysqli_fetch_assoc($Recordset7))?>
                     </tbody>
