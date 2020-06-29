@@ -1046,7 +1046,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <?php do {?>
                     <tr>
                       <td><?php echo $d++;?></td>
-                      <td><?php if(!empty($row_Recordset7['commision'])){echo '<div class="badge badge-danger">'.$row_Recordset7['commision'].'</div>';}else{echo '<div class="badge badge-warning">Commission not set yet</div>';}?></td>
+                      <td><?php if(!empty($row_Recordset7['commision'])){echo '<div class="badge badge-success">'.$row_Recordset7['commision'].'</div>';}else{echo '<div class="badge badge-warning">Commission not set yet</div>';}?></td>
                       <td><?php if($row_Recordset7['role'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset7['role']);}?></td>
                       <td><?php echo $row_Recordset7['monthName'];?></td>
                       <td><?php echo $row_Recordset7['year'];?></td>
