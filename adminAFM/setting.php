@@ -67,7 +67,7 @@ $Recordset6 = $mysqli->query("SELECT * FROM category");
 $row_Recordset6 = mysqli_fetch_assoc($Recordset6);
 $totalRows_Recordset6 = mysqli_num_rows($Recordset6);
 
-$Recordset7 = $mysqli->query("SELECT * FROM infoParcel");
+$Recordset7 = $mysqli->query("SELECT * FROM infoParcel GROUP BY role,month,year");
 $row_Recordset7 = mysqli_fetch_assoc($Recordset7);
 $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
 
@@ -1032,7 +1032,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 <h3 class="card-title">Commission by role dasboard</h3>
                 </div>
                 <div class="table-responsive">
-                   <table id="example4"class="table m-0 table-hover table-sm">
+                   <table id="example5"class="table m-0 table-hover table-sm">
                     <thead>
                     <tr>
                       <th><div class="badge badge-info">No.</div></th>
@@ -1126,6 +1126,10 @@ $(function () {
 
   $(function () {
     $("#example4").DataTable();
+  });
+
+  $(function () {
+    $("#example5").DataTable();
   });
 </script>
 <script type="text/javascript">
