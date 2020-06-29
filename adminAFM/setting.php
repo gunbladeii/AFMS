@@ -4,6 +4,7 @@
 $a = 1;
 $b = 1;
 $c = 1;
+$d = 1;
 
 date_default_timezone_set("Asia/Kuala_Lumpur");
 $year = date('Y');
@@ -65,6 +66,10 @@ $totalRows_Recordset5 = mysqli_num_rows($Recordset5);
 $Recordset6 = $mysqli->query("SELECT * FROM category");
 $row_Recordset6 = mysqli_fetch_assoc($Recordset6);
 $totalRows_Recordset6 = mysqli_num_rows($Recordset6);
+
+$Recordset7 = $mysqli->query("SELECT * FROM infoParcel");
+$row_Recordset7 = mysqli_fetch_assoc($Recordset7);
+$totalRows_Recordset7 = mysqli_num_rows($Recordset7);
 
 $Recordset3 = $mysqli->query("SELECT infoParcel.stationCode,infoParcel.month,infoParcel.year,infoParcel.operationDay,stationName.name AS name FROM infoParcel INNER JOIN stationName ON stationName.stationCode = infoParcel.stationCode GROUP BY stationCode,month,year ORDER BY month, year DESC");
 $row_Recordset3 = mysqli_fetch_assoc($Recordset3);
@@ -956,7 +961,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                           <select name="roleCom" class="custom-select browser-default" required>
                             <option value="">Pick role</option>
                             <?php do{?>
-                            <option value="<?php echo $row_Recordset5['roleCategory'];?>"><?php if($row_Recordset5['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset5['roleCategory']);}?></option>
+                            <option value="<?php echo $row_Recordset5['role'];?>"><?php if($row_Recordset5['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset5['roleCategory']);}?></option>
                             <?php }while ($row_Recordset5 = mysqli_fetch_assoc($Recordset5))?>
                           </select>
                             <div class="input-group-append input-group-text">
@@ -1022,6 +1027,33 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     </tbody>
                   </table> 
                 </div>
+
+                <div class="card-header border-transparent">
+                <h3 class="card-title">Commission by role dasboard</h3>
+                </div>
+                <div class="table-responsive">
+                   <table id="example4"class="table m-0 table-hover table-sm">
+                    <thead>
+                    <tr>
+                      <th><div class="badge badge-info">No.</div></th>
+                      <th><div class="badge badge-info">Commission</div></th>
+                      <th><div class="badge badge-info">Role</div></th>
+                      <th><div class="badge badge-info">Month</div></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php do {?>
+                    <tr>
+                      <td><?php echo $d++;?></td>
+                      <td><?php $row_Recordset7['commision'];?></td>
+                      <td><?php if($row_Recordset7['role'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset7['role']);}?></td>
+                      <td><?php $row_Recordset7['month'];?></td>
+                    </tr>
+                    <?php }while ($row_Recordset7 = mysqli_fetch_assoc($Recordset7))?>
+                    </tbody>
+                  </table> 
+                </div>
+
               </div>
               <!-- /.card-footer -->
             </div>
