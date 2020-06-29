@@ -905,7 +905,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <tbody>
                     <tr>
                       <td>
-                        <div class="h5">Role Category Setting</div>
+                        <div class="h6">Role Category Setting</div>
                       </td>
                     </tr>
                     <tr>
@@ -938,7 +938,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <tbody>
                     <tr>
                       <td>
-                        <div class="h5">Comission Setting by Role</div>
+                        <div class="h6">Comission Setting by Role</div>
                       </td>
                     </tr>
                     <tr>
