@@ -944,7 +944,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <tr>
                       <td>
                         <div class="input-group mb-3">
-                        <input type="number" class="form-control" placeholder="Update commision" name="commision" id="validationDefault07" value="<?php echo($row_Recordset6['commision'])?>" required>
+                        <input type="text" class="form-control" placeholder="Update commision" name="commision" id="validationDefault07" value="<?php echo($row_Recordset6['commision'])?>" required>
                           <div class="input-group-append input-group-text">
                              <span class="fas fa-list-ol"></span>
                           </div>
