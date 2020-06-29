@@ -13,6 +13,8 @@ $stationCode = $_POST['stationCode'];
 $operationDay = $_POST['operationDay'];
 $roleCategory = $_POST['roleCategory'];
 $commision = $_POST['commision'];
+$monthCom = $_POST['monthCom'];
+$roleCom = $_POST['roleCom'];
 
 if (isset($_POST["submit"])){
   $mysqli->query("INSERT INTO stationName (name, stationCode) VALUES ('$name', '$stationCode')");
@@ -32,7 +34,7 @@ if (isset($_POST['submit3'])) {
     }
 
 if (isset($_POST['submit4'])) {
-     $mysqli->query("UPDATE `formulaSalary` SET `commision` = '$commision' WHERE `id` = '1'");
+     $mysqli->query("UPDATE `infoParcel` SET `commision` = '$commision' WHERE `month` = '$monthCom' AND `role` = '$roleCom' ");
       
       header("location:setting.php");
     }
@@ -903,7 +905,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <tbody>
                     <tr>
                       <td>
-                        <div class="h5">Role Cagtegory Setting</div>
+                        <div class="h5">Role Category Setting</div>
                       </td>
                     </tr>
                     <tr>
@@ -936,13 +938,54 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <tbody>
                     <tr>
                       <td>
+                        <div class="h5">Comission Setting by Role</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
                         <div class="input-group mb-3">
                         <input type="number" class="form-control" placeholder="Update commision" name="commision" id="validationDefault07" value="<?php echo($row_Recordset6['commision'])?>" required>
                           <div class="input-group-append input-group-text">
                              <span class="fas fa-list-ol"></span>
                           </div>
                          </div>
+                      </td>
+
+                      <td>
+                    <div class="input-group mb-3">
+                          <select name="roleCom" class="custom-select browser-default" required>
+                            <option value="">Pick role</option>
+                            <?php do{?>
+                            <option value="<?php echo $row_Recordset5['roleCategory '];?>"><?php if($row_Recordset5['roleCategory '] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset5['roleCategory']);}?></option>
+                            <?php }while ($row_Recordset5 = mysqli_fetch_assoc($Recordset5))?>
+                          </select>
+                            <div class="input-group-append input-group-text">
+                              <span class="fas fa-motorcycle"></span>
+                            </div>
+                     </div>
                      </td>
+                      <td>
+                     <div class="input-group mb-3">
+                           <select name="monthCom" class="custom-select browser-default" required>
+                              <option value="" selected>Pick Month</option>
+                              <option value="01" >January</option>
+                              <option value="02" >Febuary</option>
+                              <option value="03" >March</option>
+                              <option value="04" >April</option>
+                              <option value="05" >May</option>
+                              <option value="06" >June</option>
+                              <option value="07" >July</option>
+                              <option value="08" >August</option>
+                              <option value="09" >September</option>
+                              <option value="10" >October</option>
+                              <option value="11" >November</option>
+                              <option value="12" >Disember</option>
+                           </select>
+                                <div class="input-group-append input-group-text">
+                                  <span class="fas fa-calendar-alt"></span>
+                                </div>
+                     </div>
+                      </td>
                     </tr>
                     </tbody>
                   </table>
