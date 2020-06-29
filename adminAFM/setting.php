@@ -62,7 +62,7 @@ $Recordset5 = $mysqli->query("SELECT * FROM category");
 $row_Recordset5 = mysqli_fetch_assoc($Recordset5);
 $totalRows_Recordset5 = mysqli_num_rows($Recordset5);
 
-$Recordset6 = $mysqli->query("SELECT * FROM formulaSalary WHERE `id` = '1'");
+$Recordset6 = $mysqli->query("SELECT * FROM category");
 $row_Recordset6 = mysqli_fetch_assoc($Recordset6);
 $totalRows_Recordset6 = mysqli_num_rows($Recordset6);
 
@@ -1016,9 +1016,9 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <?php do {?>
                     <tr>
                       <td><?php echo $c++;?></td>
-                      <td><?php if($row_Recordset5['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset5['roleCategory']);}?></td>
+                      <td><?php if($row_Recordset6['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset6['roleCategory']);}?></td>
                     </tr>
-                    <?php }while ($row_Recordset5 = mysqli_fetch_assoc($Recordset5))?>
+                    <?php }while ($row_Recordset6 = mysqli_fetch_assoc($Recordset6))?>
                     </tbody>
                   </table> 
                 </div>
