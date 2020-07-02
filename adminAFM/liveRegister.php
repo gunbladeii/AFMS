@@ -54,7 +54,7 @@ $a=1;
                       <td><?php echo $row_station['noIC'];?></td>
                       <td><?php echo $row_station['emel'];?></td>
                       <td><?php echo $row_station['password'];?></td>
-                      <td><?php if($row_station['role'] =='rider'){echo '<h6>Rider</h6>';}elseif($row_station['role'] =='ss'){echo '<h6>Station Supervisor</h6>';}elseif($row_station['role'] =='dump'){echo '<h6>Re-assign</h6>';}else{echo 'Administrator';}?></td>
+                      <td><?php if($row_station['role'] =='rider'){echo '<h6>Rider</h6>';}elseif($row_station['role'] =='ss'){echo '<h6>Station Supervisor</h6>';}elseif($row_station['role'] =='Senior Courier'){echo '<h6>Senior Courier</h6>';}elseif($row_station['role'] =='dump'){echo '<h6>Re-assign</h6>';}else{echo 'Administrator';}?></td>
                       <td><?php echo $row_station['name'];?></td>
                       <td><?php echo $row_station['stationCode'];?></td>
                       <td>
