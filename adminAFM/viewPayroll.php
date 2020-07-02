@@ -34,16 +34,7 @@ $a=1;
 	             <td><span class="badge badge-info"><?php $year=date_create($row_Recordset2['year']);echo date_format($year,"Y");?></span></td>
 	            </tr>
                 <?php } while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2));?>
-                <tr>
-                  <!--viewStationModal-->
-                      <div class="collapse" id="viewStationModal">
-                       <div class="card card-body">
-                              <h5 class="modal-title" id="exampleModalScrollableTitle">List of Rider</h5>
-                              <div class="dash2"></div>
-                        </div>
-                      </div>
-                      <!-- end viewStationModal-->
-                </tr>
+               
                 </tbody>
                 <tfoot>
                 <tr>
