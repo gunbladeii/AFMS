@@ -17,7 +17,7 @@ $Recordset2 = $mysqli->query("SELECT infoParcel.id, infoParcel.nama, infoParcel.
   INNER JOIN employeeData ON infoParcel.noIC = employeeData.noIC)
   INNER JOIN stationName ON infoParcel.stationCode = stationName.stationCode)
 
-   WHERE infoParcel.itemCode IS NOT NULL AND employeeData.employeeStatus NOT LIKE 'dump' AND infoParcel.stationCode = '$stationCode' AND infoParcel.month = '$month' GROUP BY infoParcel.id ORDER BY date DESC");
+   WHERE infoParcel.itemCode IS NOT NULL AND employeeData.employeeStatus NOT LIKE 'dump' AND infoParcel.stationCode = '$stationCode' AND infoParcel.month = '$month' GROUP BY infoParcel.stationCode, infoParcel.month, infoParcel.year ORDER BY date DESC");
 $row_Recordset2 = mysqli_fetch_assoc($Recordset2);
 $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 
