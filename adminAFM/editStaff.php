@@ -311,7 +311,7 @@
         <div class="form-group">
            
             <div class="input-group mb-3">
-                <input type='text' class="form-control" name="dateJoin" placeholder="Date of Joining(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask id="validationDefault06" value="<?php echo $ED['dateJoin'];?>" required/>
+                <input type='text' class="form-control" name="dateJoin" placeholder="Date of Joining(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask  value="<?php echo $ED['dateJoin'];?>"/>
                 <div class="input-group-append input-group-text">
                     <span class="fas fa-calendar">
                     </span>
@@ -322,7 +322,7 @@
         <div class="form-group">
             
             <div class="input-group mb-3">
-                <input type='text' class="form-control" name="dateTransfer" placeholder="Date of Transfer(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask id="validationDefault06" value="<?php echo $ED['dateTransfer'];?>" required/>
+                <input type='text' class="form-control" name="dateTransfer" placeholder="Date of Transfer(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask value="<?php echo $ED['dateTransfer'];?>"/>
                 <div class="input-group-append input-group-text">
                     <span class="fas fa-calendar">
                     </span>
@@ -333,7 +333,7 @@
         <div class="form-group">
             
             <div class="input-group mb-3">
-                <input type='text' class="form-control" name="datePromo" placeholder="Date of Promo(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask id="validationDefault06" value="<?php echo $ED['datePromo'];?>" required/>
+                <input type='text' class="form-control" name="datePromo" placeholder="Date of Promo(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask value="<?php echo $ED['datePromo'];?>"/>
                 <div class="input-group-append input-group-text">
                     <span class="fas fa-calendar">
                     </span>
@@ -344,7 +344,7 @@
         <div class="form-group">
             
             <div class="input-group mb-3">
-                <input type='text' class="form-control" name="dateResign" placeholder="Date of Resignation(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask id="validationDefault06" value="<?php echo $ED['dateResign'];?>" required/>
+                <input type='text' class="form-control" name="dateResign" placeholder="Date of Resignation(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask value="<?php echo $ED['dateResign'];?>"/>
                 <div class="input-group-append input-group-text">
                     <span class="fas fa-calendar">
                     </span>

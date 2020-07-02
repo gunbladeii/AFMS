@@ -4,6 +4,7 @@
 $a = 1;
 $b = 1;
 $c = 1;
+$d = 1;
 
 date_default_timezone_set("Asia/Kuala_Lumpur");
 $year = date('Y');
@@ -13,6 +14,8 @@ $stationCode = $_POST['stationCode'];
 $operationDay = $_POST['operationDay'];
 $roleCategory = $_POST['roleCategory'];
 $commision = $_POST['commision'];
+$monthCom = $_POST['monthCom'];
+$roleCom = $_POST['roleCom'];
 
 if (isset($_POST["submit"])){
   $mysqli->query("INSERT INTO stationName (name, stationCode) VALUES ('$name', '$stationCode')");
@@ -32,7 +35,7 @@ if (isset($_POST['submit3'])) {
     }
 
 if (isset($_POST['submit4'])) {
-     $mysqli->query("UPDATE `formulaSalary` SET `commision` = '$commision' WHERE `id` = '1'");
+     $mysqli->query("UPDATE `infoParcel` SET `commision` = '$commision' WHERE `month` = '$monthCom' AND `role` = '$roleCom' ");
       
       header("location:setting.php");
     }
@@ -60,9 +63,13 @@ $Recordset5 = $mysqli->query("SELECT * FROM category");
 $row_Recordset5 = mysqli_fetch_assoc($Recordset5);
 $totalRows_Recordset5 = mysqli_num_rows($Recordset5);
 
-$Recordset6 = $mysqli->query("SELECT * FROM formulaSalary WHERE `id` = '1'");
+$Recordset6 = $mysqli->query("SELECT * FROM category");
 $row_Recordset6 = mysqli_fetch_assoc($Recordset6);
 $totalRows_Recordset6 = mysqli_num_rows($Recordset6);
+
+$Recordset7 = $mysqli->query("SELECT *,MONTHNAME(date) AS monthName FROM infoParcel GROUP BY role,month,year ORDER BY monthName ASC");
+$row_Recordset7 = mysqli_fetch_assoc($Recordset7);
+$totalRows_Recordset7 = mysqli_num_rows($Recordset7);
 
 $Recordset3 = $mysqli->query("SELECT infoParcel.stationCode,infoParcel.month,infoParcel.year,infoParcel.operationDay,stationName.name AS name FROM infoParcel INNER JOIN stationName ON stationName.stationCode = infoParcel.stationCode GROUP BY stationCode,month,year ORDER BY month, year DESC");
 $row_Recordset3 = mysqli_fetch_assoc($Recordset3);
@@ -903,6 +910,11 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <tbody>
                     <tr>
                       <td>
+                        <div class="h6">Role Category Setting</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
                         <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Type role category" name="roleCategory" id="validationDefault07" required>
                           <div class="input-group-append input-group-text">
@@ -931,13 +943,54 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <tbody>
                     <tr>
                       <td>
+                        <div class="h6">Comission Setting by Role</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
                         <div class="input-group mb-3">
-                        <input type="number" class="form-control" placeholder="Update commision" name="commision" id="validationDefault07" value="<?php echo($row_Recordset6['commision'])?>" required>
+                        <input type="text" class="form-control" placeholder="Update commision" name="commision" id="validationDefault07" value="<?php echo($row_Recordset6['commision'])?>" required>
                           <div class="input-group-append input-group-text">
                              <span class="fas fa-list-ol"></span>
                           </div>
                          </div>
+                      </td>
+
+                      <td>
+                    <div class="input-group mb-3">
+                          <select name="roleCom" class="custom-select browser-default" required>
+                            <option value="">Pick role</option>
+                            <?php do{?>
+                            <option value="<?php echo $row_Recordset5['role'];?>"><?php if($row_Recordset5['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset5['roleCategory']);}?></option>
+                            <?php }while ($row_Recordset5 = mysqli_fetch_assoc($Recordset5))?>
+                          </select>
+                            <div class="input-group-append input-group-text">
+                              <span class="fas fa-motorcycle"></span>
+                            </div>
+                     </div>
                      </td>
+                      <td>
+                     <div class="input-group mb-3">
+                           <select name="monthCom" class="custom-select browser-default" required>
+                              <option value="" selected>Pick Month</option>
+                              <option value="01" >January</option>
+                              <option value="02" >Febuary</option>
+                              <option value="03" >March</option>
+                              <option value="04" >April</option>
+                              <option value="05" >May</option>
+                              <option value="06" >June</option>
+                              <option value="07" >July</option>
+                              <option value="08" >August</option>
+                              <option value="09" >September</option>
+                              <option value="10" >October</option>
+                              <option value="11" >November</option>
+                              <option value="12" >Disember</option>
+                           </select>
+                                <div class="input-group-append input-group-text">
+                                  <span class="fas fa-calendar-alt"></span>
+                                </div>
+                     </div>
+                      </td>
                     </tr>
                     </tbody>
                   </table>
@@ -968,12 +1021,41 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <?php do {?>
                     <tr>
                       <td><?php echo $c++;?></td>
-                      <td><?php if($row_Recordset5['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset5['roleCategory']);}?></td>
+                      <td><?php if($row_Recordset6['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset6['roleCategory']);}?></td>
                     </tr>
-                    <?php }while ($row_Recordset5 = mysqli_fetch_assoc($Recordset5))?>
+                    <?php }while ($row_Recordset6 = mysqli_fetch_assoc($Recordset6))?>
                     </tbody>
                   </table> 
                 </div>
+
+                <div class="card-header border-transparent">
+                <h3 class="card-title">Commission by Role</h3>
+                </div>
+                <div class="table-responsive">
+                   <table id="example5"class="table m-0 table-hover table-sm">
+                    <thead>
+                    <tr>
+                      <th><div class="badge badge-info">No.</div></th>
+                      <th><div class="badge badge-info">Commission</div></th>
+                      <th><div class="badge badge-info">Role</div></th>
+                      <th><div class="badge badge-info">Month</div></th>
+                      <th><div class="badge badge-info">Year</div></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php do {?>
+                    <tr>
+                      <td><?php echo $d++;?></td>
+                      <td><?php if(!empty($row_Recordset7['commision'])){echo '<div class="badge badge-success">'.$row_Recordset7['commision'].'</div>';}else{echo '<div class="badge badge-warning">Commission not set yet</div>';}?></td>
+                      <td><?php if($row_Recordset7['role'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset7['role']);}?></td>
+                      <td><?php echo $row_Recordset7['monthName'];?></td>
+                      <td><?php echo $row_Recordset7['year'];?></td>
+                    </tr>
+                    <?php }while ($row_Recordset7 = mysqli_fetch_assoc($Recordset7))?>
+                    </tbody>
+                  </table> 
+                </div>
+
               </div>
               <!-- /.card-footer -->
             </div>
@@ -1046,6 +1128,10 @@ $(function () {
 
   $(function () {
     $("#example4").DataTable();
+  });
+
+  $(function () {
+    $("#example5").DataTable();
   });
 </script>
 <script type="text/javascript">

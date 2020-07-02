@@ -281,7 +281,7 @@
          <div class="form-group">
             
             <div class="input-group mb-3">
-                <input type='text' class="form-control" name="dateJoin" placeholder="Date of Joining (mm/dd/yyyy)" data-inputmask="'mask': ['99/99/9999']" data-mask id="validationDefault06"/>
+                <input type='text' class="form-control" name="dateJoin" placeholder="Date of Joining (mm/dd/yyyy)" data-inputmask="'mask': ['99/99/9999']" data-mask/>
                 <div class="input-group-append input-group-text">
                     <span class="fas fa-calendar">
                     </span>
@@ -292,7 +292,7 @@
          <div class="form-group">
            
             <div class="input-group mb-3">
-                <input type='text' class="form-control" name="dateTransfer" placeholder="Date of Transfer (mm/dd/yyyy)" data-inputmask="'mask': ['99/99/9999']" data-mask id="validationDefault06"/>
+                <input type='text' class="form-control" name="dateTransfer" placeholder="Date of Transfer (mm/dd/yyyy)" data-inputmask="'mask': ['99/99/9999']" data-mask/>
                 <div class="input-group-append input-group-text">
                     <span class="fas fa-calendar">
                     </span>
@@ -303,7 +303,7 @@
          <div class="form-group">
             
             <div class="input-group mb-3">
-                <input type='text' class="form-control" name="datePromo" placeholder="Date of Promotion (mm/dd/yyyy)" data-inputmask="'mask': ['99/99/9999']" data-mask id="validationDefault06"/>
+                <input type='text' class="form-control" name="datePromo" placeholder="Date of Promotion (mm/dd/yyyy)" data-inputmask="'mask': ['99/99/9999']" data-mask/>
                 <div class="input-group-append input-group-text">
                     <span class="fas fa-calendar">
                     </span>
@@ -314,7 +314,7 @@
          <div class="form-group">
             
             <div class="input-group mb-3">
-                <input type='text' class="form-control" name="dateResign" placeholder="Date of Resignation (mm/dd/yyyy)" data-inputmask="'mask': ['99/99/9999']" data-mask id="validationDefault06"/>
+                <input type='text' class="form-control" name="dateResign" placeholder="Date of Resignation (mm/dd/yyyy)" data-inputmask="'mask': ['99/99/9999']" data-mask />
                 <div class="input-group-append input-group-text">
                     <span class="fas fa-calendar">
                     </span>

@@ -1,7 +1,7 @@
 <?php require('../Connection/iBerkat.php'); ?>
 <?php
 session_start();
-if ($_SESSION['role'] != 'ss')
+if ($_SESSION['role'] != 'ss' && $_SESSION['role'] != 'Senior Courier')
 {
       header('Location:../index.php');
 }
