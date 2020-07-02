@@ -973,14 +973,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 </div>
 <!-- end / parcelModal-->
 
-   <!--parcelModal-->
-<div class="collapse" id="viewStationModal">
- <div class="card card-body">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">List of Rider</h5>
-        <div class="dash2"></div>
-  </div>
-</div>
-<!-- end / parcelModal-->
+
 
 </div>
 <!-- ./wrapper -->
