@@ -177,7 +177,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>'.$row["hrdf"].'</td>
           <td>'.$month_name.'</td>
 					<td>'.$date.'</td>
-          <td>'.$row["dateJoin"].'</td>
+          <td>Date of Join: '.$row["dateJoin"].'</td>
 					
 				</tr>			
 				';		
