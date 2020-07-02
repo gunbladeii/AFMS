@@ -12,7 +12,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
 
 $station = $row_Recordset['stationCode'];
 
-$sql_performance = $mysqli->query("SELECT infoParcel.date AS date, infoParcel.stationCode, SUM(infoParcel.itemCode) AS totalParcel,SUM(infoParcel.fail) AS fail,SUM(infoParcel.itemCode - infoParcel.fail) AS success,(SUM(infoParcel.itemCode - infoParcel.fail))/(SUM(infoParcel.itemCode))*100 AS perSuccess,stationName.name AS stationName, COUNT(infoParcel.date) AS totalDay , infoParcel.month FROM infoParcel INNER JOIN stationName ON infoParcel.stationCode = stationName.stationCode WHERE infoParcel.itemCode IS NOT NULL GROUP BY infoParcel.stationCode, infoParcel.month, infoParcel.year ORDER BY stationName, infoParcel.month, infoParcel.year DESC");
+$sql_performance = $mysqli->query("SELECT infoParcel.month,infoParcel.year,infoParcel.date AS date, infoParcel.stationCode, SUM(infoParcel.itemCode) AS totalParcel,SUM(infoParcel.fail) AS fail,SUM(infoParcel.itemCode - infoParcel.fail) AS success,(SUM(infoParcel.itemCode - infoParcel.fail))/(SUM(infoParcel.itemCode))*100 AS perSuccess,stationName.name AS stationName, COUNT(infoParcel.date) AS totalDay , infoParcel.month FROM infoParcel INNER JOIN stationName ON infoParcel.stationCode = stationName.stationCode WHERE infoParcel.itemCode IS NOT NULL GROUP BY infoParcel.stationCode, infoParcel.month, infoParcel.year ORDER BY stationName, infoParcel.month, infoParcel.year DESC");
 $performance = mysqli_fetch_assoc($sql_performance);
 $totalRows_attend = mysqli_num_rows($sql_performance);
 
@@ -43,7 +43,8 @@ $a=1;
                       <td><a data-toggle="modal"
                           data-target="#performanceModal"
                           data-whatever="<?php echo $performance['stationCode'];?>"  
-                          data-whatever2="<?php echo $performance['month'];?>"><span class="badge badge-secondary"><?php echo $performance['stationName'];?></span></a>
+                          data-whatever2="<?php echo $performance['month'];?>"
+                          data-whatever3="<?php echo $performance['year'];?>"><span class="badge badge-secondary"><?php echo $performance['stationName'];?></span></a>
                       </td>
                       <td><span class="badge badge-info"><?php $date=date_create($performance['date']);echo date_format($date,"F");?></span></td>
                       <td><span class="badge badge-info"><?php $year=date_create($performance['date']);echo date_format($year,"Y");?></span></td>

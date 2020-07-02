@@ -4,20 +4,21 @@ session_start();
 
 $stationCode = $_GET['stationCode'];
 $month = $_GET['month'];
+$year = $_GET['year'];
 
 $colname_Recordset2 = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_Recordset2 = $_SESSION['MM_Username'];
 }
 
-$Recordset2 = $mysqli->query("SELECT infoParcel.id, infoParcel.nama, infoParcel.noIC, infoParcel.date AS date, infoParcel.stationCode, stationName.name AS stationName, infoParcel.itemCode, infoParcel.fail, infoParcel.month, employeeData.employeeStatus, infoParcel.fail, (infoParcel.itemCode - infoParcel.fail) AS success FROM 
+$Recordset2 = $mysqli->query("SELECT infoParcel.id, infoParcel.nama, infoParcel.noIC, infoParcel.date AS date, infoParcel.stationCode, stationName.name AS stationName, infoParcel.itemCode, infoParcel.fail, infoParcel.year, infoParcel.month, employeeData.employeeStatus, infoParcel.fail, (infoParcel.itemCode - infoParcel.fail) AS success FROM 
 
   ((infoParcel 
 
   INNER JOIN employeeData ON infoParcel.noIC = employeeData.noIC)
   INNER JOIN stationName ON infoParcel.stationCode = stationName.stationCode)
 
-   WHERE infoParcel.itemCode IS NOT NULL AND employeeData.employeeStatus NOT LIKE 'dump' AND infoParcel.stationCode = '$stationCode' AND infoParcel.month = '$month' GROUP BY infoParcel.stationCode, infoParcel.month, infoParcel.year ORDER BY date DESC");
+   WHERE infoParcel.itemCode IS NOT NULL AND employeeData.employeeStatus NOT LIKE 'dump' AND infoParcel.stationCode = '$stationCode' AND infoParcel.month = '$month' AND infoParcel.year = '$year'  GROUP BY infoParcel.stationCode, infoParcel.date ORDER BY date DESC");
 $row_Recordset2 = mysqli_fetch_assoc($Recordset2);
 $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 

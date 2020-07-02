@@ -867,8 +867,9 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
           var button = $(event.relatedTarget) // Button that triggered the modal
           var recipient = button.data('whatever') // Extract info from data-* attributes
           var recipient2 = button.data('whatever2') // Extract info from data-* attributes
+          var recipient3 = button.data('whatever3') // Extract info from data-* attributes
           var modal = $(this);
-          var dataString = 'stationCode=' + recipient + '&' + 'month=' + recipient2;
+          var dataString = 'stationCode=' + recipient + '&' + 'month=' + recipient2 + '&' + 'year=' + recipient3;
 
             $.ajax({
                 type: "GET",
