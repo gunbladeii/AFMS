@@ -311,7 +311,7 @@
         <div class="form-group">
            
             <div class="input-group mb-3">
-                <input type='date' class="form-control" name="dateJoin" placeholder="Date of Joining(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask  value="<?php echo $ED['dateJoin'];?>"/>
+                <input type='daterangepicker' class="form-control" name="dateJoin" placeholder="Date of Joining(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask  value="<?php echo $ED['dateJoin'];?>"/>
                 <div class="input-group-append input-group-text">
                     <span class="fas fa-calendar">
                     </span>
@@ -341,7 +341,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group">joinin
             
             <div class="input-group mb-3">
                 <input type='date' class="form-control" name="dateResign" placeholder="Date of Resignation(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask value="<?php echo $ED['dateResign'];?>"/>
