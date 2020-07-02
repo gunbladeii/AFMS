@@ -11,7 +11,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_Recordset2 = $_SESSION['MM_Username'];
 }
 
-$Recordset2 = $mysqli->query("SELECT infoParcel.id, infoParcel.nama, infoParcel.noIC, infoParcel.date AS date, infoParcel.stationCode, stationName.name AS stationName, SUM(infoParcel.itemCode) AS itemCode, SUM(infoParcel.fail) AS fail, infoParcel.year, infoParcel.month, employeeData.employeeStatus, infoParcel.fail, SUM(infoParcel.itemCode - infoParcel.fail) AS success FROM 
+$Recordset2 = $mysqli->query("SELECT infoParcel.id, infoParcel.nama, infoParcel.noIC, infoParcel.date AS date, infoParcel.stationCode, stationName.name AS stationName, SUM(infoParcel.itemCode) AS itemCode, SUM(infoParcel.fail) AS fail, infoParcel.year, infoParcel.month, employeeData.employeeStatus, SUM(infoParcel.itemCode - infoParcel.fail) AS success FROM 
 
   ((infoParcel 
 
