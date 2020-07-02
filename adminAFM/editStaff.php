@@ -341,7 +341,7 @@
             </div>
         </div>
 
-        <div class="form-group">joinin
+        <div class="form-group">
             
             <div class="input-group mb-3">
                 <input type='text' class="form-control" name="dateResign" placeholder="Date of Resignation(dd/mm/yyyy)" data-inputmask="'mask':['99-99-9999']" data-mask value="<?php echo $ED['dateResign'];?>"/>
