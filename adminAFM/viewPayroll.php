@@ -33,6 +33,16 @@ $a=1;
 	            <td><span class="badge badge-info"><?php $monthNum  = $row_Recordset2['month'];echo $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));?></span></td>
 	             <td><span class="badge badge-info"><?php $year=date_create($row_Recordset2['year']);echo date_format($year,"Y");?></span></td>
 	            </tr>
+              <tr>
+                   <!--viewStationModal-->
+                      <div class="collapse" id="viewStationModal">
+                       <div class="card card-body">
+                              <h5 class="modal-title" id="exampleModalScrollableTitle">List of Rider</h5>
+                              <div class="dash2"></div>
+                        </div>
+                      </div>
+                      <!-- end viewStationModal-->
+              </tr>
                 <?php } while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2));?>
                
                 </tbody>
