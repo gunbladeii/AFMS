@@ -902,9 +902,8 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <i class="fas fa-times"></i>
                   </button>
                 </div>
-                      <div class="card-body p-0">
-                          <div class="table-responsive">
-
+              <div class="card-body p-0">
+                <div class="table-responsive">
                       <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
                    <table class="table m-0">
                     <tbody>
@@ -946,35 +945,34 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                           <div class="card-body p-0">
                             <h5 class="card-title">Comission Setting by Role</h5>
                             <div class="table-responsive">
-                              <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
-                              <table class="table m-0">
+                  <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
+                   <table class="table m-0">
                     <tbody>
                     <tr>
                       <td>
                         <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Update commision" name="commision" id="validationDefault07" value="<?php echo($row_Recordset6['commision'])?>" required>
+                          <input type="text" class="form-control" placeholder="Update commision" name="commision" id="validationDefault07" value="<?php echo($row_Recordset6['commision'])?>" required>
                           <div class="input-group-append input-group-text">
                              <span class="fas fa-list-ol"></span>
                           </div>
-                         </div>
+                        </div>
                       </td>
-
                       <td>
-                    <div class="input-group mb-3">
+                        <div class="input-group mb-3">
                           <select name="roleCom" class="custom-select browser-default" required>
                             <option value="">Pick role</option>
                             <?php do{?>
                             <option value="<?php echo $row_Recordset5['role'];?>"><?php if($row_Recordset5['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset5['roleCategory']);}?></option>
                             <?php }while ($row_Recordset5 = mysqli_fetch_assoc($Recordset5))?>
-                          </select>
+                            </select>
                             <div class="input-group-append input-group-text">
                               <span class="fas fa-motorcycle"></span>
                             </div>
-                     </div>
-                     </td>
+                        </div>
+                      </td>
                       <td>
-                     <div class="input-group mb-3">
-                           <select name="monthCom" class="custom-select browser-default" required>
+                        <div class="input-group mb-3">
+                          <select name="monthCom" class="custom-select browser-default" required>
                               <option value="" selected>Pick Month</option>
                               <option value="01" >January</option>
                               <option value="02" >Febuary</option>
@@ -992,12 +990,12 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                                 <div class="input-group-append input-group-text">
                                   <span class="fas fa-calendar-alt"></span>
                                 </div>
-                     </div>
+                        </div>
                       </td>
                     </tr>
                     </tbody>
-                  </table>
-                  <div class="card-footer clearfix">
+                  </table> 
+                   <div class="card-footer clearfix">
                       <button type="submit" name="submit4" class="btn btn-sm btn-success float-right">Update</button>
                    </div>
                   </form>
