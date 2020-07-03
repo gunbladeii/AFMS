@@ -893,7 +893,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
            <div class="col-sm-6">
             <div class="card">
             <div class="card-header border-transparent">
-            <h5 class="card-title">Role Category Setting</h5>
+            <h5 class="card-title">Update Operation Days</h5>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -911,17 +911,52 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <tr>
                       <td>
                         <div class="input-group mb-3">
-                           <input type="text" class="form-control" placeholder="Type role category" name="roleCategory" id="validationDefault07" required>
+                          <select name="stationCode" class="custom-select browser-default" required>
+                              <option value="">Pick your Station Code</option>
+                              <?php do{?>
+                              <option value="<?php echo $row_Recordset4['stationCode'];?>"><?php echo $row_Recordset4['stationCode'];?></option>
+                              <?php }while ($row_Recordset4 = mysqli_fetch_assoc($Recordset4))?>
+                            </select>
+                              <div class="input-group-append input-group-text">
+                                <span class="fas fa-motorcycle"></span>
+                              </div>
+                        </div>
+                      </td>
+                      <td>
+                           <div class="input-group mb-3">
+                                <select name="month" class="custom-select browser-default" required>
+                                  <option value="" selected>Pick Month</option>
+                                  <option value="01" >January</option>
+                                  <option value="02" >Febuary</option>
+                                  <option value="03" >March</option>
+                                  <option value="04" >April</option>
+                                  <option value="05" >May</option>
+                                  <option value="06" >June</option>
+                                  <option value="07" >July</option>
+                                  <option value="08" >August</option>
+                                  <option value="09" >September</option>
+                                  <option value="10" >October</option>
+                                  <option value="11" >November</option>
+                                  <option value="12" >Disember</option>
+                               </select>
+                                <div class="input-group-append input-group-text">
+                                  <span class="fas fa-calendar-alt"></span>
+                                </div>
+                           </div>
+                       </td>
+                       <td>
+                        <div class="input-group mb-3">
+                        <input type="number" class="form-control" placeholder="Insert days" name="operationDay" id="validationDefault06" required>
                           <div class="input-group-append input-group-text">
                              <span class="fas fa-list-ol"></span>
                           </div>
-                        </div>
-                      </td>
+                         </div>
+                       </td>
                     </tr>
                     </tbody>
                   </table> 
                    <div class="card-footer clearfix">
-                      <button type="submit" name="submit3" class="btn btn-sm btn-success float-right">Insert</button>
+                      <button type="submit" name="submit2" class="btn btn-sm btn-success float-right">Update</button>
                    </div>
                   </form>
 
