@@ -886,6 +886,104 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
       </div><!-- /.container-fluid -->
     </section>
 
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+
+           <div class="col-sm-6">
+            <div class="card">
+            <div class="card-header border-transparent">
+            <h5 class="card-title">Role Category Setting</h5>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+                      <div class="card-body p-0">
+                          <div class="table-responsive">
+
+                      <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
+                   <table class="table m-0">
+                    <tbody>
+                    <tr>
+                      <td>
+                        <div class="input-group mb-3">
+                           <input type="text" class="form-control" placeholder="Type role category" name="roleCategory" id="validationDefault07" required>
+                          <div class="input-group-append input-group-text">
+                             <span class="fas fa-list-ol"></span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table> 
+                   <div class="card-footer clearfix">
+                      <button type="submit" name="submit3" class="btn btn-sm btn-success float-right">Insert</button>
+                   </div>
+                  </form>
+
+                          </div>
+                       </div>
+                </div>
+              </div>
+          </div>
+
+           <div class="col-sm-6">
+            <div class="card">
+            <div class="card-header border-transparent">
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+                     
+                          <div class="card-body p-0">
+                            <h5 class="card-title">List of Operation Days by Month and Station</h5>
+                            <div class="table-responsive">
+                              <table id="example4"class="table m-0 table-hover table-sm">
+                    <thead>
+                    <tr>
+                      <th><div class="badge badge-info">No.</div></th>
+                      <th><div class="badge badge-info">Station Code</div></th>
+                      <th><div class="badge badge-info">Station Name</div></th>
+                      <th><div class="badge badge-info">Month</div></th>
+                       <th><div class="badge badge-info">Year</div></th>
+                      <th><div class="badge badge-info">Operation Days</div></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php do {?>
+                    <tr>
+                      <td><?php echo $b++;?></td>
+                      <td><?php echo $row_Recordset3['stationCode'];?></td>
+                      <td><?php echo $row_Recordset3['name'];?></td>
+                      <td><?php $month_name = date("F", mktime(0, 0, 0, $row_Recordset3['month'], 10));
+                            echo $month_name."\n";?></td>
+                      <td><?php echo $row_Recordset3['year'];?></td>
+                      <td><?php echo $row_Recordset3['operationDay'];?></td>
+                    </tr>
+                    <?php }while ($row_Recordset3 = mysqli_fetch_assoc($Recordset3))?>
+                    </tbody>
+                  </table> 
+                          </div>
+                          </div>
+
+                      
+                     </div>
+                </div>
+              </div>
+          </div>
+
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
     
 
 </div>
