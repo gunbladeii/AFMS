@@ -954,7 +954,6 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <div class="col-sm-6">
             <!-- /.card-header -->
             <div class="card">
-              <div class="card-body">
               <h5 class="card-title">Click Station Name for Payment Voucher/Payslip</h5>
               <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
@@ -969,7 +968,9 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                     <div id="show"></div>
                 </div>
               </div>
+
             </div>
+          </div>
 
             
 
