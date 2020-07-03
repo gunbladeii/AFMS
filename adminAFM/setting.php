@@ -726,7 +726,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 </div>
                       
                              <div class="table-responsive">
-                               <table id="example3" class="table m-0">
+                               <table id="example3" class="table m-0 table-hover table-sm">
                                 <thead>
                                 <tr>
                                   <th><div class="badge badge-info">No.</div></th>
