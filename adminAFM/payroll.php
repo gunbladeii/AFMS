@@ -836,6 +836,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
+
           <div class="col-sm-6">
             <h1>Payroll Section</h1>
           </div>
@@ -845,115 +846,127 @@ $downloadExcell = $_SERVER['PHP_SELF'];
               <li class="breadcrumb-item active">Staff Payroll</li>
             </ol>
           </div>
+
+          <div class="col-sm-6">
+            <div class="card-header border-transparent">
+            <h3 class="card-title">Download Excell Payroll Section</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+            <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="download" class="download" enctype="multipart/form-data">
+                   <table class="table m-0">
+                    <thead>
+                    <tr>
+                      <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>
+                     <div class="input-group mb-3">
+                           <select name="month" class="custom-select browser-default" required>
+                              <option value="" selected>Pick Month</option>
+                              <option value="01" >January</option>
+                              <option value="02" >Febuary</option>
+                              <option value="03" >March</option>
+                              <option value="04" >April</option>
+                              <option value="05" >May</option>
+                              <option value="06" >June</option>
+                              <option value="07" >July</option>
+                              <option value="08" >August</option>
+                              <option value="09" >September</option>
+                              <option value="10" >October</option>
+                              <option value="11" >November</option>
+                              <option value="12" >Disember</option>
+                           </select>
+                                <div class="input-group-append input-group-text">
+                                  <span class="fas fa-calendar-alt"></span>
+                                </div>
+                     </div>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table> 
+                   <button type="submit" name='download' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export Excel Giro Ach</button>
+                  </form>
+                </div>
+          </div>
+
+           <div class="col-sm-6">
+            <div class="card-header border-transparent">
+            <h3 class="card-title">Download Excell O/T Supervisor Section</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+                      <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="ot" class="download" enctype="multipart/form-data">
+                             <table class="table m-0">
+                              <thead>
+                              <tr>
+                                <th></th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                <td>
+                               <div class="input-group mb-3">
+                                     <select name="month" class="custom-select browser-default" required>
+                                        <option value="" selected>Pick Month</option>
+                                        <option value="01" >January</option>
+                                        <option value="02" >Febuary</option>
+                                        <option value="03" >March</option>
+                                        <option value="04" >April</option>
+                                        <option value="05" >May</option>
+                                        <option value="06" >June</option>
+                                        <option value="07" >July</option>
+                                        <option value="08" >August</option>
+                                        <option value="09" >September</option>
+                                        <option value="10" >October</option>
+                                        <option value="11" >November</option>
+                                        <option value="12" >Disember</option>
+                                     </select>
+                                          <div class="input-group-append input-group-text">
+                                            <span class="fas fa-calendar-alt"></span>
+                                          </div>
+                               </div>
+                                </td>
+                              </tr>
+                              </tbody>
+                            </table> 
+
+                                    
+                             <button type="submit" name='ot' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export O/T Supervisor</button>
+                            </form>
+                </div>
+          </div>
+
         </div>
       </div><!-- /.container-fluid -->
     </section>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header">
-              <div class="card-description col-12">
-                  <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="download" class="download" enctype="multipart/form-data">
-                   <table class="table m-0">
-                    <thead>
-                    <tr>
-                      <th>Download Excell Payroll Section</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td>
-                     <div class="input-group mb-3">
-                           <select name="month" class="custom-select browser-default" required>
-                              <option value="" selected>Pick Month</option>
-                              <option value="01" >January</option>
-                              <option value="02" >Febuary</option>
-                              <option value="03" >March</option>
-                              <option value="04" >April</option>
-                              <option value="05" >May</option>
-                              <option value="06" >June</option>
-                              <option value="07" >July</option>
-                              <option value="08" >August</option>
-                              <option value="09" >September</option>
-                              <option value="10" >October</option>
-                              <option value="11" >November</option>
-                              <option value="12" >Disember</option>
-                           </select>
-                                <div class="input-group-append input-group-text">
-                                  <span class="fas fa-calendar-alt"></span>
-                                </div>
-                     </div>
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table> 
-
-              		  			
-				           <button type="submit" name='download' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export Excel Giro Ach</button>
-                  </form>
-
-                  <!-- Download OT part -->
-
-                  <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="ot" class="download" enctype="multipart/form-data">
-                   <table class="table m-0">
-                    <thead>
-                    <tr>
-                      <th>Download Excell O/T Supervisor Section</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td>
-                     <div class="input-group mb-3">
-                           <select name="month" class="custom-select browser-default" required>
-                              <option value="" selected>Pick Month</option>
-                              <option value="01" >January</option>
-                              <option value="02" >Febuary</option>
-                              <option value="03" >March</option>
-                              <option value="04" >April</option>
-                              <option value="05" >May</option>
-                              <option value="06" >June</option>
-                              <option value="07" >July</option>
-                              <option value="08" >August</option>
-                              <option value="09" >September</option>
-                              <option value="10" >October</option>
-                              <option value="11" >November</option>
-                              <option value="12" >Disember</option>
-                           </select>
-                                <div class="input-group-append input-group-text">
-                                  <span class="fas fa-calendar-alt"></span>
-                                </div>
-                     </div>
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table> 
-
-                          
-                   <button type="submit" name='ot' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export O/T Supervisor</button>
-                  </form>
-                 
-              </div>
-            </div>
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-12">
             <!-- /.card-header -->
             <div class="card-body">
             <h5 class="card-title">Click Station Name for Payment Voucher/Payslip</h5>    
             <div id='show'></div>
-            
             </div>
-            <!-- /.card-body -->
           </div>
-          <!-- /.card -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
+      </div><!-- /.container-fluid -->
     </section>
-    <!-- /.content -->
-  </div>
+
+
    <!--parcelModal-->
 <div class="modal fade" id="viewRiderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
