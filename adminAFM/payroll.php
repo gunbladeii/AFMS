@@ -848,6 +848,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           </div>
 
           <div class="col-sm-6">
+            <div class="card">
             <div class="card-header border-transparent">
             <h3 class="card-title">Download Excell Payroll Section</h3>
                 <div class="card-tools">
@@ -895,9 +896,11 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                    <button type="submit" name='download' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export Excel Giro Ach</button>
                   </form>
                 </div>
+              </div>
           </div>
 
            <div class="col-sm-6">
+            <div class="card">
             <div class="card-header border-transparent">
             <h3 class="card-title">Download Excell O/T Supervisor Section</h3>
                 <div class="card-tools">
@@ -947,6 +950,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                              <button type="submit" name='ot' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export O/T Supervisor</button>
                             </form>
                 </div>
+              </div>
           </div>
 
         </div>
@@ -958,9 +962,11 @@ $downloadExcell = $_SERVER['PHP_SELF'];
         <div class="row mb-2">
           <div class="col-sm-12">
             <!-- /.card-header -->
-            <div class="card-body">
-            <h5 class="card-title">Click Station Name for Payment Voucher/Payslip</h5>    
-            <div id='show'></div>
+            <div class="card">
+              <div class="card-body">
+              <h5 class="card-title">Click Station Name for Payment Voucher/Payslip</h5>    
+              <div id='show'></div>
+              </div>
             </div>
           </div>
       </div><!-- /.container-fluid -->
