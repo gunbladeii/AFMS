@@ -972,6 +972,29 @@ $downloadExcell = $_SERVER['PHP_SELF'];
               </div>
           </div>
 
+           <div class="col-sm-6">
+            <div class="card">
+            <div class="card-header border-transparent">
+            <h5 class="card-title">Payroll by Station</h5>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+                     <div id="viewRiderModal" class="collapse">
+                       <div class="card-body p-0">
+                          <div class="table-responsive">
+                              <div class="show2"></div>
+                          </div>
+                       </div>
+                     </div>
+                </div>
+              </div>
+          </div>
+
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -997,7 +1020,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 <!-- end / parcelModal-->
 
    <!--parcelModal-->
-<div class="modal fade" id="viewStationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+<div class="modal fade" id="viewStationModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -1096,7 +1119,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                 cache: false,
                 success: function (data) {
                     console.log(data);
-                    modal.find('.dash').html(data);
+                    modal.find('.show2').html(data);
                 },
                 error: function(err) {
                     console.log(err);
@@ -1106,7 +1129,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 </script>
 <script>
     
-    $('#viewStationModal').on('show.bs.modal', function (event) {
+    $('#viewStationModal').on('show.bs.collapse', function (event) {
           var button = $(event.relatedTarget) // Button that triggered the modal
           var recipient3 = button.data('whatever3') // Extract info from data-* attributes
           var recipient4 = button.data('whatever4') // Extract info from data-* attributes
