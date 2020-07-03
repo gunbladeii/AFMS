@@ -850,7 +850,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <div class="col-sm-6">
             <div class="card">
             <div class="card-header border-transparent">
-            <h3 class="card-title">Download Excell Payroll Section</h3>
+            <h5 class="card-title">Download Excell Payroll Section</h5>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -861,11 +861,6 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                 </div>
             <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="download" class="download" enctype="multipart/form-data">
                    <table class="table m-0">
-                    <thead>
-                    <tr>
-                      <th></th>
-                    </tr>
-                    </thead>
                     <tbody>
                     <tr>
                       <td>
@@ -902,7 +897,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
            <div class="col-sm-6">
             <div class="card">
             <div class="card-header border-transparent">
-            <h3 class="card-title">Download Excell O/T Supervisor Section</h3>
+            <h5 class="card-title">Download Excell O/T Supervisor Section</h5>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -913,11 +908,6 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                 </div>
                       <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="ot" class="download" enctype="multipart/form-data">
                              <table class="table m-0">
-                              <thead>
-                              <tr>
-                                <th></th>
-                              </tr>
-                              </thead>
                               <tbody>
                               <tr>
                                 <td>
