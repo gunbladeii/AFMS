@@ -48,7 +48,9 @@ $a=1;
 <script src="plugins/datatables/dataTables.bootstrap4.js"></script>
 <script>
   $(function () {
-    $("#example1").DataTable();
+    $("#example1").DataTable()({
+      "keys": true
+    });
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": false,
