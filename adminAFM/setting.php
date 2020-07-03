@@ -672,7 +672,9 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
       </div>
     </section>
 
-         <section>
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
           <div class="col-sm-6">
             <div class="card">
             <div class="card-header border-transparent">
