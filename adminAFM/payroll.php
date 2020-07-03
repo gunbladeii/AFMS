@@ -1024,7 +1024,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 
    <!--parcelModal-->
 <div class="modal fade" id="viewStationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable" role="document">
+  <div class="modal-dialog modal-dialog-scrollable" >
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalScrollableTitle">List of Rider</h5>
