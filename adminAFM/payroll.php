@@ -984,7 +984,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                     <i class="fas fa-times"></i>
                   </button>
                 </div>
-                     <div id="viewStationModal" class="collapse" aria-expanded="false" aria-controls="collapseExample">
+                     <div id="viewStationModal" class="collapse">
                        <div class="card-body p-0">
                           <div class="table-responsive">
                               <div class="show2"></div>
