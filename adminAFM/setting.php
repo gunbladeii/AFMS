@@ -655,9 +655,10 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
+    <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
+
           <div class="col-sm-6">
             <h4 class="m-0 text-dark">Altus Freight Managment System Control Panel</h4>
           </div><!-- /.col -->
@@ -667,23 +668,11 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
               <li class="breadcrumb-item active">AFMS | Conrol Panel</li>
             </ol>
           </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-
-        <div class="col-md-12">
-          <!-- TABLE: LATEST ORDERS -->
+          <div class="col-sm-6">
             <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Station Registration</h3>
-
+            <div class="card-header border-transparent">
+            <h5 class="card-title">Station Registration</h5>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -692,9 +681,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <i class="fas fa-times"></i>
                   </button>
                 </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
+                
                 <div class="table-responsive">
                 <form action="setting.php" method="post" name="prosesDaftar" enctype="multipart/form-data">
                   <table class="table m-0">
@@ -734,9 +721,25 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 <button type="submit" name="submit" class="btn btn-sm btn-success float-right">Submit</button>
               </div>
               </form>
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Registered Station</h3>
+            </div>
+
                 </div>
+              </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="card">
+            <div class="card-header border-transparent">
+            <h5 class="card-title">Registered Station</h5>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+                
                 <div class="table-responsive">
                    <table id="example3" class="table m-0 table-hover table-sm">
                     <thead>
@@ -757,20 +760,24 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     </tbody>
                   </table> 
                 </div>
+
+                </div>
               </div>
-              <!-- /.card-footer -->
-            </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col -->
 
-          <!--Update operation days-->
-          <div class="col-md-12">
-          <!-- TABLE: LATEST ORDERS -->
+
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+      </section>
+
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+
+          <div class="col-sm-6">
             <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Update Operation Days</h3>
-
+            <div class="card-header border-transparent">
+            <h5 class="card-title">Update Operation Days</h5>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -779,9 +786,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <i class="fas fa-times"></i>
                   </button>
                 </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
+                
                 <div class="table-responsive">
                 <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
                   <table class="table m-0">
@@ -841,18 +846,27 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     </tbody>
                   </table>
                   <input type="hidden" name="year" value="<?php echo $year;?>">
+                   <button type="submit" name="submit2" class="btn btn-sm btn-success float-right">Update</button>
+                   </form>
                 </div>
-                <!-- /.table-responsive -->
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer clearfix">
-                <button type="submit" name="submit2" class="btn btn-sm btn-success float-right">Update</button>
-              </div>
-              </form>
-              <div class="card-header border-transparent">
-                <h3 class="card-title">List of Operation Days by Month and Station</h3>
                 </div>
-                <div class="table-responsive">
+              </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="card">
+            <div class="card-header border-transparent">
+            <h5 class="card-title">List of Operation Days by Month and Station</h5>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+
+          <div class="table-responsive">
                    <table id="example4"class="table m-0 table-hover table-sm">
                     <thead>
                     <tr>
@@ -879,20 +893,24 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     </tbody>
                   </table> 
                 </div>
+
+                </div>
               </div>
-              <!-- /.card-footer -->
-            </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col -->
 
-          <!--Update category setting-->
-          <div class="col-md-12">
-          <!-- TABLE: LATEST ORDERS -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+      </section>
+
+
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+         
+          <div class="col-sm-6">
             <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">User's Role and Formula Setting</h3>
-
+            <div class="card-header border-transparent">
+            <h5 class="card-title">Role Category Setting</h5>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -901,18 +919,11 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <i class="fas fa-times"></i>
                   </button>
                 </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
+
                 <div class="table-responsive">
                 <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
                   <table class="table m-0">
                     <tbody>
-                    <tr>
-                      <td>
-                        <div class="h6">Role Category Setting</div>
-                      </td>
-                    </tr>
                     <tr>
                       <td>
                         <div class="input-group mb-3">
@@ -934,18 +945,29 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 <button type="submit" name="submit3" class="btn btn-sm btn-success float-right">Insert</button>
               </div>
               </form>
+            </div>                
+     
+                </div>
+              </div>
+          </div>
 
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="table-responsive">
+          <div class="col-sm-6">
+            <div class="card">
+            <div class="card-header border-transparent">
+            <h5 class="card-title">Comission Setting by Role</h5>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+
+                          <div class="table-responsive">
                 <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
                   <table class="table m-0">
                     <tbody>
-                    <tr>
-                      <td>
-                        <div class="h6">Comission Setting by Role</div>
-                      </td>
-                    </tr>
                     <tr>
                       <td>
                         <div class="input-group mb-3">
@@ -995,20 +1017,36 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     </tbody>
                   </table>
                   <input type="hidden" name="year" value="<?php echo $year;?>">
+                  <button type="submit" name="submit4" class="btn btn-sm btn-success float-right">Update</button>
+                </form>
                 </div>
-                <!-- /.table-responsive -->
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer clearfix">
-                <button type="submit" name="submit4" class="btn btn-sm btn-success float-right">Update</button>
-              </div>
-              </form>
+                <!-- /.table-responsive -->         
 
-
-
-              <div class="card-header border-transparent">
-                <h3 class="card-title">List of Registered Category</h3>
                 </div>
+              </div>
+          </div>
+
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+      </section>
+
+                <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+         
+          <div class="col-sm-6">
+            <div class="card">
+            <div class="card-header border-transparent">
+            <h5 class="card-title">List of Registered Category</h5>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+
                 <div class="table-responsive">
                    <table id="example4"class="table m-0 table-hover table-sm">
                     <thead>
@@ -1027,10 +1065,24 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     </tbody>
                   </table> 
                 </div>
-
-                <div class="card-header border-transparent">
-                <h3 class="card-title">Commission by Role</h3>
+     
                 </div>
+              </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="card">
+            <div class="card-header border-transparent">
+            <h5 class="card-title">Commission by Role</h5>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+
                 <div class="table-responsive">
                    <table id="example5"class="table m-0 table-hover table-sm">
                     <thead>
@@ -1054,19 +1106,19 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <?php }while ($row_Recordset7 = mysqli_fetch_assoc($Recordset7))?>
                     </tbody>
                   </table> 
-                </div>
+                </div>      
 
+                </div>
               </div>
-              <!-- /.card-footer -->
-            </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col -->
-      
-     </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+      </section>
+
+    </div>
+    <!-- /.content-wrapper-->
+    
   <footer class="main-footer">
   </footer>
 
