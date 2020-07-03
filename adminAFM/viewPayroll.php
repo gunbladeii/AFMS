@@ -28,7 +28,7 @@ $a=1;
                 <?php do {?>    
                 <tr>
                 <td><?php echo $a++;?></td>	
-	            <td> <span data-toggle="modal" data-target="#viewStationModal" data-whatever3="<?php echo $row_Recordset2['stationCode'];?>" data-whatever4="<?php echo $row_Recordset2['month'];?>" class="badge badge-primary" role="button" aria-pressed="true"><?php echo $row_Recordset2['stationName'];?></span></td>
+	            <td> <span data-toggle="collapse" data-target="#viewStationModal2" data-whatever3="<?php echo $row_Recordset2['stationCode'];?>" data-whatever4="<?php echo $row_Recordset2['month'];?>" class="badge badge-primary" role="button" aria-pressed="true"><?php echo $row_Recordset2['stationName'];?></span></td>
 	            <td><span class="badge badge-info"><?php $monthNum  = $row_Recordset2['month'];echo $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));?></span></td>
 	             <td><span class="badge badge-info"><?php $year=date_create($row_Recordset2['year']);echo date_format($year,"Y");?></span></td>
 	            </tr>
