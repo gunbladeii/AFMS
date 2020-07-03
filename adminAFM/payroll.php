@@ -950,14 +950,29 @@ $downloadExcell = $_SERVER['PHP_SELF'];
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-12">
+
+          <div class="col-sm-6">
             <!-- /.card-header -->
             <div class="card">
               <div class="card-body">
-              <h5 class="card-title">Click Station Name for Payment Voucher/Payslip</h5>    
-              <div id='show'></div>
+              <h5 class="card-title">Click Station Name for Payment Voucher/Payslip</h5>
+              <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>    
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                    <div id="show"></div>
+                </div>
               </div>
             </div>
+
+            
+
           </div>
       </div><!-- /.container-fluid -->
     </section>
