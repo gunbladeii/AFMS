@@ -1105,29 +1105,6 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
-    $('#viewRiderModal').on('show.bs.modal', function (event) {
-          var button = $(event.relatedTarget) // Button that triggered the modal
-          var recipient = button.data('whatever') // Extract info from data-* attributes
-          var recipient2 = button.data('whatever2') // Extract info from data-* attributes
-          var modal = $(this);
-          var dataString = 'noIC=' + recipient + '&' + 'month=' + recipient2;
-
-            $.ajax({
-                type: "GET",
-                url: "liveViewPayroll2.php",
-                data: dataString, 
-                cache: false,
-                success: function (data) {
-                    console.log(data);
-                    modal.find('.dash').html(data);
-                },
-                error: function(err) {
-                    console.log(err);
-                }
-            });
-    })
-</script>
-<script>
     
     $('#viewStationModal').on('show.bs.collapse', function (event) {
           var button = $(event.relatedTarget) // Button that triggered the modal
@@ -1151,5 +1128,29 @@ $downloadExcell = $_SERVER['PHP_SELF'];
             });
     })
 </script>
+<script>
+    $('#viewRiderModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          var recipient2 = button.data('whatever2') // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString = 'noIC=' + recipient + '&' + 'month=' + recipient2;
+
+            $.ajax({
+                type: "GET",
+                url: "liveViewPayroll2.php",
+                data: dataString, 
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    modal.find('.dash').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+    })
+</script>
+
 </body>
 </html>
