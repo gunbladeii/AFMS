@@ -1024,7 +1024,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 
    <!--parcelModal-->
 <div class="modal fade" id="viewStationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalScrollableTitle">List of Rider</h5>
@@ -1109,7 +1109,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
     
-    $('#viewStationModal').on('show.bs.modal', function (event) {
+    $('#viewStationModal2').on('show.bs.modal', function (event) {
           var button = $(event.relatedTarget); // Button that triggered the modal
           var recipient3 = button.data('whatever3'); // Extract info from data-* attributes
           var recipient4 = button.data('whatever4');// Extract info from data-* attributes
@@ -1123,7 +1123,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                 cache: false,
                 success: function (data) {
                     console.log(data);
-                    collapse.find('.dash2').html(data);
+                    collapse.find('.show2').html(data);
                 },
                 error: function(err) {
                     console.log(err);
