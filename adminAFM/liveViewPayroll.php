@@ -38,7 +38,7 @@ $a=1;
                 <?php do {?>    
                 <tr>
                 <td><?php echo $a++;?></td>	
-	            <td> <span data-toggle="collapse" data-target="#viewRiderModal" data-whatever="<?php echo $row_Recordset2['noIC'];?>" data-whatever2="<?php echo $row_Recordset2['month'];?>" class="badge badge-primary" data-dismiss="collapse" role="button" aria-pressed="true"><?php echo strtoupper($row_Recordset2['nama']);?></span></td>	
+	            <td> <span data-toggle="modal" data-target="#viewRiderModal" data-whatever="<?php echo $row_Recordset2['noIC'];?>" data-whatever2="<?php echo $row_Recordset2['month'];?>" class="badge badge-primary" data-dismiss="collapse" role="button" aria-pressed="true"><?php echo strtoupper($row_Recordset2['nama']);?></span></td>	
                 <td class="d-sm-inline-flex"><span class="badge badge-warning"><?php echo $row_Recordset2['totalDay'];?></span></td>	
 	            </tr>
                 <?php } while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2));?>
