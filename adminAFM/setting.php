@@ -660,19 +660,19 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
         <div class="row mb-2">
 
           <div class="col-sm-6">
-            <h1>Payroll Section</h1>
+            <h1>Control Panel</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">Staff Payroll</li>
+              <li class="breadcrumb-item active">AFMS  |  Control Panel</li>
             </ol>
           </div>
 
           <div class="col-sm-6">
             <div class="card">
             <div class="card-header border-transparent">
-            <h5 class="card-title">Download Excell Payroll Section</h5>
+            <h5 class="card-title">Station Registration</h5>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -681,36 +681,32 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <i class="fas fa-times"></i>
                   </button>
                 </div>
-            <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="download" class="download" enctype="multipart/form-data">
+            <form action="setting.php" method="post" name="prosesDaftar" enctype="multipart/form-data">
                    <table class="table m-0">
                     <tbody>
                     <tr>
                       <td>
-                     <div class="input-group mb-3">
-                           <select name="month" class="custom-select browser-default" required>
-                              <option value="" selected>Pick Month</option>
-                              <option value="01" >January</option>
-                              <option value="02" >Febuary</option>
-                              <option value="03" >March</option>
-                              <option value="04" >April</option>
-                              <option value="05" >May</option>
-                              <option value="06" >June</option>
-                              <option value="07" >July</option>
-                              <option value="08" >August</option>
-                              <option value="09" >September</option>
-                              <option value="10" >October</option>
-                              <option value="11" >November</option>
-                              <option value="12" >Disember</option>
-                           </select>
-                                <div class="input-group-append input-group-text">
-                                  <span class="fas fa-calendar-alt"></span>
-                                </div>
-                     </div>
+                        <div class="input-group mb-3">
+                         <input type="text" class="form-control" placeholder="Station Code" name="stationCode" id="validationDefault01" required>
+                          <div class="input-group-append input-group-text">
+                             <span class="fas fa-code"></span>
+                          </div>
+                        </div>
                       </td>
+                      <td>
+                           <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Station Name" name="name" id="validationDefault02" required>
+                            <div class="input-group-append input-group-text">
+                               <span class="fas fa-motorcycle"></span>
+                            </div>
+                           </div>
+                       </td>
                     </tr>
                     </tbody>
                   </table> 
-                   <button type="submit" name='download' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export Excel Giro Ach</button>
+                   <div class="card-footer clearfix">
+                      <button type="submit" name="submit" class="btn btn-sm btn-success float-right">Submit</button>
+                   </div>
                   </form>
                 </div>
               </div>
@@ -719,7 +715,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
            <div class="col-sm-6">
             <div class="card">
             <div class="card-header border-transparent">
-            <h5 class="card-title">Download Excell O/T Supervisor Section</h5>
+            <h5 class="card-title">Registered Station</h5>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -728,39 +724,29 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <i class="fas fa-times"></i>
                   </button>
                 </div>
-                      <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="ot" class="download" enctype="multipart/form-data">
-                             <table class="table m-0">
-                              <tbody>
-                              <tr>
-                                <td>
-                               <div class="input-group mb-3">
-                                     <select name="month" class="custom-select browser-default" required>
-                                        <option value="" selected>Pick Month</option>
-                                        <option value="01" >January</option>
-                                        <option value="02" >Febuary</option>
-                                        <option value="03" >March</option>
-                                        <option value="04" >April</option>
-                                        <option value="05" >May</option>
-                                        <option value="06" >June</option>
-                                        <option value="07" >July</option>
-                                        <option value="08" >August</option>
-                                        <option value="09" >September</option>
-                                        <option value="10" >October</option>
-                                        <option value="11" >November</option>
-                                        <option value="12" >Disember</option>
-                                     </select>
-                                          <div class="input-group-append input-group-text">
-                                            <span class="fas fa-calendar-alt"></span>
-                                          </div>
-                               </div>
-                                </td>
-                              </tr>
-                              </tbody>
-                            </table> 
+                      
+                             <div class="table-responsive">
+                               <table id="example3" class="table m-0">
+                                <thead>
+                                <tr>
+                                  <th><div class="badge badge-info">No.</div></th>
+                                  <th><div class="badge badge-info">Station Code</div></th>
+                                  <th><div class="badge badge-info">Station Name</div></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php do {?>
+                                <tr>
+                                  <td><?php echo $a++;?></td>
+                                  <td><?php echo $row_Recordset2['stationCode'];?></td>
+                                  <td><?php echo $row_Recordset2['name'];?></td>
+                                </tr>
+                                <?php }while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2))?>
+                                </tbody>
+                                </table> 
+                              </div>
 
-                                    
-                             <button type="submit" name='ot' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export O/T Supervisor</button>
-                            </form>
+                            
                 </div>
               </div>
           </div>
