@@ -972,7 +972,6 @@ $downloadExcell = $_SERVER['PHP_SELF'];
             </div>
           </div>
 
-            
 
           </div>
       </div><!-- /.container-fluid -->
