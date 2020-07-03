@@ -1118,18 +1118,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
 
     </div>
     <!-- /.content-wrapper-->
-    
-  <footer class="main-footer">
-  </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
-<!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
