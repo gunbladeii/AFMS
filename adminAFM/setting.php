@@ -824,45 +824,6 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
       </div><!-- /.container-fluid -->
     </section>
 
-
-   <!--parcelModal-->
-<div class="modal fade" id="viewRiderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">View Rider Payment Voucher</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <div class="dash"></div>
-      </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- end / parcelModal-->
-
-   <!--parcelModal-->
-<div class="modal fade" id="viewStationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">List of Rider</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <div class="dash2"></div>
-      </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- end / parcelModal-->
-
 </div>
 <!-- ./wrapper -->
 
