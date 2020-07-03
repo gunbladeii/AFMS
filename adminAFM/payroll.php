@@ -1107,9 +1107,9 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 <script>
     
     $('#viewStationModal').on('show.bs.collapse', function (event) {
-          var button = $(event.relatedTarget) // Button that triggered the modal
-          var recipient3 = button.data('whatever3') // Extract info from data-* attributes
-          var recipient4 = button.data('whatever4') // Extract info from data-* attributes
+          var button = $(event.relatedTarget); // Button that triggered the modal
+          var recipient3 = button.data('whatever3'); // Extract info from data-* attributes
+          var recipient4 = button.data('whatever4');// Extract info from data-* attributes
           var collapse = $(this);
           var dataString2 = 'stationCode=' + recipient3 + '&' + 'month=' + recipient4;
 
