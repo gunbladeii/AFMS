@@ -668,7 +668,11 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
               <li class="breadcrumb-item active">AFMS | Conrol Panel</li>
             </ol>
           </div><!-- /.col -->
+        </div>
+      </div>
+    </section>
 
+         <section>
           <div class="col-sm-6">
             <div class="card">
             <div class="card-header border-transparent">
