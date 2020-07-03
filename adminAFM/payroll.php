@@ -984,10 +984,10 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                     <i class="fas fa-times"></i>
                   </button>
                 </div>
-                     <div id="viewRiderModal" class="collapse">
+                     <div id="viewStationModal" class="collapse" aria-expanded="false" aria-controls="collapseExample">
                        <div class="card-body p-0">
                           <div class="table-responsive">
-                              <div class="show2"></div>
+                              <div id="show2"></div>
                           </div>
                        </div>
                      </div>
@@ -1119,7 +1119,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                 cache: false,
                 success: function (data) {
                     console.log(data);
-                    modal.find('.show2').html(data);
+                    modal.find('.dash').html(data);
                 },
                 error: function(err) {
                     console.log(err);
@@ -1143,7 +1143,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                 cache: false,
                 success: function (data) {
                     console.log(data);
-                    modal.find('.dash2').html(data);
+                    modal.find('.show2').html(data);
                 },
                 error: function(err) {
                     console.log(err);
