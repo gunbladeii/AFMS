@@ -976,7 +976,6 @@ $downloadExcell = $_SERVER['PHP_SELF'];
             <div id="viewStationModal" class="collapse">
             <div class="card">
             <div class="card-header border-transparent">
-              <h5 class="card-title">List of Station (Payroll)</h5>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -988,6 +987,9 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                      
                           <div class="card-body p-0">
                             <h5 class="card-title">Payroll by Station</h5>
+                            <div class="table-responsive">
+                              <div class="show2"></div>
+                          </div>
                           </div>
 
                       
