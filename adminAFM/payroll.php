@@ -987,7 +987,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                      <div id="viewStationModal" class="collapse" aria-expanded="false" aria-controls="collapseExample">
                        <div class="card-body p-0">
                           <div class="table-responsive">
-                              <div id="show2"></div>
+                              <div class="show2"></div>
                           </div>
                        </div>
                      </div>
@@ -1133,7 +1133,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           var button = $(event.relatedTarget) // Button that triggered the modal
           var recipient3 = button.data('whatever3') // Extract info from data-* attributes
           var recipient4 = button.data('whatever4') // Extract info from data-* attributes
-          var modal = $(this);
+          var collapse = $(this);
           var dataString2 = 'stationCode=' + recipient3 + '&' + 'month=' + recipient4;
 
             $.ajax({
@@ -1143,7 +1143,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                 cache: false,
                 success: function (data) {
                     console.log(data);
-                    modal.find('.show2').html(data);
+                    collapse.find('.show2').html(data);
                 },
                 error: function(err) {
                     console.log(err);
