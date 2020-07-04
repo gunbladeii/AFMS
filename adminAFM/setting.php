@@ -791,6 +791,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
         </div>
         <!-- /.row -->
 
+       <div class="row">
        <div class="col-md-6">
            <!-- TABLE: list of rider -->
             <div class="card">
@@ -902,7 +903,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     </tbody>
                   </table> 
                 </div>
-                
+
               </div>
             </div>
             <!-- /.card -->
@@ -910,6 +911,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
           <!-- /.col -->
         </div>
 
+      <div class="row">
       <div class="col-md-6">
            <!-- TABLE: list of rider -->
             <div class="card">
@@ -1037,7 +1039,8 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
           <!-- /.col -->
         </div>
 
-               <div class="col-md-6">
+        <div class="row">
+        <div class="col-md-6">
            <!-- TABLE: list of rider -->
             <div class="card">
               <div class="card-header border-transparent">
@@ -1076,7 +1079,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
               </div>
               </div>
 
-              <div class="col-md-6">
+     <div class="col-md-6">
            <!-- TABLE: list of rider -->
             <div class="card">
               <div class="card-header border-transparent">
