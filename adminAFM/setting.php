@@ -739,9 +739,11 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                       </form>
                   </div>
                 <!-- /.table-responsive -->
+                  </div>
+                </div>
               </div>
-              </div>
-              </div>
+
+            
               
             <div class="col-md-6"> 
               <!-- TABLE: parcel delivery rider -->
@@ -780,6 +782,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     </tbody>
                   </table> 
                 </div>
+
               </div>
             </div>
             <!-- /.card -->
@@ -899,9 +902,13 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     </tbody>
                   </table> 
                 </div>
+                
               </div>
-              </div>
-              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
 
       <div class="col-md-6">
            <!-- TABLE: list of rider -->
@@ -1024,8 +1031,11 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 <!-- /.table-responsive -->     
                 
               </div>
-              </div>
-              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
 
                <div class="col-md-6">
            <!-- TABLE: list of rider -->
@@ -1108,8 +1118,11 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 </div>      
                 
               </div>
-              </div>
-              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
 
 
 
