@@ -1025,6 +1025,46 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
               </div>
               </div>
 
+               <div class="col-md-6">
+           <!-- TABLE: list of rider -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">List of Registered Category</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+               <div class="table-responsive">
+                   <table id="example4"class="table m-0 table-hover table-sm">
+                    <thead>
+                    <tr>
+                      <th><div class="badge badge-info">No.</div></th>
+                      <th><div class="badge badge-info">Registered Category</div></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php do {?>
+                    <tr>
+                      <td><?php echo $c++;?></td>
+                      <td><?php if($row_Recordset6['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset6['roleCategory']);}?></td>
+                    </tr>
+                    <?php }while ($row_Recordset6 = mysqli_fetch_assoc($Recordset6))?>
+                    </tbody>
+                  </table> 
+                </div>
+                
+              </div>
+              </div>
+              </div>
+
+
 
         
       </div><!--/. container-fluid -->
