@@ -856,7 +856,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
               </div>
               </div>
 
-              <div class="col-md-6">
+       <div class="col-md-6">
            <!-- TABLE: list of rider -->
             <div class="card">
               <div class="card-header border-transparent">
@@ -899,6 +899,50 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     </tbody>
                   </table> 
                 </div>
+              </div>
+              </div>
+              </div>
+
+      <div class="col-md-6">
+           <!-- TABLE: list of rider -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Role Category Setting</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
+                  <table class="table m-0">
+                    <tbody>
+                    <tr>
+                      <td>
+                        <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Type role category" name="roleCategory" id="validationDefault07" required>
+                          <div class="input-group-append input-group-text">
+                             <span class="fas fa-list-ol"></span>
+                          </div>
+                         </div>
+                     </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <input type="hidden" name="year" value="<?php echo $year;?>">
+                  <div class="card-footer clearfix">
+                <button type="submit" name="submit3" class="btn btn-sm btn-success float-right">Insert</button>
+              </div>
+                </div>
+                <!-- /.table-responsive -->
+                </form>
+                
               </div>
               </div>
               </div>
