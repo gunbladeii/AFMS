@@ -856,6 +856,53 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
               </div>
               </div>
 
+              <div class="col-md-6">
+           <!-- TABLE: list of rider -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">List of Operation Days by Month and Station</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                   <table id="example4"class="table m-0 table-hover table-sm">
+                    <thead>
+                    <tr>
+                      <th><div class="badge badge-info">No.</div></th>
+                      <th><div class="badge badge-info">Station Code</div></th>
+                      <th><div class="badge badge-info">Station Name</div></th>
+                      <th><div class="badge badge-info">Month</div></th>
+                       <th><div class="badge badge-info">Year</div></th>
+                      <th><div class="badge badge-info">Operation Days</div></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php do {?>
+                    <tr>
+                      <td><?php echo $b++;?></td>
+                      <td><?php echo $row_Recordset3['stationCode'];?></td>
+                      <td><?php echo $row_Recordset3['name'];?></td>
+                      <td><?php $month_name = date("F", mktime(0, 0, 0, $row_Recordset3['month'], 10));
+                            echo $month_name."\n";?></td>
+                      <td><?php echo $row_Recordset3['year'];?></td>
+                      <td><?php echo $row_Recordset3['operationDay'];?></td>
+                    </tr>
+                    <?php }while ($row_Recordset3 = mysqli_fetch_assoc($Recordset3))?>
+                    </tbody>
+                  </table> 
+                </div>
+              </div>
+              </div>
+              </div>
+
 
         
       </div><!--/. container-fluid -->
