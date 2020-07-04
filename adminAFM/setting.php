@@ -747,7 +747,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
               <!-- TABLE: parcel delivery rider -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Parcel Delivery Status</h3>
+                <h3 class="card-title">Registered Station</h3>
                 <h2 class="card-title" style="font-size:14px;">(As of <?php echo $date.' '.$time;?>)</h2>
               <!-- /.card-body -->
                 <div class="card-tools">
@@ -762,9 +762,25 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
               <!-- /.card-header -->
               <div class="card-body p-0">
                 <div class="table-responsive">
-                  <div id="parcel"></div>
+                   <table id="example3" class="table m-0">
+                    <thead>
+                    <tr>
+                      <th><div class="badge badge-info">No.</div></th>
+                      <th><div class="badge badge-info">Station Code</div></th>
+                      <th><div class="badge badge-info">Station Name</div></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php do {?>
+                    <tr>
+                      <td><?php echo $a++;?></td>
+                      <td><?php echo $row_Recordset2['stationCode'];?></td>
+                      <td><?php echo $row_Recordset2['name'];?></td>
+                    </tr>
+                    <?php }while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2))?>
+                    </tbody>
+                  </table> 
                 </div>
-                <!-- /.table-responsive -->
               </div>
             </div>
             <!-- /.card -->
