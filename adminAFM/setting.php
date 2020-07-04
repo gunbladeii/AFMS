@@ -911,52 +911,17 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <tr>
                       <td>
                         <div class="input-group mb-3">
-                          <select name="stationCode" class="custom-select browser-default" required>
-                              <option value="">Pick your Station Code</option>
-                              <?php do{?>
-                              <option value="<?php echo $row_Recordset4['stationCode'];?>"><?php echo $row_Recordset4['stationCode'];?></option>
-                              <?php }while ($row_Recordset4 = mysqli_fetch_assoc($Recordset4))?>
-                            </select>
-                              <div class="input-group-append input-group-text">
-                                <span class="fas fa-motorcycle"></span>
-                              </div>
-                        </div>
-                      </td>
-                      <td>
-                           <div class="input-group mb-3">
-                                <select name="month" class="custom-select browser-default" required>
-                                  <option value="" selected>Pick Month</option>
-                                  <option value="01" >January</option>
-                                  <option value="02" >Febuary</option>
-                                  <option value="03" >March</option>
-                                  <option value="04" >April</option>
-                                  <option value="05" >May</option>
-                                  <option value="06" >June</option>
-                                  <option value="07" >July</option>
-                                  <option value="08" >August</option>
-                                  <option value="09" >September</option>
-                                  <option value="10" >October</option>
-                                  <option value="11" >November</option>
-                                  <option value="12" >Disember</option>
-                               </select>
-                                <div class="input-group-append input-group-text">
-                                  <span class="fas fa-calendar-alt"></span>
-                                </div>
-                           </div>
-                       </td>
-                       <td>
-                        <div class="input-group mb-3">
-                        <input type="number" class="form-control" placeholder="Insert days" name="operationDay" id="validationDefault06" required>
-                          <div class="input-group-append input-group-text">
-                             <span class="fas fa-list-ol"></span>
-                          </div>
+                          <input type="text" class="form-control" placeholder="Type role category" name="roleCategory" id="validationDefault07" required>
+                            <div class="input-group-append input-group-text">
+                               <span class="fas fa-list-ol"></span>
+                            </div>
                          </div>
-                       </td>
+                      </td>
                     </tr>
                     </tbody>
                   </table> 
                    <div class="card-footer clearfix">
-                      <button type="submit" name="submit2" class="btn btn-sm btn-success float-right">Update</button>
+                      <button type="submit" name="submit3" class="btn btn-sm btn-success float-right">Insert</button>
                    </div>
                   </form>
 
@@ -979,34 +944,66 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                 </div>
                      
                           <div class="card-body p-0">
-                            <h5 class="card-title">List of Operation Days by Month and Station</h5>
-                            <div class="table-responsive">
-                              <table id="example4"class="table m-0 table-hover table-sm">
-                    <thead>
-                    <tr>
-                      <th><div class="badge badge-info">No.</div></th>
-                      <th><div class="badge badge-info">Station Code</div></th>
-                      <th><div class="badge badge-info">Station Name</div></th>
-                      <th><div class="badge badge-info">Month</div></th>
-                       <th><div class="badge badge-info">Year</div></th>
-                      <th><div class="badge badge-info">Operation Days</div></th>
-                    </tr>
-                    </thead>
+                            <h5 class="card-title">Comission Setting by Role</h5>
+              <div class="table-responsive">
+                <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
+                  <table class="table m-0">
                     <tbody>
-                    <?php do {?>
                     <tr>
-                      <td><?php echo $b++;?></td>
-                      <td><?php echo $row_Recordset3['stationCode'];?></td>
-                      <td><?php echo $row_Recordset3['name'];?></td>
-                      <td><?php $month_name = date("F", mktime(0, 0, 0, $row_Recordset3['month'], 10));
-                            echo $month_name."\n";?></td>
-                      <td><?php echo $row_Recordset3['year'];?></td>
-                      <td><?php echo $row_Recordset3['operationDay'];?></td>
-                    </tr>
-                    <?php }while ($row_Recordset3 = mysqli_fetch_assoc($Recordset3))?>
-                    </tbody>
-                  </table> 
+                      <td>
+                        <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Update commision" name="commision" id="validationDefault07" value="<?php echo($row_Recordset6['commision'])?>" required>
+                          <div class="input-group-append input-group-text">
+                             <span class="fas fa-list-ol"></span>
                           </div>
+                         </div>
+                      </td>
+
+                      <td>
+                    <div class="input-group mb-3">
+                          <select name="roleCom" class="custom-select browser-default" required>
+                            <option value="">Pick role</option>
+                            <?php do{?>
+                            <option value="<?php echo $row_Recordset5['role'];?>"><?php if($row_Recordset5['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset5['roleCategory']);}?></option>
+                            <?php }while ($row_Recordset5 = mysqli_fetch_assoc($Recordset5))?>
+                          </select>
+                            <div class="input-group-append input-group-text">
+                              <span class="fas fa-motorcycle"></span>
+                            </div>
+                     </div>
+                     </td>
+                      <td>
+                     <div class="input-group mb-3">
+                           <select name="monthCom" class="custom-select browser-default" required>
+                              <option value="" selected>Pick Month</option>
+                              <option value="01" >January</option>
+                              <option value="02" >Febuary</option>
+                              <option value="03" >March</option>
+                              <option value="04" >April</option>
+                              <option value="05" >May</option>
+                              <option value="06" >June</option>
+                              <option value="07" >July</option>
+                              <option value="08" >August</option>
+                              <option value="09" >September</option>
+                              <option value="10" >October</option>
+                              <option value="11" >November</option>
+                              <option value="12" >Disember</option>
+                           </select>
+                                <div class="input-group-append input-group-text">
+                                  <span class="fas fa-calendar-alt"></span>
+                                </div>
+                     </div>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                    <div class="card-footer clearfix">
+                      <input type="hidden" name="year" value="<?php echo $year;?>">
+                      <button type="submit" name="submit4" class="btn btn-sm btn-success float-right">Update</button>
+                    </div>
+                </form>
+                </div>
+                <!-- /.table-responsive -->     
                           
 
                       
