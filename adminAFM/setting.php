@@ -705,9 +705,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
            <!-- TABLE: list of rider -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Rider Attendance Status</h3>
-                <h2 class="card-title" style="font-size:14px;">(As of <?php echo $date.' '.$time;?>)</h2>
-
+                <h3 class="card-title">Station Registration</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -720,7 +718,25 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
               <!-- /.card-header -->
               <div class="card-body p-0">
                 <div class="table-responsive">
-                    <div id="show"></div>
+                     <form action="setting.php" method="post" name="prosesDaftar" enctype="multipart/form-data">
+                          <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Station Code" name="stationCode" id="validationDefault01" required>
+                            <div class="input-group-append input-group-text">
+                               <span class="fas fa-code"></span>
+                            </div>
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Station Name" name="name" id="validationDefault02" required>
+                            <div class="input-group-append input-group-text">
+                               <span class="fas fa-motorcycle"></span>
+                            </div>
+                          </div>
+
+                          <div class="card-footer clearfix">
+                            <button type="submit" name="submit" class="btn btn-sm btn-success float-right">Submit</button>
+                          </div>
+                      </form>
                   </div>
                 <!-- /.table-responsive -->
               </div>
@@ -754,9 +770,10 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
             <!-- /.card -->
           </div>
           <!-- /.col -->
-          
         </div>
         <!-- /.row -->
+
+
         
       </div><!--/. container-fluid -->
     </section>
