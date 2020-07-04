@@ -657,7 +657,8 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
-        
+        <div class="row mb-2">
+
           <div class="col-sm-6">
             <h1>Control Panel</h1>
           </div>
@@ -748,7 +749,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
               </div>
           </div>
 
-       
+        </div>
       </div><!-- /.container-fluid -->
     </section>
 
