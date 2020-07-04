@@ -652,342 +652,210 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
     <!-- /.sidebar -->
   </aside>
 
-   <!-- Content Wrapper. Contains page content -->
+ <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-4">
-
+        <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Control Panel</h1>
-          </div>
+            <h1 class="m-0 text-dark">Welcome <?php echo ucwords(strtolower($row_Recordset['nama']));?></h1>
+            <span class="badge badge-primary">Today is <?php $dateM = new DateTime($date);echo $dateM->format('l').' ('.$dateM->format('d-M-Y').')';?></span>
+            <h6><span class="badge badge-success"><?php echo ucwords(strtolower($row_joiner['stationName']));?> Station</span></h6>
+            <h6><span class="badge badge-warning">Your IP address: <?php print $_SERVER['REMOTE_ADDR'];?></span></h6>
+          </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">AFMS  |  Control Panel</li>
+              <li class="breadcrumb-item active">SUPERVISOR Section</li>
             </ol>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="card">
-            <div class="card-header border-transparent">
-            <h5 class="card-title">Station Registration</h5>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-            <form action="setting.php" method="post" name="prosesDaftar" enctype="multipart/form-data">
-                   <table class="table m-0">
-                    <tbody>
-                    <tr>
-                      <td>
-                        <div class="input-group mb-3">
-                         <input type="text" class="form-control" placeholder="Station Code" name="stationCode" id="validationDefault01" required>
-                          <div class="input-group-append input-group-text">
-                             <span class="fas fa-code"></span>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                           <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Station Name" name="name" id="validationDefault02" required>
-                            <div class="input-group-append input-group-text">
-                               <span class="fas fa-motorcycle"></span>
-                            </div>
-                           </div>
-                       </td>
-                    </tr>
-                    </tbody>
-                  </table> 
-                   <div class="card-footer clearfix">
-                      <button type="submit" name="submit" class="btn btn-sm btn-success float-right">Submit</button>
-                   </div>
-                  </form>
-                </div>
-              </div>
-          </div>
-
-           <div class="col-sm-6">
-            <div class="card">
-            <div class="card-header border-transparent">
-            <h5 class="card-title">Registered Station</h5>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-                      
-                             <div class="table-responsive">
-                               <table id="example3" class="table m-0 table-hover table-sm">
-                                <thead>
-                                <tr>
-                                  <th><div class="badge badge-info">No.</div></th>
-                                  <th><div class="badge badge-info">Station Code</div></th>
-                                  <th><div class="badge badge-info">Station Name</div></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php do {?>
-                                <tr>
-                                  <td><?php echo $a++;?></td>
-                                  <td><?php echo $row_Recordset2['stationCode'];?></td>
-                                  <td><?php echo $row_Recordset2['name'];?></td>
-                                </tr>
-                                <?php }while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2))?>
-                                </tbody>
-                                </table> 
-                              </div>
-                </div>
-              </div>
-          </div>
-
-        </div>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
       </div><!-- /.container-fluid -->
-    </section>
-
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-4">
-
-           <div class="col-sm-6">
-            <div class="card">
-            <div class="card-header border-transparent">
-            <h5 class="card-title">Update Operation Days</h5>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-                      <div class="card-body p-0">
-                          <div class="table-responsive">
-
-                      <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
-                   <table class="table m-0">
-                    <tbody>
-                    <tr>
-                      <td>
-                        <div class="input-group mb-3">
-                          <select name="stationCode" class="custom-select browser-default" required>
-                              <option value="">Pick your Station Code</option>
-                              <?php do{?>
-                              <option value="<?php echo $row_Recordset4['stationCode'];?>"><?php echo $row_Recordset4['stationCode'];?></option>
-                              <?php }while ($row_Recordset4 = mysqli_fetch_assoc($Recordset4))?>
-                            </select>
-                              <div class="input-group-append input-group-text">
-                                <span class="fas fa-motorcycle"></span>
-                              </div>
-                        </div>
-                      </td>
-                      <td>
-                           <div class="input-group mb-3">
-                                <select name="month" class="custom-select browser-default" required>
-                                  <option value="" selected>Pick Month</option>
-                                  <option value="01" >January</option>
-                                  <option value="02" >Febuary</option>
-                                  <option value="03" >March</option>
-                                  <option value="04" >April</option>
-                                  <option value="05" >May</option>
-                                  <option value="06" >June</option>
-                                  <option value="07" >July</option>
-                                  <option value="08" >August</option>
-                                  <option value="09" >September</option>
-                                  <option value="10" >October</option>
-                                  <option value="11" >November</option>
-                                  <option value="12" >Disember</option>
-                               </select>
-                                <div class="input-group-append input-group-text">
-                                  <span class="fas fa-calendar-alt"></span>
-                                </div>
-                           </div>
-                       </td>
-                       <td>
-                        <div class="input-group mb-3">
-                        <input type="number" class="form-control" placeholder="Insert days" name="operationDay" id="validationDefault06" required>
-                          <div class="input-group-append input-group-text">
-                             <span class="fas fa-list-ol"></span>
-                          </div>
-                         </div>
-                       </td>
-                    </tr>
-                    </tbody>
-                  </table> 
-                   <div class="card-footer clearfix">
-                      <button type="submit" name="submit2" class="btn btn-sm btn-success float-right">Update</button>
-                   </div>
-                  </form>
-
-                          </div>
-                       </div>
-                </div>
-              </div>
-          </div>
-
-           <div class="col-sm-6">
-            <div class="card">
-            <div class="card-header border-transparent">
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-                     
-                          <div class="card-body p-0">
-                            <h5 class="card-title">List of Operation Days by Month and Station</h5>
-                            <div class="table-responsive">
-                              <table id="example4"class="table m-0 table-hover table-sm">
-                    <thead>
-                    <tr>
-                      <th><div class="badge badge-info">No.</div></th>
-                      <th><div class="badge badge-info">Station Code</div></th>
-                      <th><div class="badge badge-info">Station Name</div></th>
-                      <th><div class="badge badge-info">Month</div></th>
-                       <th><div class="badge badge-info">Year</div></th>
-                      <th><div class="badge badge-info">Operation Days</div></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php do {?>
-                    <tr>
-                      <td><?php echo $b++;?></td>
-                      <td><?php echo $row_Recordset3['stationCode'];?></td>
-                      <td><?php echo $row_Recordset3['name'];?></td>
-                      <td><?php $month_name = date("F", mktime(0, 0, 0, $row_Recordset3['month'], 10));
-                            echo $month_name."\n";?></td>
-                      <td><?php echo $row_Recordset3['year'];?></td>
-                      <td><?php echo $row_Recordset3['operationDay'];?></td>
-                    </tr>
-                    <?php }while ($row_Recordset3 = mysqli_fetch_assoc($Recordset3))?>
-                    </tbody>
-                  </table> 
-                          </div>
-                          </div>
-
-                      
-                     </div>
-                </div>
-              </div>
-          </div>
-
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
-
-     <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-4">
-
-          <div class="col-sm-6">
-            <h1>Control Panel</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">AFMS  |  Control Panel</li>
-            </ol>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="card">
-            <div class="card-header border-transparent">
-            <h5 class="card-title">Station Registration</h5>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-            <form action="setting.php" method="post" name="prosesDaftar" enctype="multipart/form-data">
-                   <table class="table m-0">
-                    <tbody>
-                    <tr>
-                      <td>
-                        <div class="input-group mb-3">
-                         <input type="text" class="form-control" placeholder="Station Code" name="stationCode" id="validationDefault01" required>
-                          <div class="input-group-append input-group-text">
-                             <span class="fas fa-code"></span>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                           <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Station Name" name="name" id="validationDefault02" required>
-                            <div class="input-group-append input-group-text">
-                               <span class="fas fa-motorcycle"></span>
-                            </div>
-                           </div>
-                       </td>
-                    </tr>
-                    </tbody>
-                  </table> 
-                   <div class="card-footer clearfix">
-                      <button type="submit" name="submit" class="btn btn-sm btn-success float-right">Submit</button>
-                   </div>
-                  </form>
-                </div>
-              </div>
-          </div>
-
-           <div class="col-sm-6">
-            <div class="card">
-            <div class="card-header border-transparent">
-            <h5 class="card-title">Registered Station</h5>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-                      
-                             <div class="table-responsive">
-                               <table id="example3" class="table m-0 table-hover table-sm">
-                                <thead>
-                                <tr>
-                                  <th><div class="badge badge-info">No.</div></th>
-                                  <th><div class="badge badge-info">Station Code</div></th>
-                                  <th><div class="badge badge-info">Station Name</div></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php do {?>
-                                <tr>
-                                  <td><?php echo $a++;?></td>
-                                  <td><?php echo $row_Recordset2['stationCode'];?></td>
-                                  <td><?php echo $row_Recordset2['name'];?></td>
-                                </tr>
-                                <?php }while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2))?>
-                                </tbody>
-                                </table> 
-                              </div>
-                </div>
-              </div>
-          </div>
-
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
-
+    </div>
+    <!-- /.content-header -->
     
+     <div class="modal fade" id="parcelModal">
+        <div class="modal-dialog">
+          <div class="modal-content bg-success">
+            <div class="modal-header">
+              <h4 class="modal-title">Add item parcel to rider</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="dash">
+              
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+      
+      <div class="modal fade" id="parcelModalSS">
+        <div class="modal-dialog">
+          <div class="modal-content bg-success">
+            <div class="modal-header">
+              <h4 class="modal-title">Add item parcel to rider</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="dash2">
+              
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
 
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          
+          <div class="row">
+        <!-- row -->
+        
+        <div class="col-12 col-sm-6 col-md-4">
+        <div id="show2"></div>
+        </div>
+        <!-- /.col -->
+        
+        <div class="col-12 col-sm-6 col-md-4">
+        <div id="show3"></div>
+        </div>
+        <!-- /.col -->
+        
+        <div class="col-12 col-sm-6 col-md-4">
+        <div id="show4"></div>
+        </div>
+        <!-- /.col -->
+        
+        </div>
+        <!-- /.row -->
+        
+        <div class="row">
+            
+        <div class="col-12 col-sm-6 col-md-6">
+        <a href="attendance.php">
+        <div class="info-box bg-light">
+         <span class="info-box-icon bg-gradient-warning"><i class="fas fa-user-clock"></i></span>
+           <div class="info-box-content">
+             <span class="info-box-text">e-Attendance</span>
+             <span class="info-box-number"><div id="show5"></div></span>
+         <!-- The progress section is optional -->
+         <div class="progress">
+         <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 0%"></div>
+         </div>
+         <span class="progress-description"><div id="show6"></div></span>
+        </div>
+        <!-- /.info-box-content -->
+        </div></a>
+        <!-- /.info-box -->
+       </div>
+       <!-- /.col -->
+       
+       <div class="col-12 col-sm-6 col-md-6">
+        <a data-toggle="modal" data-target="#parcelModalSS" data-whatever3="<?php echo $row_joiner['noIC'];?>" data-whatever4="<?php echo $date;?>">
+        <div class="info-box bg-light">
+         <span class="info-box-icon bg-gradient-primary"><i class="fas fa-clipboard"></i></span>
+           <div class="info-box-content">
+             <span class="info-box-text">Parcel Record (SS)</span>
+             <span class="info-box-number badge badge-warning">Click here for update</span>
+         <!-- The progress section is optional -->
+         <div class="progress">
+         <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 0%"></div>
+         </div>
+         <span class="progress-description"><div id="show7"></div></span>
+        </div>
+        <!-- /.info-box-content -->
+        </div></a>
+        <!-- /.info-box -->
+       </div>
+       <!-- /.col -->
+            
+            
+        </div>
+        <!-- /.row -->
+         
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+        <div class="col-md-6">
+           <!-- TABLE: list of rider -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Rider Attendance Status</h3>
+                <h2 class="card-title" style="font-size:14px;">(As of <?php echo $date.' '.$time;?>)</h2>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                    <div id="show"></div>
+                  </div>
+                <!-- /.table-responsive -->
+              </div>
+              </div>
+              </div>
+              
+            <div class="col-md-6"> 
+              <!-- TABLE: parcel delivery rider -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Parcel Delivery Status</h3>
+                <h2 class="card-title" style="font-size:14px;">(As of <?php echo $date.' '.$time;?>)</h2>
+              <!-- /.card-body -->
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <div id="parcel"></div>
+                </div>
+                <!-- /.table-responsive -->
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+          
+        </div>
+        <!-- /.row -->
+        
+      </div><!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2019 <a href="https://iberkat.my/AFM">AFM Sdn. Bhd</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0-beta.1
+    </div>
+  </footer>
+
+  
 </div>
-<!-- ./wrapper -->
+<!-- ./wrapper -->  
 
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->

@@ -496,11 +496,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
     </div>
   </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+  
 </div>
 <!-- ./wrapper -->     
 
