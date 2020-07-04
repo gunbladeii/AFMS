@@ -886,14 +886,24 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
       </div><!-- /.container-fluid -->
     </section>
 
-    <section class="content-header">
+     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
 
-           <div class="col-sm-6">
+          <div class="col-sm-6">
+            <h1>Control Panel</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+              <li class="breadcrumb-item active">AFMS  |  Control Panel</li>
+            </ol>
+          </div>
+
+          <div class="col-sm-6">
             <div class="card">
             <div class="card-header border-transparent">
-            <h5 class="card-title">Role Category Setting</h5>
+            <h5 class="card-title">Station Registration</h5>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -902,31 +912,33 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <i class="fas fa-times"></i>
                   </button>
                 </div>
-                      <div class="card-body p-0">
-                          <div class="table-responsive">
-
-                      <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
+            <form action="setting.php" method="post" name="prosesDaftar" enctype="multipart/form-data">
                    <table class="table m-0">
                     <tbody>
                     <tr>
                       <td>
                         <div class="input-group mb-3">
-                          <input type="text" class="form-control" placeholder="Type role category" name="roleCategory" id="validationDefault07" required>
-                            <div class="input-group-append input-group-text">
-                               <span class="fas fa-list-ol"></span>
-                            </div>
-                         </div>
+                         <input type="text" class="form-control" placeholder="Station Code" name="stationCode" id="validationDefault01" required>
+                          <div class="input-group-append input-group-text">
+                             <span class="fas fa-code"></span>
+                          </div>
+                        </div>
                       </td>
+                      <td>
+                           <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Station Name" name="name" id="validationDefault02" required>
+                            <div class="input-group-append input-group-text">
+                               <span class="fas fa-motorcycle"></span>
+                            </div>
+                           </div>
+                       </td>
                     </tr>
                     </tbody>
                   </table> 
                    <div class="card-footer clearfix">
-                      <button type="submit" name="submit3" class="btn btn-sm btn-success float-right">Insert</button>
+                      <button type="submit" name="submit" class="btn btn-sm btn-success float-right">Submit</button>
                    </div>
                   </form>
-
-                          </div>
-                       </div>
                 </div>
               </div>
           </div>
@@ -934,6 +946,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
            <div class="col-sm-6">
             <div class="card">
             <div class="card-header border-transparent">
+            <h5 class="card-title">Registered Station</h5>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -942,72 +955,27 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     <i class="fas fa-times"></i>
                   </button>
                 </div>
-                     
-                          <div class="card-body p-0">
-                            <h5 class="card-title">Comission Setting by Role</h5>
-              <div class="table-responsive">
-                <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
-                  <table class="table m-0">
-                    <tbody>
-                    <tr>
-                      <td>
-                        <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Update commision" name="commision" id="validationDefault07" value="<?php echo($row_Recordset6['commision'])?>" required>
-                          <div class="input-group-append input-group-text">
-                             <span class="fas fa-list-ol"></span>
-                          </div>
-                         </div>
-                      </td>
-
-                      <td>
-                    <div class="input-group mb-3">
-                          <select name="roleCom" class="custom-select browser-default" required>
-                            <option value="">Pick role</option>
-                            <?php do{?>
-                            <option value="<?php echo $row_Recordset5['role'];?>"><?php if($row_Recordset5['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset5['roleCategory']);}?></option>
-                            <?php }while ($row_Recordset5 = mysqli_fetch_assoc($Recordset5))?>
-                          </select>
-                            <div class="input-group-append input-group-text">
-                              <span class="fas fa-motorcycle"></span>
-                            </div>
-                     </div>
-                     </td>
-                      <td>
-                     <div class="input-group mb-3">
-                           <select name="monthCom" class="custom-select browser-default" required>
-                              <option value="" selected>Pick Month</option>
-                              <option value="01" >January</option>
-                              <option value="02" >Febuary</option>
-                              <option value="03" >March</option>
-                              <option value="04" >April</option>
-                              <option value="05" >May</option>
-                              <option value="06" >June</option>
-                              <option value="07" >July</option>
-                              <option value="08" >August</option>
-                              <option value="09" >September</option>
-                              <option value="10" >October</option>
-                              <option value="11" >November</option>
-                              <option value="12" >Disember</option>
-                           </select>
-                                <div class="input-group-append input-group-text">
-                                  <span class="fas fa-calendar-alt"></span>
-                                </div>
-                     </div>
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table>
-                    <div class="card-footer clearfix">
-                      <input type="hidden" name="year" value="<?php echo $year;?>">
-                      <button type="submit" name="submit4" class="btn btn-sm btn-success float-right">Update</button>
-                    </div>
-                </form>
-                </div>
-                <!-- /.table-responsive -->     
-                          
-
                       
-                     </div>
+                             <div class="table-responsive">
+                               <table id="example3" class="table m-0 table-hover table-sm">
+                                <thead>
+                                <tr>
+                                  <th><div class="badge badge-info">No.</div></th>
+                                  <th><div class="badge badge-info">Station Code</div></th>
+                                  <th><div class="badge badge-info">Station Name</div></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php do {?>
+                                <tr>
+                                  <td><?php echo $a++;?></td>
+                                  <td><?php echo $row_Recordset2['stationCode'];?></td>
+                                  <td><?php echo $row_Recordset2['name'];?></td>
+                                </tr>
+                                <?php }while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2))?>
+                                </tbody>
+                                </table> 
+                              </div>
                 </div>
               </div>
           </div>
