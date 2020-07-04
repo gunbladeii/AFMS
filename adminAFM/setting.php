@@ -748,7 +748,6 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
             <div class="card">
               <div class="card-header border-transparent">
                 <h3 class="card-title">Registered Station</h3>
-                <h2 class="card-title" style="font-size:14px;">(As of <?php echo $date.' '.$time;?>)</h2>
               <!-- /.card-body -->
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
@@ -762,7 +761,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
               <!-- /.card-header -->
               <div class="card-body p-0">
                 <div class="table-responsive">
-                   <table id="example3" class="table m-0">
+                   <table id="example3" class="table m-0 table-hover table-sm">
                     <thead>
                     <tr>
                       <th><div class="badge badge-info">No.</div></th>
