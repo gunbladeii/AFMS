@@ -659,63 +659,24 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Welcome <?php echo ucwords(strtolower($row_Recordset['nama']));?></h1>
-            <span class="badge badge-primary">Today is <?php $dateM = new DateTime($date);echo $dateM->format('l').' ('.$dateM->format('d-M-Y').')';?></span>
-            <h6><span class="badge badge-success"><?php echo ucwords(strtolower($row_joiner['stationName']));?> Station</span></h6>
-            <h6><span class="badge badge-warning">Your IP address: <?php print $_SERVER['REMOTE_ADDR'];?></span></h6>
+            <h1 class="m-0 text-dark">Control Panel</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">SUPERVISOR Section</li>
+              <li class="breadcrumb-item active">Control Panel</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-    
-     <div class="modal fade" id="parcelModal">
-        <div class="modal-dialog">
-          <div class="modal-content bg-success">
-            <div class="modal-header">
-              <h4 class="modal-title">Add item parcel to rider</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="dash">
-              
-            </div>
-          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /.modal -->
-      
-      <div class="modal fade" id="parcelModalSS">
-        <div class="modal-dialog">
-          <div class="modal-content bg-success">
-            <div class="modal-header">
-              <h4 class="modal-title">Add item parcel to rider</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="dash2">
-              
-            </div>
-          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /.modal -->
 
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
           
-          <div class="row">
+        <div class="row">
         <!-- row -->
         
         <div class="col-12 col-sm-6 col-md-4">
@@ -736,50 +697,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
         </div>
         <!-- /.row -->
         
-        <div class="row">
-            
-        <div class="col-12 col-sm-6 col-md-6">
-        <a href="attendance.php">
-        <div class="info-box bg-light">
-         <span class="info-box-icon bg-gradient-warning"><i class="fas fa-user-clock"></i></span>
-           <div class="info-box-content">
-             <span class="info-box-text">e-Attendance</span>
-             <span class="info-box-number"><div id="show5"></div></span>
-         <!-- The progress section is optional -->
-         <div class="progress">
-         <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 0%"></div>
-         </div>
-         <span class="progress-description"><div id="show6"></div></span>
-        </div>
-        <!-- /.info-box-content -->
-        </div></a>
-        <!-- /.info-box -->
-       </div>
-       <!-- /.col -->
-       
-       <div class="col-12 col-sm-6 col-md-6">
-        <a data-toggle="modal" data-target="#parcelModalSS" data-whatever3="<?php echo $row_joiner['noIC'];?>" data-whatever4="<?php echo $date;?>">
-        <div class="info-box bg-light">
-         <span class="info-box-icon bg-gradient-primary"><i class="fas fa-clipboard"></i></span>
-           <div class="info-box-content">
-             <span class="info-box-text">Parcel Record (SS)</span>
-             <span class="info-box-number badge badge-warning">Click here for update</span>
-         <!-- The progress section is optional -->
-         <div class="progress">
-         <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 0%"></div>
-         </div>
-         <span class="progress-description"><div id="show7"></div></span>
-        </div>
-        <!-- /.info-box-content -->
-        </div></a>
-        <!-- /.info-box -->
-       </div>
-       <!-- /.col -->
-            
-            
-        </div>
-        <!-- /.row -->
-         
+                 
         <div class="row">
           <div class="col-md-12">
             <div class="row">
@@ -846,7 +764,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2019 <a href="https://iberkat.my/AFM">AFM Sdn. Bhd</a>.</strong>
+    <strong></strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 1.0.0-beta.1
