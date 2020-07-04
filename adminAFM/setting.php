@@ -1016,7 +1016,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
       </div><!-- /.container-fluid -->
     </section>
 
-    
+    </div>
 
 </div>
 <!-- ./wrapper -->
