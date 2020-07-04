@@ -1016,7 +1016,9 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     </tbody>
                   </table>
                   <input type="hidden" name="year" value="<?php echo $year;?>">
+                  <div class="card-footer clearfix">
                   <button type="submit" name="submit4" class="btn btn-sm btn-success float-right">Update</button>
+                  </div>
                 </form>
                 </div>
                 <!-- /.table-responsive -->     
@@ -1059,6 +1061,51 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     </tbody>
                   </table> 
                 </div>
+                
+              </div>
+              </div>
+              </div>
+
+              <div class="col-md-6">
+           <!-- TABLE: list of rider -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Commission by Role</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+               <div class="table-responsive">
+                   <table id="example5"class="table m-0 table-hover table-sm">
+                    <thead>
+                    <tr>
+                      <th><div class="badge badge-info">No.</div></th>
+                      <th><div class="badge badge-info">Commission</div></th>
+                      <th><div class="badge badge-info">Role</div></th>
+                      <th><div class="badge badge-info">Month</div></th>
+                      <th><div class="badge badge-info">Year</div></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php do {?>
+                    <tr>
+                      <td><?php echo $d++;?></td>
+                      <td><?php if(!empty($row_Recordset7['commision'])){echo '<div class="badge badge-success">'.$row_Recordset7['commision'].'</div>';}else{echo '<div class="badge badge-warning">Commission not set yet</div>';}?></td>
+                      <td><?php if($row_Recordset7['role'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset7['role']);}?></td>
+                      <td><?php echo $row_Recordset7['monthName'];?></td>
+                      <td><?php echo $row_Recordset7['year'];?></td>
+                    </tr>
+                    <?php }while ($row_Recordset7 = mysqli_fetch_assoc($Recordset7))?>
+                    </tbody>
+                  </table> 
+                </div>      
                 
               </div>
               </div>
