@@ -830,27 +830,60 @@ $downloadExcell = $_SERVER['PHP_SELF'];
     <!-- /.sidebar -->
   </aside>
 
-   <!-- Content Wrapper. Contains page content -->
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-
           <div class="col-sm-6">
-            <h1>Payroll Section</h1>
-          </div>
+            <h1 class="m-0 text-dark">Payroll Section</h1>
+          </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
               <li class="breadcrumb-item active">Staff Payroll</li>
             </ol>
-          </div>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
 
-          <div class="col-sm-6">
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          
+        <div class="row">
+        <!-- row -->
+        
+        <div class="col-12 col-sm-6 col-md-4">
+        <div id="show2"></div>
+        </div>
+        <!-- /.col -->
+        
+        <div class="col-12 col-sm-6 col-md-4">
+        <div id="show3"></div>
+        </div>
+        <!-- /.col -->
+        
+        <div class="col-12 col-sm-6 col-md-4">
+        <div id="show4"></div>
+        </div>
+        <!-- /.col -->
+        
+        </div>
+        <!-- /.row -->
+        
+                 
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+        <div class="col-md-6">
+           <!-- TABLE: list of rider -->
             <div class="card">
-            <div class="card-header border-transparent">
-            <h5 class="card-title">Download Excell Payroll Section</h5>
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Download Excell Payroll Section</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -858,46 +891,58 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                   <button type="button" class="btn btn-tool" data-widget="remove">
                     <i class="fas fa-times"></i>
                   </button>
-                </div>
-            <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="download" class="download" enctype="multipart/form-data">
-                   <table class="table m-0">
-                    <tbody>
-                    <tr>
-                      <td>
-                     <div class="input-group mb-3">
-                           <select name="month" class="custom-select browser-default" required>
-                              <option value="" selected>Pick Month</option>
-                              <option value="01" >January</option>
-                              <option value="02" >Febuary</option>
-                              <option value="03" >March</option>
-                              <option value="04" >April</option>
-                              <option value="05" >May</option>
-                              <option value="06" >June</option>
-                              <option value="07" >July</option>
-                              <option value="08" >August</option>
-                              <option value="09" >September</option>
-                              <option value="10" >October</option>
-                              <option value="11" >November</option>
-                              <option value="12" >Disember</option>
-                           </select>
-                                <div class="input-group-append input-group-text">
-                                  <span class="fas fa-calendar-alt"></span>
-                                </div>
-                     </div>
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table> 
-                   <button type="submit" name='download' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export Excel Giro Ach</button>
-                  </form>
                 </div>
               </div>
-          </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                    <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="download" class="download" enctype="multipart/form-data">
+                         <table class="table m-0">
+                          <tbody>
+                          <tr>
+                            <td>
+                           <div class="input-group mb-3">
+                                 <select name="month" class="custom-select browser-default" required>
+                                    <option value="" selected>Pick Month</option>
+                                    <option value="01" >January</option>
+                                    <option value="02" >Febuary</option>
+                                    <option value="03" >March</option>
+                                    <option value="04" >April</option>
+                                    <option value="05" >May</option>
+                                    <option value="06" >June</option>
+                                    <option value="07" >July</option>
+                                    <option value="08" >August</option>
+                                    <option value="09" >September</option>
+                                    <option value="10" >October</option>
+                                    <option value="11" >November</option>
+                                    <option value="12" >Disember</option>
+                                 </select>
+                                      <div class="input-group-append input-group-text">
+                                        <span class="fas fa-calendar-alt"></span>
+                                      </div>
+                           </div>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table> 
+                         <div class="card-footer clearfix">
+                         <button type="submit" name='download' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export Excel Giro Ach</button>
+                         </div>
+                  </form>
+                  </div>
+                <!-- /.table-responsive -->
+                  </div>
+                </div>
+              </div>
 
-           <div class="col-sm-6">
+            
+              
+            <div class="col-md-6"> 
+              <!-- TABLE: parcel delivery rider -->
             <div class="card">
-            <div class="card-header border-transparent">
-            <h5 class="card-title">Download Excell O/T Supervisor Section</h5>
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Download Excell O/T Supervisor Section</h3>
+              <!-- /.card-body -->
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -906,7 +951,11 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                     <i class="fas fa-times"></i>
                   </button>
                 </div>
-                      <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="ot" class="download" enctype="multipart/form-data">
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                   <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="ot" class="download" enctype="multipart/form-data">
                              <table class="table m-0">
                               <tbody>
                               <tr>
@@ -936,25 +985,26 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                               </tbody>
                             </table> 
 
-                                    
+                             <div class="card-footer clearfix">       
                              <button type="submit" name='ot' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export O/T Supervisor</button>
-                            </form>
+                             </div>
+                             </form>
                 </div>
+
               </div>
+            </div>
+            <!-- /.card -->
           </div>
-
+          <!-- /.col -->
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
+        <!-- /.row -->
 
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-
-           <div class="col-sm-6">
+       <div class="row">
+       <div class="col-md-6">
+           <!-- TABLE: list of rider -->
             <div class="card">
-            <div class="card-header border-transparent">
-            <h5 class="card-title">Click Name for Payroll Voucher</h5>
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Click Name for Payroll Voucher</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -963,19 +1013,22 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                     <i class="fas fa-times"></i>
                   </button>
                 </div>
-                      <div class="card-body p-0">
-                          <div class="table-responsive">
-                              <div id="show"></div>
-                          </div>
-                       </div>
-                </div>
               </div>
-          </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                     <div id="show"></div>
+                  </div>
+                <!-- /.table-responsive -->
+              </div>
+              </div>
+              </div>
 
-           <div class="col-sm-6">
-            <div id="viewStationModal2" class="collapse">
+       <div class="col-md-6">
+           <!-- TABLE: list of rider -->
             <div class="card">
-            <div class="card-header border-transparent">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Payroll by Station</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -984,26 +1037,79 @@ $downloadExcell = $_SERVER['PHP_SELF'];
                     <i class="fas fa-times"></i>
                   </button>
                 </div>
-                     
-                          <div class="card-body p-0">
-                            <h5 class="card-title">Payroll by Station</h5>
-                            <div class="table-responsive">
-                              <div class="show2"></div>
-                          </div>
-                          </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <div class="show2"></div>
+                </div>
 
-                      
-                     </div>
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+
+      <div class="row">
+      <div class="col-md-6">
+           <!-- TABLE: list of rider -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Test</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
                 </div>
               </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                <div id="test"></div>
+
+              </div>
+              </div>
+              </div>
+
+      <div class="col-md-6">
+           <!-- TABLE: list of rider -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Test2</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+               <div class="table-responsive">
+                <div id="test2"></div>
+                </div>
+                <!-- /.table-responsive -->     
+                
+              </div>
+            </div>
+            <!-- /.card -->
           </div>
-
+          <!-- /.col -->
         </div>
-      </div><!-- /.container-fluid -->
+
+        <!--/. leave it blank -->
+        
+      </div><!--/. container-fluid -->
     </section>
+    <!-- /.content -->
 
-
-   <!--parcelModal-->
+    <!--parcelModal-->
 <div class="modal fade" id="viewRiderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
@@ -1041,10 +1147,20 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 </div>
 <!-- end / parcelModal-->
 
-</div>
+
+  </div>
   <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong></strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0-beta.1
+    </div>
+  </footer>
+
+  
 </div>
-<!-- ./wrapper -->
+<!-- ./wrapper -->  
 
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
