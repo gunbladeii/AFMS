@@ -1051,58 +1051,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <!-- /.col -->
         </div>
 
-      <div class="row">
-      <div class="col-md-6">
-           <!-- TABLE: list of rider -->
-            <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Test</h3>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                <div id="test"></div>
-
-              </div>
-              </div>
-              </div>
-
-      <div class="col-md-6">
-           <!-- TABLE: list of rider -->
-            <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Test2</h3>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-               <div class="table-responsive">
-                <div id="test2"></div>
-                </div>
-                <!-- /.table-responsive -->     
-                
-              </div>
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-        </div>
-
+        
         <!--/. leave it blank -->
         
       </div><!--/. container-fluid -->
