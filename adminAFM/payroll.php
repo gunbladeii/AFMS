@@ -1042,6 +1042,8 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 <!-- end / parcelModal-->
 
 </div>
+  <!-- /.content-wrapper -->
+</div>
 <!-- ./wrapper -->
 
 <!-- jQuery -->
