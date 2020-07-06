@@ -17,7 +17,7 @@
             }
             else if($_SESSION['role'] == "Temp Riders")
             {
-            header('Location:riderAFM/profileRider.php');
+            header('Location:riderAFM/profileRider2.php');
             }
             else if($_SESSION['role'] == "ss")
             {
