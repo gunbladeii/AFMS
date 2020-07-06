@@ -1,7 +1,7 @@
 <?php require('../Connection/iBerkat.php'); ?>
 <?php
 session_start();
-if ($_SESSION['role'] != 'rider')
+if ($_SESSION['role'] != 'rider' || $_SESSION['role'] != 'Temp Riders')
 {
       header('Location:../index.php');
 }

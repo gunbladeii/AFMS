@@ -63,6 +63,13 @@ session_start();
             $_SESSION['password'] = $res["password"];
             header('Location:riderAFM/profileRider.php');
             }
+            else if($res["role"] == "Temp Riders")
+            {
+            $_SESSION['MM_Username'] = $res['username'];
+            $_SESSION['role'] = $res["role"];
+            $_SESSION['password'] = $res["password"];
+            header('Location:riderAFM/profileRider.php');
+            }
             else if($res["role"] == "ss")
             {
             $_SESSION['MM_Username'] = $res['username'];
