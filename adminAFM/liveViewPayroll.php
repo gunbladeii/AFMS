@@ -30,7 +30,8 @@ $a=1;
               <h3><?php echo strtoupper($row_Recordset2['stationName']);?></h3>
               <h5><span class="badge badge-info">Month: <?php $date=date_create($row_Recordset2['date']);echo date_format($date,"F");?></span></h5>
               <h5><span class="badge badge-info"><?php echo ucwords(strtolower($row_Recordset2['nama']));?></span></h5>
-              <h5><span class="badge badge-info"><?php echo ucwords(strtolower($row_Recordset2['name']));?></span></h5>
+              <h5><span class="badge badge-primary"><?php echo ucwords(strtolower($row_Recordset2['name']));?></span></h5>
+              <h5><span class="badge badge-warning"><?php if($row_Recordset2['role'] =='rider'){echo 'Rider';}elseif($row_Recordset2['role'] =='ss'){echo 'Station Supervisor';}elseif($row_Recordset2['role'] =='Temp Riders'){echo 'Temp Riders';}elseif($row_Recordset2['role'] =='Senior Courier'){echo 'Senior Courier';}elseif($row_Recordset2['role'] =='dump'){echo 'Re-assign';}else{echo 'Administrator';}?></span></h5>
               <table id="example2" class="table table-hover table-responsive-xl">
                 <thead>
                 <th style="text-align: center" colspan="3">
