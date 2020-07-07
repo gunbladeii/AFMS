@@ -255,6 +255,8 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 	exit;
 	}
 
+$b=1;
+$z=1;
 
 $operationDay = $_POST['operationDay'];
 $commision = $_POST['commision'];
@@ -1316,7 +1318,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
                     <tbody>
                     <?php do {?>
                     <tr>
-                      <td><?php echo $d++;?></td>
+                      <td><?php echo $z++;?></td>
                       <td><?php if(!empty($row_Recordset7['commision'])){echo '<div class="badge badge-success">'.$row_Recordset7['commision'].'</div>';}else{echo '<div class="badge badge-warning">Commission not set yet</div>';}?></td>
                       <td><?php if($row_Recordset7['role'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset7['role']);}?></td>
                       <td><?php echo $row_Recordset7['monthName'];?></td>
