@@ -1438,7 +1438,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
 <script src="plugins/datatables/dataTables.bootstrap4.js"></script>
 <script>
 $(function () {
-    $("#example3").DataTable();
+    $("#example1").DataTable();
   });
 
   $(function () {
