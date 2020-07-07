@@ -2,22 +2,23 @@
 
 session_start();
 
-$stationCode = $_GET['stationCode'];
+$noIC = $_GET['noIC'];
 $month = $_GET['month'];
+$year = $_GET['year'];
 
 $colname_Recordset2 = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_Recordset2 = $_SESSION['MM_Username'];
 }
 
-$Recordset2 = $mysqli->query("SELECT attendance.nama, attendance.noIC, attendance.date AS date, attendance.stationCode, stationName.name AS stationName, COUNT(attendance.date) AS totalDay , attendance.month, employeeData.employeeStatus FROM 
+$Recordset2 = $mysqli->query("SELECT * FROM 
 
-  ((attendance 
+  ((testSalary 
 
-  INNER JOIN employeeData ON attendance.noIC = employeeData.noIC)
-  INNER JOIN stationName ON attendance.stationCode = stationName.stationCode)
+  INNER JOIN employeeData ON testSalary.noIC = employeeData.noIC)
+  INNER JOIN stationName ON testSalary.stationCode = stationName.stationCode)
 
-   WHERE attendance.timeOut IS NOT NULL AND employeeData.employeeStatus NOT LIKE 'dump' AND attendance.stationCode = '$stationCode' AND attendance.month = '$month' GROUP BY attendance.noIC, attendance.month ORDER BY attendance.month ASC");
+   WHERE testSalary.timeOut IS NOT NULL AND employeeData.employeeStatus NOT LIKE 'dump' AND testSalary.noIC = '$noIC' AND testSalary.month = '$month' AND testSalary.year = '$year' GROUP BY testSalary.noIC, testSalary.month, testSalary.year ORDER BY testSalary.month,testSalary.year ASC");
 $row_Recordset2 = mysqli_fetch_assoc($Recordset2);
 $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 

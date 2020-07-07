@@ -1440,8 +1440,9 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
           var button = $(event.relatedTarget); // Button that triggered the modal
           var recipient3 = button.data('whatever3'); // Extract info from data-* attributes
           var recipient4 = button.data('whatever4');// Extract info from data-* attributes
+          var recipient5 = button.data('whatever5');// Extract info from data-* attributes
           var collapse = $(this);
-          var dataString2 = 'stationCode=' + recipient3 + '&' + 'month=' + recipient4;
+          var dataString2 = 'noIC=' + recipient3 + '&' + 'month=' + recipient4 + '&' + 'year=' + recipient5;
 
             $.ajax({
                 type: "GET",
