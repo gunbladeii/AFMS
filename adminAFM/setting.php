@@ -22,20 +22,8 @@ if (isset($_POST["submit"])){
   header("Location: setting.php");
 }
 
-if (isset($_POST['submit2'])) {
-      $mysqli->query("UPDATE `infoParcel` SET `operationDay` = '$operationDay' WHERE `stationCode` = '$stationCode' AND `month` = '$month' AND `year` = '$year'");
-      
-      header("location:setting.php");
-    }
-
 if (isset($_POST['submit3'])) {
       $mysqli->query("INSERT INTO category (roleCategory) VALUES ('$roleCategory')");
-      
-      header("location:setting.php");
-    }
-
-if (isset($_POST['submit4'])) {
-     $mysqli->query("UPDATE `infoParcel` SET `commision` = '$commision' WHERE `month` = '$monthCom' AND `role` = '$roleCom' ");
       
       header("location:setting.php");
     }
@@ -791,126 +779,6 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
         </div>
         <!-- /.row -->
 
-       <div class="row">
-       <div class="col-md-6">
-           <!-- TABLE: list of rider -->
-            <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Update Operation Days</h3>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                     <form action="setting.php" method="post" name="prosesDaftar" enctype="multipart/form-data">
-                          <div class="input-group mb-3">
-                              <select name="stationCode" class="custom-select browser-default" required>
-                                <option value="">Pick your Station Code</option>
-                                <?php do{?>
-                                <option value="<?php echo $row_Recordset4['stationCode'];?>"><?php echo $row_Recordset4['stationCode'];?></option>
-                                <?php }while ($row_Recordset4 = mysqli_fetch_assoc($Recordset4))?>
-                              </select>
-                              <div class="input-group-append input-group-text">
-                                <span class="fas fa-motorcycle"></span>
-                              </div>
-                           </div>
-
-                           <div class="input-group mb-3">
-                               <select name="month" class="custom-select browser-default" required>
-                                  <option value="" selected>Pick Month</option>
-                                  <option value="01" >January</option>
-                                  <option value="02" >Febuary</option>
-                                  <option value="03" >March</option>
-                                  <option value="04" >April</option>
-                                  <option value="05" >May</option>
-                                  <option value="06" >June</option>
-                                  <option value="07" >July</option>
-                                  <option value="08" >August</option>
-                                  <option value="09" >September</option>
-                                  <option value="10" >October</option>
-                                  <option value="11" >November</option>
-                                  <option value="12" >Disember</option>
-                               </select>
-                                    <div class="input-group-append input-group-text">
-                                      <span class="fas fa-calendar-alt"></span>
-                                    </div>
-                           </div>
-
-                           <div class="input-group mb-3">
-                              <input type="number" class="form-control" placeholder="Insert days" name="operationDay" id="validationDefault06" required>
-                                <div class="input-group-append input-group-text">
-                                   <span class="fas fa-list-ol"></span>
-                                </div>
-                           </div>
-
-                          <div class="card-footer clearfix">
-                            <button type="submit" name="submit2" class="btn btn-sm btn-success float-right">Update</button>
-                          </div>
-                      </form>
-                  </div>
-                <!-- /.table-responsive -->
-              </div>
-              </div>
-              </div>
-
-       <div class="col-md-6">
-           <!-- TABLE: list of rider -->
-            <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">List of Operation Days by Month and Station</h3>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                   <table id="example4"class="table m-0 table-hover table-sm">
-                    <thead>
-                    <tr>
-                      <th><div class="badge badge-info">No.</div></th>
-                      <th><div class="badge badge-info">Station Code</div></th>
-                      <th><div class="badge badge-info">Station Name</div></th>
-                      <th><div class="badge badge-info">Month</div></th>
-                       <th><div class="badge badge-info">Year</div></th>
-                      <th><div class="badge badge-info">Operation Days</div></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php do {?>
-                    <tr>
-                      <td><?php echo $b++;?></td>
-                      <td><?php echo $row_Recordset3['stationCode'];?></td>
-                      <td><?php echo $row_Recordset3['name'];?></td>
-                      <td><?php $month_name = date("F", mktime(0, 0, 0, $row_Recordset3['month'], 10));
-                            echo $month_name."\n";?></td>
-                      <td><?php echo $row_Recordset3['year'];?></td>
-                      <td><?php echo $row_Recordset3['operationDay'];?></td>
-                    </tr>
-                    <?php }while ($row_Recordset3 = mysqli_fetch_assoc($Recordset3))?>
-                    </tbody>
-                  </table> 
-                </div>
-
-              </div>
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-        </div>
-
       <div class="row">
       <div class="col-md-6">
            <!-- TABLE: list of rider -->
@@ -956,95 +824,13 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
               </div>
               </div>
 
-      <div class="col-md-6">
-           <!-- TABLE: list of rider -->
-            <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Comission Setting by Role</h3>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-               <div class="table-responsive">
-                <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
-                  <table class="table m-0">
-                    <tbody>
-                    <tr>
-                      <td>
-                        <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Update commision" name="commision" id="validationDefault07" value="<?php echo($row_Recordset6['commision'])?>" required>
-                          <div class="input-group-append input-group-text">
-                             <span class="fas fa-list-ol"></span>
-                          </div>
-                         </div>
-                      </td>
 
-                      <td>
-                    <div class="input-group mb-3">
-                          <select name="roleCom" class="custom-select browser-default" required>
-                            <option value="">Pick role</option>
-                            <?php do{?>
-                            <option value="<?php echo $row_Recordset5['role'];?>"><?php if($row_Recordset5['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset5['roleCategory']);}?></option>
-                            <?php }while ($row_Recordset5 = mysqli_fetch_assoc($Recordset5))?>
-                          </select>
-                            <div class="input-group-append input-group-text">
-                              <span class="fas fa-motorcycle"></span>
-                            </div>
-                     </div>
-                     </td>
-                      <td>
-                     <div class="input-group mb-3">
-                           <select name="monthCom" class="custom-select browser-default" required>
-                              <option value="" selected>Pick Month</option>
-                              <option value="01" >January</option>
-                              <option value="02" >Febuary</option>
-                              <option value="03" >March</option>
-                              <option value="04" >April</option>
-                              <option value="05" >May</option>
-                              <option value="06" >June</option>
-                              <option value="07" >July</option>
-                              <option value="08" >August</option>
-                              <option value="09" >September</option>
-                              <option value="10" >October</option>
-                              <option value="11" >November</option>
-                              <option value="12" >Disember</option>
-                           </select>
-                                <div class="input-group-append input-group-text">
-                                  <span class="fas fa-calendar-alt"></span>
-                                </div>
-                     </div>
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table>
-                  <input type="hidden" name="year" value="<?php echo $year;?>">
-                  <div class="card-footer clearfix">
-                  <button type="submit" name="submit4" class="btn btn-sm btn-success float-right">Update</button>
-                  </div>
-                </form>
-                </div>
-                <!-- /.table-responsive -->     
-                
-              </div>
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-        </div>
-
-        <div class="row">
-        <div class="col-md-6">
-           <!-- TABLE: list of rider -->
+         <div class="col-md-6"> 
+              <!-- TABLE: parcel delivery rider -->
             <div class="card">
               <div class="card-header border-transparent">
                 <h3 class="card-title">List of Registered Category</h3>
+              <!-- /.card-body -->
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -1056,7 +842,7 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
-               <div class="table-responsive">
+                <div class="table-responsive">
                    <table id="example4"class="table m-0 table-hover table-sm">
                     <thead>
                     <tr>
@@ -1074,59 +860,14 @@ $totalRows_Recordset3 = mysqli_num_rows($Recordset3);
                     </tbody>
                   </table> 
                 </div>
-                
-              </div>
-              </div>
-              </div>
 
-     <div class="col-md-6">
-           <!-- TABLE: list of rider -->
-            <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Commission by Role</h3>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-               <div class="table-responsive">
-                   <table id="example5"class="table m-0 table-hover table-sm">
-                    <thead>
-                    <tr>
-                      <th><div class="badge badge-info">No.</div></th>
-                      <th><div class="badge badge-info">Commission</div></th>
-                      <th><div class="badge badge-info">Role</div></th>
-                      <th><div class="badge badge-info">Month</div></th>
-                      <th><div class="badge badge-info">Year</div></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php do {?>
-                    <tr>
-                      <td><?php echo $d++;?></td>
-                      <td><?php if(!empty($row_Recordset7['commision'])){echo '<div class="badge badge-success">'.$row_Recordset7['commision'].'</div>';}else{echo '<div class="badge badge-warning">Commission not set yet</div>';}?></td>
-                      <td><?php if($row_Recordset7['role'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset7['role']);}?></td>
-                      <td><?php echo $row_Recordset7['monthName'];?></td>
-                      <td><?php echo $row_Recordset7['year'];?></td>
-                    </tr>
-                    <?php }while ($row_Recordset7 = mysqli_fetch_assoc($Recordset7))?>
-                    </tbody>
-                  </table> 
-                </div>      
-                
               </div>
             </div>
             <!-- /.card -->
           </div>
           <!-- /.col -->
         </div>
-
+        <!-- /.row -->
 
 
         
