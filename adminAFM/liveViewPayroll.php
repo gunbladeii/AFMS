@@ -45,42 +45,52 @@ $a=1;
                 </thead>
                 <tbody>
                 <tr>
-                    <td>1.</td>	
+                    <td>1.</td> 
+                    <td>Operation Day</td>
+                    <td><?php echo $row_Recordset2['operationDay'];?></td> 
+                </tr>
+                <tr>
+                    <td>2.</td> 
+                    <td>Total Attend</td>
+                    <td><?php echo $row_Recordset2['totalAttend'];?></td> 
+                </tr>
+                <tr>
+                    <td>3.</td>	
     	              <td>Delivery Commission</td>
                     <td><?php echo $row_Recordset2['delComm'];?></td>	
 	              </tr>
                 <tr>
-                    <td>2.</td> 
+                    <td>4.</td> 
                     <td>Comm/Fee</td>
                     <td><?php echo $row_Recordset2['comFee'];?></td> 
                 </tr>
                 <tr>
-                    <td>3.</td> 
-                    <td>Fuel</td>
-                    <td><?php echo $row_Recordset2['fuel'];?></td> 
-                </tr>
-                <tr>
-                    <td>4.</td> 
-                    <td>Phone</td>
-                    <td><?php echo $row_Recordset2['phone'];?></td> 
-                </tr>
-                <tr>
                     <td>5.</td> 
+                    <td>Fuel</td>
+                    <td><?php echo $row_Recordset2['petrol'];?></td> 
+                </tr>
+                <tr>
+                    <td>6.</td> 
+                    <td>Phone</td>
+                    <td><?php echo $row_Recordset2['handphone'];?></td> 
+                </tr>
+                <tr>
+                    <td>7.</td> 
                     <td>Fix Commission</td>
                     <td><?php echo $row_Recordset2['comission'];?></td> 
                 </tr>
                 <tr>
-                    <td>6.</td> 
+                    <td>8.</td> 
                     <td>Overtime</td>
                     <td><input type="number" name="ot"></td> 
                 </tr>
                 <tr>
-                    <td>7.</td> 
+                    <td>9.</td> 
                     <td>Refund Bag</td>
                     <td><input type="number" name="refundBag"></td> 
                 </tr>
                 <tr>
-                    <td>8.</td> 
+                    <td>10.</td> 
                     <td>Attendance</td>
                     <td><?php echo $row_Recordset2['attAllow'];?></td> 
                 </tr>
