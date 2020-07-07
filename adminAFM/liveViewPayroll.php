@@ -5,6 +5,15 @@ session_start();
 $noIC = $_GET['noIC'];
 $month = $_GET['month'];
 $year = $_GET['year'];
+$noICedit = $_POST['noICedit'];
+$ot = $_POST['ot'];
+$refundBag = $_POST['refundBag'];
+$bagDeposit = $_POST['bagDeposit'];
+$penalty = $_POST['penalty'];
+$incompletePOD = $_POST['incompletePOD'];
+$overPayment = $_POST['overPayment'];
+$nopayLeave = $_POST['nopayLeave'];
+
 
 $colname_Recordset2 = "-1";
 if (isset($_SESSION['MM_Username'])) {
@@ -24,7 +33,12 @@ $Recordset2 = $mysqli->query("SELECT * FROM
 $row_Recordset2 = mysqli_fetch_assoc($Recordset2);
 $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 
-$a=1;
+if (isset($_POST['submit'])) {
+      $mysqli->query("UPDATE `infoParcel` SET `ot` = '$ot', `refundBag` = '$refundBag', `bagDeposit` = '$bagDeposit', `penalty` = '$penalty', `incompletePOD` ='$incompletePOD', `overPayment`= '$overPayment',`nopayLeave`= '$nopayLeave' WHERE `noICedit` = '$noICedit'");
+      
+      header("location:payroll.php");
+    }
+
 ?>
 <?php if(!empty($row_Recordset2['stationCode'])) {?>
               <h3><?php echo strtoupper($row_Recordset2['stationName']);?></h3>
@@ -83,12 +97,12 @@ $a=1;
                 <tr>
                     <td>8.</td> 
                     <td>Overtime</td>
-                    <td><input type="number" name="ot"></td> 
+                    <td><input type="number" name="ot" value="<?php echo $row_Recordset2['ot'];?>"></td> 
                 </tr>
                 <tr>
                     <td>9.</td> 
                     <td>Refund Bag</td>
-                    <td><input type="number" name="refundBag"></td> 
+                    <td><input type="number" name="refundBag" value="<?php echo $row_Recordset2['refundBag'];?>"></td> 
                 </tr>
                 <tr>
                     <td>10.</td> 
@@ -112,37 +126,37 @@ $a=1;
                   <tr>
                     <td>1.</td> 
                     <td>Bag Deposit</td>
-                    <td><input type="number" name="bagDeposit"></td> 
+                    <td><input type="number" name="bagDeposit" value="<?php echo $row_Recordset2['bagDeposit'];?>"></td> 
                   </tr>
 
                   <tr>
                     <td>2.</td> 
                     <td>Penalty</td>
-                    <td><input type="number" name="penalty"></td> 
+                    <td><input type="number" name="penalty" value="<?php echo $row_Recordset2['penalty'];?>"></td> 
                   </tr>
 
                   <tr>
                     <td>3.</td> 
                     <td>Incomplete POD</td>
-                    <td><input type="number" name="incompletePOD"></td> 
+                    <td><input type="number" name="incompletePOD" value="<?php echo $row_Recordset2['incompletePOD'];?>"></td> 
                   </tr>
 
                   <tr>
                     <td>4.</td> 
                     <td>Over Payment</td>
-                    <td><input type="number" name="overPayment"></td> 
+                    <td><input type="number" name="overPayment" value="<?php echo $row_Recordset2['overPayment'];?>"></td> 
                   </tr>
 
                   <tr>
                     <td>4.</td> 
                     <td>No Pay Leave</td>
-                    <td><input type="number" name="nopayLeave"></td> 
+                    <td><input type="number" name="nopayLeave" value="<?php echo $row_Recordset2['nopayLeave'];?>"></td> 
                   </tr>
                 </tbody>
               </table>
-              <input type="hidden" name="noIC" value="<?php echo $row_Recordset2['noIC'];?>">
+              <input type="hidden" name="noICedit" value="<?php echo $row_Recordset2['noIC'];?>">
               <div class="card-footer clearfix">
-                <button type="submit" name="submit2" class="btn btn-sm btn-success float-right">Update</button>
+                <button type="submit" name="submit" class="btn btn-sm btn-secondary float-right">Update</button>
               </div>
             </form>
 <?php }else{echo '<span class="badge badge-danger">No rider/SV data were recorded</span>';}?>
