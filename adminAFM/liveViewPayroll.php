@@ -156,7 +156,7 @@ if (isset($_POST['submit'])) {
               </table>
               <input type="hidden" name="noICedit" value="<?php echo $row_Recordset2['noIC'];?>">
               <div class="card-footer clearfix">
-                <button type="submit" name="submit" class="btn btn-sm btn-secondary float-right">Update</button>
+                <button type="submit" name="submit" class="btn btn-sm btn-primary float-right">Update</button>
               </div>
             </form>
 <?php }else{echo '<span class="badge badge-danger">No rider/SV data were recorded</span>';}?>
