@@ -97,7 +97,7 @@ if (isset($_POST['submit'])) {
                 <tr>
                     <td>8.</td> 
                     <td>Overtime</td>
-                    <td><input type="number" name="ot" value="<?php echo $row_Recordset2['ot'];?>"></td> 
+                    <td><input type="number" name="ot" value="<?php echo round($row_Recordset2['ot'],2);?>"></td> 
                 </tr>
                 <tr>
                     <td>9.</td> 
