@@ -9,9 +9,10 @@ if (isset($_SESSION['MM_Username'])) {
 
 $Recordset2 = $mysqli->query("
   SELECT employeeData.employeeStatus,login.noIC,login.role,login.nama,attendance.year, attendance.stationCode, stationName.name AS stationName, attendance.month, attendance.year 
-  FROM ((attendance 
+  FROM (((attendance 
   INNER JOIN stationName ON attendance.stationCode = stationName.stationCode)
   INNER JOIN login ON attendance.noIC = login.noIC)
+  INNER JOIN login ON attendance.noIC = employeeData.noIC)
   WHERE login.role NOT LIKE 'administrator' AND employeeData.employeeStatus NOT LIKE 'dump'
   GROUP BY attendance.noIC, attendance.month, attendance.year 
   ORDER BY attendance.stationCode, attendance.month, attendance.year ASC");
