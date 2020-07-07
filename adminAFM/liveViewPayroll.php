@@ -18,7 +18,8 @@ $Recordset2 = $mysqli->query("SELECT * FROM
   INNER JOIN employeeData ON testSalary.noIC = employeeData.noIC)
   INNER JOIN stationName ON testSalary.stationCode = stationName.stationCode)
 
-   WHERE testSalary.timeOut IS NOT NULL AND employeeData.employeeStatus NOT LIKE 'dump' AND testSalary.noIC = '$noIC' AND testSalary.month = '$month' AND testSalary.year = '$year' GROUP BY testSalary.noIC, testSalary.month, testSalary.year ORDER BY testSalary.month,testSalary.year ASC");
+   WHERE testSalary.noIC = '$noIC' AND testSalary.month = '$month' AND testSalary.year = '$year' 
+   GROUP BY testSalary.noIC, testSalary.month, testSalary.year ORDER BY testSalary.month,testSalary.year ASC");
 $row_Recordset2 = mysqli_fetch_assoc($Recordset2);
 $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 
