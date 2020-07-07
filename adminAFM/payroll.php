@@ -1174,7 +1174,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
               <!-- /.card-header -->
               <div class="card-body p-0">
                 <div class="table-responsive">
-                   <table id="example6"class="table m-0 table-hover table-sm">
+                   <table id="example6" class="table m-0 table-hover table-sm">
                     <thead>
                     <tr>
                       <th><div class="badge badge-info">No.</div></th>
@@ -1305,7 +1305,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
               <!-- /.card-header -->
               <div class="card-body p-0">
                <div class="table-responsive">
-                   <table id="example7"class="table m-0 table-hover table-sm">
+                   <table id="example7" class="table m-0 table-hover table-sm">
                     <thead>
                     <tr>
                       <th><div class="badge badge-info">No.</div></th>
