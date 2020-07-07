@@ -601,7 +601,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
           </li>
           
           <li class="nav-item has-treeview">
-          <a href="payroll.php" class="nav-link">
+          <a href="setting.php" class="nav-link">
               <i class="nav-icon fas fa-cogs"></i>
               <p>
                 Control Panel
