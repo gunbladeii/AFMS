@@ -33,9 +33,9 @@ $a=1;
               <h5><span class="badge badge-info"><?php echo ucwords(strtolower($row_Recordset2['name']));?></span></h5>
               <table id="example2" class="table table-hover table-responsive-xl">
                 <thead>
-                <tr>
+                <th>
                   <span class="badge badge-success">Earning</span>
-                </tr>
+                </th>
                 <tr>
                   <th>No.</th>
                   <th>Item</th>
@@ -86,9 +86,9 @@ $a=1;
                 </tbody>
 
                 <thead>
-                <tr>
+                <th>
                   <span class="badge badge-danger">Deduction</span>
-                </tr>
+                </th>
                 <tr>
                   <th>No.</th>
                   <th>Item</th>
