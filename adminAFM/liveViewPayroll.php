@@ -29,11 +29,12 @@ $a=1;
 <?php if(!empty($row_Recordset2['stationCode'])) {?>
               <h3><?php echo strtoupper($row_Recordset2['stationName']);?></h3>
               <h5><span class="badge badge-info">Month: <?php $date=date_create($row_Recordset2['date']);echo date_format($date,"F");?></span></h5>
-              <h6><span class="badge badge-info"><?php echo ucwords(strtolower($row_Recordset2['nama']));?></span></h6>
+              <h5><span class="badge badge-info"><?php echo ucwords(strtolower($row_Recordset2['nama']));?></span></h5>
+              <h5><span class="badge badge-info"><?php echo ucwords(strtolower($row_Recordset2['name']));?></span></h5>
               <table id="example2" class="table table-hover table-responsive-xl">
                 <thead>
                 <tr>
-                  <th><span class="badge badge-secondary">Earning</span></th>
+                  <span class="badge badge-success">Earning</span>
                 </tr>
                 <tr>
                   <th>No.</th>
@@ -86,7 +87,7 @@ $a=1;
 
                 <thead>
                 <tr>
-                  <th><span class="badge badge-secondary">Deduction</span></th>
+                  <span class="badge badge-danger">Deduction</span>
                 </tr>
                 <tr>
                   <th>No.</th>
