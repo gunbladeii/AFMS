@@ -1321,25 +1321,6 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
     </section>
     <!-- /.content -->
 
-    <!--parcelModal-->
-<div class="modal fade" id="viewRiderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">View Rider Payment Voucher</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <div class="dash"></div>
-      </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- end / parcelModal-->
-
    <!--parcelModal-->
 <div class="modal fade" id="viewStationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -1452,29 +1433,6 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
                 success: function (data) {
                     console.log(data);
                     collapse.find('.dash2').html(data);
-                },
-                error: function(err) {
-                    console.log(err);
-                }
-            });
-    })
-</script>
-<script>
-    $('#viewRiderModal').on('show.bs.modal', function (event) {
-          var button = $(event.relatedTarget) // Button that triggered the modal
-          var recipient = button.data('whatever') // Extract info from data-* attributes
-          var recipient2 = button.data('whatever2') // Extract info from data-* attributes
-          var modal = $(this);
-          var dataString = 'noIC=' + recipient + '&' + 'month=' + recipient2;
-
-            $.ajax({
-                type: "GET",
-                url: "liveViewPayroll2.php",
-                data: dataString, 
-                cache: false,
-                success: function (data) {
-                    console.log(data);
-                    modal.find('.dash').html(data);
                 },
                 error: function(err) {
                     console.log(err);
