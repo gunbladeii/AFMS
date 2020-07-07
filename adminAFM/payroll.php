@@ -1437,21 +1437,9 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
 <script>
 $(function () {
     $("#example1").DataTable();
-  });
-
-$(function () {
     $("#example2").DataTable();
-  });
-
-$(function () {
     $("#example3").DataTable();
-  });
-
-  $(function () {
     $("#example4").DataTable();
-  });
-
-  $(function () {
     $("#example5").DataTable();
   });
 </script>
