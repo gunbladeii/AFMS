@@ -281,6 +281,14 @@ $Recordset4 = $mysqli->query("SELECT * FROM stationName");
 $row_Recordset4 = mysqli_fetch_assoc($Recordset4);
 $totalRows_Recordset4 = mysqli_num_rows($Recordset4);
 
+$Recordset5 = $mysqli->query("SELECT * FROM category");
+$row_Recordset5 = mysqli_fetch_assoc($Recordset5);
+$totalRows_Recordset5 = mysqli_num_rows($Recordset5);
+
+$Recordset7 = $mysqli->query("SELECT *,MONTHNAME(date) AS monthName FROM infoParcel GROUP BY role,month,year ORDER BY monthName ASC");
+$row_Recordset7 = mysqli_fetch_assoc($Recordset7);
+$totalRows_Recordset7 = mysqli_num_rows($Recordset7);
+
 
 ?>
 <!DOCTYPE html>
@@ -1429,6 +1437,9 @@ $totalRows_Recordset4 = mysqli_num_rows($Recordset4);
 <script>
   $(function () {
     $("#example1").DataTable();
+    $("#example3").DataTable();
+    $("#example4").DataTable();
+    $("#example5").DataTable();
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": false,
