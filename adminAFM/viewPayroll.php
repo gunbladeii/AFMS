@@ -8,7 +8,7 @@ if (isset($_SESSION['MM_Username'])) {
 }
 
 $Recordset2 = $mysqli->query("
-  SELECT login.noIC,login.role,login.nama,attendance.year, attendance.stationCode, stationName.name AS stationName, attendance.month, attendance.year 
+  SELECT employeeData.employeeStatus,login.noIC,login.role,login.nama,attendance.year, attendance.stationCode, stationName.name AS stationName, attendance.month, attendance.year 
   FROM ((attendance 
   INNER JOIN stationName ON attendance.stationCode = stationName.stationCode)
   INNER JOIN login ON attendance.noIC = login.noIC)
