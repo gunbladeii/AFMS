@@ -57,27 +57,27 @@ $a=1;
                 <tr>
                     <td>3.</td>	
     	              <td>Delivery Commission</td>
-                    <td><?php echo $row_Recordset2['delComm'];?></td>	
+                    <td><?php echo round($row_Recordset2['delComm'],2);?></td>	
 	              </tr>
                 <tr>
                     <td>4.</td> 
                     <td>Comm/Fee</td>
-                    <td><?php echo $row_Recordset2['comFee'];?></td> 
+                    <td><?php echo round($row_Recordset2['comFee'],2);?></td> 
                 </tr>
                 <tr>
                     <td>5.</td> 
                     <td>Fuel</td>
-                    <td><?php echo $row_Recordset2['petrol'];?></td> 
+                    <td><?php echo round($row_Recordset2['petrol'],2);?></td> 
                 </tr>
                 <tr>
                     <td>6.</td> 
                     <td>Phone</td>
-                    <td><?php echo $row_Recordset2['handphone'];?></td> 
+                    <td><?php echo round($row_Recordset2['handphone'],2);?></td> 
                 </tr>
                 <tr>
                     <td>7.</td> 
                     <td>Fix Commission</td>
-                    <td><?php echo $row_Recordset2['comission'];?></td> 
+                    <td><?php echo round($row_Recordset2['comission'],2);?></td> 
                 </tr>
                 <tr>
                     <td>8.</td> 
@@ -92,7 +92,7 @@ $a=1;
                 <tr>
                     <td>10.</td> 
                     <td>Attendance</td>
-                    <td><?php echo $row_Recordset2['attAllow'];?></td> 
+                    <td><?php echo round($row_Recordset2['attAllow'],2);?></td> 
                 </tr>
                 </tbody>
 
