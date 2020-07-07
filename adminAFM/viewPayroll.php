@@ -14,7 +14,7 @@ $Recordset2 = $mysqli->query("
   INNER JOIN login ON attendance.noIC = login.noIC)
   WHERE attendance.timeOut IS NOT NULL 
   GROUP BY attendance.noIC, attendance.month, attendance.year 
-  ORDER BY attendance.month ASC");
+  ORDER BY attendance.stationCode, attendance.month, attendance.year ASC");
 $row_Recordset2 = mysqli_fetch_assoc($Recordset2);
 $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 
