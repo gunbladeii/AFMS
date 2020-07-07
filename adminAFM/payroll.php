@@ -1326,7 +1326,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">List of Rider</h5>
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Rider Payroll/Payment Voucher (Individual)</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
