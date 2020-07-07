@@ -1203,7 +1203,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
               <!-- /.card-header -->
               <div class="card-body p-0">
                 <div class="table-responsive">
-                          <form action="setting.php" method="post" name="update" enctype="multipart/form-data">
+                          <form action="payroll.php" method="post" name="update" enctype="multipart/form-data">
                         <table class="table m-0">
                           <tbody>
                           <tr>

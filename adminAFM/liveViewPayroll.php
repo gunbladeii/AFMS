@@ -32,6 +32,7 @@ $a=1;
               <h5><span class="badge badge-info"><?php echo ucwords(strtolower($row_Recordset2['nama']));?></span></h5>
               <h5><span class="badge badge-primary"><?php echo ucwords(strtolower($row_Recordset2['name']));?></span></h5>
               <h5><span class="badge badge-warning"><?php if($row_Recordset2['role'] =='rider'){echo 'Rider';}elseif($row_Recordset2['role'] =='ss'){echo 'Station Supervisor';}elseif($row_Recordset2['role'] =='Temp Riders'){echo 'Temp Riders';}elseif($row_Recordset2['role'] =='Senior Courier'){echo 'Senior Courier';}elseif($row_Recordset2['role'] =='dump'){echo 'Re-assign';}else{echo 'Administrator';}?></span></h5>
+              <form action="payroll.php" method="post" name="prosesDaftar" enctype="multipart/form-data">
               <table id="example2" class="table table-hover table-responsive-xl">
                 <thead>
                 <th style="text-align: center" colspan="3">
@@ -138,7 +139,10 @@ $a=1;
                     <td><input type="number" name="nopayLeave"></td> 
                   </tr>
                 </tbody>
-
-
               </table>
+              <input type="hidden" name="noIC" value="<?php echo $row_Recordset2['noIC'];?>">
+              <div class="card-footer clearfix">
+                <button type="submit" name="submit2" class="btn btn-sm btn-success float-right">Update</button>
+              </div>
+            </form>
 <?php }else{echo '<span class="badge badge-danger">No rider/SV data were recorded</span>';}?>
