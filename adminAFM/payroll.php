@@ -1037,7 +1037,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
         <!-- /.row -->
 
        <div class="row">
-       <div class="col-md-6">
+       <div class="col-md-12">
            <!-- TABLE: list of rider -->
             <div class="card">
               <div class="card-header border-transparent">
@@ -1061,32 +1061,9 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
               </div>
               </div>
 
-       <div class="col-md-6">
-           <!-- TABLE: list of rider -->
-            <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Payroll by Station</h3>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                  <div class="show2"></div>
-                </div>
-
-              </div>
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
+      
         </div>
+
 
          <div class="row">
        <div class="col-md-6">
