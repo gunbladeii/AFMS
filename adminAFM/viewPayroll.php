@@ -40,7 +40,7 @@ $a=1;
                 <td><?php echo $a++;?></td>	
 	            <td> <button type="button" data-toggle="modal" data-target="#viewStationModal" data-whatever3="<?php echo $row_Recordset2['noIC'];?>" data-whatever4="<?php echo $row_Recordset2['month'];?>" data-whatever5="<?php echo $row_Recordset2['year'];?>" class="badge badge-primary" aria-pressed="true" aria-expanded="false" aria-controls="collapseExample" data-dismiss="collapse"><?php echo $row_Recordset2['nama'];?></button></td>
 
-              <td><span class="badge badge-info"><?php if($row_Recordset2['role'] =='rider'){echo '<h6>Rider</h6>';}elseif($row_Recordset2['role'] =='ss'){echo '<h6>Station Supervisor</h6>';}elseif($row_Recordset2['role'] =='Temp Riders'){echo '<h6>Temp Riders</h6>';}elseif($row_Recordset2['role'] =='Senior Courier'){echo '<h6>Senior Courier</h6>';}elseif($row_Recordset2['role'] =='dump'){echo '<h6>Re-assign</h6>';}else{echo 'Administrator';}?></span></td>
+              <td><span class="badge badge-info"><?php if($row_Recordset2['role'] =='rider'){echo 'Rider';}elseif($row_Recordset2['role'] =='ss'){echo 'Station Supervisor';}elseif($row_Recordset2['role'] =='Temp Riders'){echo 'Temp Riders';}elseif($row_Recordset2['role'] =='Senior Courier'){echo 'Senior Courier';}elseif($row_Recordset2['role'] =='dump'){echo 'Re-assign';}else{echo 'Administrator';}?></span></td>
               
               <td><span class="badge badge-info"><?php echo $row_Recordset2['stationCode'];?></span></td>
               <td><span class="badge badge-info"><?php echo $row_Recordset2['stationName'];?></span></td>
