@@ -12,7 +12,7 @@ $Recordset2 = $mysqli->query("
   FROM ((attendance 
   INNER JOIN stationName ON attendance.stationCode = stationName.stationCode)
   INNER JOIN login ON attendance.noIC = login.noIC)
-  WHERE attendance.timeOut IS NOT NULL 
+  WHERE login.role NOT LIKE 'administrator' AND employeeData.employeeStatus NOT LIKE 'dump'
   GROUP BY attendance.noIC, attendance.month, attendance.year 
   ORDER BY attendance.stationCode, attendance.month, attendance.year ASC");
 $row_Recordset2 = mysqli_fetch_assoc($Recordset2);
@@ -41,7 +41,7 @@ $a=1;
 	            <td> <button type="button" data-toggle="modal" data-target="#viewStationModal" data-whatever3="<?php echo $row_Recordset2['noIC'];?>" data-whatever4="<?php echo $row_Recordset2['month'];?>" data-whatever5="<?php echo $row_Recordset2['year'];?>" class="badge badge-primary" aria-pressed="true" aria-expanded="false" aria-controls="collapseExample" data-dismiss="collapse"><?php echo ucwords(strtolower($row_Recordset2['nama']));?></button></td>
 
               <td><span class="badge badge-info"><?php if($row_Recordset2['role'] =='rider'){echo 'Rider';}elseif($row_Recordset2['role'] =='ss'){echo 'Station Supervisor';}elseif($row_Recordset2['role'] =='Temp Riders'){echo 'Temp Riders';}elseif($row_Recordset2['role'] =='Senior Courier'){echo 'Senior Courier';}elseif($row_Recordset2['role'] =='dump'){echo 'Re-assign';}else{echo 'Administrator';}?></span></td>
-              
+
               <td><span class="badge badge-info"><?php echo $row_Recordset2['stationCode'];?></span></td>
               <td><span class="badge badge-info"><?php echo $row_Recordset2['stationName'];?></span></td>
 	            <td><span class="badge badge-info"><?php $monthNum  = $row_Recordset2['month'];echo $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));?></span></td>
