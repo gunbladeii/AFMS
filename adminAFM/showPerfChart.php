@@ -7,6 +7,8 @@ if (isset($_SESSION['MM_Username'])) {
 }
 //
 
+date_default_timezone_set("Asia/Kuala_Lumpur");
+$date = date('d-m-Y');
 $month = $_POST['month'];
 $year = $_POST['year'];
 $b=1;
