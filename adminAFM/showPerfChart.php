@@ -9,7 +9,7 @@ if (isset($_SESSION['MM_Username'])) {
 
 $month = $_POST['month'];
 $year = $_POST['year'];
-
+$b=1;
 $downloadExcell = $_SERVER['PHP_SELF'];
 /*download overtime SV*/
   if (isset($_POST["performance"]))
@@ -45,7 +45,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
       {
       $output .='
         <tr>
-          <td>'.$a++.'</td>
+          <td>'.$b++.'</td>
           <td>'.$row2["stationCode"].'</td>
           <td>'.$row2["stationName"].'</td>
           <td>'.$row2["receieved"].'</td>
