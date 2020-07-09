@@ -14,7 +14,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 /*download overtime SV*/
   if (isset($_POST["performance"]))
   {
-  $sql2 = $mysqli->query("SELECT employeeData.employeeStatus, MONTHNAME(testSalary.date) AS monthName, testSalary.month, testSalary.year, testSalary.stationCode, SUM(testSalary.totalParcel), SUM(testSalary.fail), SUM(testSalary.receieved), stationName.name AS stationName FROM 
+  $sql2 = $mysqli->query("SELECT employeeData.employeeStatus, MONTHNAME(testSalary.date) AS monthName, testSalary.month, testSalary.year, testSalary.stationCode, SUM(testSalary.totalParcel) AS totalParcel, SUM(testSalary.fail) AS fail, SUM(testSalary.receieved) AS receieved, stationName.name AS stationName FROM 
 
     ((testSalary
     INNER JOIN stationName ON testSalary.stationCode = stationName.stationCode)
@@ -29,7 +29,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
       <table class="table" border="1">
         <tr>
           <th>No.</th>
-          <th>Station Code/th>
+          <th>Station Code</th>
           <th>Station Name</th>
           <th>Total Received</th>
           <th>Success</th>
