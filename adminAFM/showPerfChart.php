@@ -173,9 +173,9 @@ $a=1;
                       </td>
                       <td><span class="badge badge-info"><?php $date=date_create($performance['date']);echo date_format($date,"F");?></span></td>
                       <td><span class="badge badge-info"><?php $year=date_create($performance['date']);echo date_format($year,"Y");?></span></td>
-                      <td><span class="badge badge-warning"><?php echo $performance['totalParcel'];?></span></td>
-                      <td><span class="badge badge-success"><?php echo $performance['success'];?></span></td>
-                      <td><span class="badge badge-danger"><?php echo $performance['fail'];?></span></td>
+                      <td><span class="badge badge-warning"><?php echo number_format($performance['totalParcel']);?></span></td>
+                      <td><span class="badge badge-success"><?php echo number_format($performance['success']);?></span></td>
+                      <td><span class="badge badge-danger"><?php echo number_format($performance['fail']);?></span></td>
                        <td><?php 
                       if ($performance['perSuccess'] > 50)
                       {
