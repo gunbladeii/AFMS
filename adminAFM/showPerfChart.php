@@ -50,9 +50,9 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>'.$b++.'</td>
           <td>'.$row2["stationCode"].'</td>
           <td>'.$row2["stationName"].'</td>
-          <td>'.$row2["receieved"].'</td>
-          <td>'.$row2["totalParcel"].'</td>
-          <td>'.$row2["fail"].'</td>
+          <td>'.number_format($row2["receieved"]).'</td>
+          <td>'.number_format($row2["totalParcel"]).'</td>
+          <td>'.number_format($row2["fail"]).'</td>
           <td>'.$row2["monthName"].'</td>
           <td>'.$row2["year"].'</td>
           <td></td>
