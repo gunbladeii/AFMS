@@ -1254,31 +1254,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
-               <div class="table-responsive">
-                   <table id="example7" class="table m-0 table-hover table-sm">
-                    <thead>
-                    <tr>
-                      <th><div class="badge badge-info">No.</div></th>
-                      <th><div class="badge badge-info">Commission</div></th>
-                      <th><div class="badge badge-info">Role</div></th>
-                      <th><div class="badge badge-info">Month</div></th>
-                      <th><div class="badge badge-info">Year</div></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php do {?>
-                    <tr>
-                      <td><?php echo $z++;?></td>
-                      <td><?php if(!empty($row_Recordset7['commision'])){echo '<div class="badge badge-success">'.$row_Recordset7['commision'].'</div>';}else{echo '<div class="badge badge-warning">Commission not set yet</div>';}?></td>
-                      <td><?php if($row_Recordset7['role'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset7['role']);}?></td>
-                      <td><?php echo $row_Recordset7['monthName'];?></td>
-                      <td><?php echo $row_Recordset7['year'];?></td>
-                    </tr>
-                    <?php }while ($row_Recordset7 = mysqli_fetch_assoc($Recordset7))?>
-                    </tbody>
-                  </table> 
-                </div>      
-                
+               <div id="showCommisionRole"></div>  
               </div>
             </div>
             <!-- /.card -->
@@ -1384,7 +1360,8 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
 	<script type="text/javascript">
 		$(document).ready(function() {
 				$('#show').load('viewPayroll.php')
-      $('#showListOperationDays').load('showListOperationDays.php')
+        $('#showListOperationDays').load('showListOperationDays.php')
+        $('# showCommisionRole').load('showCommisionRole.php')
 		});
 </script>
 <!-- Latest compiled and minified JavaScript -->
