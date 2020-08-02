@@ -153,11 +153,11 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>=+(N'.$e3++.'*30)</td>
           <td>=+F'.$e4++.'-Q'.$e5++.'</td>
           <td>=ROUND((F'.$e6++.'*G'.$e7++.'),2)</td>
-          <td>'.$row["petrol"].'</td>
-          <td>'.$row["handphone"].'</td>
-          <td>'.$row["comFee"].'</td>
-          <td>'.$row["ot"].'</td>
-          <td>'.$row["delComm"].'</td>
+          <td>'.round($row["petrol"],2).'</td>
+          <td>'.round($row["handphone"],2).'</td>
+          <td>'.round($row["comFee"],2).'</td>
+          <td>'.round($row["ot"],2).'</td>
+          <td>'.round($row["delComm"],2).'</td>
           <td></td>
           <td>'.$row['attAllow'].'</td>
           <td>=SUM(S'.$e12++.':Z'.$e13++.')</td>
