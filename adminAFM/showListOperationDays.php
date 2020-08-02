@@ -27,7 +27,6 @@ $b=1;
 ?>
 
 <?php if(!empty($row_Recordset2['stationCode'])) {?>
-             //
              <div class="table-responsive">
                    <table id="example6" class="table m-0 table-hover table-sm">
                     <thead>
