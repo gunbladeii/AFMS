@@ -1150,34 +1150,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
-                <div class="table-responsive">
-                   <table id="example6" class="table m-0 table-hover table-sm">
-                    <thead>
-                    <tr>
-                      <th><div class="badge badge-info">No.</div></th>
-                      <th><div class="badge badge-info">Station Code</div></th>
-                      <th><div class="badge badge-info">Station Name</div></th>
-                      <th><div class="badge badge-info">Month</div></th>
-                       <th><div class="badge badge-info">Year</div></th>
-                      <th><div class="badge badge-info">Operation Days</div></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php do {?>
-                    <tr>
-                      <td><?php echo $b++;?></td>
-                      <td><?php echo $row_Recordset3['stationCode'];?></td>
-                      <td><?php echo $row_Recordset3['name'];?></td>
-                      <td><?php $month_name = date("F", mktime(0, 0, 0, $row_Recordset3['month'], 10));
-                            echo $month_name."\n";?></td>
-                      <td><?php echo $row_Recordset3['year'];?></td>
-                      <td><?php echo $row_Recordset3['operationDay'];?></td>
-                    </tr>
-                    <?php }while ($row_Recordset3 = mysqli_fetch_assoc($Recordset3))?>
-                    </tbody>
-                  </table> 
-                </div>
-
+                <div id="showListOperationDays"></div>
               </div>
             </div>
             <!-- /.card -->
@@ -1411,6 +1384,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
 	<script type="text/javascript">
 		$(document).ready(function() {
 				$('#show').load('viewPayroll.php')
+      $('#showListOperationDays').load('showListOperationDays.php')
 		});
 </script>
 <!-- Latest compiled and minified JavaScript -->
