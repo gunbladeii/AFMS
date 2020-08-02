@@ -1361,7 +1361,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
 		$(document).ready(function() {
 				$('#show').load('viewPayroll.php')
         $('#showListOperationDays').load('showListOperationDays.php')
-        $('# showCommisionRole').load('showCommisionRole.php')
+        $('#showCommisionRole').load('showCommisionRole.php')
 		});
 </script>
 <!-- Latest compiled and minified JavaScript -->
