@@ -51,6 +51,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
   <!-- chart.js plugin -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </head>
@@ -632,7 +633,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3><div id="totalSuccessParcel"></div></h3>
+                <h3><div id="totalSuccessParcel" style="font-family: 'Do Hyeon', sans-serif;"></div></h3>
 
                 <p>Succesful Parcel Today</p>
               </div>
@@ -647,7 +648,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3><div id="percentSuccessParcel"></div></h3>
+                <h3><div id="percentSuccessParcel" style="font-family: 'Do Hyeon', sans-serif;"></div></h3>
 
                 <p>Parcel Delivered Rate</p>
               </div>
@@ -662,7 +663,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3><div id="totalSupervisor"></div></h3>
+                <h3><div id="totalSupervisor" style="font-family: 'Do Hyeon', sans-serif;"></div></h3>
 
                 <p>Admin/Supervisor</p>
               </div>
@@ -677,7 +678,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3><div id="totalRider"></div></h3>
+                <h3><div id="totalRider" style="font-family: 'Do Hyeon', sans-serif;"></div></h3>
 
                 <p>Riders</p>
               </div>
