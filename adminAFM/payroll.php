@@ -322,6 +322,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -921,7 +922,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
            <!-- TABLE: list of rider -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Download Excell Payroll Section</h3>
+                <h3 class="card-title" style="font-family: 'Merienda One', cursive;"> Download Excell Payroll Section</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -979,7 +980,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
               <!-- TABLE: parcel delivery rider -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Download Excell O/T Supervisor Section</h3>
+                <h3 class="card-title" style="font-family: 'Merienda One', cursive;">Download Excell O/T Supervisor Section</h3>
               <!-- /.card-body -->
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
@@ -1042,7 +1043,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
            <!-- TABLE: list of rider -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Click Name for Payroll Voucher</h3>
+                <h3 class="card-title" style="font-family: 'Merienda One', cursive;">Click Name for Payroll Voucher</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -1071,7 +1072,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
            <!-- TABLE: list of rider -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Update Operation Days</h3>
+                <h3 class="card-title" style="font-family: 'Merienda One', cursive;">Update Operation Days</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -1139,7 +1140,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
            <!-- TABLE: list of rider -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">List of Operation Days by Month and Station</h3>
+                <h3 class="card-title" style="font-family: 'Merienda One', cursive;">List of Operation Days by Month and Station</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -1164,7 +1165,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
            <!-- TABLE: list of rider -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Comission Setting by Role</h3>
+                <h3 class="card-title" style="font-family: 'Merienda One', cursive;">Comission Setting by Role</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -1243,7 +1244,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
            <!-- TABLE: list of rider -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Commission by Role</h3>
+                <h3 class="card-title" style="font-family: 'Merienda One', cursive;">Commission by Role</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -1276,7 +1277,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">Rider Payroll/Payment Voucher (Individual)</h5>
+        <h5 class="modal-title" id="exampleModalScrollableTitle" style="font-family: 'Merienda One', cursive;">Rider Payroll/Payment Voucher (Individual)</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
