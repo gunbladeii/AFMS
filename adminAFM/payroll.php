@@ -321,6 +321,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -874,7 +875,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Payroll Section</h1>
+            <h1 class="m-0 text-dark" style="font-family: 'Teko', sans-serif;">Payroll Section</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
