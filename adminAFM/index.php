@@ -50,6 +50,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
   <!-- chart.js plugin -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </head>
@@ -607,7 +608,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Altus Freight Managment System Dashboard</h1>
+            <h1 class="m-0 text-dark" style="font-family: 'Teko', sans-serif;">Altus Freight Managment System Dashboard</h1>
             <h6>(*All data shown below as of <?php echo $date;?>)</h6>
             <h6><?php print "Your IP address: ".$_SERVER['REMOTE_ADDR'];?></h6>
           </div><!-- /.col -->
