@@ -260,11 +260,11 @@ $z=1;
 
 $operationDay = $_POST['operationDay'];
 $commision = $_POST['commision'];
-$month = $_POST['month'];
+$monthOperationDay = $_POST['monthOperationDay'];
 
 
 if (isset($_POST['submit2'])) {
-      $mysqli->query("UPDATE `infoParcel` SET `operationDay` = '$operationDay' WHERE `stationCode` = '$stationCode' AND `month` = '$month' AND `year` = '$year'");
+      $mysqli->query("UPDATE `infoParcel` SET `operationDay` = '$operationDay' WHERE `stationCode` = '$stationCode' AND `month` = '$monthOperationDay' AND `year` = '$year'");
       
       header("location:payroll.php");
     }
@@ -1099,7 +1099,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
                            </div>
 
                            <div class="input-group mb-3">
-                               <select name="month" class="custom-select browser-default" required>
+                               <select name="monthOperationDay" class="custom-select browser-default" required>
                                   <option value="" selected>Pick Month</option>
                                   <option value="01" >January</option>
                                   <option value="02" >Febuary</option>
