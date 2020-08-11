@@ -1198,7 +1198,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
                                 <select name="roleCom" class="custom-select browser-default" required>
                                   <option value="">Pick role</option>
                                   <?php do{?>
-                                  <option value="<?php echo $row_Recordset5['role'];?>"><?php if($row_Recordset5['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset5['roleCategory']);}?></option>
+                                  <option value="<?php echo $row_Recordset5['roleCategory'];?>"><?php if($row_Recordset5['roleCategory'] == 'ss'){echo 'Supervisors';}else{echo ucfirst($row_Recordset5['roleCategory']);}?></option>
                                   <?php }while ($row_Recordset5 = mysqli_fetch_assoc($Recordset5))?>
                                 </select>
                                   <div class="input-group-append input-group-text">
