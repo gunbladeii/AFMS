@@ -262,7 +262,7 @@ $operationDay = $_POST['operationDay'];
 $commision = $_POST['commision'];
 $monthOperationDay = $_POST['monthOperationDay'];
 $stationCode = $_POST['stationCode'];
-
+$roleCom = $_POST['roleCom'];
 
 if (isset($_POST['submit2'])) {
       $mysqli->query("UPDATE `infoParcel` SET `operationDay` = '$operationDay' WHERE `stationCode` = '$stationCode' AND `month` = '$monthOperationDay' AND `year` = '$year'");
