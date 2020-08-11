@@ -261,6 +261,7 @@ $z=1;
 $operationDay = $_POST['operationDay'];
 $commision = $_POST['commision'];
 $monthOperationDay = $_POST['monthOperationDay'];
+$monthCom = $_POST['monthCom'];
 $stationCode = $_POST['stationCode'];
 $roleCom = $_POST['roleCom'];
 
