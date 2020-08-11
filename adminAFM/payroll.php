@@ -261,6 +261,7 @@ $z=1;
 $operationDay = $_POST['operationDay'];
 $commision = $_POST['commision'];
 $monthOperationDay = $_POST['monthOperationDay'];
+$stationCode = $_POST['stationCode'];
 
 
 if (isset($_POST['submit2'])) {
