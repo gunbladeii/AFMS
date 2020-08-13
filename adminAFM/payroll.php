@@ -69,12 +69,13 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 
 	if (isset($_POST["download"]))
 	{
-	$sql = $mysqli->query("SELECT *, MONTHNAME( testSalary.date) AS month2 
-    FROM testSalary 
-    INNER JOIN employeeData
-    ON testSalary.noIC = employeeData.noIC
-    WHERE  testSalary.year='$year' AND  testSalary.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY testSalary.noIC,testSalary.month,testSalary.year 
-    ORDER BY testSalary.stationCode,testSalary.nama ASC"); 					
+	$sql = $mysqli->query("SELECT testSalary.role,testSalary.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, testSalary.totalAttend, testSalary.receieved AS totalParcel, testSalary.fail AS totalFail, testSalary.totalParcel AS totalSuccess, MONTHNAME(testSalary.date) AS month, testSalary.year, employeeData.employeeStatus, testSalary.operationDay,testSalary.avgDel,testSalary.ot,testSalary.minDel,testSalary.delComm,testSalary.comFee,testSalary.petrol, testSalary.handphone, testSalary.attAllow, testSalary.comission, testSalary.advanced,testSalary.epf,testSalary.eis,testSalary.socso,testSalary.epf2,testSalary.eis2,testSalary.socso2,testSalary.hrdf, testSalary.advance2, testSalary.delComm, employeeData.dateJoin FROM
+
+     (((testSalary 
+					INNER JOIN bankName ON testSalary.codeBank = bankName.codeBank) 
+					INNER JOIN attendance ON testSalary.noIC = attendance.noIC)
+          INNER JOIN employeeData ON testSalary.noIC = employeeData.noIC)			
+					WHERE testSalary.year='$year' AND testSalary.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY testSalary.noIC,testSalary.month, testSalary.year ORDER BY testSalary.stationCode,testSalary.nama ASC"); 					
 
 	if (mysqli_num_rows($sql) > 0)
 		{
@@ -174,7 +175,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>'.$row["socso2"].'</td>
           <td>'.$row["eis2"].'</td>
           <td>'.$row["hrdf"].'</td>
-          <td>'.$row["month2"].'</td>
+          <td>'.$row["month"].'</td>
 					<td>'.$date.'</td>
           <td>Date of Join: '.$row["dateJoin"].'</td>
 					
@@ -194,12 +195,13 @@ $downloadExcell = $_SERVER['PHP_SELF'];
   /*advanced*/
   if (isset($_POST["advanced"]))
   {
-  $sql = $mysqli->query("SELECT *, MONTHNAME( testSalary.date) AS month2 
-    FROM testSalary 
-    INNER JOIN employeeData
-    ON testSalary.noIC = employeeData.noIC
-    WHERE  testSalary.year='$year' AND  testSalary.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY testSalary.noIC,testSalary.month,testSalary.year 
-    ORDER BY testSalary.stationCode,testSalary.nama ASC");          
+  $sql = $mysqli->query("SELECT testSalary.role,testSalary.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, testSalary.totalAttend, testSalary.receieved AS totalParcel, testSalary.fail AS totalFail, testSalary.totalParcel AS totalSuccess, MONTHNAME(testSalary.date) AS month, testSalary.year, employeeData.employeeStatus, testSalary.operationDay,testSalary.avgDel,testSalary.ot,testSalary.minDel,testSalary.delComm,testSalary.comFee,testSalary.petrol, testSalary.handphone, testSalary.attAllow, testSalary.comission, testSalary.advanced,testSalary.epf,testSalary.eis,testSalary.socso,testSalary.epf2,testSalary.eis2,testSalary.socso2,testSalary.hrdf, testSalary.advance2, testSalary.delComm, employeeData.dateJoin FROM
+
+     (((testSalary 
+          INNER JOIN bankName ON testSalary.codeBank = bankName.codeBank) 
+          INNER JOIN attendance ON testSalary.noIC = attendance.noIC)
+          INNER JOIN employeeData ON testSalary.noIC = employeeData.noIC)     
+          WHERE testSalary.year='$year' AND testSalary.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY testSalary.noIC,testSalary.month, testSalary.year ORDER BY testSalary.stationCode,testSalary.nama ASC");          
 
   if (mysqli_num_rows($sql) > 0)
     {
@@ -227,7 +229,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>'.$row["stationCode"].'</td>
           <td>'.ucfirst($row["role"]).'</td>
           <td>'.$row["advanced"].'</td>
-          <td>'.$row["month2"].'</td>
+          <td>'.$row["month"].'</td>
           <td>'.$date.'</td>
           <td>Date of Join: '.$row["dateJoin"].'</td>
         </tr>     
