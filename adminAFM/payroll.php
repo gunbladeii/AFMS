@@ -229,7 +229,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>=TEXT('.str_replace(' ', '', $row["noIC"]).',"0000000")</td>
           <td>'.$row["stationCode"].'</td>
           <td>'.ucfirst($row["role"]).'</td>
-          <td>'.$row["advance2"].'</td>
+          <td>'.$row["advance"].'</td>
           <td>'.$row["month"].'</td>
           <td>'.$date.'</td>
           <td>Date of Join: '.$row["dateJoin"].'</td>
