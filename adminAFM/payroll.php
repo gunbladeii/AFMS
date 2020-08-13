@@ -69,7 +69,12 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 
 	if (isset($_POST["download"]))
 	{
-	$sql = $mysqli->query("SELECT *, MONTHNAME(date) AS month2 FROM testSalary WHERE year='$year' AND month ='$month' AND employeeStatus NOT LIKE 'dump' GROUP BY noIC,month,year ORDER BY stationCode,nama ASC"); 					
+	$sql = $mysqli->query("SELECT *, MONTHNAME( testSalary.date) AS month2 
+    FROM testSalary 
+    INNER JOIN employeeData
+    ON testSalary.noIC = employeeData.noIC
+    WHERE  testSalary.year='$year' AND  testSalary.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY testSalary.noIC,testSalary.month,testSalary.year 
+    ORDER BY testSalary.stationCode,testSalary.nama ASC"); 					
 
 	if (mysqli_num_rows($sql) > 0)
 		{
@@ -189,7 +194,12 @@ $downloadExcell = $_SERVER['PHP_SELF'];
   /*advanced*/
   if (isset($_POST["advanced"]))
   {
-  $sql = $mysqli->query("SELECT *, MONTHNAME(date) AS month2 FROM testSalary WHERE year='$year' AND month ='$month' AND employeeStatus NOT LIKE 'dump' GROUP BY noIC,month,year ORDER BY stationCode,nama ASC");          
+  $sql = $mysqli->query("SELECT *, MONTHNAME( testSalary.date) AS month2 
+    FROM testSalary 
+    INNER JOIN employeeData
+    ON testSalary.noIC = employeeData.noIC
+    WHERE  testSalary.year='$year' AND  testSalary.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY testSalary.noIC,testSalary.month,testSalary.year 
+    ORDER BY testSalary.stationCode,testSalary.nama ASC");          
 
   if (mysqli_num_rows($sql) > 0)
     {
