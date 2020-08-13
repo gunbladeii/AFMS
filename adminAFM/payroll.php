@@ -1026,7 +1026,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
                             </table> 
 
                              <div class="card-footer clearfix">       
-                             <button type="submit" name='ot' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export O/T Supervisor</button>
+                             <button type="submit" name='ot' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export Excel Giro Ach</button>
                              </div>
                              </form>
                 </div>
