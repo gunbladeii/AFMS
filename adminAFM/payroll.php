@@ -191,6 +191,61 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 	exit;
 	}
 	
+
+  /*advanced*/
+  if (isset($_POST["advanced"]))
+  {
+  $sql = $mysqli->query("SELECT testSalary.role,testSalary.noIC, employeeData.stationCode, employeeData.nama, employeeData.emel,employeeData.codeBank, employeeData.accNum, bankName.bankName, testSalary.totalAttend, testSalary.receieved AS totalParcel, testSalary.fail AS totalFail, testSalary.totalParcel AS totalSuccess, testSalary.month, testSalary.year, employeeData.employeeStatus, testSalary.operationDay,testSalary.avgDel,testSalary.ot,testSalary.minDel,testSalary.delComm,testSalary.comFee,testSalary.petrol, testSalary.handphone, testSalary.attAllow, testSalary.comission, testSalary.advanced,testSalary.epf,testSalary.eis,testSalary.socso,testSalary.epf2,testSalary.eis2,testSalary.socso2,testSalary.hrdf, testSalary.advance2, testSalary.delComm, employeeData.dateJoin FROM
+
+     ((((employeeData 
+          INNER JOIN bankName ON employeeData.codeBank = bankName.codeBank)
+          INNER JOIN login ON employeeData.noIC = login.noIC)  
+          INNER JOIN attendance ON employeeData.noIC = attendance.noIC)
+          INNER JOIN testSalary ON employeeData.noIC = testSalary.noIC)     
+          WHERE login.role='ss' AND testSalary.year='$year' AND testSalary.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY testSalary.noIC,testSalary.month, testSalary.year ORDER BY employeeData.stationCode,employeeData.nama ASC");          
+
+  if (mysqli_num_rows($sql) > 0)
+    {
+    $output .='
+      <table class="table" border="1">
+        <tr>
+          <th>No.</th>
+          <th>Name</th>
+          <th>IC</th>
+          <th>Poslaju Branch</th>
+          <th>PIC/Rider</th>
+          <th>Advance 15th</th>
+          <th>Month</th>
+          <th>Date download</th>
+          <th>Remarks</th>
+        </tr>   
+      ';
+    while($row = mysqli_fetch_assoc($sql))
+      {
+      $output .='
+        <tr>
+          <td>'.$d++.'</td>
+          <td>'.ucwords(strtolower($row["nama"])).'</td>
+          <td>=TEXT('.str_replace(' ', '', $row["noIC"]).',"0000000")</td>
+          <td>'.$row["stationCode"].'</td>
+          <td>'.ucfirst($row["role"]).'</td>
+          <td>'.$row["advance2"].'</td>
+          <td>'.$month_name.'</td>
+          <td>'.$date.'</td>
+          <td>Date of Join: '.$row["dateJoin"].'</td>
+        </tr>     
+        ';    
+      }
+    $output .='</table>';
+    header("Content-Type: application/vnd-ms-excel");
+    header("Content-Disposition: attachment; filename=excell_giro_ach_advance_".$date.".xls");
+    echo $output;
+      
+    }
+  exit;
+  }
+
+
 	/*download overtime SV*/
 	if (isset($_POST["ot"]))
 	{
@@ -1026,7 +1081,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
                             </table> 
 
                              <div class="card-footer clearfix">       
-                             <button type="submit" name='ot' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export Excel Giro Ach</button>
+                             <button type="submit" name='advanced' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export Excel Giro Ach</button>
                              </div>
                              </form>
                 </div>
