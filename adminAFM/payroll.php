@@ -202,7 +202,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           INNER JOIN login ON employeeData.noIC = login.noIC)  
           INNER JOIN attendance ON employeeData.noIC = attendance.noIC)
           INNER JOIN testSalary ON employeeData.noIC = testSalary.noIC)     
-          WHERE login.role='ss' AND testSalary.year='$year' AND testSalary.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY testSalary.noIC,testSalary.month, testSalary.year ORDER BY employeeData.stationCode,employeeData.nama ASC");          
+          WHERE testSalary.year='$year' AND testSalary.month ='$month' AND employeeData.employeeStatus NOT LIKE 'dump' GROUP BY testSalary.noIC,testSalary.month, testSalary.year ORDER BY employeeData.stationCode,employeeData.nama ASC");          
 
   if (mysqli_num_rows($sql) > 0)
     {
