@@ -920,7 +920,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
         <div class="row">
           <div class="col-md-12">
             <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
            <!-- TABLE: list of rider -->
             <div class="card">
               <div class="card-header border-transparent">
@@ -976,9 +976,67 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
                 </div>
               </div>
 
-            
+            <!--calculate half month-->
+            <div class="col-md-4"> 
+              <!-- TABLE: parcel delivery rider -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title" style="font-family: 'Merienda One', cursive;">Download Excell Payroll Section (advanced)</h3>
+              <!-- /.card-body -->
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                   <form action="<?php echo $downloadExcell; ?>" role="form" method="POST" class="well form-horizontal" name="ot" class="download" enctype="multipart/form-data">
+                             <table class="table m-0">
+                              <tbody>
+                              <tr>
+                                <td>
+                               <div class="input-group mb-3">
+                                     <select name="month" class="custom-select browser-default" required>
+                                        <option value="" selected>Pick Month</option>
+                                        <option value="01" >January</option>
+                                        <option value="02" >Febuary</option>
+                                        <option value="03" >March</option>
+                                        <option value="04" >April</option>
+                                        <option value="05" >May</option>
+                                        <option value="06" >June</option>
+                                        <option value="07" >July</option>
+                                        <option value="08" >August</option>
+                                        <option value="09" >September</option>
+                                        <option value="10" >October</option>
+                                        <option value="11" >November</option>
+                                        <option value="12" >Disember</option>
+                                     </select>
+                                          <div class="input-group-append input-group-text">
+                                            <span class="fas fa-calendar-alt"></span>
+                                          </div>
+                               </div>
+                                </td>
+                              </tr>
+                              </tbody>
+                            </table> 
+
+                             <div class="card-footer clearfix">       
+                             <button type="submit" name='ot' value="Export to excel" class="badge badge-warning" id="buttonExcell"><i class="nav-icon fas fa-upload"></i> Export O/T Supervisor</button>
+                             </div>
+                             </form>
+                </div>
+
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
               
-            <div class="col-md-6"> 
+            <div class="col-md-4"> 
               <!-- TABLE: parcel delivery rider -->
             <div class="card">
               <div class="card-header border-transparent">
