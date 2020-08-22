@@ -966,7 +966,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
            <!-- TABLE: list of rider -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title" style="font-family: 'Merienda One', cursive;"> Download Excell Payroll Section</h3>
+                <h4 class="card-title" style="font-family: 'Merienda One', cursive;"> Download Excell Payroll Section</h4>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -1023,7 +1023,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
               <!-- TABLE: parcel delivery rider -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title" style="font-family: 'Merienda One', cursive;">Download Excell Payroll Section (advanced)</h3>
+                <h4 class="card-title" style="font-family: 'Merienda One', cursive;">Download Excell Payroll Section (advanced)</h4>
               <!-- /.card-body -->
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
@@ -1082,7 +1082,7 @@ $totalRows_Recordset7 = mysqli_num_rows($Recordset7);
               <!-- TABLE: parcel delivery rider -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title" style="font-family: 'Merienda One', cursive;">Download Excell O/T Supervisor Section</h3>
+                <h4 class="card-title" style="font-family: 'Merienda One', cursive;">Download Excell O/T Supervisor Section</h4>
               <!-- /.card-body -->
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
