@@ -14,6 +14,7 @@ $totalRows_Recordset = mysqli_num_rows($Recordset);
 $a=1;
 $d=1;
 $e=2;
+$eS=2;
 $e1=2;
 $e2=2;
 $e3=2;
@@ -142,7 +143,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
           <td>=TEXT('.str_replace(' ', '', $row["accNum"]).',"0000000")</td>
           <td>'.$row['operationDay'].'</td>
           <td>'.$row['totalAttend'].'</td>
-          <td>=M'.$e++.'-N'.$e++.'</td>
+          <td>=M'.$e++.'-N'.$eS++.'</td>
           <td>=ROUND((+F'.$e1++.'/N'.$e2++.'),2)</td>
           <td>=+(N'.$e3++.'*30)</td>
           <td>=+F'.$e4++.'-Q'.$e5++.'</td>
