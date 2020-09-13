@@ -178,7 +178,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 				';		
 			}
 		$output .='</table>';
-		header("Content-Type: application/vnd-ms-excel");
+		header("Content-Type: text/csv");
 		header("Content-Disposition: attachment; filename=excell_giro_ach_".$date.".xls");
 		echo $output;
 			
