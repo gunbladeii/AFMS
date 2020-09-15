@@ -318,6 +318,7 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
         
         <?php if ($row_Recordset2 > 0){?>
                 <div class="card-body">
+                 <div class="table-responsive">
                   <table id="example1" class="table m-0">
                     <thead>
                     <tr style="text-align:center">
@@ -352,6 +353,7 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
                     <?php } while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2)); ?>
                     </tbody>
                   </table>
+                  </div>
                 </div>
             <?php } ?>
                 <!-- /.table-responsive -->
