@@ -131,7 +131,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 				<tr>
 					<td>'.$d++.'</td>
 					<td>'.ucwords(strtolower($row["nama"])).'</td>
-					<td>=TEXT('.str_replace(' ', '', $row["noIC"]).',"0000000")</td>
+					<td>=TEXT('.sprintf('%08d', $row["noIC"]).',"0000000")</td>
           <td>'.$row["stationCode"].'</td>
           <td>'.ucfirst($row["role"]).'</td>
           <td>'.$row["totalParcel"].'</td>
@@ -178,7 +178,7 @@ $downloadExcell = $_SERVER['PHP_SELF'];
 				';		
 			}
 		$output .='</table>';
-		header("Content-Type: application/vnd-ms-excel");
+		header("Content-Type: text/csv");
 		header("Content-Disposition: attachment; filename=excell_giro_ach_".$date.".xls");
 		echo $output;
 			
